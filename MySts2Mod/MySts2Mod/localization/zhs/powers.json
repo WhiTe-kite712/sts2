@@ -37,5 +37,8 @@
   "MYSTS2MOD-TSINGHUA_FORM_POWER.smartDescription": "当你失去豪意值时，获得等同于失去数量一半的豪意值与格挡。",
   "MYSTS2MOD-FINAL_COMMIT_POWER.title": "最终提交",
   "MYSTS2MOD-FINAL_COMMIT_POWER.description": "本回合你无法获得格挡。回合结束时，翻倍你的豪意值。",
-  "MYSTS2MOD-FINAL_COMMIT_POWER.smartDescription": "本回合你无法获得格挡。回合结束时，翻倍你的豪意值。"
+  "MYSTS2MOD-FINAL_COMMIT_POWER.smartDescription": "本回合你无法获得格挡。回合结束时，翻倍你的豪意值。",
+  "MYSTS2MOD-MATH_PRINCE_TEMP_STRENGTH_POWER.title": "临时力量",
+  "MYSTS2MOD-MATH_PRINCE_TEMP_STRENGTH_POWER.description": "回合结束时，失去这些力量。",
+  "MYSTS2MOD-MATH_PRINCE_TEMP_STRENGTH_POWER.smartDescription": "获得[blue]{Amount}[/blue]点力量，回合结束时失去。"
 }

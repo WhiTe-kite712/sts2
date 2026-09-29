@@ -25,7 +25,7 @@ public class MathPrincePower : MySts2ModPower
         var strength = player.GetHao() / 4;
         if (strength > 0)
         {
-            await PowerCmd.Apply<TemporaryStrengthPower>(choiceContext, Owner, strength, Owner, null);
+            await PowerCmd.Apply<MathPrinceTempStrengthPower>(choiceContext, Owner, strength, Owner, null);
         }
     }
 }

@@ -27,9 +27,10 @@ public class CodingFarmer : PlaceholderCharacterModel
     public override int MaxEnergy => 3;
 
     // 人物头像（png/jpg 可被 PckPacker 打包；当前为用户提供的占位图）
-    public override string CustomIconTexturePath => $"{MainFile.ResPath}/images/charui/coding_farmer_icon.jpg";
-    public override string CustomCharacterSelectIconPath => $"{MainFile.ResPath}/images/charui/coding_farmer_icon.jpg";
-    public override string CustomCharacterSelectLockedIconPath => $"{MainFile.ResPath}/images/charui/coding_farmer_icon.jpg";
+    // 注意：必须用 png——Godot 运行时无法从 pck 直接加载原始 jpg（日志报 ResourceLoadException）
+    public override string CustomIconTexturePath => $"{MainFile.ResPath}/images/charui/coding_farmer_icon.png";
+    public override string CustomCharacterSelectIconPath => $"{MainFile.ResPath}/images/charui/coding_farmer_icon.png";
+    public override string CustomCharacterSelectLockedIconPath => $"{MainFile.ResPath}/images/charui/coding_farmer_icon.png";
 
     // 过渡音效不能删
     public override string CharacterTransitionSfx => "event:/sfx/ui/wipe_ironclad";
