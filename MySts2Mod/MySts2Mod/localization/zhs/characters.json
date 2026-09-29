@@ -1,0 +1,17 @@
+{
+  "MYSTS2MOD-CODING_FARMER.aromaPrinciple": "[blue]……再提交一次就好了……[/blue]",
+  "MYSTS2MOD-CODING_FARMER.banter.alive.endTurnPing": "编译完成，到你了。",
+  "MYSTS2MOD-CODING_FARMER.banter.dead.endTurnPing": "段错误……",
+  "MYSTS2MOD-CODING_FARMER.cardsModifierDescription": "码农的卡牌现在会出现在奖励和商店中。",
+  "MYSTS2MOD-CODING_FARMER.cardsModifierTitle": "码农卡牌",
+  "MYSTS2MOD-CODING_FARMER.description": "一个会写代码的农夫。\n[gold]豪意[/gold]既是他的剑，也是他的盾。",
+  "MYSTS2MOD-CODING_FARMER.eventDeathPrevention": "还不到时候，构建还没挂。",
+  "MYSTS2MOD-CODING_FARMER.goldMonologue": "[blue]够买一把机械键盘了……[/blue]",
+  "MYSTS2MOD-CODING_FARMER.possessiveAdjective": "他的",
+  "MYSTS2MOD-CODING_FARMER.pronounObject": "他",
+  "MYSTS2MOD-CODING_FARMER.pronounPossessive": "他的",
+  "MYSTS2MOD-CODING_FARMER.pronounSubject": "他",
+  "MYSTS2MOD-CODING_FARMER.title": "码农",
+  "MYSTS2MOD-CODING_FARMER.titleObject": "码农",
+  "MYSTS2MOD-CODING_FARMER.unlockText": "用[pink]{Prerequisite}[/pink]进行一局游戏来解锁这个角色。"
+}

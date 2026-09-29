@@ -1,0 +1,17 @@
+{
+  "MYSTS2MOD-CODING_FARMER.aromaPrinciple": "[blue]...just one more commit...[/blue]",
+  "MYSTS2MOD-CODING_FARMER.banter.alive.endTurnPing": "Compiling... done. Your turn.",
+  "MYSTS2MOD-CODING_FARMER.banter.dead.endTurnPing": "Segmentation fault...",
+  "MYSTS2MOD-CODING_FARMER.cardsModifierDescription": "Coding Farmer's cards now appear in rewards and shops.",
+  "MYSTS2MOD-CODING_FARMER.cardsModifierTitle": "Coding Farmer Cards",
+  "MYSTS2MOD-CODING_FARMER.description": "A farmer who codes.\n[gold]Hao[/gold] fuels both blade and block.",
+  "MYSTS2MOD-CODING_FARMER.eventDeathPrevention": "Not today. The build still passes.",
+  "MYSTS2MOD-CODING_FARMER.goldMonologue": "[blue]Enough for a mechanical keyboard...[/blue]",
+  "MYSTS2MOD-CODING_FARMER.possessiveAdjective": "his",
+  "MYSTS2MOD-CODING_FARMER.pronounObject": "him",
+  "MYSTS2MOD-CODING_FARMER.pronounPossessive": "his",
+  "MYSTS2MOD-CODING_FARMER.pronounSubject": "he",
+  "MYSTS2MOD-CODING_FARMER.title": "Coding Farmer",
+  "MYSTS2MOD-CODING_FARMER.titleObject": "Coding Farmer",
+  "MYSTS2MOD-CODING_FARMER.unlockText": "Play a run with [pink]{Prerequisite}[/pink] to unlock this character."
+}

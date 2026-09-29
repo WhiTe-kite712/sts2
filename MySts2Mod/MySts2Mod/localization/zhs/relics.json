@@ -1,0 +1,8 @@
+{
+  "MYSTS2MOD-LUCKY_COIN.title": "幸运硬币",
+  "MYSTS2MOD-LUCKY_COIN.description": "每回合开始时，抽[blue]{Cards}[/blue]张牌。",
+  "MYSTS2MOD-LUCKY_COIN.flavor": "正面反面，都是你赢。",
+  "MYSTS2MOD-HAO.title": "豪意",
+  "MYSTS2MOD-HAO.description": "每回合开始时，获得[blue]{Hao}[/blue]层豪意值。",
+  "MYSTS2MOD-HAO.flavor": "精心耕耘的代码库的收成。"
+}
