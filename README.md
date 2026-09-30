@@ -75,6 +75,8 @@ MySts2Mod\
 - **角色战斗形象/能量表盘/选择背景回落原版**——`.tscn` 需要 Godot(MegaDot 4.5.1) 导出，场景已备好放在 `_scenes_for_publish\`，发布时配置 `Directory.Build.props` 的 `GodotPath` 后 `dotnet publish`
 - **遗物 Hao 效果为占位设计**（每回合+2豪意），可调整
 - **语法课** v1 简化：随机 1 张而非"3 选 1"（自定义选卡界面 API 未验证）
+
+stdbitmap补充：1.'嘴硬'的实际效果与描述不符合。
 - 正式发布创意工坊：官方工具 <https://github.com/megacrit/sts2-mod-uploader>
 
 ## 参考
