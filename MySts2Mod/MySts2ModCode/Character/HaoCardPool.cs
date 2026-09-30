@@ -4,7 +4,7 @@ using Godot;
 namespace MySts2Mod.MySts2ModCode.Character;
 
 /// <summary>
-/// Coding Farmer 的专属卡池。28 张豪意卡牌全部注册在此池。
+/// Coding Farmer 的专属卡池。29 张豪意卡牌全部注册在此池。
 /// </summary>
 public class HaoCardPool : CustomCardPoolModel
 {
