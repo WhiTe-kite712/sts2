@@ -53,7 +53,7 @@ public class InfiniteHao : MySts2ModCard
 
             if (x > 0)
             {
-                await DealDamage(choiceContext, cardPlay, snapshot);
+                await DealDamage(choiceContext, cardPlay, x * snapshot);
             }
         }
     }

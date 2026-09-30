@@ -1,8 +1,7 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.ValueProps;
-using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.ValueProps;using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
@@ -13,8 +12,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 namespace MySts2Mod.MySts2ModCode.Powers;
 
 /// <summary>
-/// 嘴硬（第一阶段）：格挡正常扣除，剩余伤害不扣生命而改为获得等量豪意值。
-/// 覆盖本回合和敌方回合，直到拥有者的下个回合开始时切换为反噬。
+/// 死不悔改（第一阶段）：本回合你受到的伤害改为增加等量豪意值。回合结束时移除并施加第二阶段。
 /// </summary>
 public class UnrepentantGuardPower : MySts2ModPower
 {
@@ -27,8 +25,7 @@ public class UnrepentantGuardPower : MySts2ModPower
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Single;
 
-    // 该钩子运行时格挡已经扣除。先记录本应失去的生命值并归零伤害，
-    // 再在实际伤害结算后使用 PlayerChoiceContext 兑换豪意。
+    // ModifyHpLost 钩子没有 PlayerChoiceContext，先记录待转换数值，在 AfterDamageReceived 里结算
     private int pendingHaoGain;
 
     public override decimal ModifyHpLostBeforeOsty(Creature target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
@@ -48,11 +45,11 @@ public class UnrepentantGuardPower : MySts2ModPower
         await Owner.Player!.GainHao(choiceContext, gain, null);
     }
 
-    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
+    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
-        if (side != Owner.Side || !participants.Contains(Owner)) return;
+        if (side != Owner.Side) return;
 
-        await PowerCmd.Remove(this);
         await PowerCmd.Apply<UnrepentantPainPower>(choiceContext, Owner, 1, Owner, null);
+        await PowerCmd.Remove(this);
     }
 }

@@ -37,7 +37,7 @@
   "MYSTS2MOD-GROUP_DISCUSS.title": "Group Discussion",
   "MYSTS2MOD-GROUP_DISCUSS.description": "If the target intends to Attack, gain 1 Intangible. Otherwise, deal {Damage:diff()} damage.",
   "MYSTS2MOD-UNREPENTANT.title": "Unrepentant",
-  "MYSTS2MOD-UNREPENTANT.description": "Until the start of your next turn, damage consumes Block normally, but the remaining damage is converted into equal Hao instead of HP loss. Next turn, whenever you play a card, take 2 blockable damage.",
+  "MYSTS2MOD-UNREPENTANT.description": "This turn, convert unblocked damage you take into equal Hao. From the end of this turn until the end of your next turn, take 2 unblockable damage whenever you play a card.",
   "MYSTS2MOD-GENIUS.title": "Genius",
   "MYSTS2MOD-GENIUS.description": "At the start of your turn, gain 1 energy and draw {Draw:diff()} card(s). After you lose Hao, the next damage you take from an enemy is doubled; fully blocking it still consumes the effect.",
   "MYSTS2MOD-GRAMMAR.title": "Grammar",
@@ -57,7 +57,5 @@
   "MYSTS2MOD-BETTER_THAN_WALKER.title": "Better Than Walker",
   "MYSTS2MOD-BETTER_THAN_WALKER.description": "Deal {Damage:diff()} damage to ALL enemies. Then kill enemies whose HP is not higher than your Hao.",
   "MYSTS2MOD-FINAL_COMMIT.title": "Final Commit",
-  "MYSTS2MOD-FINAL_COMMIT.description": "You cannot gain Block this turn. At the end of your turn, double your Hao.",
-  "MYSTS2MOD-HINDSIGHT.title": "Hindsight",
-  "MYSTS2MOD-HINDSIGHT.description": "Lose {HaoCost} Hao. Gain {Block:diff()} Block next turn."
+  "MYSTS2MOD-FINAL_COMMIT.description": "You cannot gain Block this turn. At the end of your turn, double your Hao."
 }

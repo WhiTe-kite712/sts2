@@ -23,7 +23,7 @@ public class Unrepentant : MySts2ModCard
 
     private const int cost = 1;
     private const CardType type = CardType.Skill;
-    private const CardRarity rarity = CardRarity.Rare;
+    private const CardRarity rarity = CardRarity.Uncommon;
     private const TargetType target = TargetType.Self;
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];

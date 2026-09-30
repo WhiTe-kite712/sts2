@@ -21,14 +21,10 @@ public static class StringExtensions
 
     public static string BigCardImagePath(this string path)
     {
-        var bigPath = Path.Join(MainFile.ResPath, "images", "card_portraits", "big", path);
-        if (ResourceLoader.Exists(bigPath)) return bigPath;
-
-        //Reuse the card's regular portrait when no separate large portrait has been supplied.
-        var portraitPath = Path.Join(MainFile.ResPath, "images", "card_portraits", path);
-        if (ResourceLoader.Exists(portraitPath)) return portraitPath;
+        path = Path.Join(MainFile.ResPath, "images", "card_portraits", "big", path);
+        if (ResourceLoader.Exists(path)) return path;
         
-        MainFile.Logger.Info("Could not find big card image path: " + bigPath);
+        MainFile.Logger.Info("Could not find big card image path: " + path);
         return Path.Join(MainFile.ResPath, "images", "card_portraits", "big", "card.png");
     }
 

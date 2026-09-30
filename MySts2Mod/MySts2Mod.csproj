@@ -35,8 +35,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Alchyr.Sts2.BaseLib" Version="3.4.7" PrivateAssets="All"/>
-        <PackageReference Include="Alchyr.Sts2.ModAnalyzers" Version="0.2.1" />
+        <PackageReference Include="Alchyr.Sts2.BaseLib" Version="*" PrivateAssets="All"/>
+        <PackageReference Include="Alchyr.Sts2.ModAnalyzers" Version="*" />
         <!-- Generates a .pck file when building if only using simple assets. May not work on all setups. Uncomment to test. -->
         <PackageReference Include="BSchneppe.StS2.PckPacker" Version="0.1.1" PrivateAssets="All" />
         <AdditionalFiles Include="MySts2Mod/localization/**/*.json"/> <!-- Used by analyzer -->
@@ -97,14 +97,14 @@
                  Importance="high" />
     </Target>
     
-    <Target Name="CopyToModsFolderOnBuild" AfterTargets="PostBuildEvent" Condition="'$(DeployToGame)' != 'false'">
+    <Target Name="CopyToModsFolderOnBuild" AfterTargets="PostBuildEvent">
         <Message Text="Copying .dll .pdb and .json to mods folder." Importance="high" />
         <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
         <Copy SourceFiles="$(AssemblyName).json" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
         <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
     </Target>
 
-    <Target Name="CopyQuickPck" AfterTargets="PackPck" Condition="'$(DeployToGame)' != 'false' And Exists('$(PckPackerOutputPath)') And '$(PckPackerSkipped)' != 'true'">
+    <Target Name="CopyQuickPck" AfterTargets="PackPck" Condition="Exists('$(PckPackerOutputPath)') And '$(PckPackerSkipped)' != 'true'">
         <Message Text="Copying quick .pck to mods folder." Importance="high"/>
         <Copy SourceFiles="$(PckPackerOutputPath)"
               DestinationFolder="$(ModsPath)/$(MSBuildProjectName)" />
