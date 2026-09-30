@@ -20,8 +20,7 @@ public class HaoPower : MySts2ModPower
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
 
-
-public override async Task AfterDamageReceived(
+    public override async Task AfterDamageReceived(
         PlayerChoiceContext choiceContext,
         Creature target,
         DamageResult result,
@@ -62,10 +61,4 @@ public override async Task AfterDamageReceived(
         return 0m;
     }
 
-    public override List<(string, string)>? Localization =>
-    [
-        ("title", "Hao Point"),
-        ("description", "When you receive unblocked damage, lose all Hao Point and take damage equal to the amount lost.")
-    ];
-}
 }
