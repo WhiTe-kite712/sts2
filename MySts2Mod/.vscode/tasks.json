@@ -14,6 +14,31 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "build (仅编译和打包)",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/MySts2Mod.csproj",
+                "-p:DeployToGame=false"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": "build"
+        },
+        {
+            "label": "test (天才回归检查)",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "run",
+                "--project",
+                "${workspaceFolder}/../tests/GeniusPowerRegression/Harness.csproj"
+            ],
+            "dependsOn": "build (仅编译和打包)",
+            "problemMatcher": "$msCompile",
+            "group": "test"
         }
     ]
 }

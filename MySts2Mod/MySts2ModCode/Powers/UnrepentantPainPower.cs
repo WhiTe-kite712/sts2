@@ -9,7 +9,8 @@ using MegaCrit.Sts2.Core.ValueProps;
 namespace MySts2Mod.MySts2ModCode.Powers;
 
 /// <summary>
-/// 死不悔改（第二阶段）：本回合你每打出一张牌，受到2点伤害。回合结束移除。
+/// 嘴硬（第二阶段）：下个自身回合每打出一张牌，受到2点可被格挡的伤害。
+/// 该回合结束时移除。
 /// </summary>
 public class UnrepentantPainPower : MySts2ModPower
 {
@@ -20,12 +21,12 @@ public class UnrepentantPainPower : MySts2ModPower
     {
         if (cardPlay.Card.Owner.Creature != Owner) return;
 
-        await CreatureCmd.Damage(choiceContext, Owner, 2, ValueProp.Unblockable | ValueProp.Unpowered, Owner);
+        await CreatureCmd.Damage(choiceContext, Owner, 2, ValueProp.Unpowered, Owner);
     }
 
     public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
-        if (side == Owner.Side)
+        if (side == Owner.Side && participants.Contains(Owner))
         {
             await PowerCmd.Remove(this);
         }

@@ -25,11 +25,10 @@ public class SneerPower : MySts2ModPower
         await CreatureCmd.Damage(choiceContext, dealer, result.BlockedDamage, ValueProp.Unpowered, Owner);
     }
 
-    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
+    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
     {
-        if (side == Owner.Side)
-        {
-            await PowerCmd.Remove(this);
-        }
+        if (side != Owner.Side || !participants.Contains(Owner)) return;
+
+        await PowerCmd.Remove(this);
     }
 }
