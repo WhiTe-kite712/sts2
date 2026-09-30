@@ -7,6 +7,9 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MySts2Mod.MySts2ModCode.Extensions;
 
+using MegaCrit.Sts2.Core.HoverTips;
+using MySts2Mod.MySts2ModCode.Powers;
+
 namespace MySts2Mod.MySts2ModCode.Cards;
 
 /// <summary>
@@ -17,6 +20,12 @@ namespace MySts2Mod.MySts2ModCode.Cards;
 [Pool(typeof(HaoCardPool))]
 public class InfiniteHao : MySts2ModCard
 {
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<HaoPower>(),
+        EnergyHoverTip,
+    ];
+
     private const int cost = 0;
     private const CardType type = CardType.Attack;
     private const CardRarity rarity = CardRarity.Rare;

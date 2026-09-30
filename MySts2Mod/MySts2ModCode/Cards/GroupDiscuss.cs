@@ -9,11 +9,19 @@ using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 
+using MegaCrit.Sts2.Core.HoverTips;
+using MySts2Mod.MySts2ModCode.Powers;
+
 namespace MySts2Mod.MySts2ModCode.Cards;
 
 [Pool(typeof(HaoCardPool))]
 public class GroupDiscuss : MySts2ModCard
 {
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<IntangiblePower>(),
+    ];
+
     private const int cost = 3;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Uncommon;

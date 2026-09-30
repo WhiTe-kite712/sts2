@@ -7,11 +7,19 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MySts2Mod.MySts2ModCode.Powers;
 
+using MegaCrit.Sts2.Core.HoverTips;
+
 namespace MySts2Mod.MySts2ModCode.Cards;
 
 [Pool(typeof(HaoCardPool))]
 public class SuperHaoField : MySts2ModCard
 {
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<SuperHaoFieldPower>(),
+        HoverTipFactory.FromPower<HaoPower>(),
+    ];
+
     private const int cost = 3;
     private const CardType type = CardType.Power;
     private const CardRarity rarity = CardRarity.Rare;

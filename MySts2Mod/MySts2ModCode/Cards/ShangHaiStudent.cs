@@ -10,11 +10,19 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MySts2Mod.MySts2ModCode.Extensions;
 using MySts2Mod.MySts2ModCode.Powers;
 
+using MegaCrit.Sts2.Core.HoverTips;
+
 namespace MySts2Mod.MySts2ModCode.Cards;
 
 [Pool(typeof(HaoCardPool))]
 public class ShangHaiStudent : MySts2ModCard
 {
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<ShangHaiStudentPower>(),
+        HoverTipFactory.FromPower<HaoPower>(),
+    ];
+
     private const int cost = 1;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Common;

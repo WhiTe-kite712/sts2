@@ -8,6 +8,8 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using MySts2Mod.MySts2ModCode.Extensions;
 
+using MegaCrit.Sts2.Core.HoverTips;
+
 namespace MySts2Mod.MySts2ModCode.Powers;
 
 /// <summary>
@@ -15,6 +17,11 @@ namespace MySts2Mod.MySts2ModCode.Powers;
 /// </summary>
 public class TsinghuaFormPower : MySts2ModPower
 {
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<HaoPower>(),
+    ];
+
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Single;
 

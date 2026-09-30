@@ -2,7 +2,7 @@
   "MYSTS2MOD-HAO_POWER.title": "Hao",
   "MYSTS2MOD-HAO_POWER.description": "When you take unblocked damage, lose all Hao, then take damage equal to the amount lost.",
   "MYSTS2MOD-HAO_POWER.smartDescription": "Current Hao: [blue]{Amount}[/blue]. When you take unblocked damage, lose all Hao, then take damage equal to the amount lost.",
-  "MYSTS2MOD-SHANG_HAI_STUDENT_POWER.title": "Diligent",
+  "MYSTS2MOD-SHANG_HAI_STUDENT_POWER.title": "Shanghai Student",
   "MYSTS2MOD-SHANG_HAI_STUDENT_POWER.description": "Whenever you play a card, gain 1 Hao and Block equal to this power's amount. Removed at the end of your turn.",
   "MYSTS2MOD-SHANG_HAI_STUDENT_POWER.smartDescription": "Whenever you play a card, gain 1 Hao and [blue]{Amount}[/blue] Block. Removed at the end of your turn.",
   "MYSTS2MOD-SNEER_POWER.title": "Sneer",

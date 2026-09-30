@@ -8,6 +8,8 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MySts2Mod.MySts2ModCode.Extensions;
 
+using MegaCrit.Sts2.Core.HoverTips;
+
 namespace MySts2Mod.MySts2ModCode.Powers;
 
 /// <summary>
@@ -15,6 +17,13 @@ namespace MySts2Mod.MySts2ModCode.Powers;
 /// </summary>
 public class MathPrincePower : MySts2ModPower
 {
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<HaoPower>(),
+        HoverTipFactory.FromPower<MathPrinceTempStrengthPower>(),
+        HoverTipFactory.FromPower<StrengthPower>(),
+    ];
+
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Single;
 

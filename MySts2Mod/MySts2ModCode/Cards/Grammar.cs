@@ -11,6 +11,9 @@ using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
 using MySts2Mod.MySts2ModCode.Extensions;
 
+using MegaCrit.Sts2.Core.HoverTips;
+using MySts2Mod.MySts2ModCode.Powers;
+
 namespace MySts2Mod.MySts2ModCode.Cards;
 
 /// <summary>
@@ -20,6 +23,11 @@ namespace MySts2Mod.MySts2ModCode.Cards;
 [Pool(typeof(HaoCardPool))]
 public class Grammar : MySts2ModCard
 {
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<HaoPower>(),
+    ];
+
     private const int cost = 1;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Uncommon;

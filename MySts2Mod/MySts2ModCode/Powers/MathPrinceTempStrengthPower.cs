@@ -6,6 +6,8 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MySts2Mod.MySts2ModCode.Cards;
 
+using MegaCrit.Sts2.Core.HoverTips;
+
 namespace MySts2Mod.MySts2ModCode.Powers;
 
 /// <summary>
@@ -16,6 +18,11 @@ namespace MySts2Mod.MySts2ModCode.Powers;
 /// </summary>
 public class MathPrinceTempStrengthPower : CustomTemporaryPowerModel
 {
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<StrengthPower>(),
+    ];
+
     public override PowerModel InternallyAppliedPower => ModelDb.Power<StrengthPower>();
 
     public override AbstractModel OriginModel => ModelDb.Card<MathPrince>();
