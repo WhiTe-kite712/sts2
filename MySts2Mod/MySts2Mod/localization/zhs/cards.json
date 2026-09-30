@@ -37,7 +37,7 @@
   "MYSTS2MOD-GROUP_DISCUSS.title": "讨论时间",
   "MYSTS2MOD-GROUP_DISCUSS.description": "若目标的意图为攻击，获得1层无实体；否则，造成{Damage:diff()}点伤害。",
   "MYSTS2MOD-UNREPENTANT.title": "嘴硬",
-  "MYSTS2MOD-UNREPENTANT.description": "本回合，将你受到的未被格挡的伤害转化为等量豪意值。回合结束后至你的下个回合结束，每打出一张牌，受到2点伤害。",
+  "MYSTS2MOD-UNREPENTANT.description": "直到你的下个回合开始，受到伤害时正常消耗格挡，剩余伤害转化为等量豪意值，不损失生命。下回合，每打出一张牌，受到2点可被格挡的伤害。",
   "MYSTS2MOD-GENIUS.title": "天才？",
   "MYSTS2MOD-GENIUS.description": "你的回合开始时，获得1点能量并抽{Draw:diff()}张牌。失去豪意值后，你受到的下一次敌方伤害翻倍；该次伤害完全被格挡也会消耗效果。",
   "MYSTS2MOD-GRAMMAR.title": "语法",
@@ -53,9 +53,11 @@
   "MYSTS2MOD-TSINGHUA_FORM.title": "清华形态",
   "MYSTS2MOD-TSINGHUA_FORM.description": "每当你失去豪意值时，重新获得失去数量的一半（向下取整），并获得等量格挡。",
   "MYSTS2MOD-INFINITE_HAO.title": "无限豪",
-  "MYSTS2MOD-INFINITE_HAO.description": "每轮记下当前豪意值并失去3点豪意值。攻击X×记录值次，每次造成X×记录值点伤害。豪意值不低于3时持续重复。{IfUpgraded:show:\n[gold]X增加1[/gold]。|}",
+  "MYSTS2MOD-INFINITE_HAO.description": "攻击X次，每次造成等同于当前豪意值的伤害。并失去3点豪意值，豪意值不低于3时持续重复。{IfUpgraded:show:\n[gold]X增加1[/gold]。|}",
   "MYSTS2MOD-BETTER_THAN_WALKER.title": "比教主更豪",
   "MYSTS2MOD-BETTER_THAN_WALKER.description": "对所有敌人造成{Damage:diff()}点伤害。随后，杀死生命值不高于豪意值的敌人。",
   "MYSTS2MOD-FINAL_COMMIT.title": "最终提交",
-  "MYSTS2MOD-FINAL_COMMIT.description": "本回合你无法获得格挡。你的回合结束时，翻倍豪意值。"
+  "MYSTS2MOD-FINAL_COMMIT.description": "本回合你无法获得格挡。你的回合结束时，翻倍豪意值。",
+  "MYSTS2MOD-HINDSIGHT.title": "后知后觉",
+  "MYSTS2MOD-HINDSIGHT.description": "失去{HaoCost}点豪意值。下回合获得{Block:diff()}点格挡。"
 }
