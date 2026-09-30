@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net9.0</TargetFramework>
+    <RollForward>Major</RollForward>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+    <ModDll Condition="'$(ModDll)' == ''">$(MSBuildThisFileDirectory)..\..\MySts2Mod\.godot\mono\temp\bin\Debug\MySts2Mod.dll</ModDll>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="sts2"><HintPath>$(Sts2DataDir)\sts2.dll</HintPath></Reference>
+    <Reference Include="GodotSharp"><HintPath>$(Sts2DataDir)\GodotSharp.dll</HintPath></Reference>
+    <Reference Include="BaseLib"><HintPath>$(BaseLibDll)</HintPath></Reference>
+    <Reference Include="MySts2Mod"><HintPath>$(ModDll)</HintPath></Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+      <_Parameter1>Sts2DataDir</_Parameter1><_Parameter2>$(Sts2DataDir)</_Parameter2>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <Target Name="CheckReferences" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(Sts2DataDir)\sts2.dll')" Text="Set Sts2DataDir to the installed game's data_sts2_windows_x86_64 directory." />
+    <Error Condition="!Exists('$(BaseLibDll)')" Text="Set BaseLibDll to a compatible BaseLib.dll (tested with 3.4.7)." />
+    <Error Condition="!Exists('$(ModDll)')" Text="Build MySts2Mod first or set ModDll to its compiled DLL." />
+  </Target>
+</Project>

@@ -7,13 +7,11 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
-using MySts2Mod.MySts2ModCode.Extensions;
 
 namespace MySts2Mod.MySts2ModCode.Powers;
 
 /// <summary>
 /// 天才：回合开始时获得1点能量并抽{Amount}张牌；每次失去豪意值后，你受到的下一次伤害翻倍。
-/// HaoLostFlag 为非序列化字段，战斗中途存档读档后该标记会丢失（仅影响一次伤害翻倍判定）。
 /// </summary>
 public class GeniusPower : MySts2ModPower
 {
@@ -32,7 +30,7 @@ public class GeniusPower : MySts2ModPower
 
     public override Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
-        if (power is HaoPower && amount < 0)
+        if (power is HaoPower && power.Owner == Owner && amount < 0)
         {
             HaoLostFlag = true;
         }
@@ -42,9 +40,21 @@ public class GeniusPower : MySts2ModPower
 
     public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
     {
-        if (target != Owner || dealer == null || dealer.Side == Owner.Side || !HaoLostFlag) return amount;
-
-        HaoLostFlag = false;
-        return amount * 2;
+        // This hook also runs for damage previews and returns a multiplier, not damage.
+        return HaoLostFlag && IsEligibleDamage(target, dealer) ? 2m : 1m;
     }
+
+    public override Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
+    {
+        // A positive hit consumes the effect even when fully blocked; zero damage does not.
+        if (IsEligibleDamage(target, dealer) && result.TotalDamage > 0)
+        {
+            HaoLostFlag = false;
+        }
+
+        return Task.CompletedTask;
+    }
+
+    private bool IsEligibleDamage(Creature? target, Creature? dealer) =>
+        target == Owner && dealer != null && dealer.Side != Owner.Side;
 }
