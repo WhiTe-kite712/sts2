@@ -17,5 +17,7 @@ public class HaoCardPool : CustomCardPoolModel
 
     public override bool IsColorless => false;
 
-    // TODO 正式版：能量图标 res://MySts2Mod/images/energy_hao.png (24x24) 与 energy_hao_big.png (74x74)
+    // 能量表盘：小图标随费用文字显示，大图标为能量球（由 tools/artgen 生成）
+    public override string? TextEnergyIconPath => $"{MainFile.ResPath}/images/energy_hao.png";
+    public override string? BigEnergyIconPath => $"{MainFile.ResPath}/images/energy_hao_big.png";
 }
