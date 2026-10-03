@@ -28,7 +28,8 @@ public class HaoPower : MySts2ModPower
         Creature? dealer,
         CardModel? cardSource)
     {
-        if (target != Owner || Amount == 0 || result.UnblockedDamage <= 0)
+        //The game marks HP loss (e.g. Offering and Poison) with Unblockable; it is not damage for Hao.
+        if (target != Owner || Amount == 0 || result.UnblockedDamage <= 0 || props.HasFlag(ValueProp.Unblockable))
         {
             return;
         }

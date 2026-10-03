@@ -1,7 +1,7 @@
 {
   "MYSTS2MOD-HAO_POWER.title": "Hao",
   "MYSTS2MOD-HAO_POWER.description": "When you take unblocked damage, lose all Hao, then take damage equal to the amount lost.",
-  "MYSTS2MOD-HAO_POWER.smartDescription": "Current Hao: [blue]{Amount}[/blue]. When you take unblocked damage, lose all Hao, then take damage equal to the amount lost.",
+  "MYSTS2MOD-HAO_POWER.smartDescription": "Current Hao: [blue]{Amount}[/blue]. When you take unblocked damage, lose all Hao, then take damage equal to the amount lost. HP loss does not trigger this effect.",
   "MYSTS2MOD-SHANG_HAI_STUDENT_POWER.title": "Shanghai Student",
   "MYSTS2MOD-SHANG_HAI_STUDENT_POWER.description": "Whenever you play a card, gain 1 Hao and Block equal to this power's amount. Removed at the end of your turn.",
   "MYSTS2MOD-SHANG_HAI_STUDENT_POWER.smartDescription": "Whenever you play a card, gain 1 Hao and [blue]{Amount}[/blue] Block. Removed at the end of your turn.",
@@ -40,5 +40,14 @@
   "MYSTS2MOD-FINAL_COMMIT_POWER.smartDescription": "You cannot gain Block. At the end of your turn, double your Hao and remove this power.",
   "MYSTS2MOD-MATH_PRINCE_TEMP_STRENGTH_POWER.title": "Temporary Strength",
   "MYSTS2MOD-MATH_PRINCE_TEMP_STRENGTH_POWER.description": "Extra Strength granted by Math Prince. Lose it at the end of your turn.",
-  "MYSTS2MOD-MATH_PRINCE_TEMP_STRENGTH_POWER.smartDescription": "Extra Strength granted by Math Prince: [blue]{Amount}[/blue]. Lose it at the end of your turn."
+  "MYSTS2MOD-MATH_PRINCE_TEMP_STRENGTH_POWER.smartDescription": "Extra Strength granted by Math Prince: [blue]{Amount}[/blue]. Lose it at the end of your turn.",
+  "MYSTS2MOD-XIAO_NEXT_TURN_POWER.title": "Xiao Next Turn",
+  "MYSTS2MOD-XIAO_NEXT_TURN_POWER.description": "At the start of your next turn, add 1 Xiao to your hand per stack.",
+  "MYSTS2MOD-XIAO_NEXT_TURN_POWER.smartDescription": "At the start of your next turn, add [blue]{Amount}[/blue] Xiao to your hand.",
+  "MYSTS2MOD-CHUAN_NEXT_TURN_POWER.title": "Chuan Next Turn",
+  "MYSTS2MOD-CHUAN_NEXT_TURN_POWER.description": "At the start of your next turn, add 1 Chuan to your hand per stack.",
+  "MYSTS2MOD-CHUAN_NEXT_TURN_POWER.smartDescription": "At the start of your next turn, add [blue]{Amount}[/blue] Chuan to your hand.",
+  "MYSTS2MOD-UNSPOKEN_FURY_POWER.title": "Unspoken Fury",
+  "MYSTS2MOD-UNSPOKEN_FURY_POWER.description": "If you take unblocked damage between the start of this turn and the start of your next turn, deal {Damage} damage to ALL enemies per stack at the start of your next turn. HP loss does not count. Resolve those stacks afterward.",
+  "MYSTS2MOD-UNSPOKEN_FURY_POWER.smartDescription": "If you take unblocked damage between the start of this turn and the start of your next turn, deal {Damage} damage to ALL enemies [blue]{Amount}[/blue] time(s) at the start of your next turn. HP loss does not count. Resolve those stacks afterward."
 }

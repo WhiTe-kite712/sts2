@@ -59,5 +59,13 @@
   "MYSTS2MOD-FINAL_COMMIT.title": "最终提交",
   "MYSTS2MOD-FINAL_COMMIT.description": "本回合你无法获得格挡。你的回合结束时，翻倍豪意值。",
   "MYSTS2MOD-HINDSIGHT.title": "后知后觉",
-  "MYSTS2MOD-HINDSIGHT.description": "失去{HaoCost}点豪意值。下回合获得{Block:diff()}点格挡。"
+  "MYSTS2MOD-HINDSIGHT.description": "失去{HaoCost}点豪意值。下回合获得{Block:diff()}点格挡。",
+  "MYSTS2MOD-NEW_GROUP_CHAT.title": "新群聊",
+  "MYSTS2MOD-NEW_GROUP_CHAT.description": "将一张“孝”加入你的手牌。",
+  "MYSTS2MOD-XIAO.title": "孝",
+  "MYSTS2MOD-XIAO.description": "获得{Hao:diff()}点豪意值与{Block:diff()}点格挡。下回合，将一张“串”加入你的手牌。",
+  "MYSTS2MOD-CHUAN.title": "串",
+  "MYSTS2MOD-CHUAN.description": "失去{HaoCost}点豪意值。造成{Damage:diff()}点伤害。失去{HpLoss}点生命。下回合，将一张“孝”加入你的手牌。",
+  "MYSTS2MOD-UNSPOKEN_FURY.title": "未声张的怒火",
+  "MYSTS2MOD-UNSPOKEN_FURY.description": "对所有敌人造成{Damage:diff()}点伤害。若从本回合开始到下回合开始前受到未被格挡的伤害，下回合开始时再次对所有敌人造成{Damage:diff()}点伤害。"
 }
