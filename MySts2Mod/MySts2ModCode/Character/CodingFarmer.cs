@@ -40,16 +40,18 @@ public class CodingFarmer : PlaceholderCharacterModel
     public override RelicPoolModel RelicPool => ModelDb.RelicPool<HaoRelicPool>();
     public override PotionPoolModel PotionPool => ModelDb.PotionPool<HaoPotionPool>();
 
-    // ---- 初始卡组：4 打击 + 4 防御 + 1 自恋 ----
+    // ---- 初始卡组：4 打击 + 4 防御 + 1 豪意打击 + 1 豪意防御 + 1 自恋（11张） ----
     public override IEnumerable<CardModel> StartingDeck =>
     [
+        ModelDb.Card<Cards.Strike>(),
+        ModelDb.Card<Cards.Strike>(),
+        ModelDb.Card<Cards.Strike>(),
+        ModelDb.Card<Cards.Strike>(),
+        ModelDb.Card<Cards.Defend>(),
+        ModelDb.Card<Cards.Defend>(),
+        ModelDb.Card<Cards.Defend>(),
+        ModelDb.Card<Cards.Defend>(),
         ModelDb.Card<Cards.HaoStrike>(),
-        ModelDb.Card<Cards.HaoStrike>(),
-        ModelDb.Card<Cards.HaoStrike>(),
-        ModelDb.Card<Cards.HaoStrike>(),
-        ModelDb.Card<Cards.HaoDefend>(),
-        ModelDb.Card<Cards.HaoDefend>(),
-        ModelDb.Card<Cards.HaoDefend>(),
         ModelDb.Card<Cards.HaoDefend>(),
         ModelDb.Card<Cards.Narcissism>(),
     ];

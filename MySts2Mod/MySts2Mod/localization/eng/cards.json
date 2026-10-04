@@ -67,5 +67,9 @@
   "MYSTS2MOD-CHUAN.title": "Chuan",
   "MYSTS2MOD-CHUAN.description": "Lose {HaoCost} Hao. Deal {Damage:diff()} damage. Lose {HpLoss} HP. Next turn, add a Xiao to your hand.",
   "MYSTS2MOD-UNSPOKEN_FURY.title": "Unspoken Fury",
-  "MYSTS2MOD-UNSPOKEN_FURY.description": "Deal {Damage:diff()} damage to ALL enemies. If you take unblocked damage between the start of this turn and the start of your next turn, deal {Damage:diff()} damage to ALL enemies again at the start of your next turn."
+  "MYSTS2MOD-UNSPOKEN_FURY.description": "Deal {Damage:diff()} damage to ALL enemies. If you take unblocked damage between the start of this turn and the start of your next turn, deal {Damage:diff()} damage to ALL enemies again at the start of your next turn.",
+  "MYSTS2MOD-STRIKE.title": "Strike",
+  "MYSTS2MOD-STRIKE.description": "Deal {Damage:diff()} damage.",
+  "MYSTS2MOD-DEFEND.title": "Defend",
+  "MYSTS2MOD-DEFEND.description": "Gain {Block:diff()} Block."
 }
