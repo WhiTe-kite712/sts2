@@ -31,11 +31,11 @@ MySts2Mod\
 │  ├─ MainFile.cs              # 入口 [ModInitializer]，Harmony 挂载 + 脚本查找
 │  ├─ Character\
 │  │  ├─ CodingFarmer.cs       # 角色：75血/3能量，初始卡组与起始遗物
-│  │  ├─ HaoCardPool.cs        # 专属卡池（28张豪意卡都在这里）
+│  │  ├─ HaoCardPool.cs        # 专属卡池（52种角色卡，含5种基础牌）
 │  │  ├─ HaoRelicPool.cs       # 专属遗物池
 │  │  └─ HaoPotionPool.cs      # 专属药水池（暂空）
-│  ├─ Cards\                   # 29 张卡（28 张 CSV 设计 + 演示卡 Spark）
-│  ├─ Powers\                  # 豪意本体 + 12 个联动能力
+│  ├─ Cards\                   # 54种卡：52种角色卡 + 孝/串2种无色衍生牌
+│  ├─ Powers\                  # 20种能力 + 临时力量桥接
 │  ├─ Relics\                  # LuckyCoin（演示）+ Hao（起始遗物）
 │  └─ Extensions\HaoExtensions.cs  # 豪意读写统一入口 GetHao/GainHao/LoseHao
 └─ MySts2Mod\                  # ★ 资源（PckPacker 打包进 .pck）
@@ -97,3 +97,7 @@ stdbitmap补充：1.'嘴硬'的实际效果与描述不符合。
 
 
 目前还在测试
+
+## 当前卡牌版本
+
+副本的卡牌更改已同步到本仓库，当前54种卡（攻击21、技能26、能力7）。初始卡组为11张：4打击、4防御、1豪意打击、1豪意防御、1自恋。当前摘要与清单位于 [docs/card-expansion-54](docs/card-expansion-54/同步完成摘要.md)，源码检查见 [tests/CardExpansionRegression](tests/CardExpansionRegression/README.md)。本次只进行了静态核对，没有重新编译或部署；按用户选择，仅保留最新摘要、清单和检查源码。

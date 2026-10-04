@@ -1,0 +1,220 @@
+{
+  "version": 4,
+  "targets": {
+    "net9.0": {
+      "Alchyr.Sts2.ModAnalyzers/0.2.1": {
+        "type": "package"
+      },
+      "Godot.SourceGenerators/4.5.1": {
+        "type": "package",
+        "build": {
+          "build/_._": {}
+        }
+      },
+      "GodotSharp/4.5.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GodotSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/GodotSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "GodotSharpEditor/4.5.1": {
+        "type": "package",
+        "dependencies": {
+          "GodotSharp": "4.5.1"
+        },
+        "compile": {
+          "lib/net8.0/GodotSharpEditor.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/GodotSharpEditor.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MySts2Mod/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Alchyr.Sts2.ModAnalyzers": "0.2.1",
+          "Godot.SourceGenerators": "4.5.1",
+          "GodotSharp": "4.5.1",
+          "GodotSharpEditor": "4.5.1"
+        },
+        "compile": {
+          "bin/placeholder/MySts2Mod.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MySts2Mod.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Alchyr.Sts2.ModAnalyzers/0.2.1": {
+      "sha512": "hiUZueWH2QqAtvrR13aqtlIxpOsByV2mCKmL/wGop2MSrbBxzO7vAJJehkFD6AII0ANE/6XNC+kAywWsiGtwwg==",
+      "type": "package",
+      "path": "alchyr.sts2.modanalyzers/0.2.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "alchyr.sts2.modanalyzers.0.2.1.nupkg.sha512",
+        "alchyr.sts2.modanalyzers.nuspec",
+        "analyzers/dotnet/cs/Sts2ModAnalyzers.dll",
+        "tools/tools/install.ps1",
+        "tools/tools/uninstall.ps1"
+      ]
+    },
+    "Godot.SourceGenerators/4.5.1": {
+      "sha512": "HOHYJQO5A/kzf5CUobeTPOX+JawSvjkDE0v/Fyo4EMYEC2MvCTGUvpJFjqQQmHYLNsiiB7RLVilcnup+jiVfdA==",
+      "type": "package",
+      "path": "godot.sourcegenerators/4.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/Godot.SourceGenerators.dll",
+        "build/Godot.SourceGenerators.props",
+        "godot.sourcegenerators.4.5.1.nupkg.sha512",
+        "godot.sourcegenerators.nuspec"
+      ]
+    },
+    "GodotSharp/4.5.1": {
+      "sha512": "5CFnEHT+FByv5desNHMipz/209SCrWR9CGWFZjGHnXupl1Rw8U8q4nf65/unqZVL97Rx+3J5hskPMoDGaiZL9g==",
+      "type": "package",
+      "path": "godotsharp/4.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "godotsharp.4.5.1.nupkg.sha512",
+        "godotsharp.nuspec",
+        "lib/net8.0/GodotSharp.dll",
+        "lib/net8.0/GodotSharp.xml"
+      ]
+    },
+    "GodotSharpEditor/4.5.1": {
+      "sha512": "8CM49047b0Us3qPJo6L7kdldreOvR7JCoXlKoSHzpA0TQP6+Qnoxz/26GZ1ONg2wW4vV9uzor0AHXSGUFP9XSw==",
+      "type": "package",
+      "path": "godotsharpeditor/4.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "godotsharpeditor.4.5.1.nupkg.sha512",
+        "godotsharpeditor.nuspec",
+        "lib/net8.0/GodotSharpEditor.dll",
+        "lib/net8.0/GodotSharpEditor.xml"
+      ]
+    },
+    "MySts2Mod/1.0.0": {
+      "type": "project",
+      "path": "../../MySts2Mod/MySts2Mod.csproj",
+      "msbuildProject": "../../MySts2Mod/MySts2Mod.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net9.0": [
+      "MySts2Mod >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Amazi\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Amazi\\Desktop\\Spire2Mod\\Git Clone\\sts2\\tests\\CardExpansionRegression\\Harness.csproj",
+      "projectName": "Harness",
+      "projectPath": "C:\\Users\\Amazi\\Desktop\\Spire2Mod\\Git Clone\\sts2\\tests\\CardExpansionRegression\\Harness.csproj",
+      "packagesPath": "C:\\Users\\Amazi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Amazi\\Desktop\\Spire2Mod\\Git Clone\\sts2\\tests\\CardExpansionRegression\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Amazi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net9.0"
+      ],
+      "sources": {
+        "C:\\Users\\Amazi\\.nuget\\packages": {}
+      },
+      "frameworks": {
+        "net9.0": {
+          "framework": "net9.0",
+          "targetAlias": "net9.0",
+          "projectReferences": {
+            "C:\\Users\\Amazi\\Desktop\\Spire2Mod\\Git Clone\\sts2\\MySts2Mod\\MySts2Mod.csproj": {
+              "projectPath": "C:\\Users\\Amazi\\Desktop\\Spire2Mod\\Git Clone\\sts2\\MySts2Mod\\MySts2Mod.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "false",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "10.0.300"
+    },
+    "frameworks": {
+      "net9.0": {
+        "framework": "net9.0",
+        "targetAlias": "net9.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[9.0.16, 9.0.16]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[9.0.16, 9.0.16]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[9.0.16, 9.0.16]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[9.0.16, 9.0.16]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

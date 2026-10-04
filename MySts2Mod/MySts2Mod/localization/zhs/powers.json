@@ -49,5 +49,17 @@
   "MYSTS2MOD-CHUAN_NEXT_TURN_POWER.smartDescription": "你的下个回合开始时，将[blue]{Amount}[/blue]张“串”加入你的手牌。",
   "MYSTS2MOD-UNSPOKEN_FURY_POWER.title": "未声张的怒火",
   "MYSTS2MOD-UNSPOKEN_FURY_POWER.description": "若从本回合开始到下回合开始前受到未被格挡的伤害，下回合开始时，每层对所有敌人造成{Damage}点伤害。生命损失不计入条件。随后失去已结算的层数。",
-  "MYSTS2MOD-UNSPOKEN_FURY_POWER.smartDescription": "若从本回合开始到下回合开始前受到未被格挡的伤害，下回合开始时，对所有敌人造成{Damage}点伤害，重复[blue]{Amount}[/blue]次。生命损失不计入条件。随后失去已结算的层数。"
+  "MYSTS2MOD-UNSPOKEN_FURY_POWER.smartDescription": "若从本回合开始到下回合开始前受到未被格挡的伤害，下回合开始时，对所有敌人造成{Damage}点伤害，重复[blue]{Amount}[/blue]次。生命损失不计入条件。随后失去已结算的层数。",
+  "MYSTS2MOD-HIDDEN_STATE_POWER.title": "隐匿状态",
+  "MYSTS2MOD-HIDDEN_STATE_POWER.description": "获得4点敏捷，失去2点力量。离开隐匿状态时撤销此状态带来的力量与敏捷变化。",
+  "MYSTS2MOD-HIDDEN_STATE_POWER.smartDescription": "获得4点敏捷，失去2点力量。离开隐匿状态时撤销此状态带来的力量与敏捷变化。",
+  "MYSTS2MOD-OPEN_HAO_STATE_POWER.title": "开豪状态",
+  "MYSTS2MOD-OPEN_HAO_STATE_POWER.description": "获得4点力量，失去2点敏捷。离开开豪状态时撤销此状态带来的力量与敏捷变化。",
+  "MYSTS2MOD-OPEN_HAO_STATE_POWER.smartDescription": "获得4点力量，失去2点敏捷。离开开豪状态时撤销此状态带来的力量与敏捷变化。",
+  "MYSTS2MOD-DUAL_LIFE_POWER.title": "双面日常",
+  "MYSTS2MOD-DUAL_LIFE_POWER.description": "每回合首次在隐匿状态与开豪状态之间切换时，按此能力的层数抽牌。",
+  "MYSTS2MOD-DUAL_LIFE_POWER.smartDescription": "每回合首次在隐匿状态与开豪状态之间切换时，抽[blue]{Amount}[/blue]张牌。尚无状态时第一次进入状态不会触发。",
+  "MYSTS2MOD-RHYTHM_POWER.title": "节奏",
+  "MYSTS2MOD-RHYTHM_POWER.description": "自己的回合内，每次获得或失去豪意值时，按此能力的层数获得格挡。",
+  "MYSTS2MOD-RHYTHM_POWER.smartDescription": "自己的回合内，每次获得或失去豪意值时，获得[blue]{Amount}[/blue]点格挡。"
 }

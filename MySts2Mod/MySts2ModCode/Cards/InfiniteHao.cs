@@ -43,7 +43,7 @@ public class InfiniteHao : MySts2ModCard
         var player = cardPlay.Card.Owner;
 
         // 升级+1
-        if(IsUpgraded){x++;};
+        if (IsUpgraded) x++;
 
         while (player.GetHao() >= 3)
         {
@@ -53,17 +53,17 @@ public class InfiniteHao : MySts2ModCard
 
             if (x > 0)
             {
-                await DealDamage(choiceContext, cardPlay, snapshot);
+                await DealDamage(choiceContext, cardPlay, snapshot, x);
             }
         }
     }
 
-    private async Task DealDamage(PlayerChoiceContext choiceContext, CardPlay cardPlay, int x)
+    private async Task DealDamage(PlayerChoiceContext choiceContext, CardPlay cardPlay, int damage, int hitCount)
     {
-        await DamageCmd.Attack(x)
+        await DamageCmd.Attack(damage)
             .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target!)
-            .WithHitCount(x)
+            .WithHitCount(hitCount)
             .Execute(choiceContext);
     }
 }

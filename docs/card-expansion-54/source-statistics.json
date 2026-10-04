@@ -1,0 +1,30 @@
+{
+  "verificationStatus": "source-only; no compile/debugging in migration",
+  "cardCount": 54,
+  "characterCards": 52,
+  "colorlessTokens": 2,
+  "nonBasicRewards": 47,
+  "newCardCount": 18,
+  "powerCount": 20,
+  "newPowerCount": 4,
+  "powerCountNote": "Concrete MySts2ModPower models only; original MathPrinceTempStrengthPower bridge is counted separately.",
+  "types": {
+    "Attack": 21,
+    "Skill": 26,
+    "Power": 7
+  },
+  "rarities": {
+    "Common": 19,
+    "Rare": 13,
+    "Uncommon": 15,
+    "Token": 2,
+    "Basic": 5
+  },
+  "costs": {
+    "1": 30,
+    "3": 4,
+    "0": 10,
+    "2": 9,
+    "X": 1
+  }
+}

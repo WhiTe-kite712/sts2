@@ -1,0 +1,1611 @@
+{
+  "verificationStatus": "source-only; not compiled or executed after COPY migration",
+  "numericBaseline": "Prior COPY source manifest plus native Strike/Defend values verified from original source. Not a new DLL snapshot.",
+  "cards": [
+    {
+      "className": "Appear",
+      "id": "MYSTS2MOD-APPEAR",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Common",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Damage": 8
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Common",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Damage": 11
+        }
+      }
+    },
+    {
+      "className": "BetterThanWalker",
+      "id": "MYSTS2MOD-BETTER_THAN_WALKER",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Rare",
+        "target": "AllEnemies",
+        "keywords": [],
+        "variables": {
+          "Damage": 12
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Rare",
+        "target": "AllEnemies",
+        "keywords": [],
+        "variables": {
+          "Damage": 12
+        }
+      }
+    },
+    {
+      "className": "Calm",
+      "id": "MYSTS2MOD-CALM",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 3,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Uncommon",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {}
+      },
+      "after": {
+        "cost": 3,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Uncommon",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {}
+      }
+    },
+    {
+      "className": "ChatHistory",
+      "id": "MYSTS2MOD-CHAT_HISTORY",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "keywords": [
+          "Exhaust"
+        ],
+        "variables": {
+          "Block": 5
+        }
+      },
+      "after": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "keywords": [
+          "Exhaust"
+        ],
+        "variables": {
+          "Block": 5
+        }
+      }
+    },
+    {
+      "className": "Chuan",
+      "id": "MYSTS2MOD-CHUAN",
+      "pool": "ColorlessCardPool",
+      "before": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Token",
+        "target": "AnyEnemy",
+        "keywords": [
+          "Exhaust"
+        ],
+        "variables": {
+          "HaoCost": 1,
+          "Damage": 18,
+          "HpLoss": 2
+        }
+      },
+      "after": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Token",
+        "target": "AnyEnemy",
+        "keywords": [
+          "Exhaust"
+        ],
+        "variables": {
+          "HaoCost": 1,
+          "Damage": 18,
+          "HpLoss": 2
+        }
+      }
+    },
+    {
+      "className": "CodeCodeCode",
+      "id": "MYSTS2MOD-CODE_CODE_CODE",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Rare",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "Block": 6
+        }
+      },
+      "after": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Rare",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "Block": 8
+        }
+      }
+    },
+    {
+      "className": "CodeOffense",
+      "id": "MYSTS2MOD-CODE_OFFENSE",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Common",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {}
+      },
+      "after": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Common",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {}
+      }
+    },
+    {
+      "className": "CompilerWarning",
+      "id": "MYSTS2MOD-COMPILER_WARNING",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Common",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Damage": 8,
+          "WeakPower": 1
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Common",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Damage": 11,
+          "WeakPower": 2
+        }
+      }
+    },
+    {
+      "className": "Conflict",
+      "id": "MYSTS2MOD-CONFLICT",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Uncommon",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Vulnerable": 3,
+          "Damage": 16
+        }
+      },
+      "after": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Uncommon",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Vulnerable": 3,
+          "Damage": 16
+        }
+      }
+    },
+    {
+      "className": "DeadlineSprint",
+      "id": "MYSTS2MOD-DEADLINE_SPRINT",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Common",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Damage": 14,
+          "WeakPower": 2
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Common",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Damage": 17,
+          "WeakPower": 1
+        }
+      }
+    },
+    {
+      "className": "Debugging",
+      "id": "MYSTS2MOD-DEBUGGING",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [],
+        "variables": {}
+      },
+      "after": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [],
+        "variables": {}
+      }
+    },
+    {
+      "className": "Defend",
+      "id": "MYSTS2MOD-DEFEND",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Basic",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "Block": 5
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Basic",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "Block": 8
+        }
+      }
+    },
+    {
+      "className": "Depression",
+      "id": "MYSTS2MOD-DEPRESSION",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Uncommon",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Damage": 9
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Uncommon",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Damage": 13
+        }
+      }
+    },
+    {
+      "className": "Derivation",
+      "id": "MYSTS2MOD-DERIVATION",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "Block": 5,
+          "Cards": 1
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "Block": 8,
+          "Cards": 1
+        }
+      }
+    },
+    {
+      "className": "DualLife",
+      "id": "MYSTS2MOD-DUAL_LIFE",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Power",
+        "rarity": "Rare",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "DualLifePower": 1
+        }
+      },
+      "after": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Power",
+        "rarity": "Rare",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "DualLifePower": 2
+        }
+      }
+    },
+    {
+      "className": "Equal680",
+      "id": "MYSTS2MOD-EQUAL680",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Power",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "keywords": [],
+        "variables": {}
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Power",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "keywords": [],
+        "variables": {}
+      }
+    },
+    {
+      "className": "Exam",
+      "id": "MYSTS2MOD-EXAM",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [
+          "Exhaust"
+        ],
+        "variables": {
+          "Heal": 6
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [
+          "Exhaust"
+        ],
+        "variables": {
+          "Heal": 6
+        }
+      }
+    },
+    {
+      "className": "FenceSitter",
+      "id": "MYSTS2MOD-FENCE_SITTER",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [
+          "Exhaust"
+        ],
+        "variables": {
+          "Cards": 1
+        }
+      },
+      "after": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [
+          "Exhaust"
+        ],
+        "variables": {
+          "Cards": 2
+        }
+      }
+    },
+    {
+      "className": "FigureShadow",
+      "id": "MYSTS2MOD-FIGURE_SHADOW",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [
+          "Exhaust"
+        ],
+        "variables": {
+          "Hao": 2,
+          "Cards": 1
+        }
+      },
+      "after": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [
+          "Exhaust"
+        ],
+        "variables": {
+          "Hao": 3,
+          "Cards": 2
+        }
+      }
+    },
+    {
+      "className": "FinalCommit",
+      "id": "MYSTS2MOD-FINAL_COMMIT",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Rare",
+        "target": "Self",
+        "keywords": [],
+        "variables": {}
+      },
+      "after": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Rare",
+        "target": "Self",
+        "keywords": [],
+        "variables": {}
+      }
+    },
+    {
+      "className": "FireInSoul",
+      "id": "MYSTS2MOD-FIRE_IN_SOUL",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "keywords": [
+          "Exhaust",
+          "Innate"
+        ],
+        "variables": {
+          "Frail": 1,
+          "Cards": 2,
+          "Energy": 1
+        }
+      },
+      "after": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "keywords": [
+          "Exhaust",
+          "Innate"
+        ],
+        "variables": {
+          "Frail": 1,
+          "Cards": 2,
+          "Energy": 1
+        }
+      }
+    },
+    {
+      "className": "FooledYou",
+      "id": "MYSTS2MOD-FOOLED_YOU",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Uncommon",
+        "target": "AllEnemies",
+        "keywords": [],
+        "variables": {
+          "Damage": 5,
+          "Repeat": 2
+        }
+      },
+      "after": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Uncommon",
+        "target": "AllEnemies",
+        "keywords": [],
+        "variables": {
+          "Damage": 7,
+          "Repeat": 2
+        }
+      }
+    },
+    {
+      "className": "Genius",
+      "id": "MYSTS2MOD-GENIUS",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Power",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "Draw": 1
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Power",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "Draw": 2
+        }
+      }
+    },
+    {
+      "className": "GodList",
+      "id": "MYSTS2MOD-GOD_LIST",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "Block": 7
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "Block": 10
+        }
+      }
+    },
+    {
+      "className": "Grammar",
+      "id": "MYSTS2MOD-GRAMMAR",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "keywords": [],
+        "variables": {}
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "keywords": [],
+        "variables": {}
+      }
+    },
+    {
+      "className": "GroupDiscuss",
+      "id": "MYSTS2MOD-GROUP_DISCUSS",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 3,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "AnyEnemy",
+        "keywords": [
+          "Ethereal",
+          "Exhaust"
+        ],
+        "variables": {
+          "Damage": 18
+        }
+      },
+      "after": {
+        "cost": 3,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "AnyEnemy",
+        "keywords": [
+          "Ethereal",
+          "Exhaust"
+        ],
+        "variables": {
+          "Damage": 24
+        }
+      }
+    },
+    {
+      "className": "HaoDefend",
+      "id": "MYSTS2MOD-HAO_DEFEND",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Basic",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "BlockCap": 11
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Basic",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "BlockCap": 15
+        }
+      }
+    },
+    {
+      "className": "HaoStrike",
+      "id": "MYSTS2MOD-HAO_STRIKE",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Basic",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Damage": 6
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Basic",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Damage": 9
+        }
+      }
+    },
+    {
+      "className": "Hindsight",
+      "id": "MYSTS2MOD-HINDSIGHT",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "HaoCost": 2,
+          "Block": 8
+        }
+      },
+      "after": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "HaoCost": 2,
+          "Block": 12
+        }
+      }
+    },
+    {
+      "className": "InfiniteHao",
+      "id": "MYSTS2MOD-INFINITE_HAO",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 0,
+        "costsX": true,
+        "type": "Attack",
+        "rarity": "Rare",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {}
+      },
+      "after": {
+        "cost": 0,
+        "costsX": true,
+        "type": "Attack",
+        "rarity": "Rare",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {}
+      }
+    },
+    {
+      "className": "KeyboardWarrior",
+      "id": "MYSTS2MOD-KEYBOARD_WARRIOR",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Common",
+        "target": "AllEnemies",
+        "keywords": [],
+        "variables": {
+          "Damage": 6
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Common",
+        "target": "AllEnemies",
+        "keywords": [],
+        "variables": {
+          "Damage": 9
+        }
+      }
+    },
+    {
+      "className": "KickUp",
+      "id": "MYSTS2MOD-KICK_UP",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Uncommon",
+        "target": "AllEnemies",
+        "keywords": [
+          "Exhaust",
+          "Innate"
+        ],
+        "variables": {
+          "Damage": 8
+        }
+      },
+      "after": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Uncommon",
+        "target": "AllEnemies",
+        "keywords": [
+          "Innate"
+        ],
+        "variables": {
+          "Damage": 8
+        }
+      }
+    },
+    {
+      "className": "MagnificentHao",
+      "id": "MYSTS2MOD-MAGNIFICENT_HAO",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "keywords": [],
+        "variables": {}
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "keywords": [],
+        "variables": {}
+      }
+    },
+    {
+      "className": "MathPrince",
+      "id": "MYSTS2MOD-MATH_PRINCE",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Power",
+        "rarity": "Rare",
+        "target": "Self",
+        "keywords": [],
+        "variables": {}
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Power",
+        "rarity": "Rare",
+        "target": "Self",
+        "keywords": [],
+        "variables": {}
+      }
+    },
+    {
+      "className": "Narcissism",
+      "id": "MYSTS2MOD-NARCISSISM",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Basic",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "Block": 6,
+          "Hao": 2
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Basic",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "Block": 8,
+          "Hao": 3
+        }
+      }
+    },
+    {
+      "className": "NewGroupChat",
+      "id": "MYSTS2MOD-NEW_GROUP_CHAT",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "keywords": [
+          "Exhaust"
+        ],
+        "variables": {}
+      },
+      "after": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "keywords": [
+          "Exhaust"
+        ],
+        "variables": {}
+      }
+    },
+    {
+      "className": "Planning",
+      "id": "MYSTS2MOD-PLANNING",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "Cards": 2,
+          "Block": 3
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "Cards": 3,
+          "Block": 3
+        }
+      }
+    },
+    {
+      "className": "PlayingMyself",
+      "id": "MYSTS2MOD-PLAYING_MYSELF",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Rare",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Damage": 14,
+          "Block": 12
+        }
+      },
+      "after": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Rare",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Damage": 18,
+          "Block": 16
+        }
+      }
+    },
+    {
+      "className": "PressForward",
+      "id": "MYSTS2MOD-PRESS_FORWARD",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Common",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "CalculationBase": 6,
+          "ExtraDamage": 4,
+          "CalculatedDamage": 6
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Common",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "CalculationBase": 9,
+          "ExtraDamage": 4,
+          "CalculatedDamage": 9
+        }
+      }
+    },
+    {
+      "className": "QuantumMechanics",
+      "id": "MYSTS2MOD-QUANTUM_MECHANICS",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Common",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Damage": 7,
+          "Block": 5
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Common",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Damage": 9,
+          "Block": 7
+        }
+      }
+    },
+    {
+      "className": "Rhythm",
+      "id": "MYSTS2MOD-RHYTHM",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Power",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "RhythmPower": 2
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Power",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "RhythmPower": 3
+        }
+      }
+    },
+    {
+      "className": "ShangHaiStudent",
+      "id": "MYSTS2MOD-SHANG_HAI_STUDENT",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "BlockEach": 1
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "BlockEach": 2
+        }
+      }
+    },
+    {
+      "className": "ShiNong",
+      "id": "MYSTS2MOD-SHI_NONG",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Common",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Damage": 7,
+          "WeakPower": 1
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Common",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Damage": 10,
+          "WeakPower": 2
+        }
+      }
+    },
+    {
+      "className": "Sneer",
+      "id": "MYSTS2MOD-SNEER",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "Vulnerable": 1
+        }
+      },
+      "after": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "Vulnerable": 1
+        }
+      }
+    },
+    {
+      "className": "Spark",
+      "id": "MYSTS2MOD-SPARK",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Common",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Damage": 8
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Common",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Damage": 11
+        }
+      }
+    },
+    {
+      "className": "Strike",
+      "id": "MYSTS2MOD-STRIKE",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Basic",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Damage": 6
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Basic",
+        "target": "AnyEnemy",
+        "keywords": [],
+        "variables": {
+          "Damage": 9
+        }
+      }
+    },
+    {
+      "className": "StudentLeader",
+      "id": "MYSTS2MOD-STUDENT_LEADER",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Rare",
+        "target": "Self",
+        "keywords": [
+          "Exhaust",
+          "Retain"
+        ],
+        "variables": {}
+      },
+      "after": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Rare",
+        "target": "Self",
+        "keywords": [
+          "Exhaust",
+          "Retain"
+        ],
+        "variables": {}
+      }
+    },
+    {
+      "className": "SuperHaoField",
+      "id": "MYSTS2MOD-SUPER_HAO_FIELD",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 3,
+        "costsX": false,
+        "type": "Power",
+        "rarity": "Rare",
+        "target": "Self",
+        "keywords": [],
+        "variables": {}
+      },
+      "after": {
+        "cost": 3,
+        "costsX": false,
+        "type": "Power",
+        "rarity": "Rare",
+        "target": "Self",
+        "keywords": [],
+        "variables": {}
+      }
+    },
+    {
+      "className": "Surfing",
+      "id": "MYSTS2MOD-SURFING",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "HaoCost": 3
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "HaoCost": 3
+        }
+      }
+    },
+    {
+      "className": "TsinghuaForm",
+      "id": "MYSTS2MOD-TSINGHUA_FORM",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 3,
+        "costsX": false,
+        "type": "Power",
+        "rarity": "Rare",
+        "target": "Self",
+        "keywords": [],
+        "variables": {}
+      },
+      "after": {
+        "cost": 3,
+        "costsX": false,
+        "type": "Power",
+        "rarity": "Rare",
+        "target": "Self",
+        "keywords": [],
+        "variables": {}
+      }
+    },
+    {
+      "className": "UncertaintyPrinciple",
+      "id": "MYSTS2MOD-UNCERTAINTY_PRINCIPLE",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Rare",
+        "target": "Self",
+        "keywords": [
+          "Exhaust"
+        ],
+        "variables": {
+          "Energy": 2,
+          "Cards": 3
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Rare",
+        "target": "Self",
+        "keywords": [
+          "Exhaust"
+        ],
+        "variables": {
+          "Energy": 2,
+          "Cards": 4
+        }
+      }
+    },
+    {
+      "className": "Unrepentant",
+      "id": "MYSTS2MOD-UNREPENTANT",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Rare",
+        "target": "Self",
+        "keywords": [
+          "Exhaust"
+        ],
+        "variables": {}
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Rare",
+        "target": "Self",
+        "keywords": [
+          "Exhaust"
+        ],
+        "variables": {}
+      }
+    },
+    {
+      "className": "UnspokenFury",
+      "id": "MYSTS2MOD-UNSPOKEN_FURY",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Rare",
+        "target": "AllEnemies",
+        "keywords": [],
+        "variables": {
+          "Damage": 15
+        }
+      },
+      "after": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Rare",
+        "target": "AllEnemies",
+        "keywords": [],
+        "variables": {
+          "Damage": 15
+        }
+      }
+    },
+    {
+      "className": "Xiao",
+      "id": "MYSTS2MOD-XIAO",
+      "pool": "ColorlessCardPool",
+      "before": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Token",
+        "target": "Self",
+        "keywords": [
+          "Exhaust"
+        ],
+        "variables": {
+          "Hao": 2,
+          "Block": 5
+        }
+      },
+      "after": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Token",
+        "target": "Self",
+        "keywords": [
+          "Exhaust"
+        ],
+        "variables": {
+          "Hao": 2,
+          "Block": 5
+        }
+      }
+    }
+  ],
+  "powers": [
+    {
+      "className": "ChuanNextTurnPower",
+      "id": "MYSTS2MOD-CHUAN_NEXT_TURN_POWER",
+      "variables": {}
+    },
+    {
+      "className": "Equal680Power",
+      "id": "MYSTS2MOD-EQUAL680_POWER",
+      "variables": {}
+    },
+    {
+      "className": "FinalCommitPower",
+      "id": "MYSTS2MOD-FINAL_COMMIT_POWER",
+      "variables": {}
+    },
+    {
+      "className": "GeniusPower",
+      "id": "MYSTS2MOD-GENIUS_POWER",
+      "variables": {}
+    },
+    {
+      "className": "HaoPower",
+      "id": "MYSTS2MOD-HAO_POWER",
+      "variables": {}
+    },
+    {
+      "className": "MagnificentDrawPower",
+      "id": "MYSTS2MOD-MAGNIFICENT_DRAW_POWER",
+      "variables": {}
+    },
+    {
+      "className": "MagnificentHaoPower",
+      "id": "MYSTS2MOD-MAGNIFICENT_HAO_POWER",
+      "variables": {}
+    },
+    {
+      "className": "MathPrincePower",
+      "id": "MYSTS2MOD-MATH_PRINCE_POWER",
+      "variables": {}
+    },
+    {
+      "className": "DualLifePower",
+      "id": "MYSTS2MOD-DUAL_LIFE_POWER",
+      "variables": {}
+    },
+    {
+      "className": "HiddenStatePower",
+      "id": "MYSTS2MOD-HIDDEN_STATE_POWER",
+      "variables": {}
+    },
+    {
+      "className": "OpenHaoStatePower",
+      "id": "MYSTS2MOD-OPEN_HAO_STATE_POWER",
+      "variables": {}
+    },
+    {
+      "className": "RhythmPower",
+      "id": "MYSTS2MOD-RHYTHM_POWER",
+      "variables": {}
+    },
+    {
+      "className": "ShangHaiStudentPower",
+      "id": "MYSTS2MOD-SHANG_HAI_STUDENT_POWER",
+      "variables": {}
+    },
+    {
+      "className": "SneerPower",
+      "id": "MYSTS2MOD-SNEER_POWER",
+      "variables": {}
+    },
+    {
+      "className": "SuperHaoFieldPower",
+      "id": "MYSTS2MOD-SUPER_HAO_FIELD_POWER",
+      "variables": {}
+    },
+    {
+      "className": "TsinghuaFormPower",
+      "id": "MYSTS2MOD-TSINGHUA_FORM_POWER",
+      "variables": {}
+    },
+    {
+      "className": "UnrepentantGuardPower",
+      "id": "MYSTS2MOD-UNREPENTANT_GUARD_POWER",
+      "variables": {}
+    },
+    {
+      "className": "UnrepentantPainPower",
+      "id": "MYSTS2MOD-UNREPENTANT_PAIN_POWER",
+      "variables": {}
+    },
+    {
+      "className": "UnspokenFuryPower",
+      "id": "MYSTS2MOD-UNSPOKEN_FURY_POWER",
+      "variables": {
+        "Damage": 15
+      }
+    },
+    {
+      "className": "XiaoNextTurnPower",
+      "id": "MYSTS2MOD-XIAO_NEXT_TURN_POWER",
+      "variables": {}
+    }
+  ]
+}

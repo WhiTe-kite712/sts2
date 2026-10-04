@@ -49,5 +49,17 @@
   "MYSTS2MOD-CHUAN_NEXT_TURN_POWER.smartDescription": "At the start of your next turn, add [blue]{Amount}[/blue] Chuan to your hand.",
   "MYSTS2MOD-UNSPOKEN_FURY_POWER.title": "Unspoken Fury",
   "MYSTS2MOD-UNSPOKEN_FURY_POWER.description": "If you take unblocked damage between the start of this turn and the start of your next turn, deal {Damage} damage to ALL enemies per stack at the start of your next turn. HP loss does not count. Resolve those stacks afterward.",
-  "MYSTS2MOD-UNSPOKEN_FURY_POWER.smartDescription": "If you take unblocked damage between the start of this turn and the start of your next turn, deal {Damage} damage to ALL enemies [blue]{Amount}[/blue] time(s) at the start of your next turn. HP loss does not count. Resolve those stacks afterward."
+  "MYSTS2MOD-UNSPOKEN_FURY_POWER.smartDescription": "If you take unblocked damage between the start of this turn and the start of your next turn, deal {Damage} damage to ALL enemies [blue]{Amount}[/blue] time(s) at the start of your next turn. HP loss does not count. Resolve those stacks afterward.",
+  "MYSTS2MOD-HIDDEN_STATE_POWER.title": "Hidden State",
+  "MYSTS2MOD-HIDDEN_STATE_POWER.description": "Gain 4 Dexterity and lose 2 Strength. Leaving the Hidden State reverses the Strength and Dexterity changes from this state.",
+  "MYSTS2MOD-HIDDEN_STATE_POWER.smartDescription": "Gain 4 Dexterity and lose 2 Strength. Leaving the Hidden State reverses the Strength and Dexterity changes from this state.",
+  "MYSTS2MOD-OPEN_HAO_STATE_POWER.title": "Hao Mode",
+  "MYSTS2MOD-OPEN_HAO_STATE_POWER.description": "Gain 4 Strength and lose 2 Dexterity. Leaving Hao Mode reverses the Strength and Dexterity changes from this state.",
+  "MYSTS2MOD-OPEN_HAO_STATE_POWER.smartDescription": "Gain 4 Strength and lose 2 Dexterity. Leaving Hao Mode reverses the Strength and Dexterity changes from this state.",
+  "MYSTS2MOD-DUAL_LIFE_POWER.title": "Double Life",
+  "MYSTS2MOD-DUAL_LIFE_POWER.description": "The first time each turn you switch between Hidden State and Hao Mode, draw cards equal to this power's amount.",
+  "MYSTS2MOD-DUAL_LIFE_POWER.smartDescription": "The first time each turn you switch between Hidden State and Hao Mode, draw [blue]{Amount}[/blue] cards. Entering a state for the first time does not trigger this effect.",
+  "MYSTS2MOD-RHYTHM_POWER.title": "Rhythm",
+  "MYSTS2MOD-RHYTHM_POWER.description": "During your turn, whenever you gain or lose Hao, gain Block equal to this Power's stacks.",
+  "MYSTS2MOD-RHYTHM_POWER.smartDescription": "During your turn, whenever you gain or lose Hao, gain [blue]{Amount}[/blue] Block."
 }

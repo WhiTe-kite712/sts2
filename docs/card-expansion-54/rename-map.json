@@ -1,0 +1,177 @@
+{
+  "cards": {
+    "PersonalityHonorRoll": [
+      "GodList",
+      "封“神”榜",
+      "The “God” List"
+    ],
+    "PersonalityShowTeeth": [
+      "Appear",
+      "出没",
+      "Appear"
+    ],
+    "PersonalityMeasuredStrike": [
+      "QuantumMechanics",
+      "量子力学",
+      "Quantum Mechanics"
+    ],
+    "PersonalityCleverRetort": [
+      "ShiNong",
+      "石农",
+      "Shi Nong"
+    ],
+    "PersonalityCleanDraft": [
+      "Derivation",
+      "推导？",
+      "Derivation?"
+    ],
+    "PersonalityRewrite": [
+      "FenceSitter",
+      "墙头草",
+      "Fence Sitter"
+    ],
+    "PersonalityMarginNote": [
+      "Planning",
+      "规划",
+      "Planning"
+    ],
+    "PersonalityOpenChallenge": [
+      "FooledYou",
+      "骗你的",
+      "Fooled You"
+    ],
+    "PersonalityExitInterview": [
+      "Depression",
+      "抑郁",
+      "Depression"
+    ],
+    "PersonalityFinalPersona": [
+      "PlayingMyself",
+      "本色出演",
+      "Playing Myself"
+    ],
+    "PersonalityBreakCharacter": [
+      "UncertaintyPrinciple",
+      "测不准原理",
+      "Uncertainty Principle"
+    ],
+    "PersonalityDualLife": [
+      "DualLife",
+      "双面日常",
+      "Double Life"
+    ],
+    "StepByStep": [
+      "PressForward",
+      "步步紧逼",
+      "Press Forward"
+    ],
+    "RhythmOfReason": [
+      "Rhythm",
+      "节奏",
+      "Rhythm"
+    ],
+    "KeyboardSweep": [
+      "KeyboardWarrior",
+      "键盘侠",
+      "Keyboard Warrior"
+    ],
+    "ChatHandoff": [
+      "ChatHistory",
+      "聊天记录",
+      "Chat History"
+    ]
+  },
+  "powers": {
+    "PersonalityHonorStudentPower": [
+      "HiddenStatePower",
+      "隐匿状态",
+      "Hidden State"
+    ],
+    "PersonalityRebelPower": [
+      "OpenHaoStatePower",
+      "开豪状态",
+      "Hao Mode"
+    ],
+    "PersonalityDualLifePower": [
+      "DualLifePower",
+      "双面日常",
+      "Double Life"
+    ],
+    "RhythmOfReasonPower": [
+      "RhythmPower",
+      "节奏",
+      "Rhythm"
+    ]
+  },
+  "removed": {
+    "PersonalityCurtainCall": "换幕",
+    "PersonalityStudyBreak": "定向自习",
+    "PersonalityStagecraft": "圆场",
+    "PersonalityPeerPressure": "连珠炮",
+    "PersonalityStagecraftPower": "圆场专属能力",
+    "AlternateSolution": "换一种解法",
+    "OpeningMove": "先列条件",
+    "RisingArgument": "递进论证",
+    "SameDenominator": "同分母",
+    "CrossCheck": "交叉验算",
+    "SimplifyFirst": "先做化简",
+    "ConsecutiveProof": "连续推导",
+    "ChangeOfMethod": "变换方法",
+    "DescendingSteps": "倒序回代",
+    "AscendingMethod": "递升法",
+    "CompleteProof": "完整证明",
+    "PerfectSequence": "严密思路",
+    "FinalAnswer": "定稿答案",
+    "AscendingMethodPower": "递升法专属能力",
+    "PerfectSequencePower": "严密思路专属能力",
+    "BorrowedUmbrella": "借伞",
+    "CacheCleanup": "清缓存",
+    "CloseTabs": "关闭标签页",
+    "PairProgramming": "结对编程",
+    "SnackBreak": "零食时间",
+    "HaoReserve": "豪意备用金",
+    "ChatArchivist": "群聊档案员",
+    "OpenBook": "开卷考试",
+    "GarbageCollector": "垃圾回收",
+    "CrashRecovery": "崩溃恢复",
+    "BareMetal": "裸机启动",
+    "ChatArchivistPower": "群聊档案员专属能力",
+    "GarbageCollectorPower": "垃圾回收专属能力",
+    "SupportCardExtensions": "已无调用者的手牌判断辅助代码"
+  },
+  "identifiers": {
+    "PersonalityHonorRoll": "GodList",
+    "PersonalityShowTeeth": "Appear",
+    "PersonalityMeasuredStrike": "QuantumMechanics",
+    "PersonalityCleverRetort": "ShiNong",
+    "PersonalityCleanDraft": "Derivation",
+    "PersonalityRewrite": "FenceSitter",
+    "PersonalityMarginNote": "Planning",
+    "PersonalityOpenChallenge": "FooledYou",
+    "PersonalityExitInterview": "Depression",
+    "PersonalityFinalPersona": "PlayingMyself",
+    "PersonalityBreakCharacter": "UncertaintyPrinciple",
+    "PersonalityDualLife": "DualLife",
+    "PersonalityHonorStudentPower": "HiddenStatePower",
+    "PersonalityRebelPower": "OpenHaoStatePower",
+    "PersonalityDualLifePower": "DualLifePower",
+    "PersonalityExtensions": "HaoStateExtensions",
+    "PersonalityPersona": "HaoState",
+    "HonorStudent": "Hidden",
+    "Rebel": "OpenHao",
+    "GetPersonality": "GetHaoState",
+    "IsHonorStudent": "IsHidden",
+    "IsRebel": "IsOpenHao",
+    "GetOppositePersonality": "GetOppositeHaoState",
+    "IsRewardingPersonalitySwitch": "IsRewardingHaoStateSwitch",
+    "TryConsumePersonalitySwitchReward": "TryConsumeHaoStateSwitchReward",
+    "FlipPersonality": "FlipHaoState",
+    "EnterPersonality": "EnterHaoState",
+    "OnPersonalitySwitched": "OnHaoStateSwitched",
+    "StepByStep": "PressForward",
+    "RhythmOfReason": "Rhythm",
+    "RhythmOfReasonPower": "RhythmPower",
+    "KeyboardSweep": "KeyboardWarrior",
+    "ChatHandoff": "ChatHistory"
+  }
+}

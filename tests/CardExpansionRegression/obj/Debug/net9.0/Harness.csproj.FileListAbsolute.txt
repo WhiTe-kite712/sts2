@@ -1,0 +1,6 @@
+C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\obj\Debug\net9.0\Harness.csproj.AssemblyReference.cache
+C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\obj\Debug\net9.0\Harness.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\obj\Debug\net9.0\Harness.AssemblyInfoInputs.cache
+C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\obj\Debug\net9.0\Harness.AssemblyInfo.cs
+C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\obj\Debug\net9.0\Harness.csproj.CoreCompileInputs.cache
+C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\obj\Debug\net9.0\Harness.sourcelink.json
