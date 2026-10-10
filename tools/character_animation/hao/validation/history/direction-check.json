@@ -1,0 +1,47 @@
+{
+  "ok": true,
+  "checked_at_utc": "2026-10-08T16:11:14.362300+00:00",
+  "measurement_source": "probe.gd: native SpineSprite update_skeleton and SpineBone get_world_x/get_world_y",
+  "coordinate_system": "Native game/Godot world coordinates; forward is +X and downward is +Y",
+  "animation": "attack",
+  "before_time": 0.25,
+  "after_time": 0.4,
+  "source_skeleton_sha256": "9279a94700681ce560b5e9c1464ee4fdd1160c9907223ade32bd04c719bcc0ba",
+  "native_report_sha256": "6b41a5878ac0ef148d6e685134ef9f0503f10eb79c3b78c8f2d3da0827eb706d",
+  "native_started_at": "2026-10-09T00:11:13",
+  "measurements": {
+    "weapon": {
+      "before": {
+        "x": 72.1408920288086,
+        "y": -260.851776123047
+      },
+      "after": {
+        "x": 103.305961608887,
+        "y": -249.905838012695
+      },
+      "delta": {
+        "x": 31.16506958007841,
+        "y": 10.945938110351989
+      }
+    },
+    "hand_main": {
+      "before": {
+        "x": 70.3478698730469,
+        "y": -277.531982421875
+      },
+      "after": {
+        "x": 95.3333282470703,
+        "y": -264.666656494141
+      },
+      "delta": {
+        "x": 24.985458374023395,
+        "y": 12.865325927733977
+      }
+    }
+  },
+  "checks": {
+    "weapon_moves_forward_positive_x": true,
+    "weapon_moves_down_positive_y": true,
+    "sword_hand_moves_down_positive_y": true
+  }
+}

@@ -1,0 +1,10 @@
+PASS source models: 54 cards, 52 character cards, 2 colorless tokens, 20 custom powers, 18 expansion cards
+PASS class/file/constructor names and source metadata match; no duplicate models
+PASS zhs: titles/descriptions, variables, selection prompts and catalogs match
+PASS eng: titles/descriptions, variables, selection prompts and catalogs match
+PASS matching Chinese/English keys, with deleted model entries removed
+PASS no removed card/power classes or old identifiers in active C# source/tests
+PASS native stats: hidden -2 Strength/+4 Dexterity; open +4 Strength/-2 Dexterity; old contribution rollback wired
+PASS Rhythm is persistent 1c Uncommon Power, Hao-change reward 2/3 on own turn; PressForward effect unchanged
+PASS KeyboardWarrior/ChatHistory effects and upgrades unchanged; deleted support helpers have no callers
+RESULT source-only validation passed; no compile, debug, DLL execution or game deployment

@@ -1,0 +1,31 @@
+{
+  "ok": false,
+  "status": "managed_factory_runtime_unverified",
+  "probe_kind": "exported_host_bootstrap_attempt",
+  "compile": {
+    "ok": true,
+    "target": "net9.0",
+    "sdk": "Godot.NET.Sdk/4.5.1",
+    "errors": 0,
+    "warnings": 0
+  },
+  "launches": 1,
+  "managed_result_present": false,
+  "host_returned_before_deadline": true,
+  "host_exit_code": null,
+  "reason": "Exported MegaDot host returned without a managed probe result; log only reports missing global script cache.",
+  "source_sha256": {
+    "mod_dll": "c8be09957fd09d947062bc680eef12cfe1cebafe5dc6718f1e9a1b78392e483e",
+    "mod_pck": "7037981b8ef314f81ffdcf4b852717d619b068bc3ac22f67ec7d8773d8d225d7"
+  },
+  "logs": [
+    "factory-probe.log",
+    "factory-probe.stdout",
+    "factory-probe.stderr"
+  ],
+  "user_directories": "runtime/AppData and runtime/bundle",
+  "actual_factory_executed": null,
+  "actual_factory_evidence": "unverified",
+  "gameplay_autoloads_configured": false,
+  "no_factory_result_fabricated": true
+}

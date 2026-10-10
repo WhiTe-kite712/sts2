@@ -1,0 +1,8 @@
+runtime/
+validation/runtime/
+validation/*.pck
+validation/manifest.json
+validation/spine_probe.gdextension
+validation/*.stdout
+validation/*.stderr
+source/hao.png.import

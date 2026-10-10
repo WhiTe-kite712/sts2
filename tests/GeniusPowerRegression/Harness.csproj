@@ -28,6 +28,12 @@
       <_Parameter1>Sts2DataDir</_Parameter1><_Parameter2>$(Sts2DataDir)</_Parameter2>
     </AssemblyAttribute>
   </ItemGroup>
+  <!-- This console harness has no Godot project or mod localization context. -->
+  <Target Name="ExcludeModOnlyAnalyzers" BeforeTargets="CoreCompile">
+    <ItemGroup>
+      <Analyzer Remove="@(Analyzer)" Condition="'%(Analyzer.Filename)' == 'Godot.SourceGenerators' Or '%(Analyzer.Filename)' == 'Sts2ModAnalyzers'" />
+    </ItemGroup>
+  </Target>
   <Target Name="CheckReferences" BeforeTargets="ResolveReferences">
     <Error Condition="!Exists('$(Sts2DataDir)\sts2.dll')" Text="Set Sts2DataDir to the installed game's data_sts2_windows_x86_64 directory." />
     <Error Condition="!Exists('$(BaseLibDll)')" Text="Set BaseLibDll to a compatible BaseLib.dll (tested with 3.4.7)." />

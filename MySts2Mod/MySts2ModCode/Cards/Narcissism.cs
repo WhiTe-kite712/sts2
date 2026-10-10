@@ -32,7 +32,7 @@ public class Narcissism : MySts2ModCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new BlockVar(6, ValueProp.Move),
+        new BlockVar(10, ValueProp.Move),
         new DynamicVar("Hao", 2m),
     ];
 
@@ -48,7 +48,7 @@ public class Narcissism : MySts2ModCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(2);
+        DynamicVars.Block.UpgradeValueBy(3);
         DynamicVars["Hao"].UpgradeValueBy(1);
     }
 }

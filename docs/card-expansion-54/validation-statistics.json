@@ -1,0 +1,35 @@
+{
+  "cardCount": 58,
+  "newCardCount": 18,
+  "powerCount": 22,
+  "newPowerCount": 4,
+  "types": {
+    "Attack": 21,
+    "Skill": 29,
+    "Power": 8
+  },
+  "rarities": {
+    "Common": 19,
+    "Rare": 14,
+    "Uncommon": 18,
+    "Token": 2,
+    "Basic": 5
+  },
+  "costs": {
+    "1": 33,
+    "3": 4,
+    "0": 10,
+    "2": 10,
+    "X": 1
+  },
+  "newTypes": {
+    "Skill": 6,
+    "Attack": 10,
+    "Power": 2
+  },
+  "newRarities": {
+    "Common": 11,
+    "Uncommon": 4,
+    "Rare": 3
+  }
+}

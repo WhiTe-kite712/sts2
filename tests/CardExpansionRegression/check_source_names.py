@@ -34,9 +34,9 @@ for path in code.rglob('*.cs'):
         models[name] = (base, path, text)
 cards = {name: value for name, value in models.items() if value[0] == 'MySts2ModCard'}
 power_models = {name: value for name, value in models.items() if value[0] != 'MySts2ModCard'}
-assert len(cards) == 54 and len(power_models) == 20
+assert len(cards) == 58 and len(power_models) == 22
 assert len(catalog) == 18 and len(powers) == 4
-assert sum('Pool(typeof(HaoCardPool))' in item[2] for item in cards.values()) == 52
+assert sum('Pool(typeof(HaoCardPool))' in item[2] for item in cards.values()) == 56
 assert sum('Pool(typeof(ColorlessCardPool))' in item[2] for item in cards.values()) == 2
 assert {c['className'] for c in inventory['cards']} == cards.keys()
 assert {p['className'] for p in inventory['powers']} == power_models.keys()
@@ -52,9 +52,9 @@ for name, (_, path, text) in cards.items():
         assert 'CardRarity.' + item['before']['rarity'] in signature, name
         assert 'TargetType.' + item['before']['target'] in signature, name
         if not item['before']['costsX']: assert int(signature.split(',')[0]) == item['before']['cost'], name
-assert Counter(c['before']['type'] for c in inventory['cards']) == {'Attack': 21, 'Skill': 26, 'Power': 7}
-assert Counter(c['before']['rarity'] for c in inventory['cards']) == {'Basic': 5, 'Common': 19, 'Uncommon': 15, 'Rare': 13, 'Token': 2}
-print('PASS source models: 54 cards, 52 character cards, 2 colorless tokens, 20 custom powers, 18 expansion cards')
+assert Counter(c['before']['type'] for c in inventory['cards']) == {'Attack': 21, 'Skill': 29, 'Power': 8}
+assert Counter(c['before']['rarity'] for c in inventory['cards']) == {'Basic': 5, 'Common': 19, 'Uncommon': 18, 'Rare': 14, 'Token': 2}
+print('PASS source models: 58 cards, 56 character cards, 2 colorless tokens, 22 custom powers, 18 migration expansion cards plus 4 later additions')
 print('PASS class/file/constructor names and source metadata match; no duplicate models')
 
 for language, suffix in [('zhs', 'Zhs'), ('eng', 'Eng')]:
@@ -70,6 +70,7 @@ for language, suffix in [('zhs', 'Zhs'), ('eng', 'Eng')]:
             known.update(re.findall(r'new\s+\w+Var\s*(?:<[^>]+>)?\s*\(\s*"([^"]+)"', text))
             known.update(re.findall(r'new\s+PowerVar\s*<\s*(\w+)\s*>', text))
             known.update(re.findall(r'new\s+(\w+)Var\s*\(', text))
+            known.update(re.findall(r'description\.Add\(\s*"([^"]+)"', text))
             for field in fields[1:]:
                 used = set(re.findall(r'\{([A-Za-z][A-Za-z0-9_]*)[}:]', translations[slug(name) + '.' + field]))
                 assert used <= known, (language, name, field, sorted(used - known))

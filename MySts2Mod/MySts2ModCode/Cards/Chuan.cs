@@ -21,14 +21,14 @@ public class Chuan : MySts2ModCard
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<HaoPower>(),
-        HoverTipFactory.FromCard<Xiao>(),
+        HoverTipFactory.FromCard<Xiao>(IsUpgraded),
     ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DynamicVar("HaoCost", 1m),
-        new DamageVar(18, ValueProp.Move),
-        new HpLossVar(2),
+        new DamageVar(12, ValueProp.Move),
+        new HpLossVar(1),
     ];
 
     public Chuan() : base(0, CardType.Attack, CardRarity.Token, TargetType.AnyEnemy)
@@ -48,4 +48,9 @@ public class Chuan : MySts2ModCard
             ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this, cardPlay);
         await PowerCmd.Apply<XiaoNextTurnPower>(choiceContext, player.Creature, 1, player.Creature, this);
     }
+
+     protected override void OnUpgrade() { 
+        DynamicVars.Damage.UpgradeValueBy(3);
+     
+     }
 }

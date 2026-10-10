@@ -15,7 +15,7 @@ public class PressForward : MySts2ModCard
     protected override bool ShouldGlowGoldInternal => SequenceHistoryExtensions.PreviousTypeIs(this, CardType.Skill);
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new CalculationBaseVar(6),
+        new CalculationBaseVar(8),
         new ExtraDamageVar(4),
         new CalculatedDamageVar(ValueProp.Move).WithMultiplier(static (card, _) =>
             SequenceHistoryExtensions.PreviousTypeIs(card, CardType.Skill) ? 1 : 0),
@@ -30,5 +30,8 @@ public class PressForward : MySts2ModCard
             .Targeting(cardPlay.Target).Execute(choiceContext);
     }
 
-    protected override void OnUpgrade() => DynamicVars.CalculationBase.UpgradeValueBy(3);
+    protected override void OnUpgrade() { 
+    DynamicVars.CalculationBase.UpgradeValueBy(3);
+    DynamicVars.ExtraDamage.UpgradeValueBy(2);
+    }
 }

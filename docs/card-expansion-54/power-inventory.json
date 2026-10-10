@@ -1,0 +1,114 @@
+[
+  {
+    "className": "ChuanNextTurnPower",
+    "id": "MYSTS2MOD-CHUAN_NEXT_TURN_POWER",
+    "variables": {}
+  },
+  {
+    "className": "ComebackPower",
+    "id": "MYSTS2MOD-COMEBACK_POWER",
+    "variables": {}
+  },
+  {
+    "className": "DualLifePower",
+    "id": "MYSTS2MOD-DUAL_LIFE_POWER",
+    "variables": {}
+  },
+  {
+    "className": "Equal680Power",
+    "id": "MYSTS2MOD-EQUAL680_POWER",
+    "variables": {}
+  },
+  {
+    "className": "FinalCommitPower",
+    "id": "MYSTS2MOD-FINAL_COMMIT_POWER",
+    "variables": {}
+  },
+  {
+    "className": "GeniusPower",
+    "id": "MYSTS2MOD-GENIUS_POWER",
+    "variables": {}
+  },
+  {
+    "className": "HaoPower",
+    "id": "MYSTS2MOD-HAO_POWER",
+    "variables": {}
+  },
+  {
+    "className": "HiddenStatePower",
+    "id": "MYSTS2MOD-HIDDEN_STATE_POWER",
+    "variables": {}
+  },
+  {
+    "className": "MagnificentDrawPower",
+    "id": "MYSTS2MOD-MAGNIFICENT_DRAW_POWER",
+    "variables": {}
+  },
+  {
+    "className": "MagnificentHaoPower",
+    "id": "MYSTS2MOD-MAGNIFICENT_HAO_POWER",
+    "variables": {}
+  },
+  {
+    "className": "MathPrincePower",
+    "id": "MYSTS2MOD-MATH_PRINCE_POWER",
+    "variables": {}
+  },
+  {
+    "className": "OpenHaoStatePower",
+    "id": "MYSTS2MOD-OPEN_HAO_STATE_POWER",
+    "variables": {}
+  },
+  {
+    "className": "RhythmPower",
+    "id": "MYSTS2MOD-RHYTHM_POWER",
+    "variables": {}
+  },
+  {
+    "className": "ShangHaiStudentPower",
+    "id": "MYSTS2MOD-SHANG_HAI_STUDENT_POWER",
+    "variables": {}
+  },
+  {
+    "className": "SneerPower",
+    "id": "MYSTS2MOD-SNEER_POWER",
+    "variables": {}
+  },
+  {
+    "className": "SuperHaoFieldPower",
+    "id": "MYSTS2MOD-SUPER_HAO_FIELD_POWER",
+    "variables": {}
+  },
+  {
+    "className": "TimeWaitsForNoOnePower",
+    "id": "MYSTS2MOD-TIME_WAITS_FOR_NO_ONE_POWER",
+    "variables": {}
+  },
+  {
+    "className": "TsinghuaFormPower",
+    "id": "MYSTS2MOD-TSINGHUA_FORM_POWER",
+    "variables": {}
+  },
+  {
+    "className": "UnrepentantGuardPower",
+    "id": "MYSTS2MOD-UNREPENTANT_GUARD_POWER",
+    "variables": {}
+  },
+  {
+    "className": "UnrepentantPainPower",
+    "id": "MYSTS2MOD-UNREPENTANT_PAIN_POWER",
+    "variables": {}
+  },
+  {
+    "className": "UnspokenFuryPower",
+    "id": "MYSTS2MOD-UNSPOKEN_FURY_POWER",
+    "variables": {
+      "Damage": 15
+    }
+  },
+  {
+    "className": "XiaoNextTurnPower",
+    "id": "MYSTS2MOD-XIAO_NEXT_TURN_POWER",
+    "variables": {}
+  }
+]

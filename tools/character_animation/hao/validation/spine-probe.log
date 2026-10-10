@@ -1,0 +1,6 @@
+MegaDot v4.5.1.m.14.mono.custom_build - https://godotengine.org
+
+PASS attack duration=1.0 motion=["upper_arm_main", "forearm_main", "hand_main", "weapon"]
+PASS cast duration=1.39999997615814 motion=["upper_arm_off", "forearm_off", "hand_main"]
+PASS ResourceLoader res://runtime/hao.tres with native SpineSprite playback
+RESULT PASS -> C:/Users/Amazi/Desktop/Spire2Mod/Git Clone/sts2/tools/character_animation/hao/validation/validation.json

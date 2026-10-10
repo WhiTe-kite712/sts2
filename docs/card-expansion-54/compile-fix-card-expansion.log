@@ -1,4 +1,11 @@
   正在确定要还原的项目…
-  已还原 C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\Harness.csproj (用时 171 毫秒)。
-  已还原 C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\MySts2Mod\MySts2Mod.csproj (用时 171 毫秒)。
+  已还原 C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\Harness.csproj (用时 315 毫秒)。
+  已还原 C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\MySts2Mod\MySts2Mod.csproj (用时 315 毫秒)。
   MySts2Mod -> C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\MySts2Mod\.godot\mono\temp\bin\Debug\MySts2Mod.dll
+  Harness -> C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\bin\Debug\net9.0\Harness.dll
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:03.06

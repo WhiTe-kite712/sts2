@@ -29,7 +29,12 @@ public class HaoStrike : MySts2ModCard
 
     public override IEnumerable<CardTag> Tags => [CardTag.Strike];
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new CalculationBaseVar(6),
+        new ExtraDamageVar(1),
+        new CalculatedDamageVar(ValueProp.Move).WithMultiplier(static (card, _) => card.Owner.GetHao()),
+    ];
 
     public HaoStrike() : base(cost, type, rarity, target)
     {
@@ -37,8 +42,7 @@ public class HaoStrike : MySts2ModCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var hao = cardPlay.Card.Owner.GetHao();
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue + hao)
+        await DamageCmd.Attack(DynamicVars.CalculatedDamage)
             .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target!)
             .Execute(choiceContext);
@@ -46,6 +50,6 @@ public class HaoStrike : MySts2ModCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3);
+        DynamicVars.CalculationBase.UpgradeValueBy(3);
     }
 }

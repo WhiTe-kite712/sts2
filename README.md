@@ -1,7 +1,7 @@
 # 杀戮尖塔 2 模组工作区（BaseLib 框架）
 
 模组项目位于 `MySts2Mod\`，基于 Alchyr 官方内容模组模板 + BaseLib 3.4.7。
-核心内容：自定义角色 **Coding Farmer（码农）**、核心资源机制 **「豪意」**、围绕豪意的 28 张卡牌与起始遗物。
+核心内容：自定义角色 **Coding Farmer（码农）**、核心资源机制 **「豪意」**、58种卡牌与起始遗物。
 
 ## 环境现状
 
@@ -31,16 +31,16 @@ MySts2Mod\
 │  ├─ MainFile.cs              # 入口 [ModInitializer]，Harmony 挂载 + 脚本查找
 │  ├─ Character\
 │  │  ├─ CodingFarmer.cs       # 角色：75血/3能量，初始卡组与起始遗物
-│  │  ├─ HaoCardPool.cs        # 专属卡池（52种角色卡，含5种基础牌）
+│  │  ├─ HaoCardPool.cs        # 专属卡池（56种角色卡，含5种基础牌）
 │  │  ├─ HaoRelicPool.cs       # 专属遗物池
 │  │  └─ HaoPotionPool.cs      # 专属药水池（暂空）
-│  ├─ Cards\                   # 54种卡：52种角色卡 + 孝/串2种无色衍生牌
-│  ├─ Powers\                  # 20种能力 + 临时力量桥接
+│  ├─ Cards\                   # 58种卡：56种角色卡 + 孝/串2种无色衍生牌
+│  ├─ Powers\                  # 22种能力 + 临时力量桥接
 │  ├─ Relics\                  # LuckyCoin（演示）+ Hao（起始遗物）
 │  └─ Extensions\HaoExtensions.cs  # 豪意读写统一入口 GetHao/GainHao/LoseHao
 └─ MySts2Mod\                  # ★ 资源（PckPacker 打包进 .pck）
-   ├─ images\charui\           # 角色头像占位图
-   ├─ images\card_portraits\   # 卡牌图（占位）
+   ├─ images\charui\           # 顶栏头像、选角头像及人物背景
+   ├─ images\card_portraits\   # 卡牌图按类名命名，普通优先、缺失回退big
    ├─ images\powers\           # 能力图标（占位）
    ├─ images\relics\           # 遗物图标（占位）
    ├─ localization\eng\        # 英文：cards/powers/relics/characters/ancients...
@@ -79,8 +79,8 @@ MySts2Mod\
 ## 已知限制 / 待办
 
 - **约 14 张卡无升级效果**（考试/平静/冲突/调试/代码攻势/讥笑/平等680/小组讨论/死不悔改/语法课/豪华的豪/超豪力场/清华之姿/比行者更强/最终提交），升级设计待定
-- **全部卡图/能力图标/遗物图标为占位图**——把图放进 `MySts2Mod\images\` 对应目录（文件名 = 小写蛇形类名，如 `hao_strike.png`），重新构建自动打包
-- **角色战斗形象/能量表盘/选择背景回落原版**——`.tscn` 需要 Godot(MegaDot 4.5.1) 导出，场景已备好放在 `_scenes_for_publish\`，发布时配置 `Directory.Build.props` 的 `GodotPath` 后 `dotnet publish`
+- **卡图仍有缺口**——2026-10-07已有35种卡图链接，21种卡无对应图；打击/防御复用原版。卡图文件名以Cards源码文件为准（如HaoStrike.png），能力/遗物图标继续使用对应ID的小写蛇形名称。现有普通新美术优先于旧big图；普通缺失时使用同名big。
+- **角色战斗形象/能量表盘仍回落原版**——对应草案位于 `_scenes_for_publish\`，后续可配置Godot导出。选角头像和人物背景已于2026-10-08接入；背景由C#生成PackedScene并注册游戏缓存，PckPacker只需打包PNG，无需把TSCN放进资源目录。
 - **遗物 Hao 效果为占位设计**（每回合+2豪意），可调整
 - **语法课** v1 简化：随机 1 张而非"3 选 1"（自定义选卡界面 API 未验证）
 
@@ -100,4 +100,4 @@ stdbitmap补充：1.'嘴硬'的实际效果与描述不符合。
 
 ## 当前卡牌版本
 
-副本的卡牌更改已同步到本仓库，当前54种卡（攻击21、技能26、能力7）。初始卡组为11张：4打击、4防御、1豪意打击、1豪意防御、1自恋。当前摘要与清单位于 [docs/card-expansion-54](docs/card-expansion-54/同步完成摘要.md)，源码检查见 [tests/CardExpansionRegression](tests/CardExpansionRegression/README.md)。本次只进行了静态核对，没有重新编译或部署；按用户选择，仅保留最新摘要、清单和检查源码。
+副本的卡牌更改已同步到本仓库；新增幡然悔悟、卷土重来、时不我待、针锋相对后，当前58种卡（攻击21、技能29、能力8）。初始卡组仍为11张：4打击、4防御、1豪意打击、1豪意防御、1自恋。迁移摘要与当前清单位于 [docs/card-expansion-54](docs/card-expansion-54/同步完成摘要.md)，检查见 [tests/CardExpansionRegression](tests/CardExpansionRegression/README.md)。目录沿用历史名称；源码清单与实际运行快照均为58卡。三张新卡的效果和升级见 [新增卡说明](docs/card-expansion-54/2026-10-07-retention-cards.md)。2026-10-07按本次授权已完成卡图改名、链接、编译打包及资源调试：0错误/0警告，基础回归98/98，纹理解码62/62；详见 [卡图验证报告](docs/card-expansion-54/2026-10-07-card-art-link.md)。未部署到游戏目录。

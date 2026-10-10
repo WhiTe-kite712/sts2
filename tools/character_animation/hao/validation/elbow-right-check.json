@@ -1,0 +1,137 @@
+{
+  "ok": true,
+  "checked_at_utc": "2026-10-09T05:34:53.048614+00:00",
+  "measurement_source": "Native SpineBone get_world_x/get_world_y from probe.gd",
+  "coordinate_system": "Native game/Godot world coordinates; screen-right is +X",
+  "criterion": "forearm_main origin worldX > upper_arm_main origin worldX for every active attack sample",
+  "shoulder_bone": "upper_arm_main",
+  "elbow_bone": "forearm_main",
+  "active_sample_count": 6,
+  "minimum_active_elbow_minus_shoulder_x": 27.628059387206996,
+  "all_sampled_poses_elbow_right": true,
+  "source_skeleton_sha256": "451f5680b4f6c42f71213df15fc6568e2eb7e2cf558bfbf33187d5087557863e",
+  "native_report_sha256": "9ad89a96ef5870e9cdb63eba1a622f5bfcbb2f45242a35ae07b3b14776138a74",
+  "native_started_at": "2026-10-09T13:34:52",
+  "poses": [
+    {
+      "time": 0.0,
+      "ratio": 0.0,
+      "active_attack": false,
+      "shoulder": {
+        "x": 41.9999771118164,
+        "y": -378.0
+      },
+      "elbow": {
+        "x": 59.9999923706055,
+        "y": -311.0
+      },
+      "elbow_minus_shoulder_x": 18.000015258789098,
+      "elbow_is_screen_right": true
+    },
+    {
+      "time": 0.125,
+      "ratio": 0.125,
+      "active_attack": true,
+      "shoulder": {
+        "x": 41.0928268432617,
+        "y": -378.505432128906
+      },
+      "elbow": {
+        "x": 93.8318634033203,
+        "y": -333.432220458984
+      },
+      "elbow_minus_shoulder_x": 52.7390365600586,
+      "elbow_is_screen_right": true
+    },
+    {
+      "time": 0.25,
+      "ratio": 0.25,
+      "active_attack": true,
+      "shoulder": {
+        "x": 40.2763595581055,
+        "y": -378.947021484375
+      },
+      "elbow": {
+        "x": 104.775543212891,
+        "y": -353.395935058594
+      },
+      "elbow_minus_shoulder_x": 64.4991836547855,
+      "elbow_is_screen_right": true
+    },
+    {
+      "time": 0.4,
+      "ratio": 0.4,
+      "active_attack": true,
+      "shoulder": {
+        "x": 46.6724853515625,
+        "y": -375.136291503906
+      },
+      "elbow": {
+        "x": 94.9699859619141,
+        "y": -325.333160400391
+      },
+      "elbow_minus_shoulder_x": 48.297500610351605,
+      "elbow_is_screen_right": true
+    },
+    {
+      "time": 0.5,
+      "ratio": 0.5,
+      "active_attack": true,
+      "shoulder": {
+        "x": 45.7036972045898,
+        "y": -375.767395019531
+      },
+      "elbow": {
+        "x": 83.0914688110352,
+        "y": -317.328063964844
+      },
+      "elbow_minus_shoulder_x": 37.3877716064454,
+      "elbow_is_screen_right": true
+    },
+    {
+      "time": 0.65,
+      "ratio": 0.65,
+      "active_attack": true,
+      "shoulder": {
+        "x": 44.3612213134766,
+        "y": -376.608947753906
+      },
+      "elbow": {
+        "x": 75.669059753418,
+        "y": -314.699157714844
+      },
+      "elbow_minus_shoulder_x": 31.3078384399414,
+      "elbow_is_screen_right": true
+    },
+    {
+      "time": 0.8,
+      "ratio": 0.8,
+      "active_attack": true,
+      "shoulder": {
+        "x": 43.0638198852539,
+        "y": -377.387023925781
+      },
+      "elbow": {
+        "x": 70.6918792724609,
+        "y": -313.749816894531
+      },
+      "elbow_minus_shoulder_x": 27.628059387206996,
+      "elbow_is_screen_right": true
+    },
+    {
+      "time": 1.0,
+      "ratio": 1.0,
+      "active_attack": false,
+      "shoulder": {
+        "x": 41.9999771118164,
+        "y": -378.0
+      },
+      "elbow": {
+        "x": 59.9999923706055,
+        "y": -311.0
+      },
+      "elbow_minus_shoulder_x": 18.000015258789098,
+      "elbow_is_screen_right": true
+    }
+  ]
+}

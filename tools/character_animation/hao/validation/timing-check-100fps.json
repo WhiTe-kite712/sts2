@@ -1,0 +1,22 @@
+{
+  "fps": 100,
+  "timeScale": 0.8,
+  "staticSkeletonUnchanged": true,
+  "texturesUnchanged": true,
+  "animations": {
+    "attack": {
+      "oldBoneKeys": 36,
+      "newBoneKeys": 71,
+      "duration": 0.7,
+      "eventTime": 0.34,
+      "timelinesChecked": 11
+    },
+    "cast": {
+      "oldBoneKeys": 43,
+      "newBoneKeys": 85,
+      "duration": 0.84,
+      "eventTime": 0.48,
+      "timelinesChecked": 10
+    }
+  }
+}

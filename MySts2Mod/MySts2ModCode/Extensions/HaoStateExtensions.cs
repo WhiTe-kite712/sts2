@@ -49,7 +49,7 @@ public static class HaoStateExtensions
         player.EnterHaoState(choiceContext, GetOppositeHaoState(player.GetHaoState()), cardSource);
 
     public static async Task EnterHaoState(this Player player, PlayerChoiceContext choiceContext,
-        HaoState next, CardModel cardSource)
+        HaoState next, CardModel? cardSource)
     {
         var before = player.GetHaoState();
         if (next == HaoState.None || next == before) return;

@@ -7,4 +7,7 @@ namespace MySts2Mod.MySts2ModCode.Character;
 /// </summary>
 public class HaoRelicPool : CustomRelicPoolModel
 {
+    public override bool IsShared => false;
+    public override string? TextEnergyIconPath => CodingFarmerEnergy.SmallPath;
+    public override string? BigEnergyIconPath => CodingFarmerEnergy.SmallPath;
 }

@@ -11,10 +11,11 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyMetadataAttribute("Sts2DataDir", "e:/steam\\steamapps/common/Slay the Spire 2/data_sts2_windows_x86_64")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("ModLocalizationDir", "C:\\Users\\Amazi\\Desktop\\Spire2Mod\\Git Clone\\sts2\\MySts2Mod\\MySts2Mod\\localization")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Harness")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66109ac1f1c1ffaaec4264fdffba79b8c7cfeb3f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d4191c9840a49ec654c9846e5fc5e2b86dea915f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Harness")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Harness")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

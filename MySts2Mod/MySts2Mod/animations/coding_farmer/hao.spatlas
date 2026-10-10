@@ -1,0 +1,6 @@
+{
+  "source_path": "res://MySts2Mod/animations/coding_farmer/hao.atlas",
+  "atlas_data": "hao.png\nsize:2048,2048\nformat:RGBA8888\nfilter:Linear,Linear\nrepeat:none\ncape\nbounds:4,4,898,1034\nthigh_off\nbounds:910,4,222,424\nthigh_main\nbounds:1140,4,179,420\nshin_off\nbounds:1327,4,171,373\nshin_main\nbounds:1506,4,156,362\ntorso\nbounds:1670,4,265,335\nmantle\nbounds:4,1046,564,307\nhead\nbounds:576,1046,293,273\nupper_arm_off\nbounds:877,1046,177,271\nupper_arm_main\nbounds:1062,1046,115,252\nweapon\nbounds:1185,1046,91,250\nfx_aura\nbounds:1284,1046,284,240\nfx_slash\nbounds:1576,1046,297,239\npelvis\nbounds:4,1361,279,229\nforearm_off\nbounds:291,1361,102,223\nforearm_main\nbounds:401,1361,117,214\nfoot_off\nbounds:526,1361,123,167\nfoot_main\nbounds:657,1361,232,135\nhand_off\nbounds:897,1361,100,127\nhand_main\nbounds:1005,1361,84,105\n",
+  "normal_texture_prefix": "",
+  "specular_texture_prefix": ""
+}

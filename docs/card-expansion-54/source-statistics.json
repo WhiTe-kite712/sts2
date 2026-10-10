@@ -1,30 +1,34 @@
 {
-  "verificationStatus": "source-only; no compile/debugging in migration",
-  "cardCount": 54,
-  "characterCards": 52,
+  "verificationStatus": "source-only; updated 2026-10-07 for 58 cards, no compile/debugging",
+  "cardCount": 58,
+  "characterCards": 56,
   "colorlessTokens": 2,
-  "nonBasicRewards": 47,
-  "newCardCount": 18,
-  "powerCount": 20,
-  "newPowerCount": 4,
+  "nonBasicRewards": 51,
+  "newCardCount": 22,
+  "powerCount": 22,
+  "newPowerCount": 6,
   "powerCountNote": "Concrete MySts2ModPower models only; original MathPrinceTempStrengthPower bridge is counted separately.",
   "types": {
     "Attack": 21,
-    "Skill": 26,
-    "Power": 7
+    "Skill": 29,
+    "Power": 8
   },
   "rarities": {
     "Common": 19,
-    "Rare": 13,
-    "Uncommon": 15,
+    "Rare": 14,
+    "Uncommon": 18,
     "Token": 2,
     "Basic": 5
   },
   "costs": {
-    "1": 30,
+    "1": 33,
     "3": 4,
     "0": 10,
-    "2": 9,
+    "2": 10,
     "X": 1
-  }
+  },
+  "migrationExpansionCardCount": 18,
+  "postMigrationCardCount": 4,
+  "migrationExpansionPowerCount": 4,
+  "postMigrationPowerCount": 2
 }

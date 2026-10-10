@@ -4,6 +4,7 @@ using System.Text.Json;
 using System.Text.RegularExpressions;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
 using MySts2Mod.MySts2ModCode.Cards;
 using MySts2Mod.MySts2ModCode.Powers;
@@ -14,7 +15,7 @@ AssemblyLoadContext.Default.Resolving += (_, name) =>
     string file = Path.Combine(dataDir, name.Name + ".dll");
     return File.Exists(file) ? AssemblyLoadContext.Default.LoadFromAssemblyPath(file) : null;
 };
-int expected = args.Length > 0 ? int.Parse(args[0]) : 54;
+int expected = args.Length > 0 ? int.Parse(args[0]) : 58;
 string output = args.Length > 1 ? args[1] : "inventory.json";
 var types = typeof(MySts2ModCard).Assembly.GetTypes().Where(t => !t.IsAbstract && typeof(MySts2ModCard).IsAssignableFrom(t)).OrderBy(t => t.Name).ToArray();
 int failures = 0, tests = 0;
@@ -50,6 +51,8 @@ foreach (var type in typeof(MySts2ModPower).Assembly.GetTypes().Where(t => !t.Is
     });
 }
 ExpansionRules.Run(Check);
+string localizationDir = Assembly.GetExecutingAssembly().GetCustomAttributes<AssemblyMetadataAttribute>().Single(x => x.Key == "ModLocalizationDir").Value!;
+HaoPreviewRules.Run(Check, localizationDir);
 Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(output))!);
 File.WriteAllText(output, JsonSerializer.Serialize(inventory, new JsonSerializerOptions { WriteIndented = true }));
 File.WriteAllText(Path.Combine(Path.GetDirectoryName(Path.GetFullPath(output))!, "power-inventory.json"), JsonSerializer.Serialize(powerInventory, new JsonSerializerOptions { WriteIndented = true }));
@@ -65,7 +68,15 @@ object State(CardModel card) => new
     target = card.TargetType.ToString(),
     keywords = card.GetKeywordsWithSources(KeywordSources.Local).Select(k => k.ToString()).Order().ToArray(),
     variables = card.DynamicVars.ToDictionary(v => v.Key, v => v.Value.BaseValue),
+    descriptionArgs = ExtraDescriptionArgs(card),
 };
+string[] ExtraDescriptionArgs(CardModel card)
+{
+    var description = new LocString("cards", card.Id.Entry + ".description");
+    typeof(CardModel).GetMethod("AddExtraArgsToDescription", BindingFlags.Instance | BindingFlags.NonPublic)!
+        .Invoke(card, [description]);
+    return description.Variables.Keys.Order().ToArray();
+}
 string Id(Type type) => "MYSTS2MOD-" + Regex.Replace(type.Name, "(?<=[A-Za-z0-9])(?=[A-Z])", "_").ToUpperInvariant();
 void Check(string name, Action action)
 {

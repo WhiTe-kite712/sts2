@@ -54,8 +54,8 @@ public class GeniusPower : MySts2ModPower
 
     public override Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
     {
-        // A positive hit consumes the effect even when fully blocked; zero damage does not.
-        if (IsEligibleDamage(target, dealer) && result.TotalDamage > 0)
+        // A  hit consumes the effect even when fully blocked; zero damage does.
+        if (IsEligibleDamage(target, dealer) && result.TotalDamage >= 0)
         {
             HaoLostFlag = false;
         }

@@ -1,0 +1,9 @@
+PASS 54 distinct cards; 52 character cards, 2 existing colorless tokens, 5 Basic cards, 47 non-Basic reward cards
+PASS all 18 new cards match design cost/type/rarity/keywords and have an observable upgrade; 20 concrete powers, 4 new
+PASS zhs/cards: duplicate-free JSON, 54 model descriptions, all variables bound to actual DLL
+PASS zhs/powers: duplicate-free JSON, 20 model descriptions, all variables bound to actual DLL
+PASS eng/cards: duplicate-free JSON, 54 model descriptions, all variables bound to actual DLL
+PASS eng/powers: duplicate-free JSON, 20 model descriptions, all variables bound to actual DLL
+PASS Chinese and English localization keys match exactly
+PASS all 2 card-specific selection screens have Chinese and English prompts
+RESULT catalog/localization validation passed

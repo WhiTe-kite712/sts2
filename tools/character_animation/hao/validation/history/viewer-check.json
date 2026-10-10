@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "method": "Production HTML executed in Node VM with recording Canvas2D/DOM adapter, not browser visual verification",
+  "sourceHashes": {
+    "spine": "9279a94700681ce560b5e9c1464ee4fdd1160c9907223ade32bd04c719bcc0ba",
+    "rig": "a36ed18342230bb1421b523c808680b671125b3ca17258395b6b7075b41363e8",
+    "png": "17fc494c3985c2b1d4553b20374fa5365982b033277fe35fe5b1a7b34e284ef7"
+  },
+  "htmlSha256": "c0c0a57cd6ebde9f8a67d0b4ceaabebfce89a32ba4aa135e44bb1eba80420319",
+  "canvas": [
+    1100,
+    800
+  ],
+  "origin": [
+    400,
+    742
+  ],
+  "scale": 1.25,
+  "bones": 22,
+  "posesChecked": 10,
+  "boneComponentChecks": 1320,
+  "meshVertices": 77,
+  "meshTriangles": 120,
+  "maxBoneError": 5.684341886080802e-14,
+  "maxMeshError": 5.684341886080802e-14,
+  "maxUVError": 1.1368683772161603e-13,
+  "maxRegionError": 1.1368683772161603e-13,
+  "setupMeshBounds": [
+    -180.00000999999997,
+    72.66668000000004,
+    119.33333000000005,
+    417.33334
+  ],
+  "fxAlpha": {
+    "attackHit": 0.65,
+    "castRelease": 1
+  },
+  "ui": [
+    "attack/cast",
+    "event-jump",
+    "bones",
+    "checker",
+    "speed",
+    "loop-end",
+    "scrub"
+  ],
+  "externalDependencies": false,
+  "browserVisualCheck": {
+    "status": "unverified",
+    "reason": "Optional headless Edge launch failed before a page opened: Crashpad TransactNamedPipe failure. No retry was performed."
+  },
+  "testScope": "Numerical and logic checks from actual production HTML. Recording Canvas2D adapter verifies affine draw calls; it does not rasterize the atlas.",
+  "attackDirection": {
+    "coordinates": "Spine Y-up",
+    "windupTime": 0.26666666666666666,
+    "hitTime": 0.4,
+    "wristDelta": [
+      25.33332140723337,
+      -13.9999768688524
+    ],
+    "gripDelta": [
+      31.776269068414933,
+      -12.054369519300508
+    ],
+    "bladeAngleDelta": -0.9599294596560727
+  }
+}

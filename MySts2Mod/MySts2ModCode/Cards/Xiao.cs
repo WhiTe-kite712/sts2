@@ -21,12 +21,12 @@ public class Xiao : MySts2ModCard
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<HaoPower>(),
-        HoverTipFactory.FromCard<Chuan>(),
+        HoverTipFactory.FromCard<Chuan>(IsUpgraded),
     ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DynamicVar("Hao", 2m),
+        new DynamicVar("Hao", 1m),
         new BlockVar(5, ValueProp.Move),
     ];
 
@@ -41,4 +41,9 @@ public class Xiao : MySts2ModCard
         await CreatureCmd.GainBlock(player.Creature, DynamicVars.Block, cardPlay);
         await PowerCmd.Apply<ChuanNextTurnPower>(choiceContext, player.Creature, 1, player.Creature, this);
     }
+    
+         protected override void OnUpgrade() { 
+            DynamicVars.Block.UpgradeValueBy(3);
+
+         }
 }

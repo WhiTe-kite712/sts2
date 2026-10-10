@@ -17,7 +17,7 @@ public class HaoCardPool : CustomCardPoolModel
 
     public override bool IsColorless => false;
 
-    // 能量表盘：小图标随费用文字显示，大图标为能量球（由 tools/artgen 生成）
-    public override string? TextEnergyIconPath => $"{MainFile.ResPath}/images/energy_hao.png";
-    public override string? BigEnergyIconPath => $"{MainFile.ResPath}/images/energy_hao_big.png";
+    // BaseLib's BigEnergyIconPath is also used by card/hover icons, not the combat orb.
+    public override string? TextEnergyIconPath => CodingFarmerEnergy.SmallPath;
+    public override string? BigEnergyIconPath => CodingFarmerEnergy.SmallPath;
 }

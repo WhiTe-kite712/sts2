@@ -14,7 +14,7 @@ public class NewGroupChat : MySts2ModCard
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromCard<Xiao>(),
+        HoverTipFactory.FromCard<Xiao>(IsUpgraded),
     ];
 
     public NewGroupChat() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
@@ -25,6 +25,9 @@ public class NewGroupChat : MySts2ModCard
     {
         var player = cardPlay.Player;
         var card = CombatState!.CreateCard<Xiao>(player);
+        if (IsUpgraded) CardCmd.Upgrade(card);
         CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, player));
     }
+
+    protected override void OnUpgrade() { }
 }

@@ -7,4 +7,6 @@ namespace MySts2Mod.MySts2ModCode.Character;
 /// </summary>
 public class HaoPotionPool : CustomPotionPoolModel
 {
+    public override string? TextEnergyIconPath => CodingFarmerEnergy.SmallPath;
+    public override string? BigEnergyIconPath => CodingFarmerEnergy.SmallPath;
 }

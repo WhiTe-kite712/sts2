@@ -1,0 +1,94 @@
+SentryGodotInitializer: Sentry GDExtension not loaded in this process; skipping. If you see this in a running game (not during project export or IDE script analysis), check Godot's log for extension load failures.
+PASS concrete card count
+PASS distinct card class names
+PASS Appear registers, clones and upgrades
+PASS BetterThanWalker registers, clones and upgrades
+PASS Calm registers, clones and upgrades
+PASS ChatHistory registers, clones and upgrades
+PASS Chuan registers, clones and upgrades
+PASS CodeCodeCode registers, clones and upgrades
+PASS CodeOffense registers, clones and upgrades
+PASS CompilerWarning registers, clones and upgrades
+PASS Conflict registers, clones and upgrades
+PASS DeadlineSprint registers, clones and upgrades
+PASS Debugging registers, clones and upgrades
+PASS Defend registers, clones and upgrades
+PASS Depression registers, clones and upgrades
+PASS Derivation registers, clones and upgrades
+PASS DualLife registers, clones and upgrades
+PASS Equal680 registers, clones and upgrades
+PASS Exam registers, clones and upgrades
+PASS FenceSitter registers, clones and upgrades
+PASS FigureShadow registers, clones and upgrades
+PASS FinalCommit registers, clones and upgrades
+PASS FireInSoul registers, clones and upgrades
+PASS FooledYou registers, clones and upgrades
+PASS Genius registers, clones and upgrades
+PASS GodList registers, clones and upgrades
+PASS Grammar registers, clones and upgrades
+PASS GroupDiscuss registers, clones and upgrades
+PASS HaoDefend registers, clones and upgrades
+PASS HaoStrike registers, clones and upgrades
+PASS Hindsight registers, clones and upgrades
+PASS InfiniteHao registers, clones and upgrades
+PASS KeyboardWarrior registers, clones and upgrades
+PASS KickUp registers, clones and upgrades
+PASS MagnificentHao registers, clones and upgrades
+PASS MathPrince registers, clones and upgrades
+PASS Narcissism registers, clones and upgrades
+PASS NewGroupChat registers, clones and upgrades
+PASS Planning registers, clones and upgrades
+PASS PlayingMyself registers, clones and upgrades
+PASS PressForward registers, clones and upgrades
+PASS QuantumMechanics registers, clones and upgrades
+PASS Rhythm registers, clones and upgrades
+PASS ShangHaiStudent registers, clones and upgrades
+PASS ShiNong registers, clones and upgrades
+PASS Sneer registers, clones and upgrades
+PASS Spark registers, clones and upgrades
+PASS Strike registers, clones and upgrades
+PASS StudentLeader registers, clones and upgrades
+PASS SuperHaoField registers, clones and upgrades
+PASS Surfing registers, clones and upgrades
+PASS TsinghuaForm registers, clones and upgrades
+PASS UncertaintyPrinciple registers, clones and upgrades
+PASS Unrepentant registers, clones and upgrades
+PASS UnspokenFury registers, clones and upgrades
+PASS Xiao registers, clones and upgrades
+PASS ChuanNextTurnPower registers and defines dynamic variables
+PASS DualLifePower registers and defines dynamic variables
+PASS Equal680Power registers and defines dynamic variables
+PASS FinalCommitPower registers and defines dynamic variables
+PASS GeniusPower registers and defines dynamic variables
+PASS HaoPower registers and defines dynamic variables
+PASS HiddenStatePower registers and defines dynamic variables
+PASS MagnificentDrawPower registers and defines dynamic variables
+PASS MagnificentHaoPower registers and defines dynamic variables
+PASS MathPrincePower registers and defines dynamic variables
+PASS OpenHaoStatePower registers and defines dynamic variables
+PASS RhythmPower registers and defines dynamic variables
+PASS ShangHaiStudentPower registers and defines dynamic variables
+PASS SneerPower registers and defines dynamic variables
+PASS SuperHaoFieldPower registers and defines dynamic variables
+PASS TsinghuaFormPower registers and defines dynamic variables
+PASS UnrepentantGuardPower registers and defines dynamic variables
+PASS UnrepentantPainPower registers and defines dynamic variables
+PASS UnspokenFuryPower registers and defines dynamic variables
+PASS XiaoNextTurnPower registers and defines dynamic variables
+PASS state transitions exclude initial entry and repeated identity
+PASS state reward locks once per own turn including extra turns
+PASS HiddenStatePower defines its reversible original-game stat contribution
+PASS HiddenStatePower does not add duplicate damage outside StrengthPower
+PASS HiddenStatePower does not add duplicate block outside DexterityPower
+PASS HiddenStatePower leaves the engine damage pipeline to original-game stats
+PASS OpenHaoStatePower defines its reversible original-game stat contribution
+PASS OpenHaoStatePower does not add duplicate damage outside StrengthPower
+PASS OpenHaoStatePower does not add duplicate block outside DexterityPower
+PASS OpenHaoStatePower leaves the engine damage pipeline to original-game stats
+PASS sequence excludes exact current play while retaining an earlier play of the same card
+PASS PressForward does not receive its bonus with no preceding skill
+PASS PressForward requires the immediately preceding card to be a skill
+PASS PressForward retains its existing damage and upgrade
+PASS Rhythm grants two block per event and three when upgraded
+PASS HP loss preserves Hao even when it has positive unblocked value
+RESULT 92/92 checks passed; inventory 54 cards

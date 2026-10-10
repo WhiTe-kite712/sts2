@@ -1,0 +1,63 @@
+{
+  "ok": true,
+  "checked_at_utc": "2026-10-09T05:34:52.888072+00:00",
+  "measurement_source": "probe.gd: native SpineSprite update_skeleton and SpineBone get_world_x/get_world_y",
+  "coordinate_system": "Native game/Godot world coordinates; forward is +X and downward is +Y",
+  "animation": "attack",
+  "before_time": 0.25,
+  "after_time": 0.4,
+  "source_skeleton_sha256": "451f5680b4f6c42f71213df15fc6568e2eb7e2cf558bfbf33187d5087557863e",
+  "native_report_sha256": "9ad89a96ef5870e9cdb63eba1a622f5bfcbb2f45242a35ae07b3b14776138a74",
+  "native_started_at": "2026-10-09T13:34:52",
+  "measurements": {
+    "weapon": {
+      "before": {
+        "x": 177.720153808594,
+        "y": -376.112274169922
+      },
+      "after": {
+        "x": 151.996688842773,
+        "y": -273.296997070312
+      },
+      "delta": {
+        "x": -25.723464965820995,
+        "y": 102.81527709961
+      }
+    },
+    "hand_main": {
+      "before": {
+        "x": 160.945129394531,
+        "y": -376.320404052734
+      },
+      "after": {
+        "x": 141.449081420898,
+        "y": -286.3427734375
+      },
+      "delta": {
+        "x": -19.496047973632983,
+        "y": 89.97763061523398
+      }
+    },
+    "blade_tip": {
+      "before": {
+        "x": 289.7939009283855,
+        "y": -481.8483683219618
+      },
+      "after": {
+        "x": 304.92819801237283,
+        "y": -254.5193533654001
+      },
+      "delta": {
+        "x": 15.134297083987349,
+        "y": 227.3290149565617
+      }
+    }
+  },
+  "checks": {
+    "blade_contact_moves_forward_positive_x": true,
+    "blade_contact_moves_down_positive_y": true,
+    "weapon_moves_down_positive_y": true,
+    "sword_hand_moves_down_positive_y": true,
+    "forearm_raises_more_than_upper_arm": true
+  }
+}

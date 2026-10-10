@@ -2,6 +2,7 @@ using BaseLib.Abstracts;
 using BaseLib.Utils;
 using MySts2Mod.MySts2ModCode.Character;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
@@ -30,7 +31,14 @@ public class HaoDefend : MySts2ModCard
 
     public override IEnumerable<CardTag> Tags => [CardTag.Defend];
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("BlockCap", 11m)];
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new DynamicVar("BlockCap", 11m),
+        new CalculationBaseVar(0),
+        new CalculationExtraVar(1),
+        new CalculatedBlockVar(ValueProp.Move).WithMultiplier(static (card, _) =>
+            Math.Min(card.Owner.GetHao() * 3m, card.DynamicVars["BlockCap"].BaseValue)),
+    ];
 
     public HaoDefend() : base(cost, type, rarity, target)
     {
@@ -38,9 +46,7 @@ public class HaoDefend : MySts2ModCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var hao = cardPlay.Card.Owner.GetHao();
-        var block = Math.Min(hao * 3, (int)DynamicVars["BlockCap"].BaseValue);
-        await CommonActions.CardBlock(this, new BlockVar(block, ValueProp.Move), cardPlay);
+        await CommonActions.CardBlock(this, cardPlay);
     }
 
     protected override void OnUpgrade()

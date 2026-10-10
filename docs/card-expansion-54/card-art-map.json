@@ -1,0 +1,358 @@
+{
+  "date": "2026-10-10",
+  "normalFirst": true,
+  "validation": "source-only",
+  "ownedArtCards": 48,
+  "vanillaCards": 2,
+  "missingCards": 8,
+  "cards": [
+    {
+      "className": "Appear",
+      "title": "出没",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/Appear.png"
+    },
+    {
+      "className": "BetterThanWalker",
+      "title": "比教主更豪",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/BetterThanWalker.png"
+    },
+    {
+      "className": "Calm",
+      "title": "冷静",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/Calm.png"
+    },
+    {
+      "className": "ChatHistory",
+      "title": "聊天记录",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/ChatHistory.png"
+    },
+    {
+      "className": "Chuan",
+      "title": "串",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/Chuan.png"
+    },
+    {
+      "className": "CodeCodeCode",
+      "title": "码上码上码上",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/CodeCodeCode.png"
+    },
+    {
+      "className": "CodeOffense",
+      "title": "代码进攻",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/CodeOffense.png"
+    },
+    {
+      "className": "Comeback",
+      "title": "卷土重来",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/Comeback.png"
+    },
+    {
+      "className": "CompilerWarning",
+      "title": "编译警告",
+      "kind": "placeholder",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/card.png"
+    },
+    {
+      "className": "Conflict",
+      "title": "冲突",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/Conflict.png"
+    },
+    {
+      "className": "DeadlineSprint",
+      "title": "赶DDL",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/DeadlineSprint.png"
+    },
+    {
+      "className": "Debugging",
+      "title": "调试",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/Debugging.png"
+    },
+    {
+      "className": "Defend",
+      "title": "防御",
+      "kind": "vanilla",
+      "portraitPath": null
+    },
+    {
+      "className": "Depression",
+      "title": "抑郁",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/Depression.png"
+    },
+    {
+      "className": "Derivation",
+      "title": "推导？",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/Derivation.png"
+    },
+    {
+      "className": "DualLife",
+      "title": "双面日常",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/DualLife.png"
+    },
+    {
+      "className": "Equal680",
+      "title": "等效680",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/Equal680.png"
+    },
+    {
+      "className": "Exam",
+      "title": "考试",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/Exam.png"
+    },
+    {
+      "className": "FenceSitter",
+      "title": "墙头草",
+      "kind": "placeholder",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/card.png"
+    },
+    {
+      "className": "FigureShadow",
+      "title": "背影",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/FigureShadow.png"
+    },
+    {
+      "className": "FinalCommit",
+      "title": "最终提交",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/FinalCommit.png"
+    },
+    {
+      "className": "FireInSoul",
+      "title": "心灵怒火",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/FireInSoul.png"
+    },
+    {
+      "className": "FooledYou",
+      "title": "骗你的",
+      "kind": "placeholder",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/card.png"
+    },
+    {
+      "className": "Genius",
+      "title": "天才？",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/Genius.png"
+    },
+    {
+      "className": "GodList",
+      "title": "封“神”榜",
+      "kind": "placeholder",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/card.png"
+    },
+    {
+      "className": "Grammar",
+      "title": "语法",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/Grammar.png"
+    },
+    {
+      "className": "GroupDiscuss",
+      "title": "讨论时间",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/GroupDiscuss.png"
+    },
+    {
+      "className": "HaoDefend",
+      "title": "豪意防御",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/HaoDefend.png"
+    },
+    {
+      "className": "HaoStrike",
+      "title": "豪意打击",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/HaoStrike.png"
+    },
+    {
+      "className": "Hindsight",
+      "title": "后知后觉",
+      "kind": "placeholder",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/card.png"
+    },
+    {
+      "className": "InfiniteHao",
+      "title": "无限豪",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/InfiniteHao.png"
+    },
+    {
+      "className": "KeyboardWarrior",
+      "title": "键盘侠",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/KeyboardWarrior.png"
+    },
+    {
+      "className": "KickUp",
+      "title": "临门一脚",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/KickUp.png"
+    },
+    {
+      "className": "MagnificentHao",
+      "title": "“佳”豪",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/MagnificentHao.png"
+    },
+    {
+      "className": "MathPrince",
+      "title": "数学王子",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/MathPrince.png"
+    },
+    {
+      "className": "Narcissism",
+      "title": "自恋",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/Narcissism.png"
+    },
+    {
+      "className": "NewGroupChat",
+      "title": "新群聊",
+      "kind": "placeholder",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/card.png"
+    },
+    {
+      "className": "Planning",
+      "title": "规划",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/Planning.png"
+    },
+    {
+      "className": "PlayingMyself",
+      "title": "本色出演",
+      "kind": "placeholder",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/card.png"
+    },
+    {
+      "className": "PressForward",
+      "title": "步步紧逼",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/PressForward.png"
+    },
+    {
+      "className": "QuantumMechanics",
+      "title": "量子力学",
+      "kind": "placeholder",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/card.png"
+    },
+    {
+      "className": "Rhythm",
+      "title": "节奏",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/Rhythm.png"
+    },
+    {
+      "className": "ShangHaiStudent",
+      "title": "上海考生",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/ShangHaiStudent.png"
+    },
+    {
+      "className": "ShiNong",
+      "title": "石农",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/ShiNong.png"
+    },
+    {
+      "className": "Sneer",
+      "title": "讥笑",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/Sneer.png"
+    },
+    {
+      "className": "Spark",
+      "title": "火花",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/Spark.png"
+    },
+    {
+      "className": "Strike",
+      "title": "打击",
+      "kind": "vanilla",
+      "portraitPath": null
+    },
+    {
+      "className": "StudentLeader",
+      "title": "学生会主席",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/StudentLeader.png"
+    },
+    {
+      "className": "SuddenRepentance",
+      "title": "幡然悔悟",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/SuddenRepentance.png"
+    },
+    {
+      "className": "SuperHaoField",
+      "title": "嘉豪领域",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/SuperHaoField.png"
+    },
+    {
+      "className": "Surfing",
+      "title": "网络冲浪",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/Surfing.png"
+    },
+    {
+      "className": "TimeWaitsForNoOne",
+      "title": "时不我待",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/TimeWaitsForNoOne.png"
+    },
+    {
+      "className": "TitForTat",
+      "title": "针锋相对",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/TitForTat.png"
+    },
+    {
+      "className": "TsinghuaForm",
+      "title": "清华形态",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/TsinghuaForm.png"
+    },
+    {
+      "className": "UncertaintyPrinciple",
+      "title": "测不准原理",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/UncertaintyPrinciple.png"
+    },
+    {
+      "className": "Unrepentant",
+      "title": "嘴硬",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/Unrepentant.png"
+    },
+    {
+      "className": "UnspokenFury",
+      "title": "未声张的怒火",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/UnspokenFury.png"
+    },
+    {
+      "className": "Xiao",
+      "title": "孝",
+      "kind": "normal",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/Xiao.png"
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "animations": [
+    {
+      "duration": 0.875,
+      "name": "attack",
+      "native_playback": true
+    },
+    {
+      "duration": 1.04999995231628,
+      "name": "cast",
+      "native_playback": true
+    },
+    {
+      "duration": 1.0,
+      "name": "idle_loop",
+      "native_playback": true
+    },
+    {
+      "duration": 0.180000007152557,
+      "name": "hurt",
+      "native_playback": true
+    },
+    {
+      "duration": 1.5,
+      "name": "die",
+      "native_playback": true
+    }
+  ],
+  "bone_count": 22,
+  "engine": {
+    "build": "custom_build",
+    "hash": "unknown",
+    "hex": 263425,
+    "major": 4,
+    "minor": 5,
+    "patch": 1,
+    "status": "m.14",
+    "string": "4.5.1-m.14 (custom_build)",
+    "timestamp": 0
+  },
+  "errors": [],
+  "extension_load_status": 0,
+  "finished_at": "2026-10-09T14:21:25",
+  "mirrored_node_fixture": {
+    "actual_managed_factory_invoked": false,
+    "factory_source_sha256": "91e952d625113e991cae9da5d374d06b6b6e0723ee34bb7375bf03d9fd3dec2e",
+    "nodes": [
+      {
+        "class": "SpineSprite",
+        "owner_is_fixture_root": true,
+        "path": "%Visuals",
+        "unique_name_in_owner": true
+      },
+      {
+        "class": "Control",
+        "owner_is_fixture_root": true,
+        "path": "%Bounds",
+        "unique_name_in_owner": true
+      },
+      {
+        "class": "Marker2D",
+        "owner_is_fixture_root": true,
+        "path": "%CenterPos",
+        "unique_name_in_owner": true
+      },
+      {
+        "class": "Marker2D",
+        "owner_is_fixture_root": true,
+        "path": "%IntentPos",
+        "unique_name_in_owner": true
+      },
+      {
+        "class": "Marker2D",
+        "owner_is_fixture_root": true,
+        "path": "%OrbPos",
+        "unique_name_in_owner": true
+      },
+      {
+        "class": "Marker2D",
+        "owner_is_fixture_root": true,
+        "path": "%TalkPos",
+        "unique_name_in_owner": true
+      },
+      {
+        "class": "Control",
+        "owner_is_fixture_root": true,
+        "path": "%FormVfx",
+        "unique_name_in_owner": true
+      }
+    ],
+    "ok": true,
+    "root_class": "Node2D"
+  },
+  "native_cape_attachment": "cape",
+  "ok": true,
+  "pack": "C:/Users/Amazi/Desktop/Spire2Mod/Git Clone/sts2/MySts2Mod/.godot/mono/temp/bin/Debug/MySts2Mod.pck",
+  "pack_sha256": "30e5fc47db4ff3caa2223c7e76fe0bb6e66fbd80f4370474a85c14f2939d9e27",
+  "point_angles": {
+    "actual_forearm_local_rotation": 45.8866882324219,
+    "baseline": {
+      "forearm_main": {
+        "rotation": 5.88669013977051,
+        "world_rotation_x": 69.0754852294922,
+        "world_x": 59.9999923706055,
+        "world_y": -311.0
+      },
+      "hand_main": {
+        "rotation": 0.0312700010836124,
+        "world_rotation_x": 69.0442047119141,
+        "world_x": 81.6666717529297,
+        "world_y": -254.333343505859
+      },
+      "upper_arm_main": {
+        "rotation": -74.9621810913086,
+        "world_rotation_x": 74.9621658325195,
+        "world_x": 41.9999771118164,
+        "world_y": -378.0
+      },
+      "weapon": {
+        "rotation": 44.0442199707031,
+        "world_rotation_x": 24.9999961853027,
+        "world_x": 87.6666793823242,
+        "world_y": -238.66667175293
+      }
+    },
+    "expected_forearm_local_rotation": 45.88669,
+    "forearm_raise_exceeds_upper_arm": true,
+    "forearm_world_raise": -95.1765098571777,
+    "ok": true,
+    "peak": {
+      "forearm_main": {
+        "rotation": 45.8866882324219,
+        "world_rotation_x": -26.1010246276855,
+        "world_x": 105.478210449219,
+        "world_y": -355.5048828125
+      },
+      "hand_main": {
+        "rotation": -22.1452503204346,
+        "world_rotation_x": -3.95577430725098,
+        "world_x": 159.958892822266,
+        "world_y": -382.195892333984
+      },
+      "upper_arm_main": {
+        "rotation": -21.2856597900391,
+        "world_rotation_x": 19.7856578826904,
+        "world_x": 40.1979751586914,
+        "world_y": -378.98876953125
+      },
+      "weapon": {
+        "rotation": 44.0442199707031,
+        "world_rotation_x": -48.0000038146973,
+        "world_x": 176.695236206055,
+        "world_y": -383.353240966797
+      }
+    },
+    "peak_time": 0.2,
+    "setup_forearm_rotation": 5.88669,
+    "timeline_forearm_addition": 40.0,
+    "upper_arm_world_raise": -55.1765079498291
+  },
+  "ready_after_frames": 0,
+  "resource": "res://MySts2Mod/animations/coding_farmer/hao.tres",
+  "source_sha256": {
+    "atlas": "a56eafd2cdf6d37848d5c904698ed8add771365fb6ad4cc01c02929b71b20b20",
+    "png": "17fc494c3985c2b1d4553b20374fa5365982b033277fe35fe5b1a7b34e284ef7",
+    "skeleton": "9a4bc944351b8da613c98fa7e4237b611c8844aaa2a5c40724db223a7309a824"
+  },
+  "source_version": "4.2.43",
+  "started_at": "2026-10-09T14:21:23",
+  "texture": {
+    "ctex_path": "res://.godot/imported/hao.png-a679ed8f4a98f6c3be21008c8f057e2f.ctex",
+    "ctex_payload_exists": true,
+    "decoded_rgba_sha256": "0f5d1d40a9267af8be081a3c295ce3b967b743ca46d329216619c2c307f41b2d",
+    "exact_rgba_equal": false,
+    "height": 2048,
+    "import_load_error": 0,
+    "source_rgba_sha256": "53572b66158a6bb440838916cf059580e259cf092a9d415be86a1d0720f02ab5",
+    "texture_class": "CompressedTexture2D",
+    "texture_resource_path": "res://MySts2Mod/animations/coding_farmer/hao.png",
+    "transparent_rgb_only_mismatch_pixels": 2836420,
+    "visible_mismatch_pixels": 0,
+    "visible_pixels_equal": true,
+    "width": 2048
+  }
+}

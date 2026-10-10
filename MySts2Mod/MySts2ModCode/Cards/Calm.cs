@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
 using MySts2Mod.MySts2ModCode.Extensions;
@@ -29,6 +30,21 @@ public class Calm : MySts2ModCard
 
     public override bool GainsBlock => true;
 
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new CalculationBaseVar(0),
+        new ExtraDamageVar(4),
+        new CalculationExtraVar(4),
+        new CalculatedDamageVar(ValueProp.Move).WithMultiplier(static (card, _) => card.Owner.GetHao()),
+        new CalculatedBlockVar(ValueProp.Move).WithMultiplier(static (card, _) => card.Owner.GetHao()),
+    ];
+
+    protected override void AddExtraArgsToDescription(LocString description)
+    {
+        base.AddExtraArgsToDescription(description);
+        description.Add("HasHaoToLose", IsMutable && Owner != null && Owner.GetHao() > 0);
+    }
+
     public Calm() : base(cost, type, rarity, target)
     {
     }
@@ -38,12 +54,16 @@ public class Calm : MySts2ModCard
         var player = cardPlay.Card.Owner;
         var lost = await player.LoseHao(choiceContext, player.GetHao(), this);
         if (lost <= 0) return;
+        
 
-        await DamageCmd.Attack(lost * 3)
+        // Keep this loss snapshot: Hao has already changed before either effect resolves.
+        await DamageCmd.Attack(lost * 4)
             .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target!)
             .Execute(choiceContext);
 
-        await CommonActions.CardBlock(this, new BlockVar(lost * 3, ValueProp.Move), cardPlay);
+        await CommonActions.CardBlock(this, new BlockVar(lost * 4, ValueProp.Move), cardPlay);
     }
+    protected override void OnUpgrade() => EnergyCost.UpgradeBy(-1);
 }
+    

@@ -1,0 +1,584 @@
+{
+  "complete": true,
+  "executedUtc": "2026-10-08T15:12:37.9062494Z",
+  "removed": [
+    {
+      "path": "C:\\Users\\Amazi\\Desktop\\Spire2Mod\\Git Clone\\sts2\\tests\\CardExpansionRegression\\bin",
+      "fileCount": 26,
+      "sizeBytes": 28371254
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Desktop\\Spire2Mod\\Git Clone\\sts2\\tests\\CardExpansionRegression\\obj",
+      "fileCount": 22,
+      "sizeBytes": 280362
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Desktop\\Spire2Mod\\Git Clone\\sts2\\tests\\GeniusPowerRegression\\bin",
+      "fileCount": 26,
+      "sizeBytes": 28344974
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Desktop\\Spire2Mod\\Git Clone\\sts2\\tests\\GeniusPowerRegression\\obj",
+      "fileCount": 22,
+      "sizeBytes": 246871
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Desktop\\Spire2Mod\\Git Clone\\sts2\\MySts2Mod\\.godot\\mono\\temp\\obj",
+      "fileCount": 19,
+      "sizeBytes": 345340
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\basic_starters",
+      "fileCount": 6,
+      "sizeBytes": 23915
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\expansion",
+      "fileCount": 91,
+      "sizeBytes": 340371
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\rename_states",
+      "fileCount": 4,
+      "sizeBytes": 52691
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\state_rework",
+      "fileCount": 9,
+      "sizeBytes": 91067
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\support_cleanup",
+      "fileCount": 7,
+      "sizeBytes": 63331
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\sync_copy",
+      "fileCount": 18,
+      "sizeBytes": 369203
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\build",
+      "fileCount": 11,
+      "sizeBytes": 673925
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\dotnet-home",
+      "fileCount": 3,
+      "sizeBytes": 0
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\damage-review\\bin",
+      "fileCount": 5,
+      "sizeBytes": 189815
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\damage-review\\obj",
+      "fileCount": 19,
+      "sizeBytes": 254262
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\damage-review\\harness\\bin",
+      "fileCount": 25,
+      "sizeBytes": 27993988
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\damage-review\\harness\\obj",
+      "fileCount": 21,
+      "sizeBytes": 292492
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\unrepentant-regression\\bin",
+      "fileCount": 50,
+      "sizeBytes": 56009378
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\unrepentant-regression\\obj",
+      "fileCount": 37,
+      "sizeBytes": 513899
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\Appear.png",
+      "fileCount": 1,
+      "sizeBytes": 1964481
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\better_than_walker.png",
+      "fileCount": 1,
+      "sizeBytes": 115114
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\calm.png",
+      "fileCount": 1,
+      "sizeBytes": 131366
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\card.png",
+      "fileCount": 1,
+      "sizeBytes": 48916
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\code_code_code.png",
+      "fileCount": 1,
+      "sizeBytes": 122482
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\code_offense.png",
+      "fileCount": 1,
+      "sizeBytes": 139842
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\conflict.png",
+      "fileCount": 1,
+      "sizeBytes": 142137
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\debugging.png",
+      "fileCount": 1,
+      "sizeBytes": 130759
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\equal680.png",
+      "fileCount": 1,
+      "sizeBytes": 119099
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\exam.png",
+      "fileCount": 1,
+      "sizeBytes": 124074
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\figure_shadow.png",
+      "fileCount": 1,
+      "sizeBytes": 110456
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\final_commit.png",
+      "fileCount": 1,
+      "sizeBytes": 128542
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\fire_in_soul.png",
+      "fileCount": 1,
+      "sizeBytes": 126814
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\genius.png",
+      "fileCount": 1,
+      "sizeBytes": 124519
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\grammar.png",
+      "fileCount": 1,
+      "sizeBytes": 112368
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\group_discuss.png",
+      "fileCount": 1,
+      "sizeBytes": 115193
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\hao_defend.png",
+      "fileCount": 1,
+      "sizeBytes": 2129586
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\hao_strike.png",
+      "fileCount": 1,
+      "sizeBytes": 1815790
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\infinite_hao.png",
+      "fileCount": 1,
+      "sizeBytes": 126475
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\kick_up.png",
+      "fileCount": 1,
+      "sizeBytes": 128847
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\magnificent_hao.png",
+      "fileCount": 1,
+      "sizeBytes": 113685
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\math_prince.png",
+      "fileCount": 1,
+      "sizeBytes": 126638
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\narcissism.png",
+      "fileCount": 1,
+      "sizeBytes": 121520
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\shang_hai_student.png",
+      "fileCount": 1,
+      "sizeBytes": 121054
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\sneer.png",
+      "fileCount": 1,
+      "sizeBytes": 125910
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\spark.png",
+      "fileCount": 1,
+      "sizeBytes": 117948
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\student_leader.png",
+      "fileCount": 1,
+      "sizeBytes": 122678
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\super_hao_field.png",
+      "fileCount": 1,
+      "sizeBytes": 118724
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\surfing.png",
+      "fileCount": 1,
+      "sizeBytes": 121158
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\tsinghua_form.png",
+      "fileCount": 1,
+      "sizeBytes": 120312
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\big\\unrepentant.png",
+      "fileCount": 1,
+      "sizeBytes": 130662
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\Calm.png",
+      "fileCount": 1,
+      "sizeBytes": 2224508
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\card.png",
+      "fileCount": 1,
+      "sizeBytes": 6738
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\ChatHistory.png",
+      "fileCount": 1,
+      "sizeBytes": 1893510
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\Chuan.png",
+      "fileCount": 1,
+      "sizeBytes": 1559106
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\CodeCodeCode.png",
+      "fileCount": 1,
+      "sizeBytes": 2281503
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\CodeOffense.png",
+      "fileCount": 1,
+      "sizeBytes": 2746740
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\Conflict.png",
+      "fileCount": 1,
+      "sizeBytes": 2744299
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\debugging.png",
+      "fileCount": 1,
+      "sizeBytes": 1954419
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\FigureShadow.png",
+      "fileCount": 1,
+      "sizeBytes": 2135824
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\final_commit.png",
+      "fileCount": 1,
+      "sizeBytes": 2383383
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\fire_in_soul.png",
+      "fileCount": 1,
+      "sizeBytes": 2233975
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\Genius.png",
+      "fileCount": 1,
+      "sizeBytes": 1782982
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\group_discuss.png",
+      "fileCount": 1,
+      "sizeBytes": 33022
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\HaoDefend.png",
+      "fileCount": 1,
+      "sizeBytes": 2081640
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\HaoStrike.png",
+      "fileCount": 1,
+      "sizeBytes": 2274122
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\InfiniteHao.png",
+      "fileCount": 1,
+      "sizeBytes": 2427258
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\kick_up.png",
+      "fileCount": 1,
+      "sizeBytes": 2040520
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\magnificent_hao.png",
+      "fileCount": 1,
+      "sizeBytes": 33077
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\math_prince.png",
+      "fileCount": 1,
+      "sizeBytes": 2070050
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\shang_hai_student.png",
+      "fileCount": 1,
+      "sizeBytes": 2302380
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\Sneer.png",
+      "fileCount": 1,
+      "sizeBytes": 2327407
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\spark.png",
+      "fileCount": 1,
+      "sizeBytes": 31038
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\Student_leader.png",
+      "fileCount": 1,
+      "sizeBytes": 2123533
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\SuddenRepentance.png",
+      "fileCount": 1,
+      "sizeBytes": 1983153
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\super_hao_field.png",
+      "fileCount": 1,
+      "sizeBytes": 2261488
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\surfing.png",
+      "fileCount": 1,
+      "sizeBytes": 1950297
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\Tsinghua_form.png",
+      "fileCount": 1,
+      "sizeBytes": 2987895
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\unrepentant.png",
+      "fileCount": 1,
+      "sizeBytes": 1719957
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\UnspokenFury.png",
+      "fileCount": 1,
+      "sizeBytes": 2183469
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\Xiao.png",
+      "fileCount": 1,
+      "sizeBytes": 1550646
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\animation-frames-2026-10-08",
+      "fileCount": 74,
+      "sizeBytes": 10647140
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\animation-rebuild-check-2026-10-08",
+      "fileCount": 25,
+      "sizeBytes": 3266335
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\animation-validation-2026-10-08",
+      "fileCount": 14,
+      "sizeBytes": 4118286
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\cleanup-2026-10-08",
+      "fileCount": 5,
+      "sizeBytes": 182274
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\build_hao_animations.py",
+      "fileCount": 1,
+      "sizeBytes": 14632
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\package_hao_animations.py",
+      "fileCount": 1,
+      "sizeBytes": 7773
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\check_hao_viewer.cjs",
+      "fileCount": 1,
+      "sizeBytes": 4292
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\compile-default-before.log",
+      "fileCount": 1,
+      "sizeBytes": 3423
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\compile-harness-before.log",
+      "fileCount": 1,
+      "sizeBytes": 449
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\compile-harness-after.log",
+      "fileCount": 1,
+      "sizeBytes": 1108
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\compile-project-after.log",
+      "fileCount": 1,
+      "sizeBytes": 313
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\compile-vscode-after.log",
+      "fileCount": 1,
+      "sizeBytes": 4121
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\outputs\\hao-skeleton-animations-2026-10-08\\preview\\attack-first.png",
+      "fileCount": 1,
+      "sizeBytes": 126759
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\outputs\\hao-skeleton-animations-2026-10-08\\preview\\cast-first.png",
+      "fileCount": 1,
+      "sizeBytes": 126759
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\outputs\\hao-skeleton-animations-2026-10-08\\validation\\spine-probe.pck",
+      "fileCount": 1,
+      "sizeBytes": 19380
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\outputs\\hao-skeleton-animations-2026-10-08\\validation\\animation-assets.pck",
+      "fileCount": 1,
+      "sizeBytes": 3956377
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\outputs\\hao-skeleton-animations-2026-10-08\\validation\\manifest.json",
+      "fileCount": 1,
+      "sizeBytes": 1343
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\outputs\\hao-skeleton-animations-2026-10-08\\validation\\spine_probe.gdextension",
+      "fileCount": 1,
+      "sizeBytes": 340
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\outputs\\hao-skeleton-animations-2026-10-08\\validation\\texture.log",
+      "fileCount": 1,
+      "sizeBytes": 237
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\outputs\\hao-skeleton-animations-2026-10-08",
+      "fileCount": 51,
+      "sizeBytes": 11348118
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\animation-viewer",
+      "fileCount": 2,
+      "sizeBytes": 26654
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\finalize_hao_cleanup.ps1",
+      "fileCount": 1,
+      "sizeBytes": 4611
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\finish_hao_v2.ps1",
+      "fileCount": 1,
+      "sizeBytes": 4036
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\outputs\\hao-spine-v2-2026-10-08\\validation\\runtime",
+      "fileCount": 0,
+      "sizeBytes": 0
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\outputs\\hao-spine-v2-2026-10-08\\validation\\animation-assets.pck",
+      "fileCount": 1,
+      "sizeBytes": 6244389
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\outputs\\hao-spine-v2-2026-10-08\\validation\\spine-probe.pck",
+      "fileCount": 1,
+      "sizeBytes": 25023
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\outputs\\hao-spine-v2-2026-10-08\\validation\\manifest.json",
+      "fileCount": 1,
+      "sizeBytes": 1553
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\outputs\\hao-spine-v2-2026-10-08\\validation\\spine_probe.gdextension",
+      "fileCount": 1,
+      "sizeBytes": 340
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\outputs\\hao-spine-v2-2026-10-08\\validation\\texture.log",
+      "fileCount": 1,
+      "sizeBytes": 226
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\outputs\\hao-spine-v2-2026-10-08\\validation\\texture.log.stdout",
+      "fileCount": 1,
+      "sizeBytes": 229
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\outputs\\hao-spine-v2-2026-10-08\\validation\\texture.log.stderr",
+      "fileCount": 1,
+      "sizeBytes": 0
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\outputs\\hao-spine-v2-2026-10-08\\validation\\spine-probe.log.stdout",
+      "fileCount": 1,
+      "sizeBytes": 460
+    },
+    {
+      "path": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\outputs\\hao-spine-v2-2026-10-08\\validation\\spine-probe.log.stderr",
+      "fileCount": 1,
+      "sizeBytes": 0
+    }
+  ],
+  "removedBytes": 250219206.0,
+  "removedFileCount": 679.0,
+  "preserved": [
+    "Original mod source and art",
+    "Git metadata",
+    "Current mod DLL and PCK",
+    "Historical exported art",
+    "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\card-art-link-2026-10-07\\backup\\better_than_walker.png",
+    "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\work\\unrepentant-regression\\UnrepentantChecks.cs",
+    "Latest design summaries and regression source"
+  ],
+  "currentPackage": "C:\\Users\\Amazi\\Documents\\Codex\\2026-09-30\\github-slay-the-spire-2-mod\\outputs\\hao-spine-v2-2026-10-08",
+  "notes": "Discarded first animation package and reproducible probe caches removed after final rebind validation. Source, current mod builds, historical art and unique regression code preserved."
+}

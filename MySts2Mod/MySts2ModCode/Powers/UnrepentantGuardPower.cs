@@ -33,7 +33,8 @@ public class UnrepentantGuardPower : MySts2ModPower
 
     public override decimal ModifyHpLostBeforeOsty(Creature target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
     {
-        if (target != Owner || amount <= 0) return amount;
+        // Unblockable marks direct HP loss, which must not be converted into Hao.
+        if (target != Owner || amount <= 0 || props.HasFlag(ValueProp.Unblockable)) return amount;
 
         pendingHaoGain += (int)amount;
         return 0;
@@ -41,7 +42,7 @@ public class UnrepentantGuardPower : MySts2ModPower
 
     public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
     {
-        if (target != Owner || pendingHaoGain <= 0) return;
+        if (target != Owner || pendingHaoGain <= 0 || props.HasFlag(ValueProp.Unblockable)) return;
 
         var gain = pendingHaoGain;
         pendingHaoGain = 0;

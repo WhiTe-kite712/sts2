@@ -1,4 +1,4 @@
-﻿using Godot;
+using Godot;
 
 namespace MySts2Mod.MySts2ModCode.Extensions;
 
@@ -12,24 +12,27 @@ public static class StringExtensions
 
     public static string CardImagePath(this string path)
     {
-        path = Path.Join(MainFile.ResPath, "images", "card_portraits", path);
-        if (ResourceLoader.Exists(path)) return path;
+        var portraitPath = Path.Join(MainFile.ResPath, "images", "card_portraits", path);
+        if (ResourceLoader.Exists(portraitPath)) return portraitPath;
+
+        var bigPath = Path.Join(MainFile.ResPath, "images", "card_portraits", "big", path);
+        if (ResourceLoader.Exists(bigPath)) return bigPath;
         
-        MainFile.Logger.Info("Could not find card image path: " + path);
+        MainFile.Logger.Info("Could not find card image path: " + portraitPath);
         return Path.Join(MainFile.ResPath, "images", "card_portraits", "card.png");
     }
 
     public static string BigCardImagePath(this string path)
     {
-        var bigPath = Path.Join(MainFile.ResPath, "images", "card_portraits", "big", path);
-        if (ResourceLoader.Exists(bigPath)) return bigPath;
-
-        //Reuse the card's regular portrait when no separate large portrait has been supplied.
+        // Use the regular portrait as the authoritative artwork across both views.
         var portraitPath = Path.Join(MainFile.ResPath, "images", "card_portraits", path);
         if (ResourceLoader.Exists(portraitPath)) return portraitPath;
+
+        var bigPath = Path.Join(MainFile.ResPath, "images", "card_portraits", "big", path);
+        if (ResourceLoader.Exists(bigPath)) return bigPath;
         
         MainFile.Logger.Info("Could not find big card image path: " + bigPath);
-        return Path.Join(MainFile.ResPath, "images", "card_portraits", "big", "card.png");
+        return Path.Join(MainFile.ResPath, "images", "card_portraits", "card.png");
     }
 
     public static string PowerImagePath(this string path)
