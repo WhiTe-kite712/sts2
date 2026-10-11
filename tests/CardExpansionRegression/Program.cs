@@ -15,7 +15,7 @@ AssemblyLoadContext.Default.Resolving += (_, name) =>
     string file = Path.Combine(dataDir, name.Name + ".dll");
     return File.Exists(file) ? AssemblyLoadContext.Default.LoadFromAssemblyPath(file) : null;
 };
-int expected = args.Length > 0 ? int.Parse(args[0]) : 58;
+int expected = args.Length > 0 ? int.Parse(args[0]) : 60;
 string output = args.Length > 1 ? args[1] : "inventory.json";
 var types = typeof(MySts2ModCard).Assembly.GetTypes().Where(t => !t.IsAbstract && typeof(MySts2ModCard).IsAssignableFrom(t)).OrderBy(t => t.Name).ToArray();
 int failures = 0, tests = 0;

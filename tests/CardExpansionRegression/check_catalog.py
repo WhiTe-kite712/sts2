@@ -21,22 +21,22 @@ cards = read(docs / 'runtime-inventory.json')
 powers = read(docs / 'power-inventory.json')
 catalog = read(docs / 'catalog-new-cards.json')
 power_catalog = read(docs / 'catalog-new-powers.json')
-assert len(cards) == 58, 'Runtime inventory is stale. Build the current mod and run Harness with expected count 58 to regenerate runtime-inventory.json.'
+assert len(cards) == 60, 'Runtime inventory is stale. Build the current mod and run Harness with expected count 60 to regenerate runtime-inventory.json.'
 assert len(catalog) == 18
-assert len({c['id'] for c in cards}) == 58
+assert len({c['id'] for c in cards}) == 60
 assert len(powers) == 22 and len({p['id'] for p in powers}) == 22
 assert len(power_catalog) == 4 and len({p['className'] for p in power_catalog}) == 4
 power_by_class = {p['className']: p for p in powers}
 assert {p['className'] for p in power_catalog} <= power_by_class.keys()
 new = {c['className']: c for c in catalog}
 by_class = {c['className']: c for c in cards}
-assert Counter(c['pool'] for c in cards) == {'HaoCardPool': 56, 'ColorlessCardPool': 2}
+assert Counter(c['pool'] for c in cards) == {'HaoCardPool': 58, 'ColorlessCardPool': 2}
 assert {c['className'] for c in cards if c['before']['rarity'] == 'Token'} == {'Xiao', 'Chuan'}
-assert len([c for c in cards if c['before']['rarity'] not in ('Basic', 'Token')]) == 51
+assert len([c for c in cards if c['before']['rarity'] not in ('Basic', 'Token')]) == 53
 assert len([c for c in cards if c['before']['rarity'] == 'Basic']) == 5
-assert Counter(c['before']['type'] for c in cards) == {'Attack': 21, 'Skill': 29, 'Power': 8}
+assert Counter(c['before']['type'] for c in cards) == {'Attack': 21, 'Skill': 31, 'Power': 8}
 assert Counter('X' if c['before']['costsX'] else str(c['before']['cost']) for c in cards) == {
-    '0': 10, '1': 33, '2': 10, '3': 4, 'X': 1
+    '0': 11, '1': 34, '2': 10, '3': 4, 'X': 1
 }
 for name, card in new.items():
     actual = by_class[name]
@@ -45,7 +45,7 @@ for name, card in new.items():
         assert actual['before'][field] == card[field], (name, field)
     assert actual['before'] != actual['after'], 'No observable upgrade: ' + name
     assert actual['before']['keywords'] == sorted(card['keywords']), (name, 'keywords')
-print('PASS 58 distinct cards; 56 character cards, 2 existing colorless tokens, 5 Basic cards, 51 non-Basic reward cards')
+print('PASS 60 distinct cards; 58 character cards, 2 existing colorless tokens, 5 Basic cards, 53 non-Basic reward cards')
 print('PASS all 18 migration expansion cards match design cost/type/rarity/keywords and have an observable upgrade; 22 concrete powers, 4 migration expansion powers')
 
 loaded = {}

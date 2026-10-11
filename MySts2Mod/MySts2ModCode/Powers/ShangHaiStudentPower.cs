@@ -29,7 +29,7 @@ public class ShangHaiStudentPower : MySts2ModPower
         if (cardPlay.Card.Owner.Creature != Owner) return;
 
         await PowerCmd.Apply<HaoPower>(choiceContext, Owner, 1, Owner, null);
-        await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Move, null);
+        await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Unpowered, null);
     }
 
     public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)

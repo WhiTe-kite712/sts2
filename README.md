@@ -1,7 +1,7 @@
 # 杀戮尖塔 2 模组工作区（BaseLib 框架）
 
 模组项目位于 `MySts2Mod\`，基于 Alchyr 官方内容模组模板 + BaseLib 3.4.7。
-核心内容：自定义角色 **Coding Farmer（码农）**、核心资源机制 **「豪意」**、58种卡牌与起始遗物。
+核心内容：自定义角色 **Coding Farmer（码农）**、核心资源机制 **「豪意」**、60种卡牌与起始遗物。
 
 ## 环境现状
 
@@ -31,10 +31,10 @@ MySts2Mod\
 │  ├─ MainFile.cs              # 入口 [ModInitializer]，Harmony 挂载 + 脚本查找
 │  ├─ Character\
 │  │  ├─ CodingFarmer.cs       # 角色：75血/3能量，初始卡组与起始遗物
-│  │  ├─ HaoCardPool.cs        # 专属卡池（56种角色卡，含5种基础牌）
+│  │  ├─ HaoCardPool.cs        # 专属卡池（58种角色卡，含5种基础牌）
 │  │  ├─ HaoRelicPool.cs       # 专属遗物池
 │  │  └─ HaoPotionPool.cs      # 专属药水池（暂空）
-│  ├─ Cards\                   # 58种卡：56种角色卡 + 孝/串2种无色衍生牌
+│  ├─ Cards\                   # 60种卡：58种角色卡 + 孝/串2种无色衍生牌
 │  ├─ Powers\                  # 22种能力 + 临时力量桥接
 │  ├─ Relics\                  # LuckyCoin（演示）+ Hao（起始遗物）
 │  └─ Extensions\HaoExtensions.cs  # 豪意读写统一入口 GetHao/GainHao/LoseHao
@@ -100,4 +100,4 @@ stdbitmap补充：1.'嘴硬'的实际效果与描述不符合。
 
 ## 当前卡牌版本
 
-副本的卡牌更改已同步到本仓库；新增幡然悔悟、卷土重来、时不我待、针锋相对后，当前58种卡（攻击21、技能29、能力8）。初始卡组仍为11张：4打击、4防御、1豪意打击、1豪意防御、1自恋。迁移摘要与当前清单位于 [docs/card-expansion-54](docs/card-expansion-54/同步完成摘要.md)，检查见 [tests/CardExpansionRegression](tests/CardExpansionRegression/README.md)。目录沿用历史名称；源码清单与实际运行快照均为58卡。三张新卡的效果和升级见 [新增卡说明](docs/card-expansion-54/2026-10-07-retention-cards.md)。2026-10-07按本次授权已完成卡图改名、链接、编译打包及资源调试：0错误/0警告，基础回归98/98，纹理解码62/62；详见 [卡图验证报告](docs/card-expansion-54/2026-10-07-card-art-link.md)。未部署到游戏目录。
+副本的卡牌更改已同步到本仓库；在幡然悔悟、卷土重来、时不我待、针锋相对之后新增偏见和发言，当前源码为60种卡（攻击21、技能31、能力8）：58种人物卡、2种无色衍生牌，含5种基础牌和53种非基础奖励牌。稀有度为基础5、普通20、罕见18、稀有15、衍生2；费用为0费11、1费34、2费10、3费4、X费1。偏见：1费普通技能，获得7/9格挡并抽1/2张牌；发言：0费稀有技能，获得4豪意及2/3能量，升级仍为0费。初始卡组仍为11张：4打击、4防御、1豪意打击、1豪意防御、1自恋。迁移摘要与当前清单位于 [docs/card-expansion-54](docs/card-expansion-54/同步完成摘要.md)，检查见 [tests/CardExpansionRegression](tests/CardExpansionRegression/README.md)。目录沿用历史名称；source-inventory.json/source-statistics.json 已按两张新卡同步为60卡源码记录；现有 runtime-inventory.json 继续保留此前实际执行的58卡快照。本次仅修改源码和清单，未编译、调试或生成新的运行快照；后续执行 Harness 时需按60卡重新生成快照。三张新卡的效果和升级见 [新增卡说明](docs/card-expansion-54/2026-10-07-retention-cards.md)。2026-10-07按本次授权已完成卡图改名、链接、编译打包及资源调试：0错误/0警告，基础回归98/98，纹理解码62/62；详见 [卡图验证报告](docs/card-expansion-54/2026-10-07-card-art-link.md)。未部署到游戏目录。

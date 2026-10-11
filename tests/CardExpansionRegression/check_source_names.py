@@ -34,9 +34,9 @@ for path in code.rglob('*.cs'):
         models[name] = (base, path, text)
 cards = {name: value for name, value in models.items() if value[0] == 'MySts2ModCard'}
 power_models = {name: value for name, value in models.items() if value[0] != 'MySts2ModCard'}
-assert len(cards) == 58 and len(power_models) == 22
+assert len(cards) == 60 and len(power_models) == 22
 assert len(catalog) == 18 and len(powers) == 4
-assert sum('Pool(typeof(HaoCardPool))' in item[2] for item in cards.values()) == 56
+assert sum('Pool(typeof(HaoCardPool))' in item[2] for item in cards.values()) == 58
 assert sum('Pool(typeof(ColorlessCardPool))' in item[2] for item in cards.values()) == 2
 assert {c['className'] for c in inventory['cards']} == cards.keys()
 assert {p['className'] for p in inventory['powers']} == power_models.keys()
@@ -52,9 +52,9 @@ for name, (_, path, text) in cards.items():
         assert 'CardRarity.' + item['before']['rarity'] in signature, name
         assert 'TargetType.' + item['before']['target'] in signature, name
         if not item['before']['costsX']: assert int(signature.split(',')[0]) == item['before']['cost'], name
-assert Counter(c['before']['type'] for c in inventory['cards']) == {'Attack': 21, 'Skill': 29, 'Power': 8}
-assert Counter(c['before']['rarity'] for c in inventory['cards']) == {'Basic': 5, 'Common': 19, 'Uncommon': 18, 'Rare': 14, 'Token': 2}
-print('PASS source models: 58 cards, 56 character cards, 2 colorless tokens, 22 custom powers, 18 migration expansion cards plus 4 later additions')
+assert Counter(c['before']['type'] for c in inventory['cards']) == {'Attack': 21, 'Skill': 31, 'Power': 8}
+assert Counter(c['before']['rarity'] for c in inventory['cards']) == {'Basic': 5, 'Common': 20, 'Uncommon': 18, 'Rare': 15, 'Token': 2}
+print('PASS source models: 60 cards, 58 character cards, 2 colorless tokens, 22 custom powers, 18 migration expansion cards plus 6 later additions')
 print('PASS class/file/constructor names and source metadata match; no duplicate models')
 
 for language, suffix in [('zhs', 'Zhs'), ('eng', 'Eng')]:
@@ -108,10 +108,10 @@ assert 'ModifyDamageAdditive' not in states and 'ModifyBlockAdditive' not in sta
 assert helper.index('await PowerCmd.Remove<HiddenStatePower>') < helper.index('await PowerCmd.Apply<HiddenStatePower>')
 assert helper.index('await PowerCmd.Remove<OpenHaoStatePower>') < helper.index('await PowerCmd.Apply<OpenHaoStatePower>')
 assert 'next == before' in helper and 'DualLifePower' in helper
-for name, strength, dexterity in [('HiddenStatePower', -2, 4), ('OpenHaoStatePower', 4, -2)]:
+for name, strength, dexterity in [('HiddenStatePower', -2, 4), ('OpenHaoStatePower', 3, -1)]:
     text = power_models[name][2]
     assert f'StrengthChange => {strength};' in text and f'DexterityChange => {dexterity};' in text
-print('PASS native stats: hidden -2 Strength/+4 Dexterity; open +4 Strength/-2 Dexterity; old contribution rollback wired')
+print('PASS native stats: hidden -2 Strength/+4 Dexterity; open +3 Strength/-1 Dexterity; old contribution rollback wired')
 
 rhythm = power_models['RhythmPower'][2]
 assert 'AfterPowerAmountChanged' in rhythm and 'power is not HaoPower' in rhythm

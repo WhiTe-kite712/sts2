@@ -1,6 +1,7 @@
 using BaseLib.Abstracts;
 using BaseLib.Utils;
 using MySts2Mod.MySts2ModCode.Character;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -28,11 +29,11 @@ public class Narcissism : MySts2ModCard
 
     public override bool GainsBlock => true;
 
-    public override IEnumerable<CardTag> Tags => [CardTag.Defend];
+    // Unique starter card; it is not part of the Strike/Defend family.
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new BlockVar(10, ValueProp.Move),
+        new BlockVar(8, ValueProp.Move),
         new DynamicVar("Hao", 2m),
     ];
 
@@ -42,7 +43,7 @@ public class Narcissism : MySts2ModCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CommonActions.CardBlock(this, cardPlay);
+        await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
         await cardPlay.Card.Owner.GainHao(choiceContext, DynamicVars["Hao"].IntValue, this);
     }
 

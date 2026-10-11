@@ -29,12 +29,13 @@ public class CodeOffense : MySts2ModCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
+        new DynamicVar("HaoCap", 16m),
         new CalculationBaseVar(0),
         new ExtraDamageVar(2),
         new CalculatedDamageVar(ValueProp.Move).WithMultiplier(static (card, _) =>
         {
             var hao = card.Owner.GetHao();
-            return hao >= 6 ? hao * 2 : hao;
+            return (hao >= card.DynamicVars["HaoCap"].BaseValue) ? hao + hao << 1: hao;
         }),
     ];
 
@@ -48,5 +49,9 @@ public class CodeOffense : MySts2ModCard
             .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target!)
             .Execute(choiceContext);
+    }
+      protected override void OnUpgrade()
+    {
+        DynamicVars["HaoCap"].UpgradeValueBy(-4);
     }
 }

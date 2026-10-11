@@ -33,8 +33,8 @@ public class Calm : MySts2ModCard
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new CalculationBaseVar(0),
-        new ExtraDamageVar(4),
-        new CalculationExtraVar(4),
+        new ExtraDamageVar(3),
+        new CalculationExtraVar(3),
         new CalculatedDamageVar(ValueProp.Move).WithMultiplier(static (card, _) => card.Owner.GetHao()),
         new CalculatedBlockVar(ValueProp.Move).WithMultiplier(static (card, _) => card.Owner.GetHao()),
     ];
@@ -57,12 +57,12 @@ public class Calm : MySts2ModCard
         
 
         // Keep this loss snapshot: Hao has already changed before either effect resolves.
-        await DamageCmd.Attack(lost * 4)
+        await DamageCmd.Attack(lost * 3)
             .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target!)
             .Execute(choiceContext);
 
-        await CommonActions.CardBlock(this, new BlockVar(lost * 4, ValueProp.Move), cardPlay);
+        await CreatureCmd.GainBlock(Owner.Creature, lost * 3, ValueProp.Move, cardPlay);
     }
     protected override void OnUpgrade() => EnergyCost.UpgradeBy(-1);
 }

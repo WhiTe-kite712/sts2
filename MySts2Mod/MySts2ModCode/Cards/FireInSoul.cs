@@ -31,7 +31,7 @@ public class FireInSoul : MySts2ModCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new PowerVar<FrailPower>("Frail", 1),
+        new PowerVar<FrailPower>("Frail", 2),
         new CardsVar(2),
         new EnergyVar(1),
     ];

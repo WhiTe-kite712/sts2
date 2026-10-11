@@ -1,6 +1,7 @@
 using BaseLib.Abstracts;
 using BaseLib.Utils;
 using MySts2Mod.MySts2ModCode.Character;
+using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -35,11 +36,12 @@ public class Surfing : MySts2ModCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var selected = await CommonActions.SelectSingleCard(
-            this,
-            new LocString("cards", "MYSTS2MOD-SURFING.selectPrompt"),
+        var selected = (await CardSelectCmd.FromSimpleGrid(
             choiceContext,
-            PileType.Discard);
+            PileType.Discard.GetPile(Owner).Cards,
+            Owner,
+            new CardSelectorPrefs(new LocString("cards", "MYSTS2MOD-SURFING.selectPrompt"), 1)))
+            .FirstOrDefault();
 
         if (selected == null) return;
 

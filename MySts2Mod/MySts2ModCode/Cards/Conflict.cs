@@ -43,7 +43,8 @@ public class Conflict : MySts2ModCard
     {
         var player = cardPlay.Card.Owner;
 
-        await CommonActions.Apply<VulnerablePower>(choiceContext, cardPlay.Target!, this);
+        await PowerCmd.Apply<VulnerablePower>(
+            choiceContext, cardPlay.Target!, DynamicVars["Vulnerable"].BaseValue, Owner.Creature, this);
 
         if (player.GetHao() >= 10)
         {

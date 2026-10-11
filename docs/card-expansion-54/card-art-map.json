@@ -4,7 +4,7 @@
   "validation": "source-only",
   "ownedArtCards": 48,
   "vanillaCards": 2,
-  "missingCards": 8,
+  "missingCards": 10,
   "cards": [
     {
       "className": "Appear",
@@ -17,6 +17,12 @@
       "title": "比教主更豪",
       "kind": "normal",
       "portraitPath": "res://MySts2Mod/images/card_portraits/BetterThanWalker.png"
+    },
+    {
+      "className": "Bias",
+      "title": "偏见",
+      "kind": "placeholder",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/card.png"
     },
     {
       "className": "Calm",
@@ -281,6 +287,12 @@
       "title": "火花",
       "kind": "normal",
       "portraitPath": "res://MySts2Mod/images/card_portraits/Spark.png"
+    },
+    {
+      "className": "Speech",
+      "title": "发言",
+      "kind": "placeholder",
+      "portraitPath": "res://MySts2Mod/images/card_portraits/card.png"
     },
     {
       "className": "Strike",

@@ -1,6 +1,6 @@
 {
-  "verificationStatus": "source-only; updated 2026-10-07 with Comeback, TimeWaitsForNoOne and TitForTat, not compiled or executed",
-  "numericBaseline": "Prior COPY source manifest plus native Strike/Defend values verified from original source. Not a new DLL snapshot. SuddenRepentance values are derived from its source (cost 1 to 0, Retain/Exhaust); this file remains a source manifest. The three 2026-10-07 cards and their two powers are source-derived records, not runtime results.",
+  "verificationStatus": "source-only; updated 2026-10-10 with Bias and Speech, not compiled or executed",
+  "numericBaseline": "Prior COPY source manifest plus native Strike/Defend values verified from original source. Not a new DLL snapshot. SuddenRepentance values are derived from its source (cost 1 to 0, Retain/Exhaust); this file remains a source manifest. The three 2026-10-07 cards and their two powers are source-derived records, not runtime results. Bias (7/9 Block, 1/2 Cards) and Speech (4 Hao, 2/3 Energy, cost 0 both versions) are source-derived additions on 2026-10-10. Existing 58 card records are retained verbatim as data, including any prior source-manifest drift; this is not a refreshed DLL snapshot.",
   "cards": [
     {
       "className": "Appear",
@@ -53,6 +53,35 @@
         "keywords": [],
         "variables": {
           "Damage": 12
+        }
+      }
+    },
+    {
+      "className": "Bias",
+      "id": "MYSTS2MOD-BIAS",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "Block": 7,
+          "Cards": 1
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "Block": 9,
+          "Cards": 2
         }
       }
     },
@@ -568,7 +597,7 @@
         "type": "Skill",
         "rarity": "Rare",
         "target": "Self",
-        "keywords": [],
+        "keywords": ["Exhaust"],
         "variables": {}
       },
       "after": {
@@ -577,7 +606,7 @@
         "type": "Skill",
         "rarity": "Rare",
         "target": "Self",
-        "keywords": [],
+        "keywords": ["Exhaust", "Retain"],
         "variables": {}
       }
     },
@@ -711,8 +740,10 @@
         "type": "Skill",
         "rarity": "Uncommon",
         "target": "Self",
-        "keywords": [],
-        "variables": {}
+        "keywords": ["Exhaust"],
+        "variables": {
+          "HaoThreshold": 18
+        }
       },
       "after": {
         "cost": 1,
@@ -720,8 +751,10 @@
         "type": "Skill",
         "rarity": "Uncommon",
         "target": "Self",
-        "keywords": [],
-        "variables": {}
+        "keywords": ["Exhaust"],
+        "variables": {
+          "HaoThreshold": 12
+        }
       }
     },
     {
@@ -1276,6 +1309,35 @@
         "keywords": [],
         "variables": {
           "Damage": 11
+        }
+      }
+    },
+    {
+      "className": "Speech",
+      "id": "MYSTS2MOD-SPEECH",
+      "pool": "HaoCardPool",
+      "before": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Rare",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "Hao": 4,
+          "Energy": 2
+        }
+      },
+      "after": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Rare",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "Hao": 4,
+          "Energy": 3
         }
       }
     },

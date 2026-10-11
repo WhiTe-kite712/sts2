@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SpineIntegrationProbe")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d4191c9840a49ec654c9846e5fc5e2b86dea915f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+772f145baed3ad975811d4762e599ced08d8163d")]
 [assembly: System.Reflection.AssemblyProductAttribute("SpineIntegrationProbe")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SpineIntegrationProbe")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

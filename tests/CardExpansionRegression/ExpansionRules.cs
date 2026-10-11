@@ -29,6 +29,39 @@ internal static class ExpansionRules
         var previousSkill = Play(skill, player, 0);
         var previousPower = Play(powerCard, player, 2);
 
+        check("unique starter cards are excluded from Strike and Defend families", () =>
+        {
+            foreach (var type in new[] { typeof(Strike), typeof(Defend), typeof(HaoStrike), typeof(HaoDefend), typeof(Narcissism) })
+            {
+                var canonical = ModelDb.GetById<CardModel>(ModelDb.GetId(type));
+                var card = canonical.ToMutable();
+                card.Owner = player;
+                foreach (var value in new[] { canonical, card })
+                {
+                    Equal(type == typeof(Strike) || type == typeof(Defend), value.IsBasicStrikeOrDefend);
+                    Equal(type == typeof(Strike), value.Tags.Contains(CardTag.Strike));
+                    Equal(type == typeof(Defend), value.Tags.Contains(CardTag.Defend));
+                }
+                card.UpgradeInternal();
+                card.FinalizeUpgradeInternal();
+                Equal(type == typeof(Strike) || type == typeof(Defend), card.IsBasicStrikeOrDefend);
+                Equal(type == typeof(Strike), card.Tags.Contains(CardTag.Strike));
+                Equal(type == typeof(Defend), card.Tags.Contains(CardTag.Defend));
+            }
+        });
+        check("Pandora and basic family relics target only eight cards in the starting deck", () =>
+        {
+            var deck = Enumerable.Range(0, 4).Select(_ => (CardModel)Card<Strike>(player))
+                .Concat(Enumerable.Range(0, 4).Select(_ => (CardModel)Card<Defend>(player)))
+                .Concat(new CardModel[] { Card<HaoStrike>(player), Card<HaoDefend>(player), Card<Narcissism>(player) })
+                .ToArray();
+            Equal(11, deck.Length);
+            Equal(8, deck.Count(card => card.IsBasicStrikeOrDefend && card.IsRemovable));
+            Equal(8, deck.Count(card => card.Rarity == CardRarity.Basic
+                && (card.Tags.Contains(CardTag.Strike) || card.Tags.Contains(CardTag.Defend))));
+            Equal(typeof(Strike), deck.Last(card => card.Tags.Contains(CardTag.Strike)).GetType());
+            Equal(typeof(Defend), deck.Last(card => card.Tags.Contains(CardTag.Defend)).GetType());
+        });
         check("state transitions exclude initial entry and repeated identity", () =>
         {
             foreach (HaoState before in Enum.GetValues<HaoState>())
@@ -47,7 +80,7 @@ internal static class ExpansionRules
             Equal(true, HaoStateExtensions.TryConsumeHaoStateSwitchReward(2, ref last));
             Equal(false, HaoStateExtensions.TryConsumeHaoStateSwitchReward(2, ref last));
         });
-        foreach (var (type, strength, dexterity) in new[] { (typeof(HiddenStatePower), -2, 4), (typeof(OpenHaoStatePower), 4, -2) })
+        foreach (var (type, strength, dexterity) in new[] { (typeof(HiddenStatePower), -2, 4), (typeof(OpenHaoStatePower), 3, -1) })
         {
             var state = Power(type, owner);
             check(type.Name + " defines its reversible original-game stat contribution", () =>

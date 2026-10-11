@@ -1,12 +1,12 @@
-# CardExpansionRegression（当前原本 58 卡源码）
+# CardExpansionRegression（当前原本 60 卡源码）
 
 迁移时将副本中的卡牌与状态变化同步回原本项目，保留原本 Strike、Defend 和默认 11 张起始牌组。当时未重新构建或执行 DLL，迁移摘要和清单属于 source-only；后续编译结果单独记录在编译修复报告中。
 
 按用户选择，仅保留最新 source-only 摘要、清单和检查源码；旧历史设计、备份与旧编译缓存不迁移，随副本舍弃。当前结果不引用旧版本的运行时验证。
 
-当前共 58 张卡：56 张人物卡、2 张原有无色衍生牌，包含 5 张基础卡及 51 张非基础奖励卡。保留迁入的 18 张扩充牌，后续新增幡然悔悟、卷土重来、时不我待、针锋相对。MySts2ModPower 的具体能力类共 22 个，其中迁入能力 4 个、后续新增能力 2 个。HaoStatStatePower 为抽象基类，不计入具体能力数量。
+当前源码共 60 张卡：58 张人物卡、2 张原有无色衍生牌，包含 5 张基础卡及 53 张非基础奖励卡。保留迁入的 18 张扩充牌，后续新增幡然悔悟、卷土重来、时不我待、针锋相对、偏见、发言。MySts2ModPower 的具体能力类共 22 个，其中迁入能力 4 个、后续新增能力 2 个。HaoStatStatePower 为抽象基类，不计入具体能力数量。
 
-卡牌类型为 21 张攻击、29 张技能、8 张能力；费用分布为 0 费 10 张、1 费 33 张、2 费 10 张、3 费 4 张、X 费 1 张。幡然悔悟通过既有 LoseHao 入口失去当前全部豪意，保留节奏、清华形态等豪意变动协同；其它能力可能随后返还豪意。2026-10-07三张新卡的效果、升级和手动验收见 `docs/card-expansion-54/2026-10-07-retention-cards.md`。
+卡牌稀有度为基础5、普通20、罕见18、稀有15、衍生2；类型为 21 张攻击、31 张技能、8 张能力；费用分布为 0 费 11 张、1 费 34 张、2 费 10 张、3 费 4 张、X 费 1 张。幡然悔悟通过既有 LoseHao 入口失去当前全部豪意，保留节奏、清华形态等豪意变动协同；其它能力可能随后返还豪意。2026-10-07三张新卡的效果、升级和手动验收见 `docs/card-expansion-54/2026-10-07-retention-cards.md`。
 
 当前可运行的源码检查（原本项目根目录）：
 
@@ -14,13 +14,15 @@
 python .\tests\CardExpansionRegression\check_source_names.py
 ```
 
+2026-10-10 新增偏见（1费普通技能，7/9格挡、抽1/2张牌）和发言（0费稀有技能，4豪意、2/3能量，升级仍0费）。本次仅准备源码和 source-only 清单，未编译或执行回归。现有58卡运行快照保持原样，check_catalog.py 的60卡期望会拒绝旧快照，需在后续明确执行 Harness 后更新。
+
 源码检查只读取源码、本地化和最新清单。键盘侠、聊天记录、步步紧逼的效果未变检查使用最新目录中的 rename-effect-baselines.json SHA256 基线，不依赖旧历史备份。
 
-编译或运行测试时，默认通过 ProjectReference 先构建当前模组源码，且不安装到游戏目录，无需手动提前生成 DLL。无界面回归使用 58 张卡的期望，并生成当前版本的实际快照：
+编译或运行测试时，默认通过 ProjectReference 先构建当前模组源码，且不安装到游戏目录，无需手动提前生成 DLL。后续无界面回归使用 60 张卡的期望，并生成当前版本的实际快照：
 
 ```powershell
 dotnet build .\tests\CardExpansionRegression\Harness.csproj -p:DeployToGame=false
-dotnet run --project .\tests\CardExpansionRegression\Harness.csproj --no-build -- 58 .\docs\card-expansion-54\runtime-inventory.json
+dotnet run --project .\tests\CardExpansionRegression\Harness.csproj --no-build -- 60 .\docs\card-expansion-54\runtime-inventory.json
 python .\tests\CardExpansionRegression\check_catalog.py
 ```
 
@@ -34,4 +36,4 @@ python .\tests\CardExpansionRegression\check_catalog.py
 
 2026-10-09 加入 `HaoPreviewRules.cs` 的 175 项动态预览回归，检查普通打击/防御的原版力量/敏捷预览，以及豪意打击、豪意防御、调试、代码进攻、冷静的豪意公式、升级、重复预览不累加、中英 `InCombat` 真实格式化和不触发时显示 0。加上原有 98 项检查，共 273 项；本地化路径由项目元数据解析，不依赖作者桌面路径。快照新增 `descriptionArgs`，记录实际 DLL 的 `AddExtraArgsToDescription` 注入参数。
 
-docs/card-expansion-54 沿用历史目录名，其中 source-inventory.json/source-statistics.json 为当前58卡的源码参考。runtime-inventory.json 和 power-inventory.json 已于2026-10-07实际执行当前58卡/22能力DLL后重新生成，check_catalog.py验证通过。检查器会明确拒绝过期卡牌快照，不会把手填源码记录当作DLL执行结果。catalog-new-cards.json 继续保留迁入的18张扩充套组，不包含后续新增的四张牌。
+docs/card-expansion-54 沿用历史目录名，其中 source-inventory.json/source-statistics.json 为当前60卡的源码参考。runtime-inventory.json 和 power-inventory.json 已于2026-10-07实际执行当时58卡/22能力DLL后重新生成，当时 check_catalog.py 验证通过；本次没有生成60卡运行快照。检查器会明确拒绝过期卡牌快照，不会把手填源码记录当作DLL执行结果。catalog-new-cards.json 继续保留迁入的18张扩充套组，不包含后续新增的六张牌。

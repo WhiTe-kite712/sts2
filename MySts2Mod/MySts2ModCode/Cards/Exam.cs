@@ -23,7 +23,7 @@ public class Exam : MySts2ModCard
 
     private const int cost = 1;
     private const CardType type = CardType.Skill;
-    private const CardRarity rarity = CardRarity.Common;
+    private const CardRarity rarity = CardRarity.Uncommon;
     private const TargetType target = TargetType.Self;
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
@@ -38,12 +38,12 @@ public class Exam : MySts2ModCard
     {
         var player = cardPlay.Card.Owner;
         var hao = player.GetHao();
-        if (hao > 0)
+        if (hao > 0 && hao < 10)
         {
             await player.GainHao(choiceContext, hao, this);
         }
 
-        if (hao >= 10)
+        else
         {
             await CreatureCmd.Heal(player.Creature, DynamicVars.Heal.BaseValue);
         }

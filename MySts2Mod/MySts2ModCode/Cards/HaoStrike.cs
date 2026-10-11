@@ -27,7 +27,7 @@ public class HaoStrike : MySts2ModCard
     private const CardRarity rarity = CardRarity.Basic;
     private const TargetType target = TargetType.AnyEnemy;
 
-    public override IEnumerable<CardTag> Tags => [CardTag.Strike];
+    // Unique starter card; it is not part of the Strike/Defend family.
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

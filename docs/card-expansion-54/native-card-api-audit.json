@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-11",
+  "scope": "source-only; no compilation or game execution",
+  "cardsReviewed": 60,
+  "cardsChanged": [
+    "Calm",
+    "CodeCodeCode",
+    "Conflict",
+    "Debugging",
+    "FigureShadow",
+    "Grammar",
+    "HaoDefend",
+    "InfiniteHao",
+    "Narcissism",
+    "Surfing"
+  ],
+  "commonActionsRemaining": 0,
+  "nativeCalls": {
+    "CardCmd.ApplySingleTurnRetain": 1,
+    "CardCmd.Exhaust": 1,
+    "CardCmd.PreviewCardPileAdd": 2,
+    "CardCmd.Upgrade": 2,
+    "CardFactory.GetDistinctForCombat": 1,
+    "CardPileCmd.Add": 3,
+    "CardPileCmd.AddGeneratedCardToCombat": 3,
+    "CardPileCmd.Draw": 7,
+    "CardSelectCmd.FromHand": 3,
+    "CardSelectCmd.FromSimpleGrid": 1,
+    "CreatureCmd.Damage": 2,
+    "CreatureCmd.GainBlock": 14,
+    "CreatureCmd.Heal": 1,
+    "CreatureCmd.Kill": 1,
+    "CreatureCmd.LoseBlock": 1,
+    "DamageCmd.Attack": 22,
+    "PlayerCmd.GainEnergy": 3,
+    "PowerCmd.Apply": 28
+  },
+  "valuesAndUpgradesPreserved": true,
+  "energyFormatter": "energyIcons",
+  "grammarGenerationHistoryHooks": "Uses native AddGeneratedCardToCombat; records generation and invokes generation hooks."
+}

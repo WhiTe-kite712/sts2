@@ -53,17 +53,13 @@ public class InfiniteHao : MySts2ModCard
 
             if (x > 0)
             {
-                await DealDamage(choiceContext, cardPlay, snapshot, x);
+                await DamageCmd.Attack(snapshot)
+                    .FromCard(this, cardPlay)
+                    .Targeting(cardPlay.Target!)
+                    .WithHitCount(x)
+                    .Execute(choiceContext);
             }
         }
     }
 
-    private async Task DealDamage(PlayerChoiceContext choiceContext, CardPlay cardPlay, int damage, int hitCount)
-    {
-        await DamageCmd.Attack(damage)
-            .FromCard(this, cardPlay)
-            .Targeting(cardPlay.Target!)
-            .WithHitCount(hitCount)
-            .Execute(choiceContext);
-    }
 }

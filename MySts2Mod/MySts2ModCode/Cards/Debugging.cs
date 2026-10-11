@@ -1,6 +1,7 @@
 using BaseLib.Abstracts;
 using BaseLib.Utils;
 using MySts2Mod.MySts2ModCode.Character;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -54,7 +55,7 @@ public class Debugging : MySts2ModCard
         if (hao > 10)
         {
             var lost = await player.LoseHao(choiceContext, hao - 10, this);
-            await CommonActions.CardBlock(this, new BlockVar(lost * 2, ValueProp.Move), cardPlay);
+            await CreatureCmd.GainBlock(Owner.Creature, lost * 2, ValueProp.Move, cardPlay);
         }
     }
 }

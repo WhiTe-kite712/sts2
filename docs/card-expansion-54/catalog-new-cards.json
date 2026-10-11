@@ -174,8 +174,8 @@
     "type": "Skill",
     "rarity": "Rare",
     "theme": "状态切换",
-    "descriptionZhs": "消耗一张手牌。若做到了，获得{Energy:diff()}点能量，抽{Cards:diff()}张牌。然后切换到另一状态（尚无状态时进入隐匿状态）。",
-    "descriptionEng": "Exhaust a card from your Hand. If you do, gain {Energy:diff()} Energy and draw {Cards:diff()} cards. Then switch to the other state (enter Hidden State if you have none).",
+    "descriptionZhs": "消耗一张手牌。获得{Energy:energyIcons()}，抽{Cards:diff()}张牌。然后切换到另一状态（尚无状态时进入隐匿状态）。",
+    "descriptionEng": "Exhaust a card from your Hand. If you do, gain {Energy:energyIcons()} and draw {Cards:diff()} cards. Then switch to the other state (enter Hidden State if you have none).",
     "upgradeSummary": "抽牌3→4。",
     "sourcePath": "Cards/UncertaintyPrinciple.cs",
     "keywords": [

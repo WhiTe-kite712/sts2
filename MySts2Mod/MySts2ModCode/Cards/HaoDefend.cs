@@ -29,7 +29,7 @@ public class HaoDefend : MySts2ModCard
 
     public override bool GainsBlock => true;
 
-    public override IEnumerable<CardTag> Tags => [CardTag.Defend];
+    // Unique starter card; it is not part of the Strike/Defend family.
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
@@ -46,7 +46,8 @@ public class HaoDefend : MySts2ModCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CommonActions.CardBlock(this, cardPlay);
+        var block = DynamicVars.CalculatedBlock;
+        await CreatureCmd.GainBlock(Owner.Creature, block.Calculate(Owner.Creature), block.Props, cardPlay);
     }
 
     protected override void OnUpgrade()
