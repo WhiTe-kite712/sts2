@@ -1,7 +1,38 @@
 # IDE
 .idea/
 .vs/
+*.user
 
-# 系统文件
+# Operating system
 Thumbs.db
 Desktop.ini
+.DS_Store
+
+# Generated .NET / Godot output (all projects and test harnesses)
+**/bin/
+**/obj/
+**/.godot/
+
+# Python caches
+**/__pycache__/
+*.pyc
+*.pyo
+
+# Release and local validation output
+/artifacts/
+/release/
+/releases/
+/dist/
+
+# Machine-local overrides; source manifests and test JSON inputs stay tracked.
+MySts2Mod/Directory.Build.props
+MySts2Mod/*.user
+
+# Generated native animation probes
+tools/character_animation/hao/runtime/
+tools/character_animation/hao/validation/runtime/
+tools/character_animation/hao/validation/*.pck
+tools/character_animation/hao/validation/manifest.json
+tools/character_animation/hao/validation/spine_probe.gdextension
+tools/character_animation/hao/validation/*.stdout
+tools/character_animation/hao/validation/*.stderr

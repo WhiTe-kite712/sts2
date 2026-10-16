@@ -21,23 +21,39 @@ cards = read(docs / 'runtime-inventory.json')
 powers = read(docs / 'power-inventory.json')
 catalog = read(docs / 'catalog-new-cards.json')
 power_catalog = read(docs / 'catalog-new-powers.json')
-assert len(cards) == 60, 'Runtime inventory is stale. Build the current mod and run Harness with expected count 60 to regenerate runtime-inventory.json.'
+assert len(cards) == 88, 'Runtime inventory is stale. Build the current mod and run Harness with expected count 88 to regenerate runtime-inventory.json.'
 assert len(catalog) == 18
-assert len({c['id'] for c in cards}) == 60
-assert len(powers) == 22 and len({p['id'] for p in powers}) == 22
+assert len({c['id'] for c in cards}) == 88
+assert len(powers) == 30 and len({p['id'] for p in powers}) == 30, 'Power inventory is stale. Build the current mod and run Harness to regenerate power-inventory.json with 30 concrete powers.'
 assert len(power_catalog) == 4 and len({p['className'] for p in power_catalog}) == 4
 power_by_class = {p['className']: p for p in powers}
 assert {p['className'] for p in power_catalog} <= power_by_class.keys()
 new = {c['className']: c for c in catalog}
 by_class = {c['className']: c for c in cards}
-assert Counter(c['pool'] for c in cards) == {'HaoCardPool': 58, 'ColorlessCardPool': 2}
+assert Counter(c['pool'] for c in cards) == {'HaoCardPool': 86, 'ColorlessCardPool': 2}
 assert {c['className'] for c in cards if c['before']['rarity'] == 'Token'} == {'Xiao', 'Chuan'}
-assert len([c for c in cards if c['before']['rarity'] not in ('Basic', 'Token')]) == 53
+assert len([c for c in cards if c['before']['rarity'] in ('Common', 'Uncommon', 'Rare')]) == 79
+assert {c['className'] for c in cards if c['before']['rarity'] == 'Ancient'} == {'GodList', 'Lost'}
+assert Counter(c['before']['rarity'] for c in cards) == {'Basic': 5, 'Common': 24, 'Uncommon': 33, 'Rare': 22, 'Token': 2, 'Ancient': 2}
 assert len([c for c in cards if c['before']['rarity'] == 'Basic']) == 5
-assert Counter(c['before']['type'] for c in cards) == {'Attack': 21, 'Skill': 31, 'Power': 8}
+assert Counter(c['before']['type'] for c in cards) == {'Attack': 26, 'Skill': 49, 'Power': 13}
 assert Counter('X' if c['before']['costsX'] else str(c['before']['cost']) for c in cards) == {
-    '0': 11, '1': 34, '2': 10, '3': 4, 'X': 1
+    '0': 15, '1': 49, '2': 15, '3': 7, 'X': 2
 }
+god_list = by_class['GodList']
+assert god_list['before']['cost'] == 3 and god_list['after']['cost'] == 2
+assert all(god_list[version]['type'] == 'Power' and god_list[version]['rarity'] == 'Ancient' for version in ('before', 'after'))
+assert 'ITomeCard' in (code / 'Cards/GodList.cs').read_text(encoding='utf-8-sig')
+assert 'GodListPower' in power_by_class
+lost = by_class['Lost']
+assert lost['before']['cost'] == lost['after']['cost'] == 1 and lost['before']['type'] == 'Skill' and lost['before']['rarity'] == 'Ancient'
+assert 'ITomeCard' not in (code / 'Cards/Lost.cs').read_text(encoding='utf-8-sig')
+narcissism_source = (code / 'Cards/Narcissism.cs').read_text(encoding='utf-8-sig')
+assert 'ITranscendenceCard' in narcissism_source and re.search(r'\bLost\b', narcissism_source)
+hao_relic = (code / 'Relics/Hao.cs').read_text(encoding='utf-8-sig')
+upgraded_relic = (code / 'Relics/SkyHighHao.cs').read_text(encoding='utf-8-sig')
+assert 'GetUpgradeReplacement' in hao_relic and 'ModelDb.Relic<SkyHighHao>()' in hao_relic
+assert 'class SkyHighHao' in upgraded_relic and 'RelicRarity.Starter' in upgraded_relic
 for name, card in new.items():
     actual = by_class[name]
     assert actual['pool'] == 'HaoCardPool'
@@ -45,8 +61,8 @@ for name, card in new.items():
         assert actual['before'][field] == card[field], (name, field)
     assert actual['before'] != actual['after'], 'No observable upgrade: ' + name
     assert actual['before']['keywords'] == sorted(card['keywords']), (name, 'keywords')
-print('PASS 60 distinct cards; 58 character cards, 2 existing colorless tokens, 5 Basic cards, 53 non-Basic reward cards')
-print('PASS all 18 migration expansion cards match design cost/type/rarity/keywords and have an observable upgrade; 22 concrete powers, 4 migration expansion powers')
+print('PASS 88 distinct cards; 86 character cards, 2 existing colorless tokens, 5 Basic cards, 79 Common/Uncommon/Rare reward cards and 2 Ancient cards (GodList/Lost)')
+print('PASS all 18 migration expansion cards match design cost/type/rarity/keywords and have an observable upgrade; 30 concrete powers, 4 migration expansion powers')
 
 loaded = {}
 for language, suffix in [('zhs', 'Zhs'), ('eng', 'Eng')]:

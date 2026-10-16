@@ -21,7 +21,7 @@ public class Unrepentant : MySts2ModCard
         HoverTipFactory.FromPower<HaoPower>(),
     ];
 
-    private const int cost = 1;
+    private const int cost = 3;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Rare;
     private const TargetType target = TargetType.Self;
@@ -37,4 +37,6 @@ public class Unrepentant : MySts2ModCard
         var creature = cardPlay.Player.Creature;
         await PowerCmd.Apply<UnrepentantGuardPower>(choiceContext, creature, 1, creature, this);
     }
+
+    protected override void OnUpgrade() => EnergyCost.UpgradeBy(-1);
 }

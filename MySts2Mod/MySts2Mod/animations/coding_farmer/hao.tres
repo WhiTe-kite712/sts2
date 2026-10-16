@@ -1,7 +1,7 @@
 [gd_resource type="SpineSkeletonDataResource" load_steps=3 format=3]
 
-[ext_resource type="SpineAtlasResource" path="res://MySts2Mod/animations/coding_farmer/hao.spatlas" id="1_atlas"]
-[ext_resource type="SpineSkeletonFileResource" path="res://MySts2Mod/animations/coding_farmer/hao.spjson" id="2_skeleton"]
+[ext_resource type="SpineAtlasResource" path="res://CodeFarmer/animations/coding_farmer/hao.spatlas" id="1_atlas"]
+[ext_resource type="SpineSkeletonFileResource" path="res://CodeFarmer/animations/coding_farmer/hao.spjson" id="2_skeleton"]
 
 [resource]
 atlas_res = ExtResource("1_atlas")

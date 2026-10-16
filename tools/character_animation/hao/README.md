@@ -1,7 +1,7 @@
 # Coding Farmer Spine 动画
 
 角色战斗视觉已接入 `MySts2ModCode/Character/CodingFarmerCombatVisuals.cs`。
-运行资源在 `MySts2Mod/MySts2Mod/animations/coding_farmer`，资源入口为 `res://MySts2Mod/animations/coding_farmer/hao.tres`。
+运行资源在 `MySts2Mod/MySts2Mod/animations/coding_farmer`，资源入口为 `res://CodeFarmer/animations/coding_farmer/hao.tres`。
 
 帧率由 motion-keyframes.json 的 fps 控制，当前为100 FPS。攻击 `attack` 为0.700秒，能力牌 `cast` 为0.840秒。游戏的 Attack、Cast、PowerUp 触发已映射，动作结束回到待机；效果等待时间分别为0.340与0.480秒。
 待机、受击、死亡使用中立姿势兼容片段，尚未另做这些动作的美术。
@@ -12,7 +12,8 @@
 
 `editable/bind.json` 保存图片关节与分割边界；`editable/motion-keyframes.json` 保存动作坐标与抬臂幅度。
 `editable/hao.json` 可用 Spine 4.2 的 Import Data 导入，图片目录为 `editable/parts`。
-`preview/index.html` 是离线预览。
+`preview/index.html` 是唯一的离线 HTML 预览入口，直接双击打开即可。
+`editable/viewer.template.txt` 是生成器使用的模板，保留用于以后重建预览；它不是预览页面。
 
 ```powershell
 python .\editable\rebuild.py --keep-textures

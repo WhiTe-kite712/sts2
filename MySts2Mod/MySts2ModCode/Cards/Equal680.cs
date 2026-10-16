@@ -4,6 +4,7 @@ using MySts2Mod.MySts2ModCode.Character;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MySts2Mod.MySts2ModCode.Powers;
 
@@ -14,6 +15,8 @@ namespace MySts2Mod.MySts2ModCode.Cards;
 [Pool(typeof(HaoCardPool))]
 public class Equal680 : MySts2ModCard
 {
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new IntVar("ExtraDamage", 4)];
+
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<Equal680Power>(),
@@ -31,6 +34,13 @@ public class Equal680 : MySts2ModCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var creature = cardPlay.Player.Creature;
-        await PowerCmd.Apply<Equal680Power>(choiceContext, creature, 1, creature, this);
+        var power = await PowerCmd.Apply<Equal680Power>(choiceContext, creature, 1, creature, this);
+        if (power != null)
+        {
+            var extraDamage = power.DynamicVars["ExtraDamage"];
+            extraDamage.BaseValue = Math.Max(extraDamage.BaseValue, DynamicVars["ExtraDamage"].BaseValue);
+        }
     }
+
+    protected override void OnUpgrade() => DynamicVars["ExtraDamage"].UpgradeValueBy(2);
 }

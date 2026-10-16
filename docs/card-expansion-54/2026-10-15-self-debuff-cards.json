@@ -1,0 +1,430 @@
+{
+  "date": "2026-10-15",
+  "sourceOnly": true,
+  "regularDebuffs": [
+    "FrailPower",
+    "WeakPower",
+    "VulnerablePower"
+  ],
+  "cards": [
+    {
+      "className": "Noob",
+      "id": "MYSTS2MOD-NOOB",
+      "pool": "HaoCardPool",
+      "title": "菜",
+      "titleEng": "Noob",
+      "description": "对自己施加{WeakPower:diff()}层虚弱。获得{Block:diff()}点格挡。",
+      "descriptionEng": "Apply {WeakPower:diff()} Weak to yourself. Gain {Block:diff()} Block.",
+      "before": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "variables": {
+          "WeakPower": 1,
+          "Block": 15
+        },
+        "keywords": []
+      },
+      "after": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "variables": {
+          "WeakPower": 1,
+          "Block": 20
+        },
+        "keywords": []
+      }
+    },
+    {
+      "className": "BrokenDefense",
+      "id": "MYSTS2MOD-BROKEN_DEFENSE",
+      "pool": "HaoCardPool",
+      "title": "破防",
+      "titleEng": "Broken Defense",
+      "description": "对自己施加{FrailPower:diff()}层脆弱。抽{Cards:diff()}张牌。",
+      "descriptionEng": "Apply {FrailPower:diff()} Frail to yourself. Draw {Cards:diff()} cards.",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "variables": {
+          "FrailPower": 1,
+          "Cards": 3
+        },
+        "keywords": []
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Common",
+        "target": "Self",
+        "variables": {
+          "FrailPower": 1,
+          "Cards": 4
+        },
+        "keywords": []
+      }
+    },
+    {
+      "className": "Enlightened",
+      "id": "MYSTS2MOD-ENLIGHTENED",
+      "pool": "HaoCardPool",
+      "title": "我悟了",
+      "titleEng": "Enlightened",
+      "description": "对自己施加{FrailPower:diff()}层脆弱。选择并升级1张手牌。{IfUpgraded:该牌在本场战斗中获得保留。|}",
+      "descriptionEng": "Apply {FrailPower:diff()} Frail to yourself. Upgrade a card in your Hand.{IfUpgraded: It gains Retain this combat.|}",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "variables": {
+          "FrailPower": 2
+        },
+        "keywords": []
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "variables": {
+          "FrailPower": 2
+        },
+        "keywords": []
+      }
+    },
+    {
+      "className": "Tilted",
+      "id": "MYSTS2MOD-TILTED",
+      "pool": "HaoCardPool",
+      "title": "急了",
+      "titleEng": "Tilted",
+      "description": "造成{Damage:diff()}点伤害。你每有一种常规负面状态，额外造成1次伤害。",
+      "descriptionEng": "Deal {Damage:diff()} damage. Hit 1 additional time for each kind of regular debuff on you.",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Uncommon",
+        "target": "AnyEnemy",
+        "variables": {
+          "Damage": 8
+        },
+        "keywords": []
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Attack",
+        "rarity": "Uncommon",
+        "target": "AnyEnemy",
+        "variables": {
+          "Damage": 10
+        },
+        "keywords": []
+      }
+    },
+    {
+      "className": "Unorthodox",
+      "id": "MYSTS2MOD-UNORTHODOX",
+      "pool": "HaoCardPool",
+      "title": "野路子",
+      "titleEng": "Unorthodox",
+      "description": "抽{Cards:diff()}张牌。若你有至少{DebuffKinds}种常规负面状态，额外选择抽牌堆中的1张牌加入手牌。",
+      "descriptionEng": "Draw {Cards:diff()} cards. If you have at least {DebuffKinds} kinds of regular debuff, choose a card in your Draw Pile and add it to your Hand.",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "variables": {
+          "Cards": 1,
+          "DebuffKinds": 2
+        },
+        "keywords": []
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "variables": {
+          "Cards": 2,
+          "DebuffKinds": 2
+        },
+        "keywords": []
+      }
+    },
+    {
+      "className": "EvenWorse",
+      "id": "MYSTS2MOD-EVEN_WORSE",
+      "pool": "HaoCardPool",
+      "title": "还能更烂",
+      "titleEng": "Even Worse",
+      "description": "对自己施加{FrailPower:diff()}层脆弱、{WeakPower:diff()}层虚弱与{VulnerablePower:diff()}层易伤。抽{Cards:diff()}张牌，获得{Energy:energyIcons()}。",
+      "descriptionEng": "Apply {FrailPower:diff()} Frail, {WeakPower:diff()} Weak, and {VulnerablePower:diff()} Vulnerable to yourself. Draw {Cards:diff()} cards. Gain {Energy:energyIcons()}.",
+      "before": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "variables": {
+          "FrailPower": 3,
+          "WeakPower": 3,
+          "VulnerablePower": 3,
+          "Cards": 2,
+          "Energy": 2
+        },
+        "keywords": [
+          "Ethereal",
+          "Exhaust"
+        ]
+      },
+      "after": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "variables": {
+          "FrailPower": 2,
+          "WeakPower": 2,
+          "VulnerablePower": 2,
+          "Cards": 2,
+          "Energy": 2
+        },
+        "keywords": [
+          "Ethereal",
+          "Exhaust"
+        ]
+      }
+    },
+    {
+      "className": "LetItGo",
+      "id": "MYSTS2MOD-LET_IT_GO",
+      "pool": "HaoCardPool",
+      "title": "想开了",
+      "titleEng": "Let It Go",
+      "description": "移除你所有的常规负面状态。每移除一种，回复{Heal:diff()}点生命（至多回复6点）。",
+      "descriptionEng": "Remove all regular debuffs from yourself. Heal {Heal:diff()} HP for each kind removed (up to 6 HP).",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "variables": {
+          "Heal": 2
+        },
+        "keywords": [
+          "Exhaust"
+        ]
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "variables": {
+          "Heal": 2
+        },
+        "keywords": [
+          "Exhaust",
+          "Retain"
+        ]
+      }
+    },
+    {
+      "className": "NoEscape",
+      "id": "MYSTS2MOD-NO_ESCAPE",
+      "pool": "HaoCardPool",
+      "title": "无处可逃",
+      "titleEng": "No Escape",
+      "description": "对自己施加{VulnerablePower:diff()}层易伤与{FrailPower:diff()}层脆弱。你的回合开始时，获得{Energy:energyIcons()}，额外抽{Cards:diff()}张牌。",
+      "descriptionEng": "Apply {VulnerablePower:diff()} Vulnerable and {FrailPower:diff()} Frail to yourself. At the start of your turn, gain {Energy:energyIcons()} and draw {Cards:diff()} extra card.",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Power",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "variables": {
+          "VulnerablePower": 2,
+          "FrailPower": 2,
+          "Energy": 1,
+          "Cards": 1
+        },
+        "keywords": []
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Power",
+        "rarity": "Uncommon",
+        "target": "Self",
+        "variables": {
+          "VulnerablePower": 2,
+          "FrailPower": 2,
+          "Energy": 1,
+          "Cards": 1
+        },
+        "keywords": [
+          "Retain"
+        ]
+      }
+    },
+    {
+      "className": "SilverLining",
+      "id": "MYSTS2MOD-SILVER_LINING",
+      "pool": "HaoCardPool",
+      "title": "苦中作乐",
+      "titleEng": "Silver Lining",
+      "description": "你的回合内，每当打出对自身施加常规负面状态的牌时，获得{Energy:energyIcons()}，抽{Cards:diff()}张牌。每回合至多触发{TriggerLimit:diff()}次。",
+      "descriptionEng": "During your turn, whenever you play a card that applies a regular debuff to yourself, gain {Energy:energyIcons()} and draw {Cards:diff()} cards. Triggers up to {TriggerLimit:diff()} times per turn.",
+      "before": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Power",
+        "rarity": "Rare",
+        "target": "Self",
+        "variables": {
+          "TriggerLimit": 2,
+          "Energy": 1,
+          "Cards": 2
+        },
+        "keywords": []
+      },
+      "after": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Power",
+        "rarity": "Rare",
+        "target": "Self",
+        "variables": {
+          "TriggerLimit": 3,
+          "Energy": 1,
+          "Cards": 2
+        },
+        "keywords": []
+      }
+    },
+    {
+      "className": "FullSurrender",
+      "id": "MYSTS2MOD-FULL_SURRENDER",
+      "pool": "HaoCardPool",
+      "title": "摆烂到底",
+      "titleEng": "Full Surrender",
+      "description": "对自己施加{FrailPower:diff()}层脆弱、{WeakPower:diff()}层虚弱与{VulnerablePower:diff()}层易伤。抽{Cards:diff()}张牌。本回合，你手牌的能量消耗减少{CostReduction}（最低为0）。",
+      "descriptionEng": "Apply {FrailPower:diff()} Frail, {WeakPower:diff()} Weak, and {VulnerablePower:diff()} Vulnerable to yourself. Draw {Cards:diff()} cards. Reduce the energy cost of cards in your Hand by {CostReduction} this turn, to a minimum of 0.",
+      "before": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Rare",
+        "target": "Self",
+        "variables": {
+          "FrailPower": 2,
+          "WeakPower": 2,
+          "VulnerablePower": 2,
+          "Cards": 2,
+          "CostReduction": 1
+        },
+        "keywords": [
+          "Exhaust"
+        ]
+      },
+      "after": {
+        "cost": 2,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Rare",
+        "target": "Self",
+        "variables": {
+          "FrailPower": 1,
+          "WeakPower": 1,
+          "VulnerablePower": 1,
+          "Cards": 2,
+          "CostReduction": 1
+        },
+        "keywords": [
+          "Exhaust"
+        ]
+      }
+    },
+    {
+      "className": "AmIShiNong",
+      "id": "MYSTS2MOD-AM_I_SHI_NONG",
+      "pool": "HaoCardPool",
+      "title": "石农是我？",
+      "titleEng": "Am I Shi Nong?",
+      "description": "你每有1层常规负面状态，本回合获得{StrengthPower:diff()}点力量与{DexterityPower:diff()}点敏捷，至多获得{StatCap}点力量与{StatCap}点敏捷。",
+      "descriptionEng": "For each stack of regular debuff on you, gain {StrengthPower:diff()} Strength and {DexterityPower:diff()} Dexterity this turn, up to {StatCap} Strength and {StatCap} Dexterity.",
+      "before": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Rare",
+        "target": "Self",
+        "variables": {
+          "StrengthPower": 2,
+          "DexterityPower": 2,
+          "StatCap": 10
+        },
+        "keywords": [
+          "Exhaust"
+        ]
+      },
+      "after": {
+        "cost": 0,
+        "costsX": false,
+        "type": "Skill",
+        "rarity": "Rare",
+        "target": "Self",
+        "variables": {
+          "StrengthPower": 2,
+          "DexterityPower": 2,
+          "StatCap": 10
+        },
+        "keywords": [
+          "Exhaust"
+        ]
+      }
+    }
+  ],
+  "powers": [
+    {
+      "className": "NoEscapePower",
+      "variables": {},
+      "title": "无处可逃",
+      "titleEng": "No Escape",
+      "description": "你的回合开始时，获得{Amount:energyIcons()}，额外抽{Amount}张牌。",
+      "descriptionEng": "At the start of your turn, gain {Amount:energyIcons()} and draw {Amount} extra cards."
+    },
+    {
+      "className": "SilverLiningPower",
+      "variables": {
+        "Energy": 1,
+        "Cards": 2
+      },
+      "title": "苦中作乐",
+      "titleEng": "Silver Lining",
+      "description": "你的回合内，每当打出对自身施加常规负面状态的牌时，获得{energyPrefix:energyIcons(1)}，抽2张牌。每回合至多触发{Amount}次。同一次出牌只触发1次。常规负面状态仅指脆弱、虚弱和易伤。",
+      "descriptionEng": "During your turn, whenever you play a card that applies Frail, Weak, or Vulnerable to yourself, gain {energyPrefix:energyIcons(1)} and draw 2 cards. Triggers up to {Amount} times per turn, once per card play."
+    }
+  ]
+}

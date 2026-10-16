@@ -1,5 +1,10 @@
 [
   {
+    "className": "AnswerQuestionsPower",
+    "id": "MYSTS2MOD-ANSWER_QUESTIONS_POWER",
+    "variables": {}
+  },
+  {
     "className": "ChuanNextTurnPower",
     "id": "MYSTS2MOD-CHUAN_NEXT_TURN_POWER",
     "variables": {}
@@ -15,8 +20,22 @@
     "variables": {}
   },
   {
+    "className": "EndlesssssPower",
+    "id": "MYSTS2MOD-ENDLESSSSS_POWER",
+    "variables": {
+      "PlayThreshold": 12
+    }
+  },
+  {
     "className": "Equal680Power",
     "id": "MYSTS2MOD-EQUAL680_POWER",
+    "variables": {
+      "ExtraDamage": 4
+    }
+  },
+  {
+    "className": "FiercerSmurfingPower",
+    "id": "MYSTS2MOD-FIERCER_SMURFING_POWER",
     "variables": {}
   },
   {
@@ -30,6 +49,13 @@
     "variables": {}
   },
   {
+    "className": "GodListPower",
+    "id": "MYSTS2MOD-GOD_LIST_POWER",
+    "variables": {
+      "MaxHpCap": 8
+    }
+  },
+  {
     "className": "HaoPower",
     "id": "MYSTS2MOD-HAO_POWER",
     "variables": {}
@@ -37,6 +63,11 @@
   {
     "className": "HiddenStatePower",
     "id": "MYSTS2MOD-HIDDEN_STATE_POWER",
+    "variables": {}
+  },
+  {
+    "className": "JT83Power",
+    "id": "MYSTS2MOD-J_T83_POWER",
     "variables": {}
   },
   {
@@ -55,6 +86,11 @@
     "variables": {}
   },
   {
+    "className": "NoEscapePower",
+    "id": "MYSTS2MOD-NO_ESCAPE_POWER",
+    "variables": {}
+  },
+  {
     "className": "OpenHaoStatePower",
     "id": "MYSTS2MOD-OPEN_HAO_STATE_POWER",
     "variables": {}
@@ -68,6 +104,14 @@
     "className": "ShangHaiStudentPower",
     "id": "MYSTS2MOD-SHANG_HAI_STUDENT_POWER",
     "variables": {}
+  },
+  {
+    "className": "SilverLiningPower",
+    "id": "MYSTS2MOD-SILVER_LINING_POWER",
+    "variables": {
+      "Energy": 1,
+      "Cards": 2
+    }
   },
   {
     "className": "SneerPower",
@@ -85,6 +129,14 @@
     "variables": {}
   },
   {
+    "className": "TriathlonPower",
+    "id": "MYSTS2MOD-TRIATHLON_POWER",
+    "variables": {
+      "StrengthPower": 2,
+      "DexterityPower": 2
+    }
+  },
+  {
     "className": "TsinghuaFormPower",
     "id": "MYSTS2MOD-TSINGHUA_FORM_POWER",
     "variables": {}
@@ -97,13 +149,16 @@
   {
     "className": "UnrepentantPainPower",
     "id": "MYSTS2MOD-UNREPENTANT_PAIN_POWER",
-    "variables": {}
+    "variables": {
+      "Damage": 3
+    }
   },
   {
     "className": "UnspokenFuryPower",
     "id": "MYSTS2MOD-UNSPOKEN_FURY_POWER",
     "variables": {
-      "Damage": 15
+      "Damage": 15,
+      "QueuedDamage": 0
     }
   },
   {

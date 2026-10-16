@@ -34,9 +34,9 @@ for path in code.rglob('*.cs'):
         models[name] = (base, path, text)
 cards = {name: value for name, value in models.items() if value[0] == 'MySts2ModCard'}
 power_models = {name: value for name, value in models.items() if value[0] != 'MySts2ModCard'}
-assert len(cards) == 60 and len(power_models) == 22
+assert len(cards) == 88 and len(power_models) == 30
 assert len(catalog) == 18 and len(powers) == 4
-assert sum('Pool(typeof(HaoCardPool))' in item[2] for item in cards.values()) == 58
+assert sum('Pool(typeof(HaoCardPool))' in item[2] for item in cards.values()) == 86
 assert sum('Pool(typeof(ColorlessCardPool))' in item[2] for item in cards.values()) == 2
 assert {c['className'] for c in inventory['cards']} == cards.keys()
 assert {p['className'] for p in inventory['powers']} == power_models.keys()
@@ -52,9 +52,37 @@ for name, (_, path, text) in cards.items():
         assert 'CardRarity.' + item['before']['rarity'] in signature, name
         assert 'TargetType.' + item['before']['target'] in signature, name
         if not item['before']['costsX']: assert int(signature.split(',')[0]) == item['before']['cost'], name
-assert Counter(c['before']['type'] for c in inventory['cards']) == {'Attack': 21, 'Skill': 31, 'Power': 8}
-assert Counter(c['before']['rarity'] for c in inventory['cards']) == {'Basic': 5, 'Common': 20, 'Uncommon': 18, 'Rare': 15, 'Token': 2}
-print('PASS source models: 60 cards, 58 character cards, 2 colorless tokens, 22 custom powers, 18 migration expansion cards plus 6 later additions')
+assert Counter(c['before']['type'] for c in inventory['cards']) == {'Attack': 26, 'Skill': 49, 'Power': 13}
+assert Counter(c['before']['rarity'] for c in inventory['cards']) == {'Basic': 5, 'Common': 24, 'Uncommon': 33, 'Rare': 22, 'Token': 2, 'Ancient': 2}
+normal_rewards = [c for c in inventory['cards'] if c['before']['rarity'] in ('Common', 'Uncommon', 'Rare')]
+assert len(normal_rewards) == 79
+assert {c['className'] for c in inventory['cards'] if c['before']['rarity'] == 'Ancient'} == {'GodList', 'Lost'}
+assert sum(c['before']['rarity'] == 'Basic' for c in inventory['cards']) == 5
+assert Counter('X' if c['before']['costsX'] else str(c['before']['cost']) for c in inventory['cards']) == {'0': 15, '1': 49, '2': 15, '3': 7, 'X': 2}
+god_list = next(c for c in inventory['cards'] if c['className'] == 'GodList')
+assert god_list['before']['cost'] == 3 and god_list['after']['cost'] == 2
+assert all(god_list[version]['type'] == 'Power' and god_list[version]['rarity'] == 'Ancient' for version in ('before', 'after'))
+assert 'ITomeCard' in cards['GodList'][2] and 'GodListPower' in power_models
+lost = next(c for c in inventory['cards'] if c['className'] == 'Lost')
+assert lost['before']['cost'] == lost['after']['cost'] == 1 and lost['before']['type'] == 'Skill' and lost['before']['rarity'] == 'Ancient'
+assert 'ITomeCard' not in cards['Lost'][2]
+assert 'ITranscendenceCard' in cards['Narcissism'][2] and re.search(r'\bLost\b', cards['Narcissism'][2])
+hao_relic = (code / 'Relics/Hao.cs').read_text(encoding='utf-8-sig')
+upgraded_relic = (code / 'Relics/SkyHighHao.cs').read_text(encoding='utf-8-sig')
+assert 'GetUpgradeReplacement' in hao_relic and 'ModelDb.Relic<SkyHighHao>()' in hao_relic
+assert 'class SkyHighHao' in upgraded_relic and 'RelicRarity.Starter' in upgraded_relic
+stats = read(docs / 'source-statistics.json')
+assert stats['cardCount'] == 88 and stats['characterCards'] == 86 and stats['colorlessTokens'] == 2
+assert stats['normalRewardCards'] == 79 and stats['ancientCards'] == 2
+assert stats['newCardCount'] == 52 and stats['postMigrationCardCount'] == 34
+assert stats['powerCount'] == 30 and stats['newPowerCount'] == 14 and stats['postMigrationPowerCount'] == 10
+assert stats['migrationExpansionCardCount'] == len(catalog) == 18
+assert stats['migrationExpansionPowerCount'] == len(powers) == 4
+assert stats['types'] == Counter(c['before']['type'] for c in inventory['cards'])
+assert stats['rarities'] == Counter(c['before']['rarity'] for c in inventory['cards'])
+assert stats['costs'] == Counter('X' if c['before']['costsX'] else str(c['before']['cost']) for c in inventory['cards'])
+print('PASS source models: 88 cards, 86 character cards, 2 colorless tokens, 30 custom powers, 18 migration expansion cards plus 34 later additions')
+print('PASS 79 Common/Uncommon/Rare reward cards, 5 Basic cards and 2 Ancient cards: GodList from ITomeCard, Lost from Narcissism ITranscendenceCard; Hao upgrades to SkyHighHao')
 print('PASS class/file/constructor names and source metadata match; no duplicate models')
 
 for language, suffix in [('zhs', 'Zhs'), ('eng', 'Eng')]:
@@ -108,10 +136,10 @@ assert 'ModifyDamageAdditive' not in states and 'ModifyBlockAdditive' not in sta
 assert helper.index('await PowerCmd.Remove<HiddenStatePower>') < helper.index('await PowerCmd.Apply<HiddenStatePower>')
 assert helper.index('await PowerCmd.Remove<OpenHaoStatePower>') < helper.index('await PowerCmd.Apply<OpenHaoStatePower>')
 assert 'next == before' in helper and 'DualLifePower' in helper
-for name, strength, dexterity in [('HiddenStatePower', -2, 4), ('OpenHaoStatePower', 3, -1)]:
+for name, strength, dexterity in [('HiddenStatePower', -2, 3), ('OpenHaoStatePower', 2, -1)]:
     text = power_models[name][2]
     assert f'StrengthChange => {strength};' in text and f'DexterityChange => {dexterity};' in text
-print('PASS native stats: hidden -2 Strength/+4 Dexterity; open +3 Strength/-1 Dexterity; old contribution rollback wired')
+print('PASS native stats: hidden -2 Strength/+3 Dexterity; open +2 Strength/-1 Dexterity; old contribution rollback wired')
 
 rhythm = power_models['RhythmPower'][2]
 assert 'AfterPowerAmountChanged' in rhythm and 'power is not HaoPower' in rhythm
@@ -124,13 +152,13 @@ assert 'base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)' in card
 assert 'AfterSideTurnEnd' not in rhythm
 sequence = (code / 'Extensions/SequenceHistoryExtensions.cs').read_text(encoding='utf-8')
 assert set(re.findall(r'public static [^\n]+? (\w+)\(', sequence)) == {'PriorPlays', 'BeforeCurrentPlay', 'PreviousTypeIs'}
-print('PASS Rhythm is persistent 1c Uncommon Power, Hao-change reward 2/3 on own turn; PressForward effect unchanged')
+print('PASS Rhythm is persistent 1c Uncommon Power, Hao-change reward 2/3 on own turn; PressForward uses the accepted release tuning')
 
-# Effect fingerprints preserve prior rename validation without historical source backups.
+# Effect fingerprints use the accepted release source: PressForward tuning from commit 772f145 and current ChatHistory costs 2/1; no gameplay changes are made by this check.
 for name, expected_hash in read(docs / 'rename-effect-baselines.json').items():
     normalized = cards[name][2].encode('utf-8')
     assert hashlib.sha256(normalized).hexdigest() == expected_hash, name
 assert not (code / 'Extensions/SupportCardExtensions.cs').exists()
 assert not any(word in active_text for word in ['CountOtherHandCards', 'HasOtherHandSkill'])
-print('PASS KeyboardWarrior/ChatHistory effects and upgrades unchanged; deleted support helpers have no callers')
+print('PASS accepted release fingerprints for PressForward/KeyboardWarrior/ChatHistory; deleted support helpers have no callers')
 print('RESULT source-only validation passed; no compile, debug, DLL execution or game deployment')

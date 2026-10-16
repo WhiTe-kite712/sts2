@@ -17,7 +17,7 @@ public class ChatHistory : MySts2ModCard
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(5m, ValueProp.Move)];
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<Chuan>()];
 
-    public ChatHistory() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
+    public ChatHistory() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

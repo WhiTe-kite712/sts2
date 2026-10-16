@@ -21,7 +21,7 @@
     <Reference Include="GodotSharp"><HintPath>$(Sts2DataDir)\GodotSharp.dll</HintPath></Reference>
     <Reference Include="BaseLib"><HintPath>$(BaseLibDll)</HintPath></Reference>
     <ProjectReference Include="../../MySts2Mod/MySts2Mod.csproj" Condition="'$(ModDll)' == ''" AdditionalProperties="DeployToGame=false" />
-    <Reference Include="MySts2Mod" Condition="'$(ModDll)' != ''"><HintPath>$(ModDll)</HintPath></Reference>
+    <Reference Include="CodeFarmer" Condition="'$(ModDll)' != ''"><HintPath>$(ModDll)</HintPath></Reference>
   </ItemGroup>
   <ItemGroup>
     <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">

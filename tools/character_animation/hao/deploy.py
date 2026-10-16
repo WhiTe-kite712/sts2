@@ -16,7 +16,7 @@ def neutral(duration):
 data['animations'].update(idle_loop=neutral(1.0),hurt=neutral(.18),die=neutral(1.5))
 (target/'hao.spjson').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 for name in ('hao.atlas','hao.png'):shutil.copy2(source/name,target/name)
-prefix='res://MySts2Mod/animations/coding_farmer'
+prefix='res://CodeFarmer/animations/coding_farmer'
 wrapper={'source_path':prefix+'/hao.atlas','atlas_data':(source/'hao.atlas').read_text(encoding='utf-8'),
          'normal_texture_prefix':'','specular_texture_prefix':''}
 (target/'hao.spatlas').write_text(json.dumps(wrapper,indent=2)+'\n',encoding='utf-8')

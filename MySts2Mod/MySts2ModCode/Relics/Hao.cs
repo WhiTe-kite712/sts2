@@ -3,6 +3,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MySts2Mod.MySts2ModCode.Character;
 using MySts2Mod.MySts2ModCode.Extensions;
 
@@ -24,6 +25,8 @@ public class Hao : MySts2ModRelic
     ];
 
     public override RelicRarity Rarity => RelicRarity.Starter;
+
+    public override RelicModel? GetUpgradeReplacement() => ModelDb.Relic<SkyHighHao>();
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

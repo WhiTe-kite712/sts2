@@ -72,7 +72,7 @@ def main():
     png = png_path.read_bytes()
     metadata = {name: hashlib.sha256(path.read_bytes()).hexdigest() for name, path in [('spine', source_path), ('rig', rig_path), ('png', png_path)]}
     metadata.update(bones=len(spine['bones']), slots=len(spine['slots']), regions=len(rig['regions']), fps=spine['skeleton'].get('fps',30), canvas=[args.width,args.height], origin=[args.origin_x,args.origin_y], scale=args.scale)
-    template = Path(__file__).with_name('viewer.template.html').read_text(encoding='utf-8')
+    template = Path(__file__).with_name('viewer.template.txt').read_text(encoding='utf-8')
     template = replace_once(template, 'Math.round(time*30)', 'Math.round(time*(sourceMeta.fps||30))')
     template = replace_once(template, "(e.code==='ArrowRight'?1:-1)/30", "(e.code==='ArrowRight'?1:-1)/(sourceMeta.fps||30)")
     template = replace_once(template, 'const W=900,H=650,ORIGIN=[330,580],SCALE=1,DEG=Math.PI/180;', f'const W={args.width},H={args.height},ORIGIN=[{args.origin_x},{args.origin_y}],SCALE={args.scale},DEG=Math.PI/180;')

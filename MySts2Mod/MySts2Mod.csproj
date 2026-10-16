@@ -2,6 +2,14 @@
     <Import Project=".\Sts2PathDiscovery.props"/>
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
+        <AssemblyName>CodeFarmer</AssemblyName>
+        <RootNamespace>MySts2Mod</RootNamespace>
+        <ModId>CodeFarmer</ModId>
+        <ModManifestSource>$(MSBuildProjectDirectory)/$(MSBuildProjectName).json</ModManifestSource>
+        <ModDeployDirectory>$(ModsPath)$(ModId)/</ModDeployDirectory>
+        <PckPackerSourceDir>$(MSBuildProjectDirectory)/MySts2Mod/</PckPackerSourceDir>
+        <PckPackerResPrefix>$(ModId)</PckPackerResPrefix>
+        <PckPackerOutputPath>$(OutputPath)$(AssemblyName).pck</PckPackerOutputPath>
         <ImplicitUsings>true</ImplicitUsings>
         <Nullable>enable</Nullable> <!--Makes code analysis regarding null values stricter.-->
         <Publicize>False</Publicize> <!--Allows access to originally private/protected members but may (unlikely to) cause errors.-->
@@ -75,7 +83,7 @@
 
     <Target Name="UpdateDependencyVersions" BeforeTargets="BeforeBuild" Condition="Exists('.godot/mono/temp/obj/project.assets.json')">
         <PropertyGroup>
-            <ManifestPath>$(MSBuildProjectName).json</ManifestPath>
+            <ManifestPath>$(ModManifestSource)</ManifestPath>
         </PropertyGroup>
 
         <PropertyGroup>
@@ -97,28 +105,53 @@
                  Importance="high" />
     </Target>
     
-    <Target Name="CopyToModsFolderOnBuild" AfterTargets="PostBuildEvent" Condition="'$(DeployToGame)' != 'false'">
-        <Message Text="Copying .dll .pdb and .json to mods folder." Importance="high" />
-        <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
-        <Copy SourceFiles="$(AssemblyName).json" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
-        <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
+    <Target Name="CopyModManifestToOutput" AfterTargets="Build">
+        <PropertyGroup>
+            <_ManifestSourceText>$([System.IO.File]::ReadAllText('$(ModManifestSource)'))</_ManifestSourceText>
+            <_ManifestSourceId>$([System.Text.RegularExpressions.Regex]::Match($(_ManifestSourceText), '&quot;id&quot;\s*:\s*&quot;([^&quot;]+)&quot;').Result('$1'))</_ManifestSourceId>
+        </PropertyGroup>
+        <Error Condition="'$(_ManifestSourceId)' != '$(ModId)'"
+               Text="The manifest id must be $(ModId), matching the DLL and PCK names." />
+        <Copy SourceFiles="$(ModManifestSource)"
+              DestinationFiles="$(TargetDir)$(ModId).json" />
     </Target>
 
-    <Target Name="CopyQuickPck" AfterTargets="PackPck" Condition="'$(DeployToGame)' != 'false' And Exists('$(PckPackerOutputPath)') And '$(PckPackerSkipped)' != 'true'">
-        <Message Text="Copying quick .pck to mods folder." Importance="high"/>
-        <Copy SourceFiles="$(PckPackerOutputPath)"
-              DestinationFolder="$(ModsPath)/$(MSBuildProjectName)" />
+    <Target Name="DeployCodeFarmerPackage" AfterTargets="PackPck"
+            DependsOnTargets="CopyModManifestToOutput"
+            Condition="'$(DeployToGame)' != 'false'">
+        <Error Condition="'$(PckPackerEnabled)' != 'true' Or !Exists('$(PckPackerSourceDir)') Or '$(PckPackerSkipped)' == 'true' Or !Exists('$(PckPackerOutputPath)')"
+               Text="No usable $(ModId).pck was produced; the mod package was not installed." />
+        <Message Text="Installing $(ModId) DLL, PCK and manifest to $(ModDeployDirectory)." Importance="high" />
+        <Copy SourceFiles="$(TargetPath);$(TargetDir)$(ModId).json;$(PckPackerOutputPath)"
+              DestinationFolder="$(ModDeployDirectory)" />
+        <Copy SourceFiles="$(TargetDir)$(TargetName).pdb"
+              DestinationFolder="$(ModDeployDirectory)"
+              Condition="Exists('$(TargetDir)$(TargetName).pdb')" />
+
+        <!-- Keep the previous package, but prevent its manifest from loading the same mod twice. -->
+        <PropertyGroup>
+            <_LegacyManifest>$(ModsPath)MySts2Mod/MySts2Mod.json</_LegacyManifest>
+            <_LegacyManifestText Condition="Exists('$(_LegacyManifest)')">$([System.IO.File]::ReadAllText('$(_LegacyManifest)'))</_LegacyManifestText>
+            <_LegacyManifestId Condition="'$(_LegacyManifestText)' != ''">$([System.Text.RegularExpressions.Regex]::Match($(_LegacyManifestText), '&quot;id&quot;\s*:\s*&quot;([^&quot;]+)&quot;').Result('$1'))</_LegacyManifestId>
+            <_LegacyManifestBackup>$(_LegacyManifest).disabled-$([System.DateTime]::UtcNow.ToString('yyyyMMddHHmmssfff'))</_LegacyManifestBackup>
+        </PropertyGroup>
+        <Move SourceFiles="$(_LegacyManifest)" DestinationFiles="$(_LegacyManifestBackup)"
+              Condition="Exists('$(_LegacyManifest)') And ('$(_LegacyManifestId)' == 'MySts2Mod' Or '$(_LegacyManifestId)' == 'CodeFarmer')" />
+        <PropertyGroup>
+            <_LegacyRenamedManifest>$(ModsPath)MySts2Mod/CodeFarmer.json</_LegacyRenamedManifest>
+            <_LegacyRenamedText Condition="Exists('$(_LegacyRenamedManifest)')">$([System.IO.File]::ReadAllText('$(_LegacyRenamedManifest)'))</_LegacyRenamedText>
+            <_LegacyRenamedId Condition="'$(_LegacyRenamedText)' != ''">$([System.Text.RegularExpressions.Regex]::Match($(_LegacyRenamedText), '&quot;id&quot;\s*:\s*&quot;([^&quot;]+)&quot;').Result('$1'))</_LegacyRenamedId>
+            <_LegacyRenamedBackup>$(_LegacyRenamedManifest).disabled-$([System.DateTime]::UtcNow.ToString('yyyyMMddHHmmssfff'))</_LegacyRenamedBackup>
+        </PropertyGroup>
+        <Move SourceFiles="$(_LegacyRenamedManifest)" DestinationFiles="$(_LegacyRenamedBackup)"
+              Condition="Exists('$(_LegacyRenamedManifest)') And ('$(_LegacyRenamedId)' == 'MySts2Mod' Or '$(_LegacyRenamedId)' == 'CodeFarmer')" />
     </Target>
 
-    <Target Name="NeedGodotForPublish" BeforeTargets="Publish">
-        <Error Text=" Godot path must be set up before publishing; Godot not found at path '$(GodotPath)'. Check Directory.Build.props file."
-               Condition="'$(GodotPath)' == '' or !Exists('$(GodotPath)')"/>
-    </Target>
-
-    <Target Name="GodotPublish" AfterTargets="Publish" Condition="'$(GodotPath)' != '' and Exists('$(GodotPath)') and '$(IsInnerGodotExport)' != 'true'">
-        <Message Text="Exporting Godot .pck to mods folder" Importance="high"/>
-        <Exec Command="&quot;$(GodotPath)&quot; --headless --export-pack &quot;BasicExport&quot; &quot;$(ModsPath)$(MSBuildProjectName)/$(MSBuildProjectName).pck&quot;"
-              EnvironmentVariables="IsInnerGodotExport=true;MSBUILDDISABLENODEREUSE=1"
-              ContinueOnError="WarnAndContinue"/>
+    <Target Name="CopyModPackageToPublish" AfterTargets="Publish"
+            DependsOnTargets="PackPck;CopyModManifestToOutput">
+        <Error Condition="'$(PckPackerEnabled)' != 'true' Or !Exists('$(PckPackerSourceDir)') Or '$(PckPackerSkipped)' == 'true' Or !Exists('$(PckPackerOutputPath)')"
+               Text="No usable $(ModId).pck was produced; publish requires a resource pack mounted under res://$(ModId)." />
+        <Copy SourceFiles="$(TargetDir)$(ModId).json;$(PckPackerOutputPath)"
+              DestinationFolder="$(PublishDir)" />
     </Target>
 </Project>

@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
 using MySts2Mod.MySts2ModCode.Extensions;
@@ -15,7 +16,7 @@ using MySts2Mod.MySts2ModCode.Powers;
 namespace MySts2Mod.MySts2ModCode.Cards;
 
 [Pool(typeof(HaoCardPool))]
-public class Narcissism : MySts2ModCard
+public class Narcissism : MySts2ModCard, ITranscendenceCard
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -28,6 +29,8 @@ public class Narcissism : MySts2ModCard
     private const TargetType target = TargetType.Self;
 
     public override bool GainsBlock => true;
+
+    public CardModel GetTranscendenceTransformedCard() => ModelDb.Card<Lost>();
 
     // Unique starter card; it is not part of the Strike/Defend family.
 

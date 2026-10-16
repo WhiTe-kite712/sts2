@@ -1,43 +1,43 @@
+using BaseLib.Abstracts;
 using BaseLib.Utils;
-using MySts2Mod.MySts2ModCode.Character;
-using MySts2Mod.MySts2ModCode.Extensions;
-using MySts2Mod.MySts2ModCode.Powers;
-using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models.Powers;
-using MegaCrit.Sts2.Core.ValueProps;
+using MegaCrit.Sts2.Core.Models;
+using MySts2Mod.MySts2ModCode.Character;
+using MySts2Mod.MySts2ModCode.Powers;
 
 namespace MySts2Mod.MySts2ModCode.Cards;
 
 [Pool(typeof(HaoCardPool))]
-public class GodList : MySts2ModCard
+public class GodList : MySts2ModCard, ITomeCard
 {
-    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    public CharacterModel TomeCharacter => ModelDb.Character<CodingFarmer>();
+
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        HoverTipFactory.FromPower<HiddenStatePower>(),
-        HoverTipFactory.FromPower<OpenHaoStatePower>()
+        new PowerVar<GodListPower>(2),
+        new IntVar("MaxHpCap", 8),
     ];
 
-    public override bool GainsBlock => true;
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<HaoPower>(),
+        HoverTipFactory.FromPower<GodListPower>(),
+    ];
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(7, ValueProp.Move)];
-
-    public GodList() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
+    public GodList() : base(3, CardType.Power, CardRarity.Ancient, TargetType.Self)
     {
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CreatureCmd.GainBlock(cardPlay.Player.Creature, DynamicVars.Block, cardPlay);
-        await cardPlay.Player.EnterHaoState(choiceContext, HaoState.Hidden, this);
+        var creature = cardPlay.Player.Creature;
+        await PowerCmd.Apply<GodListPower>(choiceContext, creature,
+            DynamicVars["GodListPower"].BaseValue, creature, this);
     }
 
-    protected override void OnUpgrade()
-    {
-        DynamicVars.Block.UpgradeValueBy(3);
-    }
+    protected override void OnUpgrade() => EnergyCost.UpgradeBy(-1);
 }

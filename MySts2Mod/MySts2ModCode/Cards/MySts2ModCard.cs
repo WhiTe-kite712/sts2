@@ -1,4 +1,4 @@
-﻿using BaseLib.Abstracts;
+using BaseLib.Abstracts;
 using MySts2Mod.MySts2ModCode.Extensions;
 using MegaCrit.Sts2.Core.Entities.Cards;
 
@@ -14,7 +14,7 @@ public abstract class MySts2ModCard(int cost, CardType type, CardRarity rarity, 
     CustomCardModel(cost, type, rarity, target)
 {
     //Image size:
-    //Normal art: 1000x760 (Using 500x380 should also work, it will simply be scaled.)
+    // New card portraits are prepared at 1000x790; existing artwork keeps its dimensions.
     //Full art: 606x852
     public override string CustomPortraitPath => $"{GetType().Name}.png".BigCardImagePath();
     
@@ -24,5 +24,5 @@ public abstract class MySts2ModCard(int cost, CardType type, CardRarity rarity, 
     
     //Uses card_portraits/<class name>.png, preserving the filename's case (e.g. HaoStrike.png).
     public override string PortraitPath => $"{GetType().Name}.png".CardImagePath();
-    public override string BetaPortraitPath => $"beta/{GetType().Name}.png".CardImagePath();
+    public override string BetaPortraitPath => PortraitPath;
 }

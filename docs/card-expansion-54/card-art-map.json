@@ -1,370 +1,974 @@
 {
-  "date": "2026-10-10",
+  "date": "2026-10-16",
   "normalFirst": true,
-  "validation": "source-only",
-  "ownedArtCards": 48,
+  "validation": "Source-only release art validation; no build or runtime execution.",
+  "ownedArtCards": 86,
   "vanillaCards": 2,
-  "missingCards": 10,
+  "missingCards": 0,
+  "generatedArtCards": 33,
+  "requestedGeneratedArtSize": [
+    1000,
+    790
+  ],
   "cards": [
+    {
+      "className": "AmIShiNong",
+      "title": "石农是我？",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/AmIShiNong.png",
+      "generated": true,
+      "width": 1402,
+      "height": 1122,
+      "sha256": "1441992ad51b2ede01d246bc4add2fd67bbdbe5c211f2d3a294b3f87a47cea08",
+      "bytes": 2680844
+    },
+    {
+      "className": "AnswerQuestions",
+      "title": "答疑",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/AnswerQuestions.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "7b097ccd0fa04785327f0333bc87c686673c5ea01d55dbff5c87aa6da774260b",
+      "bytes": 2040485
+    },
     {
       "className": "Appear",
       "title": "出没",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/Appear.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Appear.png",
+      "generated": false,
+      "width": 1411,
+      "height": 1115,
+      "sha256": "31d7141aca82e25144427c20a57459dc3863e1ea22870f99e3eab7b134a06b0c",
+      "bytes": 1964481
     },
     {
       "className": "BetterThanWalker",
       "title": "比教主更豪",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/BetterThanWalker.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/BetterThanWalker.png",
+      "generated": false,
+      "width": 1411,
+      "height": 1115,
+      "sha256": "abf8216548fc67f0d5b7261eff154401d799f1b1923149b426947105261aada0",
+      "bytes": 2028414
     },
     {
       "className": "Bias",
       "title": "偏见",
-      "kind": "placeholder",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/card.png"
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Bias.png",
+      "generated": false,
+      "width": 1448,
+      "height": 1086,
+      "sha256": "f219bf0c9ce438f864e55199edf6fb85fcc5987a86b810ac2a5b6ea24fdabe0f",
+      "bytes": 2468781
+    },
+    {
+      "className": "BrokenDefense",
+      "title": "破防",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/BrokenDefense.png",
+      "generated": true,
+      "width": 1412,
+      "height": 1114,
+      "sha256": "19bdd754fe7160f77c24a0fdd868e4f1cbadba5375631a61da9daffe6af144a4",
+      "bytes": 2311688
     },
     {
       "className": "Calm",
       "title": "冷静",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/Calm.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Calm.png",
+      "generated": false,
+      "width": 1411,
+      "height": 1115,
+      "sha256": "0c12fb33448c8b0c3457ae74d60129de629654d85fc34081ab04e9401a10ae00",
+      "bytes": 2224508
     },
     {
       "className": "ChatHistory",
       "title": "聊天记录",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/ChatHistory.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/ChatHistory.png",
+      "generated": false,
+      "width": 1410,
+      "height": 1115,
+      "sha256": "cb88c6fa29269bf845254b3cfa013126776f0b736981d03a695c8ecb84fc3af1",
+      "bytes": 1893510
     },
     {
       "className": "Chuan",
       "title": "串",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/Chuan.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Chuan.png",
+      "generated": false,
+      "width": 1410,
+      "height": 1115,
+      "sha256": "3ceb2e5b421d8e93f64fb8b674b62f44abc3fbba86d242216f9238bd10b3ce70",
+      "bytes": 1559106
     },
     {
       "className": "CodeCodeCode",
       "title": "码上码上码上",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/CodeCodeCode.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/CodeCodeCode.png",
+      "generated": false,
+      "width": 1411,
+      "height": 1115,
+      "sha256": "af04659635e8ac59b67faf847a7b672a48f0eed1d566be35f1d1ffabec4e4de4",
+      "bytes": 2281503
     },
     {
       "className": "CodeOffense",
       "title": "代码进攻",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/CodeOffense.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/CodeOffense.png",
+      "generated": false,
+      "width": 1435,
+      "height": 1096,
+      "sha256": "a1e7a595b40fc705819c9d0226d041f65e90c8cfca444ec18706b042196d6ebf",
+      "bytes": 2746740
     },
     {
       "className": "Comeback",
       "title": "卷土重来",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/Comeback.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Comeback.png",
+      "generated": false,
+      "width": 1438,
+      "height": 1093,
+      "sha256": "9e5b7bd5487d0e42a8d04591bcc6a7207b9c60b07bb70b9872915f19f4d3cb4d",
+      "bytes": 2000589
     },
     {
       "className": "CompilerWarning",
       "title": "编译警告",
-      "kind": "placeholder",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/card.png"
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/CompilerWarning.png",
+      "generated": false,
+      "width": 1438,
+      "height": 1093,
+      "sha256": "7fa7a7d7e38c6036411dfef364dc532ee5dbfb5a00655521cafa558b4e1d0cd6",
+      "bytes": 1897961
     },
     {
       "className": "Conflict",
       "title": "冲突",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/Conflict.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Conflict.png",
+      "generated": false,
+      "width": 1448,
+      "height": 1086,
+      "sha256": "561e8b804d30387c8febe39a23ee4280c98e1d8201896fe2b32f7deffde358fb",
+      "bytes": 2744299
+    },
+    {
+      "className": "CrossDressing",
+      "title": "女装",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/CrossDressing.png",
+      "generated": true,
+      "width": 1302,
+      "height": 1000,
+      "sha256": "3b8f27d9272ce7b84926b054f86eba572ce6e6e50d3c83b29ffd83d2e4a3165b",
+      "bytes": 2698227
     },
     {
       "className": "DeadlineSprint",
       "title": "赶DDL",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/DeadlineSprint.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/DeadlineSprint.png",
+      "generated": false,
+      "width": 1438,
+      "height": 1093,
+      "sha256": "d9feafb3907d627995e93ac1e6fa4a1586eb385814f5d8d8eaa6debe107cc02e",
+      "bytes": 2511467
     },
     {
       "className": "Debugging",
       "title": "调试",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/Debugging.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Debugging.png",
+      "generated": false,
+      "width": 1411,
+      "height": 1115,
+      "sha256": "fe20efa0852e36d048d4892ab08db6725790b4a15125b9d75dc2591d2a728bed",
+      "bytes": 1954419
     },
     {
       "className": "Defend",
       "title": "防御",
       "kind": "vanilla",
-      "portraitPath": null
+      "portraitPath": "ModelDb.Card<DefendIronclad>().PortraitPath"
     },
     {
       "className": "Depression",
       "title": "抑郁",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/Depression.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Depression.png",
+      "generated": false,
+      "width": 1438,
+      "height": 1093,
+      "sha256": "b5a7c996de13c5f0cf1c98f7d5e3923c4a70ab342996777368fd07334fe13bb2",
+      "bytes": 2393446
     },
     {
       "className": "Derivation",
       "title": "推导？",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/Derivation.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Derivation.png",
+      "generated": false,
+      "width": 1438,
+      "height": 1093,
+      "sha256": "82d99194b72fa63027e45f160bb5abd2b78518058618f5e65ac189c18449cc85",
+      "bytes": 1705019
     },
     {
       "className": "DualLife",
       "title": "双面日常",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/DualLife.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/DualLife.png",
+      "generated": false,
+      "width": 1438,
+      "height": 1093,
+      "sha256": "d2d434f61818bef6063a5ea1166bded7404d3a387bed6e7cd1e2b6bec1ef7821",
+      "bytes": 2318478
+    },
+    {
+      "className": "Endlesssss",
+      "title": "神在精准迅捷萨尔贡",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Endlesssss.png",
+      "generated": true,
+      "width": 1002,
+      "height": 759,
+      "sha256": "4419874e4c4ddd1089a473a77e1758963e4a0efe5b5c0baf859c84f52f253f06",
+      "bytes": 1198421
+    },
+    {
+      "className": "Enlightened",
+      "title": "我悟了",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Enlightened.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "412af0913f2c68b1577ddfbc272c7e25e87be71c58ae6f232096728ca4af2e29",
+      "bytes": 2042763
     },
     {
       "className": "Equal680",
       "title": "等效680",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/Equal680.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Equal680.png",
+      "generated": false,
+      "width": 1438,
+      "height": 1093,
+      "sha256": "b886a899a740f50a387e6136cbb10f02663534d30c572f13ae866c5f50b24f94",
+      "bytes": 2134145
+    },
+    {
+      "className": "EvenWorse",
+      "title": "还能更烂",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/EvenWorse.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "5c65b86bb607fc5069b851835a25c6369d365bf7f638e408e6b52105d03185ca",
+      "bytes": 2147102
     },
     {
       "className": "Exam",
       "title": "考试",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/Exam.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Exam.png",
+      "generated": false,
+      "width": 1438,
+      "height": 1093,
+      "sha256": "87e895349913dded97129f7cedd83893ff7da3f8152f2d9ca6a162bc2c20eab5",
+      "bytes": 2288516
     },
     {
       "className": "FenceSitter",
       "title": "墙头草",
-      "kind": "placeholder",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/card.png"
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/FenceSitter.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "d387f707856fdfdee63ab4aced49ac6beb69087af7f7bcab085b9efc855069c0",
+      "bytes": 2090495
+    },
+    {
+      "className": "FiercerSmurfing",
+      "title": "更猛烈的炸鱼",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/FiercerSmurfing.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "fde31c7fd0b69ebdf0f07559efec6ea6921125335bdb8cd2161e09f012060d24",
+      "bytes": 2127375
     },
     {
       "className": "FigureShadow",
       "title": "背影",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/FigureShadow.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/FigureShadow.png",
+      "generated": false,
+      "width": 1411,
+      "height": 1115,
+      "sha256": "9dc2bbf893bb6ddd7b4bb3753e4d34490f60ff609021b43bf9cdc3f043f0305e",
+      "bytes": 2135824
     },
     {
       "className": "FinalCommit",
       "title": "最终提交",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/FinalCommit.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/FinalCommit.png",
+      "generated": false,
+      "width": 1411,
+      "height": 1115,
+      "sha256": "e928d629acfa3d78f3db1690043cb89d0cb5a209199775f84604fa978d820a29",
+      "bytes": 2383383
     },
     {
       "className": "FireInSoul",
       "title": "心灵怒火",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/FireInSoul.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/FireInSoul.png",
+      "generated": false,
+      "width": 1411,
+      "height": 1115,
+      "sha256": "f2842e44ec91c489783b88acfb6a7ea9bc20d045c427317f799c51d04117b71a",
+      "bytes": 2233975
     },
     {
       "className": "FooledYou",
       "title": "骗你的",
-      "kind": "placeholder",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/card.png"
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/FooledYou.png",
+      "generated": true,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "31b27c18775381d96386bca459772e4b6421ce877582da1bbbadc3516120b665",
+      "bytes": 2431407
+    },
+    {
+      "className": "FullSurrender",
+      "title": "摆烂到底",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/FullSurrender.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "6b325eb5481ec0f1944e20d13f1eec51616ef1579f5c6850214ee1deaddd60c5",
+      "bytes": 2105468
     },
     {
       "className": "Genius",
       "title": "天才？",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/Genius.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Genius.png",
+      "generated": false,
+      "width": 1438,
+      "height": 1093,
+      "sha256": "bf5db23b996df2f0d49856a902913638b5a2c4ac8d86fdcaf276832152c94dda",
+      "bytes": 1782982
+    },
+    {
+      "className": "GermanBook",
+      "title": "别逼我学德语",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/GermanBook.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "4b6975fa0266c8825bc567a0705d93920fe1dfa86201a95648cd4b3f86c8c3ea",
+      "bytes": 2108954
     },
     {
       "className": "GodList",
       "title": "封“神”榜",
-      "kind": "placeholder",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/card.png"
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/GodList.png",
+      "generated": false,
+      "width": 1024,
+      "height": 1536,
+      "sha256": "15dc40a6d4ee25714093dfded8f0fe11b94b1ece410f3572f73bc9c3824ba245",
+      "bytes": 2708292
     },
     {
       "className": "Grammar",
       "title": "语法",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/Grammar.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Grammar.png",
+      "generated": false,
+      "width": 1438,
+      "height": 1093,
+      "sha256": "f810f2d0b2efaf7b5459cda07cf45d0ae93723eb576440d92f884985acaaeb51",
+      "bytes": 2270422
     },
     {
       "className": "GroupDiscuss",
       "title": "讨论时间",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/GroupDiscuss.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/GroupDiscuss.png",
+      "generated": false,
+      "width": 1438,
+      "height": 1093,
+      "sha256": "b3436f85eba13e81a02666168c21366e257e7e3fae13656b4b709954e5a1cef8",
+      "bytes": 1635293
+    },
+    {
+      "className": "HangSoutheast",
+      "title": "自挂东南枝",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/HangSoutheast.png",
+      "generated": true,
+      "width": 1304,
+      "height": 1025,
+      "sha256": "bfe0c19777cb80a3b4a8083956f6e8f1d9532a1c661f6da86b51d00396e5e087",
+      "bytes": 2583628
     },
     {
       "className": "HaoDefend",
       "title": "豪意防御",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/HaoDefend.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/HaoDefend.png",
+      "generated": false,
+      "width": 1411,
+      "height": 1115,
+      "sha256": "5a8e0f01be140742e0b1791129ae9c6dc6657999b38f9bd1716aa64dd85901ec",
+      "bytes": 2081640
     },
     {
       "className": "HaoStrike",
       "title": "豪意打击",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/HaoStrike.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/HaoStrike.png",
+      "generated": false,
+      "width": 1411,
+      "height": 1115,
+      "sha256": "3cb83fa14b84cf164a23d4e53c4bd76aea9954c0a4bc0c4a1d5995d5c2a1d337",
+      "bytes": 2274122
     },
     {
       "className": "Hindsight",
       "title": "后知后觉",
-      "kind": "placeholder",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/card.png"
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Hindsight.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "cbebe91a67d688eac77a46cabf52ecf6cd72c57cc618bbbd8cdf494b56f8c9df",
+      "bytes": 2101204
+    },
+    {
+      "className": "HowToChuan",
+      "title": "怎么串？",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/HowToChuan.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "3d9457ed385fcd800bb25316384a1361d69f68af204ce7def6b9463514c75359",
+      "bytes": 1985398
     },
     {
       "className": "InfiniteHao",
       "title": "无限豪",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/InfiniteHao.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/InfiniteHao.png",
+      "generated": false,
+      "width": 1411,
+      "height": 1115,
+      "sha256": "eedc93a0549e246336bcbd2d8b3c59a43b3f7c769c3ae30e0c191bd3e34c5549",
+      "bytes": 2427258
+    },
+    {
+      "className": "InverseMapping",
+      "title": "逆映射",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/InverseMapping.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "500e908af357292ca2c9935641945e10f82abe4d300d352cf8462ad554f35922",
+      "bytes": 2120630
+    },
+    {
+      "className": "JT83",
+      "title": "军团办公室",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/JT83.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "0987e8b80c5f2154c1e1cf981a4db3b701a68cb3caaa6ad5b3cd9cad6a3ee650",
+      "bytes": 2039086
     },
     {
       "className": "KeyboardWarrior",
       "title": "键盘侠",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/KeyboardWarrior.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/KeyboardWarrior.png",
+      "generated": false,
+      "width": 1438,
+      "height": 1093,
+      "sha256": "ee96d20c92c55b2432687b77938f1ff80646b8f3f1e9164c1fde5c2f2ab499eb",
+      "bytes": 1821889
     },
     {
       "className": "KickUp",
       "title": "临门一脚",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/KickUp.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/KickUp.png",
+      "generated": false,
+      "width": 1411,
+      "height": 1115,
+      "sha256": "01ee8da17ee85aea04211b7c00d9846a4917ef8fed5e21f42d7e5c6ef39eaab1",
+      "bytes": 2040520
+    },
+    {
+      "className": "LetItGo",
+      "title": "想开了",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/LetItGo.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "9b42090908f80a88465bfb45b19ddf0ede0be7ad14e1e32ab2ebe33cab52bb5c",
+      "bytes": 2091367
+    },
+    {
+      "className": "Lost",
+      "title": "沉沦",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Lost.png",
+      "generated": false,
+      "width": 1024,
+      "height": 1536,
+      "sha256": "7410a450d893f24c9492c9551cd80c3d1d2782c9fefcbf1579dcfeee0ed4c3e2",
+      "bytes": 2941194
+    },
+    {
+      "className": "MMMath",
+      "title": "高高高等数学",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/MMMath.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "3fe4a8f414c5998bfc6332e0c9decb9f4af6744cdc1088e0ef9a29c8ee28603b",
+      "bytes": 2204329
     },
     {
       "className": "MagnificentHao",
       "title": "“佳”豪",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/MagnificentHao.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/MagnificentHao.png",
+      "generated": false,
+      "width": 250,
+      "height": 190,
+      "sha256": "79681bd07db91433dd4d532a9d1ec85e8a96d4191ed5efd30e7dc25b1f24a852",
+      "bytes": 33077
     },
     {
       "className": "MathPrince",
       "title": "数学王子",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/MathPrince.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/MathPrince.png",
+      "generated": false,
+      "width": 1448,
+      "height": 1086,
+      "sha256": "853960e2f881a2e1e95fdc7fcc635934d61c1bf7fcd37059020078d300eae909",
+      "bytes": 2070050
     },
     {
       "className": "Narcissism",
       "title": "自恋",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/Narcissism.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Narcissism.png",
+      "generated": false,
+      "width": 1204,
+      "height": 949,
+      "sha256": "4c9e5fff3655dc2878610083900551bc7b4cca9c2afec15953911f3467211211",
+      "bytes": 2038030
     },
     {
       "className": "NewGroupChat",
       "title": "新群聊",
-      "kind": "placeholder",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/card.png"
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/NewGroupChat.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "1aa11c6f4332d3884db96a27df916b4ec1717f364e47795b6c04c40cabfd9739",
+      "bytes": 2112740
+    },
+    {
+      "className": "NoEscape",
+      "title": "无处可逃",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/NoEscape.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "6e6898af2502553eaae16f7b63674114d8e8334ff6cc2be1cbe05eb1e495f33f",
+      "bytes": 2131416
+    },
+    {
+      "className": "Noob",
+      "title": "菜",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Noob.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "5d3d0653399fd0402707fa9859e41f2724663b7a0c7bb95b4a29313e466e1e43",
+      "bytes": 2173394,
+      "selectedVariant": "v2"
+    },
+    {
+      "className": "NothingToMention",
+      "title": "不如你一根",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/NothingToMention.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "cb14f8d3023e67f9b433f14db0b7a94bcd44bf4e06d660c099c9b935e0fa73b9",
+      "bytes": 2095954
+    },
+    {
+      "className": "OnlyNumbers",
+      "title": "只有数值",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/OnlyNumbers.png",
+      "generated": true,
+      "width": 1411,
+      "height": 1114,
+      "sha256": "63172dccaf062b2906a479fb2680e5dc69a0678f0b45750738fa1cda91dc672d",
+      "bytes": 2411466
     },
     {
       "className": "Planning",
       "title": "规划",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/Planning.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Planning.png",
+      "generated": false,
+      "width": 1448,
+      "height": 1086,
+      "sha256": "001e2c7694e30f37b094e9dc63be20b51ba9d9d2d2b13164b2a07e80707c76fe",
+      "bytes": 1448482
     },
     {
       "className": "PlayingMyself",
       "title": "本色出演",
-      "kind": "placeholder",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/card.png"
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/PlayingMyself.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "214957b44e6438be09c0e76caa54b53ddfeda330faef76874473b84fa6c6b185",
+      "bytes": 2001275
     },
     {
       "className": "PressForward",
       "title": "步步紧逼",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/PressForward.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/PressForward.png",
+      "generated": false,
+      "width": 1438,
+      "height": 1093,
+      "sha256": "0d007243a28b435b0b65096d7e134a7f82738908b452791c6359ccca32976484",
+      "bytes": 2535785
     },
     {
       "className": "QuantumMechanics",
       "title": "量子力学",
-      "kind": "placeholder",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/card.png"
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/QuantumMechanics.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "b3e89169f22b74d6f3547176a07476de60537561a0fa50376201a1683a48ed69",
+      "bytes": 2130508
+    },
+    {
+      "className": "RabbitHead",
+      "title": "兔头",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/RabbitHead.png",
+      "generated": true,
+      "width": 1411,
+      "height": 1115,
+      "sha256": "8aaf5cbb8c89d589011f4e3d7ba97ac7de377cc62b841ffca9ea3f3811b17d4e",
+      "bytes": 2186521
     },
     {
       "className": "Rhythm",
       "title": "节奏",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/Rhythm.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Rhythm.png",
+      "generated": false,
+      "width": 1448,
+      "height": 1086,
+      "sha256": "e75e1b4974ec218b1fea3853c1ce4909e94dab690f60a2848e7a9cb36166dffb",
+      "bytes": 1488553
     },
     {
       "className": "ShangHaiStudent",
       "title": "上海考生",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/ShangHaiStudent.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/ShangHaiStudent.png",
+      "generated": false,
+      "width": 1411,
+      "height": 1115,
+      "sha256": "8e396acb3f72313c54174359ece0512b2d95eee8ed626ab3232237ee68e155dc",
+      "bytes": 2302380
     },
     {
       "className": "ShiNong",
       "title": "石农",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/ShiNong.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/ShiNong.png",
+      "generated": false,
+      "width": 1410,
+      "height": 1116,
+      "sha256": "77866d9e1734c8eb71cc3fbc8b9f9f174cb619db08784847ba472e5200a40fd3",
+      "bytes": 1793022
+    },
+    {
+      "className": "SilverLining",
+      "title": "苦中作乐",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/SilverLining.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "fbfa0fbd4038797bb0d3b23acf962b36c6e829d9fdef4f3cbfc94ed4c1aacac9",
+      "bytes": 2176488
+    },
+    {
+      "className": "Smurfing",
+      "title": "炸鱼",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Smurfing.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "fc97a73116d321818ffd4b46eefdc8de80029d23bb62032f835ebdf3e7f7102f",
+      "bytes": 2072839
     },
     {
       "className": "Sneer",
       "title": "讥笑",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/Sneer.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Sneer.png",
+      "generated": false,
+      "width": 1448,
+      "height": 1086,
+      "sha256": "2833430df6a3a054dcc92ff37e6728b6cfffce17ad5612cad8a9efa857148ec7",
+      "bytes": 2327407
     },
     {
       "className": "Spark",
       "title": "火花",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/Spark.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Spark.png",
+      "generated": false,
+      "width": 250,
+      "height": 190,
+      "sha256": "790d9bee1d05089a2191e099bad9c9abc21f7faec8094ae4d1176d6d9c3ac4ec",
+      "bytes": 31038
     },
     {
       "className": "Speech",
       "title": "发言",
-      "kind": "placeholder",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/card.png"
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Speech.png",
+      "generated": false,
+      "width": 1448,
+      "height": 1086,
+      "sha256": "8f3b20d046fd3294122da86c02df09247f0fd7e313754d3727aa710abe2b159c",
+      "bytes": 1941306
     },
     {
       "className": "Strike",
       "title": "打击",
       "kind": "vanilla",
-      "portraitPath": null
+      "portraitPath": "ModelDb.Card<StrikeIronclad>().PortraitPath"
     },
     {
       "className": "StudentLeader",
       "title": "学生会主席",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/StudentLeader.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/StudentLeader.png",
+      "generated": false,
+      "width": 1203,
+      "height": 947,
+      "sha256": "f7cbd4325b186bc780a2d2ad5ff90ad0cb100827eec2fa16e196dffecb94abfe",
+      "bytes": 1918027
     },
     {
       "className": "SuddenRepentance",
       "title": "幡然悔悟",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/SuddenRepentance.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/SuddenRepentance.png",
+      "generated": false,
+      "width": 1411,
+      "height": 1115,
+      "sha256": "cc72823e6331d3dcbef4dbfb86afefaa37099b87d25c9c5110c0d68f4a194207",
+      "bytes": 1983153
     },
     {
       "className": "SuperHaoField",
       "title": "嘉豪领域",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/SuperHaoField.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/SuperHaoField.png",
+      "generated": false,
+      "width": 1411,
+      "height": 1115,
+      "sha256": "625c5fbeea41dea0b9a4455032fb38ca9aadc17d48adc1303f92216b0730990b",
+      "bytes": 2261488
     },
     {
       "className": "Surfing",
       "title": "网络冲浪",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/Surfing.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Surfing.png",
+      "generated": false,
+      "width": 1411,
+      "height": 1115,
+      "sha256": "22818f0d978e29c0a701028598f0a474694f5f3ca34321f5512752e2e9229b0f",
+      "bytes": 1950297
+    },
+    {
+      "className": "Tilted",
+      "title": "急了",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Tilted.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "58a5f4295f246c318294bfdf05c3336f729fa55d046517b86bca3fe2f9cdecb3",
+      "bytes": 2057004
     },
     {
       "className": "TimeWaitsForNoOne",
       "title": "时不我待",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/TimeWaitsForNoOne.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/TimeWaitsForNoOne.png",
+      "generated": false,
+      "width": 1438,
+      "height": 1093,
+      "sha256": "4d6a50512f86a8a74c110341daf7b8abadbd77042f55923e30d938fc8ca5dbad",
+      "bytes": 2803077
     },
     {
       "className": "TitForTat",
       "title": "针锋相对",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/TitForTat.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/TitForTat.png",
+      "generated": false,
+      "width": 1438,
+      "height": 1093,
+      "sha256": "c3f0105a49bb1f35a1b1490d259cdac495106e2d02b1cc02f8b2291571a53c48",
+      "bytes": 1881213
+    },
+    {
+      "className": "Triathlon",
+      "title": "三项全能",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Triathlon.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "633af28a4a1b85f53d1cae92a069ddc9c1afbf5845e61db7453f80bb9b3d072d",
+      "bytes": 2207747
     },
     {
       "className": "TsinghuaForm",
       "title": "清华形态",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/TsinghuaForm.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/TsinghuaForm.png",
+      "generated": false,
+      "width": 1448,
+      "height": 1086,
+      "sha256": "602cef7ae741e0ec78e84dcee50ebb25c6d78ef70ab177ffaace4c59fa4da27c",
+      "bytes": 2987895
     },
     {
       "className": "UncertaintyPrinciple",
       "title": "测不准原理",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/UncertaintyPrinciple.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/UncertaintyPrinciple.png",
+      "generated": false,
+      "width": 1438,
+      "height": 1093,
+      "sha256": "f4e5261750ef2e8b748829967c7c2979032e10bed447c9f11e75ed60878cbcff",
+      "bytes": 1781011
+    },
+    {
+      "className": "Unorthodox",
+      "title": "野路子",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Unorthodox.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "027fd7888f36236f38530ad64f994e19ab98288021ab41c5d0a6720959ffef85",
+      "bytes": 2188912
     },
     {
       "className": "Unrepentant",
       "title": "嘴硬",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/Unrepentant.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Unrepentant.png",
+      "generated": false,
+      "width": 1410,
+      "height": 1115,
+      "sha256": "7f8eb676478fb86a98657396d6a4b20bcb36fea5ede82bea2b5c05fd542c3bbf",
+      "bytes": 1719957
     },
     {
       "className": "UnspokenFury",
       "title": "未声张的怒火",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/UnspokenFury.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/UnspokenFury.png",
+      "generated": false,
+      "width": 1411,
+      "height": 1115,
+      "sha256": "e741a0546c325e5bb8a8543959f546729a00a84997e7ecbe8b17b5b1f43df3e0",
+      "bytes": 2183469
     },
     {
       "className": "Xiao",
       "title": "孝",
       "kind": "normal",
-      "portraitPath": "res://MySts2Mod/images/card_portraits/Xiao.png"
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Xiao.png",
+      "generated": false,
+      "width": 1201,
+      "height": 949,
+      "sha256": "0179f9b2ffb5c0f405ae8265830d4dd2608ce0411c3d1ea6253313bf1b2a79c8",
+      "bytes": 1222823
+    },
+    {
+      "className": "XuXiaoyan",
+      "title": "消炎",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/XuXiaoyan.png",
+      "generated": true,
+      "width": 1000,
+      "height": 790,
+      "sha256": "d5d90fa5a360a04eecd6191c3d5657fa8ed2e6de8e11d19e80b44eff25865475",
+      "bytes": 2045388
     }
   ]
 }

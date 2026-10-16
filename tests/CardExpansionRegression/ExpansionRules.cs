@@ -80,7 +80,7 @@ internal static class ExpansionRules
             Equal(true, HaoStateExtensions.TryConsumeHaoStateSwitchReward(2, ref last));
             Equal(false, HaoStateExtensions.TryConsumeHaoStateSwitchReward(2, ref last));
         });
-        foreach (var (type, strength, dexterity) in new[] { (typeof(HiddenStatePower), -2, 4), (typeof(OpenHaoStatePower), 3, -1) })
+        foreach (var (type, strength, dexterity) in new[] { (typeof(HiddenStatePower), -2, 3), (typeof(OpenHaoStatePower), 2, -1) })
         {
             var state = Power(type, owner);
             check(type.Name + " defines its reversible original-game stat contribution", () =>
@@ -151,6 +151,67 @@ internal static class ExpansionRules
             Equal(3m, card.DynamicVars["RhythmPower"].BaseValue);
         });
 
+        check("GodList adds two to each positive Hao receipt including an unowned canonical first application", () =>
+        {
+            var godList = GodListBonus(owner);
+            var canonicalHao = ModelDb.Power<HaoPower>();
+            // A newly applied power has no owner yet; the receiver argument identifies the beneficiary.
+            Equal(false, canonicalHao.IsMutable);
+            Equal<object?>(null, Field(typeof(PowerModel), "_owner").GetValue(canonicalHao));
+            foreach (var (received, expected) in new[] { (1m, 3m), (5m, 7m) })
+            {
+                Equal(true, godList.TryModifyPowerAmountReceived(canonicalHao, owner, received, owner, out var modified));
+                Equal(expected, modified);
+            }
+        });
+        check("GodList also boosts existing Hao receipts without mutating the power inside the modifier", () =>
+        {
+            var godList = GodListBonus(owner);
+            var existingHao = Power(typeof(HaoPower), owner);
+            Field(typeof(PowerModel), "_amount").SetValue(existingHao, 10);
+            for (var receipt = 0; receipt < 3; receipt++)
+            {
+                Equal(true, godList.TryModifyPowerAmountReceived(existingHao, owner, 5m, owner, out var modified));
+                Equal(7m, modified);
+                Equal(10, existingHao.Amount);
+                Equal(2, godList.Amount);
+            }
+        });
+        check("GodList does not boost zero receipts or Hao losses", () =>
+        {
+            var godList = GodListBonus(owner);
+            var hao = ModelDb.Power<HaoPower>();
+            foreach (var amount in new[] { 0m, -1m, -5m })
+            {
+                Equal(false, godList.TryModifyPowerAmountReceived(hao, owner, amount, owner, out var modified));
+                Equal(amount, modified);
+            }
+        });
+        check("GodList does not boost another player's Hao or a different power", () =>
+        {
+            var godList = GodListBonus(owner);
+            Equal(false, godList.TryModifyPowerAmountReceived(ModelDb.Power<HaoPower>(), ally, 5m, owner, out var allyAmount));
+            Equal(5m, allyAmount);
+            Equal(false, godList.TryModifyPowerAmountReceived(ModelDb.Power<GeniusPower>(), owner, 5m, owner, out var otherPowerAmount));
+            Equal(5m, otherPowerAmount);
+        });
+        check("GodList boosts its owner's Hao even with no giver or a teammate giver", () =>
+        {
+            var godList = GodListBonus(owner);
+            foreach (var giver in new Creature?[] { null, ally })
+            {
+                Equal(true, godList.TryModifyPowerAmountReceived(ModelDb.Power<HaoPower>(), owner, 1m, giver, out var modified));
+                Equal(3m, modified);
+            }
+        });
+        check("GodList receipt bonus follows the stacked power amount", () =>
+        {
+            var godList = GodListBonus(owner, 4);
+            Equal(MegaCrit.Sts2.Core.Entities.Powers.PowerStackType.Counter, godList.StackType);
+            Equal(true, godList.TryModifyPowerAmountReceived(ModelDb.Power<HaoPower>(), owner, 5m, owner, out var modified));
+            Equal(9m, modified);
+        });
+
         check("HP loss preserves Hao even when it has positive unblocked value", () =>
         {
             var hao = Power(typeof(HaoPower), owner);
@@ -196,6 +257,12 @@ internal static class ExpansionRules
         var value = (PowerModel)RuntimeHelpers.GetUninitializedObject(type);
         Field(typeof(AbstractModel), "<IsMutable>k__BackingField").SetValue(value, true);
         Field(typeof(PowerModel), "_owner").SetValue(value, owner);
+        return value;
+    }
+    private static GodListPower GodListBonus(Creature owner, int amount = 2)
+    {
+        var value = (GodListPower)Power(typeof(GodListPower), owner);
+        Field(typeof(PowerModel), "_amount").SetValue(value, amount);
         return value;
     }
     private static CardPlay Play(CardModel card, Player player, int cost, int? energySpent = null) => new()

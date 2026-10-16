@@ -9,7 +9,7 @@ namespace MySts2Mod.MySts2ModCode;
 [ModInitializer(nameof(Initialize))]
 public partial class MainFile : Node
 {
-    public const string ModId = "MySts2Mod"; //Used for resource filepath
+    public const string ModId = "CodeFarmer"; //Used for resource filepath
     public const string ResPath = $"res://{ModId}";
 
     public static MegaCrit.Sts2.Core.Logging.Logger Logger { get; } = new(ModId, MegaCrit.Sts2.Core.Logging.LogType.Generic);

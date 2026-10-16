@@ -160,7 +160,7 @@ def main() -> int:
         "--resources", type=Path, required=True,
         help="Source asset directory containing localization/ (not the C# project root)",
     )
-    parser.add_argument("--mod-id", default="MySts2Mod", help="Manifest ID / PCK resource prefix")
+    parser.add_argument("--mod-id", default="CodeFarmer", help="Manifest ID / PCK resource prefix")
     args = parser.parse_args()
     if not args.mod_id or "/" in args.mod_id or "\\" in args.mod_id:
         parser.error("--mod-id must be a nonempty single path component")

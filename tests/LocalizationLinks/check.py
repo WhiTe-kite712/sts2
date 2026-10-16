@@ -34,7 +34,8 @@ def source_only(source):
 
 
 manifest = json.loads((PROJECT / "MySts2Mod.json").read_text(encoding="utf-8-sig"))
-resource_path = PROJECT / manifest["id"] / "localization"
+# Disk assets stay in MySts2Mod; the manifest ID names packed resources and installation only.
+resource_path = PROJECT / "MySts2Mod" / "localization"
 models = {}
 for folder, table in [("Cards", "cards"), ("Powers", "powers"), ("Relics", "relics")]:
     for file in sorted((CODE / folder).glob("*.cs")):

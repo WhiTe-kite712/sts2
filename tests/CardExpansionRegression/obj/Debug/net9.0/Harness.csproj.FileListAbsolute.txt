@@ -6,7 +6,6 @@ C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\bi
 C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\bin\Debug\net9.0\0Harmony.dll
 C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\bin\Debug\net9.0\BaseLib.dll
 C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\bin\Debug\net9.0\GodotSharp.dll
-C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\bin\Debug\net9.0\MySts2Mod.dll
 C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\bin\Debug\net9.0\sts2.dll
 C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\bin\Debug\net9.0\Sentry.Godot.dll
 C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\bin\Debug\net9.0\Sentry.dll
@@ -21,7 +20,6 @@ C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\bi
 C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\bin\Debug\net9.0\SharpGen.Runtime.COM.dll
 C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\bin\Debug\net9.0\sts2.xml
 C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\bin\Debug\net9.0\BaseLib.xml
-C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\bin\Debug\net9.0\MySts2Mod.pdb
 C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\bin\Debug\net9.0\Sentry.Godot.xml
 C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\obj\Debug\net9.0\Harness.csproj.AssemblyReference.cache
 C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\obj\Debug\net9.0\Harness.GeneratedMSBuildEditorConfig.editorconfig
@@ -35,3 +33,6 @@ C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\ob
 C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\obj\Debug\net9.0\Harness.pdb
 C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\obj\Debug\net9.0\Harness.genruntimeconfig.cache
 C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\obj\Debug\net9.0\ref\Harness.dll
+C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\bin\Debug\net9.0\GodotSharpEditor.dll
+C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\bin\Debug\net9.0\CodeFarmer.dll
+C:\Users\Amazi\Desktop\Spire2Mod\Git Clone\sts2\tests\CardExpansionRegression\bin\Debug\net9.0\CodeFarmer.pdb

@@ -17,7 +17,7 @@ public class NewGroupChat : MySts2ModCard
         HoverTipFactory.FromCard<Xiao>(IsUpgraded),
     ];
 
-    public NewGroupChat() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    public NewGroupChat() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }
 

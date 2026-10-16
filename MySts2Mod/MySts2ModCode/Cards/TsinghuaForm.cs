@@ -34,4 +34,6 @@ public class TsinghuaForm : MySts2ModCard
         var creature = cardPlay.Player.Creature;
         await PowerCmd.Apply<TsinghuaFormPower>(choiceContext, creature, 1, creature, this);
     }
+
+    protected override void OnUpgrade() => AddKeyword(CardKeyword.Retain);
 }

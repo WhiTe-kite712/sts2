@@ -34,4 +34,6 @@ public class UnspokenFury : MySts2ModCard
         var creature = cardPlay.Player.Creature;
         await PowerCmd.Apply<UnspokenFuryPower>(choiceContext, creature, 1, creature, this);
     }
+
+    protected override void OnUpgrade() => DynamicVars.Damage.UpgradeValueBy(5);
 }

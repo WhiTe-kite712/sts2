@@ -45,10 +45,10 @@ public class InfiniteHao : MySts2ModCard
         // 升级+1
         if (IsUpgraded) x++;
 
-        while (player.GetHao() >= 3)
+        while (player.GetHao() >= 6)
         {
                 var snapshot = player.GetHao();
-                await player.LoseHao(choiceContext, 3, this);
+                await player.LoseHao(choiceContext, 6, this);
                 if (player.GetHao() >= snapshot) return; // 豪意未实际减少，防无限循环
 
             if (x > 0)
