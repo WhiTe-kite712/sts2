@@ -16,7 +16,7 @@ public class Triathlon : MySts2ModCard
     protected override IEnumerable<DynamicVar> CanonicalVars =>
         [new PowerVar<StrengthPower>(2), new PowerVar<DexterityPower>(2)];
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
-        [HoverTipFactory.FromPower<StrengthPower>(), HoverTipFactory.FromPower<DexterityPower>(), HoverTipFactory.FromPower<TriathlonPower>()];
+        [HoverTipFactory.FromPower<StrengthPower>(), HoverTipFactory.FromPower<DexterityPower>()];
 
     public Triathlon() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
 

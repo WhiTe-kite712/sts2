@@ -17,8 +17,6 @@ public class MagnificentHao : MySts2ModCard
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<MagnificentDrawPower>(),
-        HoverTipFactory.FromPower<MagnificentHaoPower>(),
         HoverTipFactory.FromPower<HaoPower>(),
     ];
 

@@ -17,7 +17,6 @@ public class MathPrince : MySts2ModCard
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<MathPrincePower>(),
         HoverTipFactory.FromPower<StrengthPower>(),
         HoverTipFactory.FromPower<HaoPower>(),
     ];

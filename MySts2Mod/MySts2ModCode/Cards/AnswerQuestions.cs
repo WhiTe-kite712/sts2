@@ -16,7 +16,7 @@ public class AnswerQuestions : MySts2ModCard
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new IntVar("DamageThreshold", 30)];
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
-        [HoverTipFactory.FromPower<HaoPower>(), HoverTipFactory.FromPower<AnswerQuestionsPower>(DynamicVars["DamageThreshold"].IntValue)];
+        [HoverTipFactory.FromPower<HaoPower>()];
 
     public AnswerQuestions() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
 

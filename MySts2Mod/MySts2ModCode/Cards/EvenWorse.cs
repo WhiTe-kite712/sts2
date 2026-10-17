@@ -16,7 +16,7 @@ public class EvenWorse : MySts2ModCard
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Ethereal, CardKeyword.Exhaust];
     protected override IEnumerable<DynamicVar> CanonicalVars =>
         [new PowerVar<FrailPower>(3), new PowerVar<WeakPower>(3), new PowerVar<VulnerablePower>(3),
-         new CardsVar(2), new EnergyVar(2)];
+         new CardsVar(4), new EnergyVar(3)];
     protected override IEnumerable<IHoverTip> ExtraHoverTips => RegularDebuffs.HoverTips;
 
     public EvenWorse() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }

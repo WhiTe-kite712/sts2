@@ -1,6 +1,6 @@
 {
-  "verificationStatus": "source-only; current constructor and committed PressForward tuning aligned on 2026-10-16; not a runtime DLL snapshot",
-  "numericBaseline": "Prior COPY source manifest plus native Strike/Defend values verified from original source. Not a new DLL snapshot. SuddenRepentance values are derived from its source (cost 1 to 0, Retain/Exhaust); this file remains a source manifest. The three 2026-10-07 cards and their two powers are source-derived records, not runtime results. Bias (7/9 Block, 1/2 Cards) and Speech (4 Hao, 2/3 Energy, cost 0 both versions) are source-derived additions on 2026-10-10. Records retain the prior source-manifest baseline, including existing drift, except for explicitly documented source-only changes; this is not a refreshed DLL snapshot. Four cards (UnspokenFury, Sneer, TsinghuaForm, Unrepentant) and two canonical power variable records were updated from source on 2026-10-12; no new runtime execution is implied. The 16 cards and 5 powers added on 2026-10-12 are source-derived records; existing records and their previously documented drift are retained. Eleven self-debuff cards and two powers added on 2026-10-15 are source-derived records; older source/runtime drift remains documented. Release preparation 2026-10-16: source constructors align ChatHistory costs 2/1, NewGroupChat costs 1/1 and Exam Uncommon; PressForward source committed in 772f145 uses CalculationBase 8/11 and ExtraDamage 4/6. No gameplay source was changed. Remaining fields retain their documented source baseline; runtime inventories require a separate real Harness run.",
+  "verificationStatus": "source-only; constructor metadata aligned on 2026-10-17; not a runtime DLL snapshot",
+  "numericBaseline": "Prior COPY source manifest plus native Strike/Defend values verified from original source. Not a new DLL snapshot. SuddenRepentance values are derived from its source (cost 1 to 0, Retain/Exhaust); this file remains a source manifest. The three 2026-10-07 cards and their two powers are source-derived records, not runtime results. Bias (7/9 Block, 1/2 Cards) and Speech (4 Hao, 2/3 Energy, cost 0 both versions) are source-derived additions on 2026-10-10. Records retain the prior source-manifest baseline, including existing drift, except for explicitly documented source-only changes; this is not a refreshed DLL snapshot. Four cards (UnspokenFury, Sneer, TsinghuaForm, Unrepentant) and two canonical power variable records were updated from source on 2026-10-12; no new runtime execution is implied. The 16 cards and 5 powers added on 2026-10-12 are source-derived records; existing records and their previously documented drift are retained. Eleven self-debuff cards and two powers added on 2026-10-15 are source-derived records; older source/runtime drift remains documented. Release preparation 2026-10-16: source constructors align ChatHistory costs 2/1, NewGroupChat costs 1/1 and Exam Uncommon; PressForward source committed in 772f145 uses CalculationBase 8/11 and ExtraDamage 4/6. No gameplay source was changed. Remaining fields retain their documented source baseline; runtime inventories require a separate real Harness run. Source audit 2026-10-17: Calm upgraded cost 2; GodList costs 2/1 and its card MaxHpCap variable 7; GroupDiscuss Rare. All 88 constructor costs/types/rarities/targets were statically compared. Other historical variable records are preserved rather than presented as a newly executed inventory. Source audit 2026-10-17 (11 self-debuff cards): EvenWorse current working-tree values Cards 4 and Energy 3 retained in both base and upgraded records; upgrade only reduces each regular debuff 3 to 2. The other ten cards match their source-derived fixture. No gameplay source or runtime inventory was changed.",
   "cards": [
     {
       "className": "AmIShiNong",
@@ -194,7 +194,7 @@
         "variables": {}
       },
       "after": {
-        "cost": 3,
+        "cost": 2,
         "costsX": false,
         "type": "Attack",
         "rarity": "Uncommon",
@@ -692,8 +692,8 @@
           "FrailPower": 3,
           "WeakPower": 3,
           "VulnerablePower": 3,
-          "Cards": 2,
-          "Energy": 2
+          "Cards": 4,
+          "Energy": 3
         },
         "keywords": [
           "Ethereal",
@@ -710,8 +710,8 @@
           "FrailPower": 2,
           "WeakPower": 2,
           "VulnerablePower": 2,
-          "Cards": 2,
-          "Energy": 2
+          "Cards": 4,
+          "Energy": 3
         },
         "keywords": [
           "Ethereal",
@@ -949,8 +949,8 @@
           "FrailPower": 2,
           "WeakPower": 2,
           "VulnerablePower": 2,
-          "Cards": 2,
-          "CostReduction": 1
+          "CostReduction": 1,
+          "Cards": 2
         },
         "keywords": [
           "Exhaust"
@@ -966,8 +966,8 @@
           "FrailPower": 1,
           "WeakPower": 1,
           "VulnerablePower": 1,
-          "Cards": 2,
-          "CostReduction": 1
+          "CostReduction": 1,
+          "Cards": 2
         },
         "keywords": [
           "Exhaust"
@@ -1037,18 +1037,6 @@
       "id": "MYSTS2MOD-GOD_LIST",
       "pool": "HaoCardPool",
       "before": {
-        "cost": 3,
-        "costsX": false,
-        "type": "Power",
-        "rarity": "Ancient",
-        "target": "Self",
-        "keywords": [],
-        "variables": {
-          "GodListPower": 2,
-          "MaxHpCap": 8
-        }
-      },
-      "after": {
         "cost": 2,
         "costsX": false,
         "type": "Power",
@@ -1057,7 +1045,19 @@
         "keywords": [],
         "variables": {
           "GodListPower": 2,
-          "MaxHpCap": 8
+          "MaxHpCap": 7
+        }
+      },
+      "after": {
+        "cost": 1,
+        "costsX": false,
+        "type": "Power",
+        "rarity": "Ancient",
+        "target": "Self",
+        "keywords": [],
+        "variables": {
+          "GodListPower": 2,
+          "MaxHpCap": 7
         }
       }
     },
@@ -1100,7 +1100,7 @@
         "cost": 3,
         "costsX": false,
         "type": "Skill",
-        "rarity": "Uncommon",
+        "rarity": "Rare",
         "target": "AnyEnemy",
         "keywords": [
           "Ethereal",
@@ -1114,7 +1114,7 @@
         "cost": 3,
         "costsX": false,
         "type": "Skill",
-        "rarity": "Uncommon",
+        "rarity": "Rare",
         "target": "AnyEnemy",
         "keywords": [
           "Ethereal",
@@ -2407,8 +2407,8 @@
         "rarity": "Uncommon",
         "target": "Self",
         "variables": {
-          "Cards": 1,
-          "DebuffKinds": 2
+          "DebuffKinds": 2,
+          "Cards": 1
         },
         "keywords": []
       },
@@ -2419,8 +2419,8 @@
         "rarity": "Uncommon",
         "target": "Self",
         "variables": {
-          "Cards": 2,
-          "DebuffKinds": 2
+          "DebuffKinds": 2,
+          "Cards": 2
         },
         "keywords": []
       }

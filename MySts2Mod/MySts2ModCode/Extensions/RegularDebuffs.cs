@@ -1,5 +1,6 @@
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 
@@ -20,8 +21,8 @@ internal static class RegularDebuffs
 
     public static IEnumerable<IHoverTip> HoverTips =>
     [
-        HoverTipFactory.FromPower<FrailPower>(),
-        HoverTipFactory.FromPower<WeakPower>(),
-        HoverTipFactory.FromPower<VulnerablePower>(),
+        new HoverTip(
+            new LocString("static_hover_tips", "MYSTS2MOD-REGULAR_DEBUFFS.title"),
+            new LocString("static_hover_tips", "MYSTS2MOD-REGULAR_DEBUFFS.description")),
     ];
 }

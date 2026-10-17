@@ -15,12 +15,15 @@ namespace MySts2Mod.MySts2ModCode.Powers;
 /// <summary>
 /// 数学王子：回合开始时，每有4点豪意值，获得1点临时力量。
 /// </summary>
+// Smart description only; source checks still require localized title and smartDescription.
+#pragma warning disable STS001
 public class MathPrincePower : MySts2ModPower
+#pragma warning restore STS001
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<HaoPower>(),
-        HoverTipFactory.FromPower<MathPrinceTempStrengthPower>(),
+
         HoverTipFactory.FromPower<StrengthPower>(),
     ];
 

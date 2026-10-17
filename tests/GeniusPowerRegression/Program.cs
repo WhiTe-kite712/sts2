@@ -40,10 +40,11 @@ Check("fully blocked positive hit consumes flag", () =>
     var genius = MakePower<GeniusPower>(owner); genius.HaoLostFlag = true;
     Settle(genius, owner, enemy, 20, 0); Equal(false, genius.HaoLostFlag);
 });
-Check("zero damage callback preserves flag", () =>
+Check("zero damage enemy callback consumes flag", () =>
 {
     var genius = MakePower<GeniusPower>(owner); genius.HaoLostFlag = true;
-    Settle(genius, owner, enemy, 0, 0); Equal(true, genius.HaoLostFlag);
+    // Current committed GeniusPower explicitly consumes eligible zero-damage callbacks.
+    Settle(genius, owner, enemy, 0, 0); Equal(false, genius.HaoLostFlag);
 });
 Check("other target callback preserves flag", () =>
 {

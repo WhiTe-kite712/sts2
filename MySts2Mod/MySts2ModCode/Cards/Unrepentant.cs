@@ -16,8 +16,6 @@ public class Unrepentant : MySts2ModCard
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<UnrepentantGuardPower>(),
-        HoverTipFactory.FromPower<UnrepentantPainPower>(),
         HoverTipFactory.FromPower<HaoPower>(),
     ];
 

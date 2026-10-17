@@ -13,7 +13,10 @@ namespace MySts2Mod.MySts2ModCode.Powers;
 /// <summary>
 /// 讥笑：本回合你格挡掉的伤害，会对攻击者造成等量伤害。回合结束移除。
 /// </summary>
+// Smart description only; source checks still require localized title and smartDescription.
+#pragma warning disable STS001
 public class SneerPower : MySts2ModPower
+#pragma warning restore STS001
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Single;

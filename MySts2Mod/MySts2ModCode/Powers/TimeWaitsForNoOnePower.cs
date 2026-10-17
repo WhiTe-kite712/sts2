@@ -8,7 +8,10 @@ using MySts2Mod.MySts2ModCode.Extensions;
 
 namespace MySts2Mod.MySts2ModCode.Powers;
 
+// Smart description only; source checks still require localized title and smartDescription.
+#pragma warning disable STS001
 public class TimeWaitsForNoOnePower : MySts2ModPower
+#pragma warning restore STS001
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Single;

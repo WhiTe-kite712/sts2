@@ -15,12 +15,14 @@ namespace MySts2Mod.MySts2ModCode.Powers;
 /// <summary>
 /// 天才：回合开始时获得1点能量并抽{Amount}张牌；每次失去豪意值后，你受到的下一次伤害翻倍。
 /// </summary>
+// Smart description only; source checks still require localized title and smartDescription.
+#pragma warning disable STS001
 public class GeniusPower : MySts2ModPower
+#pragma warning restore STS001
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<HaoPower>(),
-        HoverTipFactory.ForEnergy(this),
     ];
 
     public override PowerType Type => PowerType.Buff;

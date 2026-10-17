@@ -16,12 +16,14 @@ namespace MySts2Mod.MySts2ModCode.Powers;
 /// 嘴硬（第一阶段）：格挡正常扣除，剩余伤害不扣生命而改为获得等量豪意值。
 /// 覆盖本回合和敌方回合，直到拥有者的下个回合开始时切换为反噬。
 /// </summary>
+// Smart description only; source checks still require localized title and smartDescription.
+#pragma warning disable STS001
 public class UnrepentantGuardPower : MySts2ModPower
+#pragma warning restore STS001
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<HaoPower>(),
-        HoverTipFactory.FromPower<UnrepentantPainPower>(),
     ];
 
     public override PowerType Type => PowerType.Buff;

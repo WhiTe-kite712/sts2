@@ -15,7 +15,10 @@ namespace MySts2Mod.MySts2ModCode.Powers;
 /// <summary>
 /// 清华之姿：当你失去豪意值时，获得等同于失去数量一半的豪意值与格挡（净效果约只失去一半）。
 /// </summary>
+// Smart description only; source checks still require localized title and smartDescription.
+#pragma warning disable STS001
 public class TsinghuaFormPower : MySts2ModPower
+#pragma warning restore STS001
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [

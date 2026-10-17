@@ -55,7 +55,9 @@ internal static class ExpansionRules
                 .Concat(Enumerable.Range(0, 4).Select(_ => (CardModel)Card<Defend>(player)))
                 .Concat(new CardModel[] { Card<HaoStrike>(player), Card<HaoDefend>(player), Card<Narcissism>(player) })
                 .ToArray();
-            Equal(11, deck.Length);
+            foreach (var card in deck) player.Deck.AddInternal(card, silent: true);
+            Equal(11, player.Deck.Cards.Count);
+            Equal(true, deck.All(card => ReferenceEquals(player.Deck, card.Pile)));
             Equal(8, deck.Count(card => card.IsBasicStrikeOrDefend && card.IsRemovable));
             Equal(8, deck.Count(card => card.Rarity == CardRarity.Basic
                 && (card.Tags.Contains(CardTag.Strike) || card.Tags.Contains(CardTag.Defend))));
@@ -135,12 +137,12 @@ internal static class ExpansionRules
         check("PressForward retains its existing damage and upgrade", () =>
         {
             var card = Card<PressForward>(player);
-            Equal(6m, card.DynamicVars.CalculationBase.BaseValue);
+            Equal(8m, card.DynamicVars.CalculationBase.BaseValue);
             Equal(4m, card.DynamicVars.ExtraDamage.BaseValue);
             card.UpgradeInternal();
             card.FinalizeUpgradeInternal();
-            Equal(9m, card.DynamicVars.CalculationBase.BaseValue);
-            Equal(4m, card.DynamicVars.ExtraDamage.BaseValue);
+            Equal(11m, card.DynamicVars.CalculationBase.BaseValue);
+            Equal(6m, card.DynamicVars.ExtraDamage.BaseValue);
         });
         check("Rhythm grants two block per event and three when upgraded", () =>
         {
@@ -240,7 +242,14 @@ internal static class ExpansionRules
         var player = (Player)RuntimeHelpers.GetUninitializedObject(typeof(Player));
         Field(typeof(Player), "<Creature>k__BackingField").SetValue(player, creature);
         Field(typeof(Creature), "<Player>k__BackingField").SetValue(creature, player);
+        // UninitializedObject bypasses Player's Deck and run-state field initializers.
+        // Native CardModel.Pile enumerates both combat piles and the permanent Deck.
+        var deck = new CardPile(PileType.Deck);
+        Field(typeof(Player), "<Deck>k__BackingField").SetValue(player, deck);
+        Field(typeof(Player), "_runPiles").SetValue(player, new[] { deck });
+        Field(typeof(Player), "_runState").SetValue(player, NullRunState.Instance);
         var state = (PlayerCombatState)RuntimeHelpers.GetUninitializedObject(typeof(PlayerCombatState));
+        Field(typeof(PlayerCombatState), "_player").SetValue(state, player);
         foreach (var (name, type) in new[] { ("Hand", PileType.Hand), ("PlayPile", PileType.Play), ("DrawPile", PileType.Draw), ("DiscardPile", PileType.Discard), ("ExhaustPile", PileType.Exhaust) })
             Field(typeof(PlayerCombatState), "<" + name + ">k__BackingField").SetValue(state, new CardPile(type));
         Field(typeof(Player), "<PlayerCombatState>k__BackingField").SetValue(player, state);

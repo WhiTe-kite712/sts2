@@ -35,7 +35,7 @@ public class CodeOffense : MySts2ModCard
         new CalculatedDamageVar(ValueProp.Move).WithMultiplier(static (card, _) =>
         {
             var hao = card.Owner.GetHao();
-            return (hao >= card.DynamicVars["HaoCap"].BaseValue) ? hao + hao << 1: hao;
+            return hao >= card.DynamicVars["HaoCap"].BaseValue ? hao * 1.5m : hao;
         }),
     ];
 

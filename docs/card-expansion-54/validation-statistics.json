@@ -1,34 +1,36 @@
 {
-  "cardCount": 58,
+  "cardCount": 88,
   "newCardCount": 18,
-  "powerCount": 22,
+  "powerCount": 30,
   "newPowerCount": 4,
   "types": {
-    "Attack": 21,
-    "Skill": 29,
-    "Power": 8
+    "Skill": 49,
+    "Attack": 26,
+    "Power": 13
   },
   "rarities": {
-    "Common": 19,
-    "Rare": 14,
-    "Uncommon": 18,
+    "Rare": 23,
+    "Uncommon": 32,
+    "Common": 24,
     "Token": 2,
-    "Basic": 5
+    "Basic": 5,
+    "Ancient": 2
   },
   "costs": {
-    "1": 33,
-    "3": 4,
-    "0": 10,
-    "2": 10,
-    "X": 1
+    "1": 49,
+    "0": 15,
+    "3": 6,
+    "2": 16,
+    "X": 2
   },
   "newTypes": {
-    "Skill": 6,
+    "Power": 3,
     "Attack": 10,
-    "Power": 2
+    "Skill": 5
   },
   "newRarities": {
-    "Common": 11,
+    "Ancient": 1,
+    "Common": 10,
     "Uncommon": 4,
     "Rare": 3
   }

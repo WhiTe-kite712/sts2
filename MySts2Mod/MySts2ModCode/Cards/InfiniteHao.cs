@@ -23,7 +23,6 @@ public class InfiniteHao : MySts2ModCard
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<HaoPower>(),
-        EnergyHoverTip,
     ];
 
     private const int cost = 0;
@@ -45,8 +44,8 @@ public class InfiniteHao : MySts2ModCard
         // 升级+1
         if (IsUpgraded) x++;
 
-        while (player.GetHao() >= 6)
-        {
+
+        do{
                 var snapshot = player.GetHao();
                 await player.LoseHao(choiceContext, 6, this);
                 if (player.GetHao() >= snapshot) return; // 豪意未实际减少，防无限循环
@@ -60,6 +59,7 @@ public class InfiniteHao : MySts2ModCard
                     .Execute(choiceContext);
             }
         }
+        while (player.GetHao() >= 6);
     }
 
 }

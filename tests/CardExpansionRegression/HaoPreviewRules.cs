@@ -79,7 +79,7 @@ internal static class HaoPreviewRules
             {
                 var card = Card(type, player);
                 if (upgraded) Upgrade(card);
-                foreach (var value in new[] { 0, 1, 5, 6, 10, 11, 20 })
+                foreach (var value in new[] { 0, 1, 5, 6, 10, 11, 12, 13, 15, 16, 17, 20 })
                 {
                     var expected = Expected(type, value, upgraded);
                     check($"{type.Name}{(upgraded ? "+" : "")} hao={value}: formula and stats applied once", () =>
@@ -121,6 +121,7 @@ internal static class HaoPreviewRules
                     if (type == typeof(HaoStrike)) Equal(upgraded ? 9m : 6m, card.DynamicVars.CalculationBase.BaseValue);
                     if (type == typeof(HaoDefend)) Equal(upgraded ? 15m : 11m, card.DynamicVars["BlockCap"].BaseValue);
                     if (type == typeof(Calm)) Equal(upgraded ? 2m : 3m, card.EnergyCost.GetWithModifiers(CostModifiers.None));
+                    if (type == typeof(CodeOffense)) Equal(upgraded ? 12m : 16m, card.DynamicVars["HaoCap"].BaseValue);
                 });
             }
             foreach (var type in new[] { typeof(HaoStrike), typeof(HaoDefend) })
@@ -150,7 +151,7 @@ internal static class HaoPreviewRules
             Field(typeof(LocManager), "_tables").SetValue(manager, new Dictionary<string, LocTable> { ["cards"] = new LocTable("cards", translations) });
             foreach (var type in CardTypes)
             foreach (var inCombat in new[] { false, true })
-            foreach (var haoValue in new[] { 0, 10, 11, 20 })
+            foreach (var haoValue in new[] { 0, 10, 11, 12, 13, 15, 16, 17, 20 })
             check($"{language} {type.Name}: real formatter InCombat={inCombat}, hao={haoValue}", () =>
             {
                 var card = Card(type, player);
@@ -182,8 +183,8 @@ internal static class HaoPreviewRules
         nameof(HaoStrike) => ((upgraded ? 9m : 6m) + hao, null),
         nameof(HaoDefend) => (null, Math.Min(hao * 3m, upgraded ? 15m : 11m)),
         nameof(Debugging) => (null, Math.Max(0, hao - 10) * 2m),
-        nameof(CodeOffense) => (hao * 2m * (hao >= 6 ? 2 : 1), null),
-        nameof(Calm) => (hao * 4m, hao * 4m),
+        nameof(CodeOffense) => (hao * (hao >= (upgraded ? 12 : 16) ? 3m : 2m), null),
+        nameof(Calm) => (hao * 3m, hao * 3m),
         _ => throw new ArgumentException(type.Name),
     };
     private static void Preview(CardModel card, Creature target) => card.UpdateDynamicVarPreview(CardPreviewMode.Normal, target, card.DynamicVars);

@@ -16,7 +16,10 @@ namespace MySts2Mod.MySts2ModCode.Powers;
 /// 会抛 KeyNotFoundException 并杀死回合循环）；官方模式是每个来源建一个子类（如 FlexPotionPower），
 /// 这里用 BaseLib 的 CustomTemporaryPowerModel 封装，内部联动原版力量（StrengthPower）。
 /// </summary>
+// The BaseLib temporary-power bridge supplies its localized descriptions.
+#pragma warning disable STS001
 public class MathPrinceTempStrengthPower : CustomTemporaryPowerModel
+#pragma warning restore STS001
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [

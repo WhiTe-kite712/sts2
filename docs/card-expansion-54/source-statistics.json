@@ -1,6 +1,6 @@
 {
-  "verificationStatus": "source-only; current constructor distributions aligned on 2026-10-16; runtime release validation recorded separately",
-  "statisticsBaselineNote": "Derived from the current source-inventory card constructors and pools. Release preparation aligned ChatHistory costs 2/1, NewGroupChat costs 1/1 and Exam Uncommon; there are 24 Common and 33 Uncommon cards. PressForward committed numeric tuning is source-derived. These statistics are not a runtime DLL inventory.",
+  "verificationStatus": "source-only; current constructor distributions aligned on 2026-10-17; runtime release validation recorded separately",
+  "statisticsBaselineNote": "Derived from all 88 current source constructors and existing pool declarations. Current changes include Calm upgraded cost 2, GodList costs 2/1, and GroupDiscuss Rare. Common 24, Uncommon 32, Rare 23. These statistics are not a runtime DLL inventory.",
   "cardCount": 88,
   "characterCards": 86,
   "colorlessTokens": 2,
@@ -17,8 +17,8 @@
     "Power": 13
   },
   "rarities": {
-    "Rare": 22,
-    "Uncommon": 33,
+    "Rare": 23,
+    "Uncommon": 32,
     "Common": 24,
     "Token": 2,
     "Basic": 5,
@@ -27,8 +27,8 @@
   "costs": {
     "1": 49,
     "0": 15,
-    "3": 7,
-    "2": 15,
+    "3": 6,
+    "2": 16,
     "X": 2
   },
   "migrationExpansionCardCount": 18,

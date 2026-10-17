@@ -14,7 +14,7 @@ public class XuXiaoyan : MySts2ModCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new EnergyVar(2), new CardsVar(1)];
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
-        [EnergyHoverTip, HoverTipFactory.FromPower<EnergyNextTurnPower>(DynamicVars.Energy.IntValue), HoverTipFactory.FromPower<DrawCardsNextTurnPower>(DynamicVars.Cards.IntValue)];
+        [HoverTipFactory.FromPower<EnergyNextTurnPower>(DynamicVars.Energy.IntValue), HoverTipFactory.FromPower<DrawCardsNextTurnPower>(DynamicVars.Cards.IntValue)];
 
     public XuXiaoyan() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
 

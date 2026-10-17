@@ -15,7 +15,10 @@ namespace MySts2Mod.MySts2ModCode.Powers;
 /// 豪华的豪（第二阶段）：本回合你每获得2点豪意值，抽1张牌。回合结束移除。
 /// Amount 用作计数器（0..1）。
 /// </summary>
+// Smart description only; source checks still require localized title and smartDescription.
+#pragma warning disable STS001
 public class MagnificentHaoPower : MySts2ModPower
+#pragma warning restore STS001
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [

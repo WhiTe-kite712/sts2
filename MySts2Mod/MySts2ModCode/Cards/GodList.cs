@@ -19,16 +19,15 @@ public class GodList : MySts2ModCard, ITomeCard
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new PowerVar<GodListPower>(2),
-        new IntVar("MaxHpCap", 8),
+        new IntVar("MaxHpCap", 7),
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<HaoPower>(),
-        HoverTipFactory.FromPower<GodListPower>(),
     ];
 
-    public GodList() : base(3, CardType.Power, CardRarity.Ancient, TargetType.Self)
+    public GodList() : base(2, CardType.Power, CardRarity.Ancient, TargetType.Self)
     {
     }
 
