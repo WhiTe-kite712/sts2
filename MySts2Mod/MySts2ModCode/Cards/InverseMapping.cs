@@ -16,7 +16,7 @@ public class InverseMapping : MySts2ModCard
         new CalculationBaseVar(0), new ExtraDamageVar(1),
         new CalculatedDamageVar(ValueProp.Move).WithMultiplier(static (card, _) => card.Owner.Creature.Block),
     ];
-    public InverseMapping() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy) { }
+    public InverseMapping() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy) { }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

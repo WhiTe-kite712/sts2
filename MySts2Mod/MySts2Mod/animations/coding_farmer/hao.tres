@@ -1,9 +1,20 @@
-[gd_resource type="SpineSkeletonDataResource" load_steps=3 format=3]
+[gd_resource type="SpineSkeletonDataResource" load_steps=5 format=3]
 
 [ext_resource type="SpineAtlasResource" path="res://CodeFarmer/animations/coding_farmer/hao.spatlas" id="1_atlas"]
 [ext_resource type="SpineSkeletonFileResource" path="res://CodeFarmer/animations/coding_farmer/hao.spjson" id="2_skeleton"]
 
+[sub_resource type="SpineAnimationMix" id="attack_in"]
+from = "idle_loop"
+to = "attack"
+mix = 0.04
+
+[sub_resource type="SpineAnimationMix" id="attack_out"]
+from = "attack"
+to = "idle_loop"
+mix = 0.08
+
 [resource]
+animation_mixes = [SubResource("attack_in"), SubResource("attack_out")]
 atlas_res = ExtResource("1_atlas")
 skeleton_file_res = ExtResource("2_skeleton")
 default_mix = 0.10

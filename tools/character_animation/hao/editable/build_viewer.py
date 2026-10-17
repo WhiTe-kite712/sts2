@@ -58,7 +58,7 @@ def main():
     parser.add_argument('--height', type=int, default=800)
     parser.add_argument('--origin-x', type=float, default=400)
     parser.add_argument('--origin-y', type=float, default=742)
-    parser.add_argument('--scale', type=float, default=1.25)
+    parser.add_argument('--scale', type=float, default=1.05)
     parser.add_argument('--output', type=Path, help='Optional HTML destination; defaults to OUT/preview/index.html.')
     args = parser.parse_args()
     if args.width <= 0 or args.height <= 0 or args.scale <= 0:

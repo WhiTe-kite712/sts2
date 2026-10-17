@@ -70,7 +70,12 @@ for name in ('weapon','fx_slash','fx_aura'):
     path=SOURCE/(name+'.png')
     full_images[name]=Image.open(path).convert('RGBA')
     source_boxes[name]=[0,0,full_images[name].width,full_images[name].height]
-if not args.keep_textures:
+if args.keep_textures:
+    for name,piece in list(full_images.items()):
+        current=Image.open(PARTS/(name+'.png')).convert('RGBA')
+        if current.size!=piece.size: raise ValueError('Edited part dimensions changed: '+name)
+        full_images[name]=current
+else:
     for name,piece in full_images.items(): piece.save(PARTS/(name+'.png'))
 
 # Shelf pack padded, unrotated regions; every part retains its original aspect.
@@ -252,13 +257,33 @@ for action,last in last_frames.items():
     for f in range(0,last,frame_step):
         for offset in range(1,frame_step):frames[f+offset]=blend_pose(frames[f],frames[f+frame_step],offset/frame_step)
     poses[action]=frames
+
+# Sparse exports must drive both the runtime timelines and the offline preview.
+# Otherwise removed recovery keys would still appear in the GIF/HTML source.
+export_frames={}
+for action,last in last_frames.items():
+    selected=motion.get('exportFrames',{}).get(action,list(range(last+1)))
+    if (not isinstance(selected,list) or not selected
+            or any(type(f) is not int for f in selected)
+            or selected!=sorted(set(selected))
+            or selected[0]!=0 or selected[-1]!=last):
+        raise ValueError('exportFrames must contain increasing unique integer frames from 0 to the animation end')
+    export_frames[action]=selected
+    if selected!=list(range(last+1)):
+        sampled=poses[action]
+        frames=[None]*(last+1)
+        for f in selected:frames[f]=sampled[f]
+        for left,right in zip(selected,selected[1:]):
+            for f in range(left+1,right):
+                frames[f]=blend_pose(sampled[left],sampled[right],(f-left)/(right-left))
+        poses[action]=frames
 animations={}
 for action,last in last_frames.items():
     timelines={}
     for name in names:
         values=np.rad2deg(np.unwrap(np.deg2rad([p[1][name] for p in poses[action]])))
         if np.max(np.abs(values-local_rot[name]))>1e-7:
-            timelines[name]={'rotate':[{'time':round(f/FPS,6),'value':round(float(a-local_rot[name]),5)} for f,a in enumerate(values)]}
+            timelines[name]={'rotate':[{'time':round(f/FPS,6),'value':round(float(a-local_rot[name]),5)} for f in export_frames[action] for a in [values[f]]]}
     slot_times={part:{'alpha':[{'time':round(f/FPS,6),'value':value} for f,value in keys]} for part,keys in effect_frames[action].items()}
     event={'time':round(event_frames[action]/FPS,6),'name':'hit' if action=='attack' else 'release'}
     animations[action]={'bones':timelines,'slots':slot_times,'events':[event]}
@@ -279,7 +304,7 @@ proof['ok']=bool(proof['ok'] and proof['maxIKReachClamp']<.005 and proof['bodyAt
 print(json.dumps(proof))
 if args.no_previews: raise SystemExit(0)
 
-SIZE=(1100,800);ORIGIN=np.array([400.,742.]);PS=1.25
+SIZE=(1100,800);ORIGIN=np.array([400.,742.]);PS=1.05
 def opacity(action,part,t):
     frames=animations[action]['slots'].get(part,{}).get('alpha')
     if not frames:return 1.

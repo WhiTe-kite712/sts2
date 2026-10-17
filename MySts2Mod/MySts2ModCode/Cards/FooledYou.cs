@@ -29,10 +29,10 @@ public class FooledYou : MySts2ModCard
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-    {
+    {   
+        await cardPlay.Player.EnterHaoState(choiceContext, HaoState.OpenHao, this);
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue).WithHitCount(DynamicVars.Repeat.IntValue)
             .FromCard(this, cardPlay).TargetingAllOpponents(CombatState!).Execute(choiceContext);
-        await cardPlay.Player.EnterHaoState(choiceContext, HaoState.OpenHao, this);
     }
 
     protected override void OnUpgrade()

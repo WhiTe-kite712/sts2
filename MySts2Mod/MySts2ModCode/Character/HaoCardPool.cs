@@ -17,7 +17,7 @@ public class HaoCardPool : CustomCardPoolModel
 
     public override bool IsColorless => false;
 
-    // BaseLib's BigEnergyIconPath is also used by card/hover icons, not the combat orb.
+    // The game scales the card cost orb; use the large image and keep inline text icons small.
     public override string? TextEnergyIconPath => CodingFarmerEnergy.SmallPath;
-    public override string? BigEnergyIconPath => CodingFarmerEnergy.SmallPath;
+    public override string? BigEnergyIconPath => CodingFarmerEnergy.CounterPath;
 }

@@ -10,8 +10,8 @@ namespace MySts2Mod.MySts2ModCode.Cards;
 /// This will generate a class that extends this one.
 /// You can also just create the class manually; just make sure to inherit from this class.
 /// </summary>
-public abstract class MySts2ModCard(int cost, CardType type, CardRarity rarity, TargetType target) :
-    CustomCardModel(cost, type, rarity, target)
+public abstract class MySts2ModCard(int cost, CardType type, CardRarity rarity, TargetType target, bool showInCardLibrary = true) :
+    CustomCardModel(cost, type, rarity, target, showInCardLibrary)
 {
     //Image size:
     // New card portraits are prepared at 1000x790; existing artwork keeps its dimensions.

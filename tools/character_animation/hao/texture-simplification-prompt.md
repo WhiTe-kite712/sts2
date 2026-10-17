@@ -1,0 +1,9 @@
+# 贴图简化记录 · 2026-10-17
+
+使用内置imagegen编辑当前角色图集；原版Silent与Ironclad图集仅作风格参考，不更换角色身份。原始生成结果保存在工作区generated/hao-atlas-simplified-raw.png。
+
+实际提示词：
+
+Use case: style-transfer. Edit target: IMAGE 1, an existing production Spine character atlas on a 2048x2048 transparent canvas. Images 2 and 3 are official game atlases, STYLE REFERENCES ONLY, never copy their characters, body shapes, or palette. Request: simplify the rendered paint of IMAGE 1 into readable hand-painted game sprite art like those references. Keep the EXACT 2048x2048 atlas layout, every isolated part in its exact original position and scale, with exactly the same silhouette, transparency and blank gaps; do not rotate, crop, move, merge, resize or add any part. Do not reconstruct a whole assembled person. Only repaint the existing pixels: reduce dense tiny cloth wrinkles, thin scratches, individual hair strands, busy gold flecks, repeated boot/lower-leg strap details; use broad clean 3-4 tone shadow planes and a few deliberate brush accents, crisp silhouettes, subdued edge light instead of the scattered brilliant golden rimlight. Preserve the blue cloak with a restrained gold hem, black suit, silver diagonal chest buckle/strap, white angular W chest mark, masked blond head and amber eye, and sword. Preserve broad garment seams and one main buckle per existing cuff/boot. Preserve hands anatomy and finger locations. Leave the blue aura and slash VFX regions untouched. The large blue region at upper left is a continuous cloak mesh with intentionally filled interior: KEEP its exact rectangular extent and silhouette, but simplify its paint. This is a runtime texture atlas whose original bone and UV coordinates must remain usable, so exact part placement is critical. Output transparent PNG atlas, no text/labels/grid/background/watermark, not a mockup.
+
+生成器实际返回1254×1254，因此未直接覆盖运行图集；通过导出流程适配回2048×2048、恢复原alpha并保持区域矩形不变，两个VFX区域使用原图。目视检查站姿、九阶段攻击、脸与手部；量化核对全图及各部位alpha、UV、握柄、骨长。

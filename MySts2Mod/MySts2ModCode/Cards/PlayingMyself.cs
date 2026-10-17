@@ -24,7 +24,7 @@ public class PlayingMyself : MySts2ModCard
 
     public override bool GainsBlock => true;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(14, ValueProp.Move), new BlockVar(12, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(13, ValueProp.Move), new BlockVar(11, ValueProp.Move)];
 
     public PlayingMyself() : base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
     {

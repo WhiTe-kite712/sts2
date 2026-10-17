@@ -28,7 +28,7 @@ public class Exam : MySts2ModCard
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new HealVar(6)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new IntVar("HaoThreshold", 8), new HealVar(4)];
 
     public Exam() : base(cost, type, rarity, target)
     {
@@ -38,7 +38,7 @@ public class Exam : MySts2ModCard
     {
         var player = cardPlay.Card.Owner;
         var hao = player.GetHao();
-        if (hao > 0 && hao < 10)
+        if (hao <= DynamicVars["HaoThreshold"].IntValue)
         {
             await player.GainHao(choiceContext, hao, this);
         }
@@ -48,4 +48,11 @@ public class Exam : MySts2ModCard
             await CreatureCmd.Heal(player.Creature, DynamicVars.Heal.BaseValue);
         }
     }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars["HaoThreshold"].UpgradeValueBy(2);
+        DynamicVars.Heal.UpgradeValueBy(2);
+    }
+
 }

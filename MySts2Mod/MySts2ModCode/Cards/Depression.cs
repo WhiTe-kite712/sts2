@@ -22,7 +22,7 @@ public class Depression : MySts2ModCard
         HoverTipFactory.FromPower<OpenHaoStatePower>()
     ];
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(9, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6, ValueProp.Move)];
 
     public Depression() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
@@ -31,13 +31,13 @@ public class Depression : MySts2ModCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay)
-            .Targeting(cardPlay.Target!).Execute(choiceContext);
+            .Targeting(cardPlay.Target!).WithHitCount(2).Execute(choiceContext);
         await cardPlay.Player.EnterHaoState(choiceContext, HaoState.Hidden, this);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(4);
+        DynamicVars.Damage.UpgradeValueBy(2);
     }
 }
 

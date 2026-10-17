@@ -11,7 +11,7 @@ using MySts2Mod.MySts2ModCode.Powers;
 
 namespace MySts2Mod.MySts2ModCode.Cards;
 
-[Pool(typeof(ColorlessCardPool))]
+[Pool(typeof(TokenCardPool))]
 public class Chuan : MySts2ModCard
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
@@ -31,7 +31,7 @@ public class Chuan : MySts2ModCard
         new HpLossVar(1),
     ];
 
-    public Chuan() : base(0, CardType.Attack, CardRarity.Token, TargetType.AnyEnemy)
+    public Chuan() : base(0, CardType.Attack, CardRarity.Token, TargetType.AnyEnemy, showInCardLibrary: false)
     {
     }
 

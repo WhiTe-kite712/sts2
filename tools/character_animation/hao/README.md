@@ -1,19 +1,16 @@
-# Coding Farmer Spine 动画
+# 码农 Spine 动画
 
-角色战斗视觉已接入 `MySts2ModCode/Character/CodingFarmerCombatVisuals.cs`。
-运行资源在 `MySts2Mod/MySts2Mod/animations/coding_farmer`，资源入口为 `res://CodeFarmer/animations/coding_farmer/hao.tres`。
+2026-10-17：火堆独立角色场景已接入，复用当前角色贴图与骨架。三幕循环overgrowth_loop、hive_loop、glory_loop采用轻微呼吸站姿并隐藏武器；本次未制作独立坐姿。战斗与商店保持各自实例。
 
-帧率由 motion-keyframes.json 的 fps 控制，当前为100 FPS。攻击 `attack` 为0.700秒，能力牌 `cast` 为0.840秒。游戏的 Attack、Cast、PowerUp 触发已映射，动作结束回到待机；效果等待时间分别为0.340与0.480秒。
-待机、受击、死亡使用中立姿势兼容片段，尚未另做这些动作的美术。
+攻击保持100 FPS时间栅格、0.70秒总时长：第20帧举剑至头顶，手肘高于肩49.54骨架单位；第24帧复制最高姿态，保持0.04秒，再于第26–32帧大幅劈下。收剑仅保留第40、54、70帧三个旋转关键帧。命中事件与CodingFarmer.AttackAnimDelay均为0.32秒；攻击入场混合0.04秒、返回0.08秒。能力动作0.84秒、释放0.48秒保持不变。
 
-抬手峰值的小臂相对大臂角度在上一版基础上增加10度（额外上抬由30改为40度），大臂额外上抬仍为20度。绑定、等比缩放、握柄锚点保留。
+最高点大臂世界转角较初始增加120.53°，小臂增加180.53°，两者同向且小臂幅度更大。每条攻击旋转时间线由71键减少为40键；预览按同一稀疏时间线重采样，预览缩放1.05以完整显示剑尖。原骨长、握柄和身体绑定保留，避免重绑导致畸形。
 
-## 后续编辑
+贴图参考原版Silent/战士的明暗块面，使用内置imagegen简化密集褶皱、发丝和碎高光，再按原图集规范导出。2048×2048尺寸、20个区域、原透明通道、22根骨骼、披风网格与UV均保留；fx_aura/fx_slash未改。生成说明见texture-simplification-prompt.md。
 
-`editable/bind.json` 保存图片关节与分割边界；`editable/motion-keyframes.json` 保存动作坐标与抬臂幅度。
-`editable/hao.json` 可用 Spine 4.2 的 Import Data 导入，图片目录为 `editable/parts`。
-`preview/index.html` 是唯一的离线 HTML 预览入口，直接双击打开即可。
-`editable/viewer.template.txt` 是生成器使用的模板，保留用于以后重建预览；它不是预览页面。
+## 编辑与重建
+
+bind.json保存关节与分割边界，motion-keyframes.json保存动作。Spine4.2可导入editable/hao.json，图片目录editable/parts。
 
 ```powershell
 python .\editable\rebuild.py --keep-textures
@@ -21,11 +18,12 @@ python .\editable\build_viewer.py
 python .\deploy.py
 ```
 
-最后一步将源数据复制到模组资源目录，并添加兼容片段；普通 VS Code 构建会将 `.spjson`、`.spatlas`、`.tres` 和图集打包进 PCK。
-当前打包器不支持 `.tscn`，所以节点由角色工厂运行时创建。
+务必使用--keep-textures以保留已简化的parts和图集；省略该参数会从历史character-reference重新裁切原画。此次同时修复了保留贴图时GIF预览仍读取旧reference的问题。运行时部署只复制Spine数据、atlas、tres和正式图集，authoring/审核资料不会进入PCK。
 
-`validation/history` 是接入前的历史检查，哈希只证明对应历史版本。实际接入验证见仓库 `docs` 中的报告。
-素材来源与提示词保存在 `generation-prompt.md` 和 `reused-textures-prompt.md`。
-100 FPS 版本将原40 FPS版的帧坐标翻倍，在每两个原关键姿态之间插入一个局部骨骼插值帧（`keyframeSubdivisions=2`）。攻击骨骼时间线由36个键增至71个，能力牌由43个增至85个，整体时长缩短20%。原来的姿态、绑定、图片和手臂运动方向保持。
+preview/index.html是唯一离线HTML入口，支持时间轴和骨骼；当前动画GIF为attack-100fps.gif、cast-100fps.gif。viewer.template.txt为生成源码，应保留。idle/hurt/die仍为兼容中立片段。
 
-攻击下挥 wristY 阶段现在为第16→34帧，攻击结束于第70帧；能力牌结束于第84帧。特效和事件时间使用配置中的帧号除以fps。事件只移动时间，不增加触发次数。`--keep-textures` 保留现有图片和图集，当前预览为 `attack-100fps.gif`、`cast-100fps.gif` 与 `preview/index.html`。
+修改前备份保存在桌面Spire2Mod/Backups：
+- Spine-before-campfire-20261017-182143.zip
+- Spine-before-overhead-20261017-184013.zip
+
+旧动画副本、原生探针和回归日志已清理。validation目录仅保留说明；重建时会重新生成bind-check.json，它不参与游戏加载。

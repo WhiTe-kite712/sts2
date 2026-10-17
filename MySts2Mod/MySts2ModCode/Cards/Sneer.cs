@@ -24,7 +24,6 @@ public class Sneer : MySts2ModCard
         get
         {
             yield return HoverTipFactory.FromPower<VulnerablePower>();
-            if (IsUpgraded) yield return HoverTipFactory.FromPower<BlockNextTurnPower>();
         }
     }
 

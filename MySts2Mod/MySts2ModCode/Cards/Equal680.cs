@@ -1,40 +1,33 @@
-using BaseLib.Abstracts;
 using BaseLib.Utils;
-using MySts2Mod.MySts2ModCode.Character;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models.CardPools;
-using MySts2Mod.MySts2ModCode.Powers;
-
+using MegaCrit.Sts2.Core.Models.Powers;
+using MySts2Mod.MySts2ModCode.Character;
 
 namespace MySts2Mod.MySts2ModCode.Cards;
 
 [Pool(typeof(HaoCardPool))]
 public class Equal680 : MySts2ModCard
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new IntVar("ExtraDamage", 4)];
+    public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.MultiplayerOnly;
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<StrengthPower>(4)];
 
-    private const int cost = 1;
-    private const CardType type = CardType.Power;
-    private const CardRarity rarity = CardRarity.Uncommon;
-    private const TargetType target = TargetType.Self;
-
-    public Equal680() : base(cost, type, rarity, target)
-    {
-    }
+    public Equal680() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.AllAllies) { }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var creature = cardPlay.Player.Creature;
-        var power = await PowerCmd.Apply<Equal680Power>(choiceContext, creature, 1, creature, this);
-        if (power != null)
-        {
-            var extraDamage = power.DynamicVars["ExtraDamage"];
-            extraDamage.BaseValue = Math.Max(extraDamage.BaseValue, DynamicVars["ExtraDamage"].BaseValue);
-        }
+        var state = CombatState!;
+        var allies = state.Players.Select(player => player.Creature).ToArray();
+        long alliedMaxHp = allies.Sum(creature => (long)creature.MaxHp);
+        long enemyMaxHp = state.Enemies.Where(creature => creature.IsAlive).Sum(creature => (long)creature.MaxHp);
+        if (alliedMaxHp >= enemyMaxHp) return;
+
+        foreach (var ally in allies.Where(creature => creature.IsAlive))
+            await PowerCmd.Apply<StrengthPower>(choiceContext, ally,
+                DynamicVars.Strength.BaseValue, cardPlay.Player.Creature, this);
     }
 
-    protected override void OnUpgrade() => DynamicVars["ExtraDamage"].UpgradeValueBy(2);
+    protected override void OnUpgrade() => DynamicVars.Strength.UpgradeValueBy(2);
 }

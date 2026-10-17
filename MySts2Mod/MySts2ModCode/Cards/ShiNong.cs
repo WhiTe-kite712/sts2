@@ -23,7 +23,8 @@ public class ShiNong : MySts2ModCard
         HoverTipFactory.FromPower<WeakPower>()
     ];
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(7, ValueProp.Move), new PowerVar<WeakPower>(1)];
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+        [new DamageVar(7, ValueProp.Move), new PowerVar<WeakPower>(1), new PowerVar<DexterityPower>(2)];
 
     public ShiNong() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
     {
@@ -35,14 +36,19 @@ public class ShiNong : MySts2ModCard
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay)
             .Targeting(cardPlay.Target!).Execute(choiceContext);
         if (player.IsOpenHao())
+        {
             await PowerCmd.Apply<WeakPower>(choiceContext, cardPlay.Target!,
                 DynamicVars["WeakPower"].BaseValue, player.Creature, this);
+            await PowerCmd.Apply<AnticipatePower>(choiceContext, player.Creature,
+                DynamicVars.Dexterity.BaseValue, player.Creature, this);
+        }
     }
 
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(3);
         DynamicVars["WeakPower"].UpgradeValueBy(1);
+        DynamicVars.Dexterity.UpgradeValueBy(1);
     }
 }
 

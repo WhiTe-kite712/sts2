@@ -31,19 +31,12 @@ public static class HaoStateExtensions
     public static bool IsOpenHao(this Player player) =>
         player.GetHaoState() == HaoState.OpenHao;
 
-    // These pure helpers are also useful for validating the transition and once-per-turn rules.
+    // Pure helpers for state transitions.
     public static HaoState GetOppositeHaoState(HaoState current) =>
         current == HaoState.Hidden ? HaoState.OpenHao : HaoState.Hidden;
 
     public static bool IsRewardingHaoStateSwitch(HaoState before, HaoState after) =>
         before != HaoState.None && after != HaoState.None && before != after;
-
-    public static bool TryConsumeHaoStateSwitchReward(int currentTurn, ref int lastTriggeredTurn)
-    {
-        if (lastTriggeredTurn == currentTurn) return false;
-        lastTriggeredTurn = currentTurn;
-        return true;
-    }
 
     public static Task FlipHaoState(this Player player, PlayerChoiceContext choiceContext, CardModel cardSource) =>
         player.EnterHaoState(choiceContext, GetOppositeHaoState(player.GetHaoState()), cardSource);
@@ -64,7 +57,7 @@ public static class HaoStateExtensions
 
         if (!IsRewardingHaoStateSwitch(before, player.GetHaoState())) return;
 
-        // Consume the once-per-turn switch reward before drawing cards.
+        // Reward each actual switch between the two states.
         var dualLife = creature.GetPower<DualLifePower>();
         if (dualLife != null)
             await dualLife.OnHaoStateSwitched(choiceContext, player);

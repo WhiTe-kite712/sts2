@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-16",
+  "date": "2026-10-18",
   "normalFirst": true,
   "validation": "Source-only release art validation; no build or runtime execution.",
-  "ownedArtCards": 86,
+  "ownedArtCards": 90,
   "vanillaCards": 2,
   "missingCards": 0,
   "generatedArtCards": 33,
@@ -65,6 +65,17 @@
       "height": 1086,
       "sha256": "f219bf0c9ce438f864e55199edf6fb85fcc5987a86b810ac2a5b6ea24fdabe0f",
       "bytes": 2468781
+    },
+    {
+      "className": "Bond",
+      "title": "羁绊",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Bond.png",
+      "generated": false,
+      "width": 1305,
+      "height": 958,
+      "sha256": "d4b3deb558e425bd8960814864a8c453b6d884384ec23d6cbee8ff008ae08611",
+      "bytes": 2081609
     },
     {
       "className": "BrokenDefense",
@@ -236,6 +247,17 @@
       "height": 1093,
       "sha256": "d2d434f61818bef6063a5ea1166bded7404d3a387bed6e7cd1e2b6bec1ef7821",
       "bytes": 2318478
+    },
+    {
+      "className": "Empathy",
+      "title": "共情",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/Empathy.png",
+      "generated": false,
+      "width": 1438,
+      "height": 1093,
+      "sha256": "a1d163b94f87cb46a4d573ec9f4132f3bc079b35fa0b13bf67f59029259dc49d",
+      "bytes": 1576208
     },
     {
       "className": "Endlesssss",
@@ -723,6 +745,17 @@
       "bytes": 1488553
     },
     {
+      "className": "RoundTable",
+      "title": "圆桌会议",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/RoundTable.png",
+      "generated": false,
+      "width": 1448,
+      "height": 1086,
+      "sha256": "e73117488fa350d8ea1156f060413fe863f4850de45e7ad0e8e6d6ff848fe047",
+      "bytes": 2118721
+    },
+    {
       "className": "ShangHaiStudent",
       "title": "上海考生",
       "kind": "normal",
@@ -969,6 +1002,17 @@
       "height": 790,
       "sha256": "d5d90fa5a360a04eecd6191c3d5657fa8ed2e6de8e11d19e80b44eff25865475",
       "bytes": 2045388
+    },
+    {
+      "className": "ZeroSumGame",
+      "title": "零和博弈",
+      "kind": "normal",
+      "portraitPath": "res://CodeFarmer/images/card_portraits/ZeroSumGame.png",
+      "generated": false,
+      "width": 1438,
+      "height": 1093,
+      "sha256": "b43b344ec1655d9f6849587fe96a1222b4d339ae6cb3793786460a08a9cf931a",
+      "bytes": 1841410
     }
   ]
 }

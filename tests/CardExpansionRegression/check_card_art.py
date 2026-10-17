@@ -11,6 +11,7 @@ import json
 import re
 import struct
 import zlib
+from datetime import datetime, timedelta, timezone
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('root', nargs='?', type=Path, default=Path(__file__).resolve().parents[2])
@@ -65,11 +66,11 @@ for path in (root / code).glob('*.cs'):
     for name in re.findall(r'public\s+(?:sealed\s+)?class\s+(\w+)\s*:\s*MySts2ModCard\b', source):
         assert path.name == name + '.cs' and name not in models, name
         models[name] = source
-assert len(models) == 88, len(models)
+assert models, "No source cards found"
 manifest = json.loads(read(Path('docs/card-expansion-54/card-art-map.json')))
 records = {item['className']: item for item in manifest['cards']}
 assert len(records) == len(manifest['cards']) and records.keys() == models.keys()
-assert (manifest['ownedArtCards'], manifest['vanillaCards'], manifest['missingCards']) == (86, 2, 0)
+assert (manifest['ownedArtCards'], manifest['vanillaCards'], manifest['missingCards']) == (len(models) - 2, 2, 0)
 texts = json.loads(read(resources / 'localization/zhs/cards.json'))
 imports = json.loads(args.imports.read_text(encoding='utf-8-sig')) if args.imports else []
 staged = {item['className']: Path(item['source']) for item in imports}
@@ -111,8 +112,8 @@ generated = [item for item in records.values() if item.get('generated')]
 assert len(generated) == manifest['generatedArtCards'] == 33
 different_sizes = [{'className': item['className'], 'width': item['width'], 'height': item['height']}
                    for item in generated if (item['width'], item['height']) != (1000, 790)]
-report = {'status': 'PASS', 'date': '2026-10-16', 'compiled': False,
-          'counts': {'cards': 88, 'ownedArtwork': 86, 'nativeArtwork': 2, 'newArtwork': 33, 'missing': 0},
+report = {'status': 'PASS', 'date': datetime.now(timezone(timedelta(hours=8))).date().isoformat(), 'compiled': False,
+          'counts': {'cards': len(models), 'ownedArtwork': manifest['ownedArtCards'], 'nativeArtwork': 2, 'newArtwork': len(generated), 'missing': 0},
           'noobVariant': 'v2', 'allPngCrcsValid': True,
           'userEditedDraftsWithOtherDimensions': different_sizes,
           'checks': ['Exact-case class filename mapping', 'Native Strike and Defend portraits preserved',
@@ -123,7 +124,7 @@ report = {'status': 'PASS', 'date': '2026-10-16', 'compiled': False,
 if args.report:
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-print('PASS: 88 cards: 86 exact-case owned portraits and 2 native portraits; no missing artwork.')
+print(f"PASS: {len(models)} cards: {manifest['ownedArtCards']} exact-case owned portraits and 2 native portraits; no missing artwork.")
 print('PASS: SHA256, PNG CRC, dimensions, Noob v2, source portrait routing and orphan checks.')
 if different_sizes:
     print('NOTE: Later user-edited draft dimensions preserved for ' + ', '.join(item['className'] for item in different_sizes) + '.')

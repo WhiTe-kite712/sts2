@@ -11,7 +11,7 @@ using MySts2Mod.MySts2ModCode.Powers;
 
 namespace MySts2Mod.MySts2ModCode.Cards;
 
-[Pool(typeof(ColorlessCardPool))]
+[Pool(typeof(TokenCardPool))]
 public class Xiao : MySts2ModCard
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
@@ -30,7 +30,7 @@ public class Xiao : MySts2ModCard
         new BlockVar(5, ValueProp.Move),
     ];
 
-    public Xiao() : base(0, CardType.Skill, CardRarity.Token, TargetType.Self)
+    public Xiao() : base(0, CardType.Skill, CardRarity.Token, TargetType.Self, showInCardLibrary: false)
     {
     }
 

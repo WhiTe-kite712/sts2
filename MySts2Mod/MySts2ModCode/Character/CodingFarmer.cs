@@ -11,8 +11,7 @@ namespace MySts2Mod.MySts2ModCode.Character;
 
 /// <summary>
 /// 角色：Coding Farmer（码农）。豪意机制卡组的使用者。
-/// 选角、战斗、商店模型与能量表盘使用自定义资源；
-/// 篝火/多人手势等尚未覆盖的部分沿用原版（铁甲战士）资源。
+/// 选角、战斗、商店、篝火模型与能量表盘使用自定义资源。
 /// </summary>
 public class CodingFarmer : PlaceholderCharacterModel
 {
@@ -41,11 +40,12 @@ public class CodingFarmer : PlaceholderCharacterModel
     public override string CustomCharacterSelectBg => CodingFarmerSelectScene.GetScenePath();
 
     public override string CustomMerchantAnimPath => CodingFarmerMerchantScene.GetScenePath();
+    public override string CustomRestSiteAnimPath => CodingFarmerRestSiteScene.GetScenePath();
 
     public override NCreatureVisuals CreateCustomVisuals() => CodingFarmerCombatVisuals.Create();
     public override CreatureAnimator SetupCustomAnimationStates(MegaSprite controller)
         => CodingFarmerCombatVisuals.CreateAnimator(controller);
-    public override float AttackAnimDelay => 0.34f;
+    public override float AttackAnimDelay => 0.32f;
     public override float CastAnimDelay => 0.48f;
 
     // 过渡音效不能删

@@ -74,14 +74,6 @@ internal static class ExpansionRules
             Equal(HaoState.OpenHao, HaoStateExtensions.GetOppositeHaoState(HaoState.Hidden));
             Equal(HaoState.Hidden, HaoStateExtensions.GetOppositeHaoState(HaoState.OpenHao));
         });
-        check("state reward locks once per own turn including extra turns", () =>
-        {
-            int last = -1;
-            Equal(true, HaoStateExtensions.TryConsumeHaoStateSwitchReward(1, ref last));
-            Equal(false, HaoStateExtensions.TryConsumeHaoStateSwitchReward(1, ref last));
-            Equal(true, HaoStateExtensions.TryConsumeHaoStateSwitchReward(2, ref last));
-            Equal(false, HaoStateExtensions.TryConsumeHaoStateSwitchReward(2, ref last));
-        });
         foreach (var (type, strength, dexterity) in new[] { (typeof(HiddenStatePower), -2, 3), (typeof(OpenHaoStatePower), 2, -1) })
         {
             var state = Power(type, owner);

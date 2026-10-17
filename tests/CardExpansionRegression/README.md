@@ -1,6 +1,6 @@
 # CardExpansionRegression
 
-当前源码包含88张卡：86张人物卡、2张无色衍生牌；其中攻击26、技能49、能力13，Basic5、Common24、Uncommon32、Rare23、Token2、Ancient2。具体自定义能力30种；临时力量桥接类单独计数。
+当前源码包含92张卡：90张人物卡、2张衍生牌（孝与串，使用TokenCardPool且不在卡牌图鉴中展示）。运行时清单需在重新构建后生成；历史检查输出不代表当前版本。
 
 初始卡组保留11张：4打击、4防御、1豪意打击、1豪意防御、1自恋。状态数值按当前源码：隐匿-2力量/+3敏捷，开豪+2力量/-1敏捷。
 
@@ -20,7 +20,7 @@ dotnet build MySts2Mod/MySts2Mod.csproj -c ExportRelease -p:DeployToGame=false
 无界面回归可以直接使用刚生成的DLL，避免再次打包：
 
 ```powershell
-dotnet run --project tests/CardExpansionRegression/Harness.csproj -c Release -p:DeployToGame=false -p:ModDll="../../MySts2Mod/.godot/mono/temp/bin/ExportRelease/CodeFarmer.dll" -- 88 docs/card-expansion-54/runtime-inventory.json
+dotnet run --project tests/CardExpansionRegression/Harness.csproj -c Release -p:DeployToGame=false -p:ModDll="../../MySts2Mod/.godot/mono/temp/bin/ExportRelease/CodeFarmer.dll" -- 92 docs/card-expansion-54/runtime-inventory.json
 python tests/CardExpansionRegression/check_catalog.py
 ```
 

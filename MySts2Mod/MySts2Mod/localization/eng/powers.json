@@ -6,8 +6,6 @@
   "MYSTS2MOD-SHANG_HAI_STUDENT_POWER.smartDescription": "This turn, whenever you play a card, gain 1 Hao and [blue]{Amount}[/blue] Block.",
   "MYSTS2MOD-SNEER_POWER.title": "Sneer",
   "MYSTS2MOD-SNEER_POWER.smartDescription": "This turn, when you block damage from an enemy, deal damage equal to the amount blocked back to that enemy.",
-  "MYSTS2MOD-EQUAL680_POWER.title": "Equal 680",
-  "MYSTS2MOD-EQUAL680_POWER.smartDescription": "While your Max HP is lower than the target enemy's, you deal {ExtraDamage} additional damage.",
   "MYSTS2MOD-UNREPENTANT_GUARD_POWER.title": "Unrepentant",
   "MYSTS2MOD-UNREPENTANT_GUARD_POWER.smartDescription": "Until the start of your next turn, unblocked damage is converted into an equal amount of Hao. Next turn, gain Unrepentant Aftermath.",
   "MYSTS2MOD-UNREPENTANT_PAIN_POWER.title": "Unrepentant Aftermath",
@@ -41,7 +39,7 @@
   "MYSTS2MOD-OPEN_HAO_STATE_POWER.description": "Gain 2 Strength and lose 1 Dexterity. At the start of your turn, apply 1 Vulnerable to ALL enemies. Leaving Hao Mode reverses the Strength and Dexterity changes from this state.",
   "MYSTS2MOD-OPEN_HAO_STATE_POWER.smartDescription": "Gain 2 Strength and lose 1 Dexterity. At the start of your turn, apply 1 Vulnerable to ALL enemies. Leaving Hao Mode reverses the Strength and Dexterity changes from this state.",
   "MYSTS2MOD-DUAL_LIFE_POWER.title": "Double Life",
-  "MYSTS2MOD-DUAL_LIFE_POWER.smartDescription": "The first time each turn you switch between Hidden State and Hao Mode, draw [blue]{Amount}[/blue] cards. Entering a state for the first time does not trigger this effect.",
+  "MYSTS2MOD-DUAL_LIFE_POWER.smartDescription": "Whenever you switch between Hidden State and Hao Mode, draw [blue]{Amount}[/blue] cards. Entering a state from no state does not trigger this effect.",
   "MYSTS2MOD-RHYTHM_POWER.title": "Rhythm",
   "MYSTS2MOD-RHYTHM_POWER.smartDescription": "During a turn, whenever you gain or lose Hao, gain [blue]{Amount}[/blue] Block.",
   "MYSTS2MOD-COMEBACK_POWER.title": "Comeback",
@@ -63,5 +61,12 @@
   "MYSTS2MOD-NO_ESCAPE_POWER.title": "No Escape",
   "MYSTS2MOD-NO_ESCAPE_POWER.smartDescription": "At the start of your turn, gain {Amount:energyIcons()} and draw {Amount} extra cards.",
   "MYSTS2MOD-SILVER_LINING_POWER.title": "Silver Lining",
-  "MYSTS2MOD-SILVER_LINING_POWER.smartDescription": "During your turn, whenever you play a card that applies a Regular Debuff to yourself, gain {energyPrefix:energyIcons(1)} and draw 2 cards. Triggers up to {Amount} times per turn, once per card play. Regular Debuffs are Frail, Weak, and Vulnerable."
+  "MYSTS2MOD-SILVER_LINING_POWER.smartDescription": "During your turn, whenever you play a card that applies a Regular Debuff to yourself, gain {energyPrefix:energyIcons(1)} and draw 2 cards. Triggers up to {Amount} times per turn, once per card play. Regular Debuffs are Frail, Weak, and Vulnerable.",
+  "MYSTS2MOD-EMPATHY_POWER.title": "Empathy",
+  "MYSTS2MOD-EMPATHY_POWER.smartDescription": "Whenever you heal during combat, heal all teammates for the same amount.",
+  "MYSTS2MOD-ROUND_TABLE_POWER.title": "Round Table",
+  "MYSTS2MOD-ROUND_TABLE_POWER.smartDescription": "At the end of this turn, choose up to {Amount} cards to Retain.",
+  "MYSTS2MOD-ROUND_TABLE_POWER.selectionScreenPrompt": "Choose up to {Amount} cards to Retain.",
+  "MYSTS2MOD-BOND_POWER.title": "Bond",
+  "MYSTS2MOD-BOND_POWER.smartDescription": "After taking unblocked damage, retain up to {Amount} Hao. Lose only the remaining Hao and take that much backlash damage."
 }

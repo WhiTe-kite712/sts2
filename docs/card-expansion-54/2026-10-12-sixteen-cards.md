@@ -48,4 +48,3 @@ source-inventory、source-statistics、power-inventory、card-art-map以及回�
 
 新增部分的静态检查通过：16张牌的构造参数和X费声明、5个能力的注册引用、中英文文本及变量、选牌提示、类名与文件名、原版回调签名、源码括号以及占位资源均已核对。源码模型数量为77张卡牌／28个自定义能力。这些检查不能代替编译和游戏内效果验证。
 
-全库旧检查没有通过：`check_source_names.py`首先停在聊天记录的费用漂移（当前源码2费，保留清单1费）；`LocalizationLinks/check.py`使用了不存在的原版能力源码路径，未识别部分原版动态变量，还报告旧文本缺项。本次没有修改这些旧牌的效果或覆盖此前的手动调参。具体静态检查结果见同目录的 `2026-10-12-sixteen-cards-static-validation.json`。

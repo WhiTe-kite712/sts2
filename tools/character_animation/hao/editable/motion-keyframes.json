@@ -22,64 +22,94 @@
       0
     ],
     [
-      10,
-      1,
-      -0.5,
-      815,
-      700,
-      12,
-      -0.4,
-      -0.8
-    ],
-    [
-      16,
-      1.5,
-      -1,
-      807,
-      674,
-      48,
-      -0.8,
-      -1.5
-    ],
-    [
-      34,
-      -4,
-      2,
-      883,
-      716,
-      -7,
+      8,
       1.8,
-      3.2
+      -0.8,
+      822,
+      707,
+      10,
+      -0.3,
+      -0.3
     ],
     [
-      42,
-      -3,
-      1.5,
-      872,
-      742,
-      -42,
-      2.8,
-      4.5
-    ],
-    [
-      56,
-      -1,
-      0.5,
-      846,
-      747,
-      -30,
+      14,
+      3.5,
+      -1.4,
+      801,
+      664,
+      75,
       -0.7,
+      -1.0
+    ],
+    [
+      20,
+      4.2,
+      -1.8,
+      795,
+      647,
+      115,
+      -1.2,
       -1.8
     ],
     [
-      66,
-      0,
-      0,
-      842.1564860155703,
-      747.4878681661899,
-      -25,
-      0,
-      0
+      24,
+      4.2,
+      -1.8,
+      795,
+      647,
+      115,
+      -1.2,
+      -1.8
+    ],
+    [
+      26,
+      3.8,
+      -1.7,
+      798,
+      652,
+      108,
+      -1.1,
+      -1.9
+    ],
+    [
+      32,
+      -6,
+      2.7,
+      889,
+      709,
+      -28,
+      0.8,
+      1.0
+    ],
+    [
+      36,
+      -6.5,
+      2.6,
+      894,
+      723,
+      -55,
+      2.9,
+      4.8
+    ],
+    [
+      40,
+      -4.0,
+      1.5,
+      877,
+      742,
+      -48,
+      4.0,
+      7.0
+    ],
+    [
+      54,
+      0.4,
+      -0.3,
+      839,
+      746,
+      -22,
+      -1.0,
+      -2.2
     ],
     [
       70,
@@ -184,9 +214,11 @@
     ]
   },
   "notes": [
-    "Frame coordinates doubled from the 40 FPS version; playback now uses 100 FPS (20% shorter duration).",
-    "keyframeSubdivisions=2 bakes original poses at even frames and inserts linear local-bone midpoints at odd frames.",
-    "Attack wristY downswing interval is now frames 16 to 34; eventFrames and effectFrames use the 100 FPS grid."
+    "100 FPS, attack 0.70 s, hit at frame 32 (0.32 s), and all cast data are preserved.",
+    "Raised sword apex: frames 20 and 24 duplicate the same pose, adding a readable 0.04 s anticipation hold.",
+    "Main elbow rises above shoulder; forearm global raising amplitude exceeds upper arm while sword crosses above the hood.",
+    "The exported attack recovery uses only frames 40, 54, 70. Previews are interpolated from the actual exported keys.",
+    "World arm movement remains in the same direction; hand_main/weapon attachment pivots and textures are unchanged."
   ],
   "attackArmRaise": [
     [
@@ -200,17 +232,47 @@
       0
     ],
     [
-      10,
-      12,
-      24
+      8,
+      30,
+      20
     ],
     [
-      16,
+      14,
+      60,
+      45
+    ],
+    [
       20,
-      40
+      80,
+      60
     ],
     [
-      34,
+      24,
+      80,
+      60
+    ],
+    [
+      26,
+      75,
+      56
+    ],
+    [
+      32,
+      0,
+      0
+    ],
+    [
+      36,
+      0,
+      0
+    ],
+    [
+      40,
+      0,
+      0
+    ],
+    [
+      54,
       0,
       0
     ],
@@ -221,7 +283,7 @@
     ]
   ],
   "eventFrames": {
-    "attack": 34,
+    "attack": 32,
     "cast": 48
   },
   "effectFrames": {
@@ -232,40 +294,28 @@
           0
         ],
         [
-          14.6,
-          0.0
-        ],
-        [
-          29.2,
+          27,
           0
         ],
         [
-          31.6,
-          0.325
+          30,
+          0.35
         ],
         [
-          34,
-          0.65
+          32,
+          0.72
         ],
         [
-          37.0,
-          0.475
+          35,
+          0.58
         ],
         [
           40,
-          0.3
+          0.25
         ],
         [
-          43.6,
-          0.15
-        ],
-        [
-          47.2,
+          45,
           0
-        ],
-        [
-          58.6,
-          0.0
         ],
         [
           70,
@@ -276,10 +326,6 @@
         [
           0,
           0
-        ],
-        [
-          35.0,
-          0.0
         ],
         [
           70,
@@ -359,5 +405,49 @@
     }
   },
   "keyframeSubdivisions": 2,
-  "hash": "hao-rebind-v2-100fps-2026-10-10"
+  "hash": "hao-overhead-large-slash-2026-10-17",
+  "exportFrames": {
+    "attack": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      54,
+      70
+    ]
+  }
 }

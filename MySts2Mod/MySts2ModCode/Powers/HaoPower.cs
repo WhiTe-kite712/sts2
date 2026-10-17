@@ -17,6 +17,12 @@ namespace MySts2Mod.MySts2ModCode.Powers;
 /// </summary>
 public class HaoPower : MySts2ModPower
 {
+    private sealed class Data
+    {
+        public bool ResolvingBacklash;
+    }
+
+    protected override object InitInternalData() => new Data();
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
 
@@ -34,16 +40,31 @@ public class HaoPower : MySts2ModPower
             return;
         }
 
-        decimal lostAmount = Amount;
+        var data = GetInternalData<Data>();
+        if (data.ResolvingBacklash) return;
 
-        Flash();
-        await PowerCmd.ModifyAmount(choiceContext, this, -Amount, dealer, cardSource);
-        await CreatureCmd.Damage(
-            choiceContext,
-            Owner,
-            lostAmount,
-            ValueProp.Unpowered,
-            dealer ?? Owner);
+        var retained = Math.Max(0, Owner.GetPower<BondPower>()?.Amount ?? 0);
+        var lostAmount = Math.Max(0, Amount - retained);
+        if (lostAmount == 0) return;
+
+        // Keep the retained Hao in place: losing then regaining it would trigger gain effects.
+        // Backlash itself must not clear the retained Hao or recursively trigger more backlash.
+        data.ResolvingBacklash = true;
+        try
+        {
+            Flash();
+            await PowerCmd.ModifyAmount(choiceContext, this, -lostAmount, dealer, cardSource);
+            await CreatureCmd.Damage(
+                choiceContext,
+                Owner,
+                lostAmount,
+                ValueProp.Unpowered,
+                dealer ?? Owner);
+        }
+        finally
+        {
+            data.ResolvingBacklash = false;
+        }
     }
 
     public override decimal ModifyDamageAdditive(

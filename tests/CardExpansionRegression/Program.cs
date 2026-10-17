@@ -15,7 +15,7 @@ AssemblyLoadContext.Default.Resolving += (_, name) =>
     string file = Path.Combine(dataDir, name.Name + ".dll");
     return File.Exists(file) ? AssemblyLoadContext.Default.LoadFromAssemblyPath(file) : null;
 };
-int expected = args.Length > 0 ? int.Parse(args[0]) : 88;
+int expected = args.Length > 0 ? int.Parse(args[0]) : 92;
 string output = args.Length > 1 ? args[1] : "inventory.json";
 var types = typeof(MySts2ModCard).Assembly.GetTypes().Where(t => !t.IsAbstract && typeof(MySts2ModCard).IsAssignableFrom(t)).OrderBy(t => t.Name).ToArray();
 int failures = 0, tests = 0;
@@ -38,6 +38,18 @@ foreach (var type in types)
         Equal(0, canonical.CurrentUpgradeLevel);
         var pools = type.GetCustomAttributes<PoolAttribute>().ToArray();
         Equal(1, pools.Length);
+        if (type == typeof(Xiao) || type == typeof(Chuan))
+        {
+            Equal(typeof(MegaCrit.Sts2.Core.Models.CardPools.TokenCardPool), pools[0].PoolType!);
+            Equal(false, card.ShouldShowInCardLibrary);
+            Equal(false, card.CanBeGeneratedInCombat);
+            Equal(false, card.CanBeGeneratedByModifiers);
+        }
+        if (type == typeof(RoundTable) || type == typeof(Bond) || type == typeof(ZeroSumGame))
+        {
+            Equal(typeof(MySts2Mod.MySts2ModCode.Character.HaoCardPool), pools[0].PoolType!);
+            Equal(CardMultiplayerConstraint.MultiplayerOnly, card.MultiplayerConstraint);
+        }
         inventory.Add(new { className = type.Name, id = Id(type), pool = pools[0].PoolType!.Name, before, after });
     });
 }

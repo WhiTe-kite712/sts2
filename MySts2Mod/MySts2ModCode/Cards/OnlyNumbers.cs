@@ -12,7 +12,7 @@ namespace MySts2Mod.MySts2ModCode.Cards;
 public class OnlyNumbers : MySts2ModCard
 {
     public override bool GainsBlock => true;
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(16, ValueProp.Move), new BlockVar(16, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(14, ValueProp.Move), new BlockVar(14, ValueProp.Move)];
 
     public OnlyNumbers() : base(3, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy) { }
 

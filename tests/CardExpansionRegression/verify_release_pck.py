@@ -68,10 +68,14 @@ def verify(args):
     manifest_path = args.art_manifest or root / 'docs/card-expansion-54/card-art-map.json'
     art = json.loads(manifest_path.read_text(encoding='utf-8-sig'))
     records = {item['className']: item for item in art['cards']}
-    require(len(records) == len(art['cards']) == 88, 'Artwork manifest must contain 88 unique cards')
+    source_cards = {path.stem for path in (root / 'MySts2Mod/MySts2ModCode/Cards').glob('*.cs')
+                    if re.search(r'public\s+(?:sealed\s+)?class\s+\w+\s*:\s*MySts2ModCard\b',
+                                 path.read_text(encoding='utf-8-sig'))}
+    require(bool(source_cards) and len(records) == len(art['cards']) and records.keys() == source_cards,
+            'Artwork manifest must match all unique source cards')
     own = {name: item for name, item in records.items() if item['kind'] == 'normal'}
-    require(len(own) == 86 and {name for name, item in records.items() if item['kind'] == 'vanilla'} == {'Strike', 'Defend'},
-            'Expected 86 formal portraits and native Strike/Defend')
+    require(len(own) == len(records) - 2 == art['ownedArtCards'] and {name for name, item in records.items() if item['kind'] == 'vanilla'} == {'Strike', 'Defend'},
+            'Expected formal portraits for every card except native Strike/Defend')
     require(art['missingCards'] == 0, 'Artwork manifest still lists missing cards')
     reader_path = root / 'tests/CardExpansionRegression/verify_localization_pck.py'
     spec = importlib.util.spec_from_file_location('release_localization_pck_reader', reader_path)
@@ -186,9 +190,9 @@ def verify(args):
                     report['localizationResourcesVerified'] += 1
                 except (CheckError, reader.VerificationError, OSError, ValueError) as error:
                     failures.append(str(error))
-    require(report['formalPortraitsVerified'] <= 86, 'Invalid verification count')
-    if report['formalPortraitsVerified'] != 86:
-        failures.append(f"Only {report['formalPortraitsVerified']}/86 formal card textures verified")
+    require(report['formalPortraitsVerified'] <= len(own), 'Invalid verification count')
+    if report['formalPortraitsVerified'] != len(own):
+        failures.append(f"Only {report['formalPortraitsVerified']}/{len(own)} formal card textures verified")
     if report['localizationResourcesVerified'] != 4:
         failures.append('Not all four localization JSON files verified')
     if report['payloadMd5Verified'] != report['directoryEntries']:
