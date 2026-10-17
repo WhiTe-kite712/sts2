@@ -1,8 +1,10 @@
+using BaseLib.Extensions;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MySts2Mod.MySts2ModCode.Powers;
+using MySts2Mod.MySts2ModCode.Relics;
 
 namespace MySts2Mod.MySts2ModCode.Extensions;
 
@@ -68,6 +70,9 @@ public static class HaoStateExtensions
         var dualLife = creature.GetPower<DualLifePower>();
         if (dualLife != null)
             await dualLife.OnHaoStateSwitched(choiceContext, player);
+
+        if (player.TryGetRelic<DualBoot>(out var dualBoot))
+            await dualBoot.OnHaoStateSwitched(choiceContext, player);
     }
 }
 
