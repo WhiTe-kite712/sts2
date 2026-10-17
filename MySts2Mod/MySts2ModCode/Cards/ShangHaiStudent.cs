@@ -19,7 +19,6 @@ public class ShangHaiStudent : MySts2ModCard
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<ShangHaiStudentPower>(),
         HoverTipFactory.FromPower<HaoPower>(),
     ];
 

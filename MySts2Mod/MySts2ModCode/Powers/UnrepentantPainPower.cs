@@ -13,7 +13,10 @@ namespace MySts2Mod.MySts2ModCode.Powers;
 /// 嘴硬（第二阶段）：下个自身回合每打出一张牌，受到3点可被格挡的伤害。
 /// 该回合结束时移除。
 /// </summary>
+// Smart description only; source checks still require localized title and smartDescription.
+#pragma warning disable STS001
 public class UnrepentantPainPower : MySts2ModPower
+#pragma warning restore STS001
 {
     public override PowerType Type => PowerType.Debuff;
     public override PowerStackType StackType => PowerStackType.Single;

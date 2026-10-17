@@ -186,8 +186,8 @@
           "FrailPower": 3,
           "WeakPower": 3,
           "VulnerablePower": 3,
-          "Cards": 2,
-          "Energy": 2
+          "Cards": 4,
+          "Energy": 3
         },
         "keywords": [
           "Ethereal",
@@ -204,8 +204,8 @@
           "FrailPower": 2,
           "WeakPower": 2,
           "VulnerablePower": 2,
-          "Cards": 2,
-          "Energy": 2
+          "Cards": 4,
+          "Energy": 3
         },
         "keywords": [
           "Ethereal",
@@ -426,5 +426,14 @@
       "description": "你的回合内，每当打出对自身施加常规负面状态的牌时，获得{energyPrefix:energyIcons(1)}，抽2张牌。每回合至多触发{Amount}次。同一次出牌只触发1次。常规负面状态仅指脆弱、虚弱和易伤。",
       "descriptionEng": "During your turn, whenever you play a card that applies Frail, Weak, or Vulnerable to yourself, gain {energyPrefix:energyIcons(1)} and draw 2 cards. Triggers up to {Amount} times per turn, once per card play."
     }
-  ]
+  ],
+  "sourceAudit": {
+    "date": "2026-10-17",
+    "verification": "Static comparison against all 11 current card source files; no DLL or combat execution.",
+    "changeSource": "Current working-tree diff for EvenWorse.cs changes CardsVar(2), EnergyVar(2) to CardsVar(4), EnergyVar(3). OnUpgrade only reduces Frail/Weak/Vulnerable by 1, preserving draw/energy in both versions.",
+    "changedCards": [
+      "EvenWorse"
+    ],
+    "checkedCardCount": 11
+  }
 }

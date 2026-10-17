@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../MySts2Mod/Sts2PathDiscovery.props" Condition="'$(Sts2DataDir)' == ''" />
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net9.0</TargetFramework>
+    <RollForward>Major</RollForward><ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable><NuGetAudit>false</NuGetAudit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="sts2"><HintPath>$(Sts2DataDir)/sts2.dll</HintPath></Reference>
+    <Reference Include="GodotSharp"><HintPath>$(Sts2DataDir)/GodotSharp.dll</HintPath></Reference>
+    <Reference Include="0Harmony"><HintPath>$(Sts2DataDir)/0Harmony.dll</HintPath></Reference>
+    <Compile Include="../../MySts2Mod/MySts2ModCode/Extensions/UpgradeTextCompatibility.cs" Link="UpgradeTextCompatibility.cs" />
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+      <_Parameter1>Sts2DataDir</_Parameter1><_Parameter2>$(Sts2DataDir)</_Parameter2>
+    </AssemblyAttribute>
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+      <_Parameter1>ModLocalizationDir</_Parameter1><_Parameter2>$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)/../../MySts2Mod/MySts2Mod/localization'))</_Parameter2>
+    </AssemblyAttribute>
+  </ItemGroup>
+</Project>

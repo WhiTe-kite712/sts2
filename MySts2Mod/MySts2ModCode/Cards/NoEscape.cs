@@ -17,7 +17,7 @@ public class NoEscape : MySts2ModCard
     protected override IEnumerable<DynamicVar> CanonicalVars =>
         [new PowerVar<VulnerablePower>(2), new PowerVar<FrailPower>(2), new EnergyVar(1), new CardsVar(1)];
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
-        RegularDebuffs.HoverTips.Append(HoverTipFactory.FromPower<NoEscapePower>(1));
+        RegularDebuffs.HoverTips;
 
     public NoEscape() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self) { }
 

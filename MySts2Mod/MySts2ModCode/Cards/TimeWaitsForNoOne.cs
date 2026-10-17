@@ -13,7 +13,6 @@ public class TimeWaitsForNoOne : MySts2ModCard
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<TimeWaitsForNoOnePower>(),
         HoverTipFactory.FromPower<HiddenStatePower>(),
         HoverTipFactory.FromPower<OpenHaoStatePower>(),
         HoverTipFactory.FromKeyword(CardKeyword.Retain),

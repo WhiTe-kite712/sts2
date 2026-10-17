@@ -14,7 +14,6 @@ public class Comeback : MySts2ModCard
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<ComebackPower>(),
         HoverTipFactory.FromPower<HiddenStatePower>(),
         HoverTipFactory.FromPower<OpenHaoStatePower>(),
         HoverTipFactory.FromKeyword(CardKeyword.Retain),

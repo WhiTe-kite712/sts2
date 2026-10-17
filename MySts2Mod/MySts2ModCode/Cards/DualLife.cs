@@ -19,8 +19,7 @@ public class DualLife : MySts2ModCard
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<HiddenStatePower>(),
-        HoverTipFactory.FromPower<OpenHaoStatePower>(),
-        HoverTipFactory.FromPower<DualLifePower>()
+        HoverTipFactory.FromPower<OpenHaoStatePower>()
     ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<DualLifePower>(1)];

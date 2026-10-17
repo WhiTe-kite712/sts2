@@ -24,12 +24,12 @@ public class GroupDiscuss : MySts2ModCard
 
     private const int cost = 3;
     private const CardType type = CardType.Skill;
-    private const CardRarity rarity = CardRarity.Uncommon;
+    private const CardRarity rarity = CardRarity.Rare;
     private const TargetType target = TargetType.AnyEnemy;
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Ethereal, CardKeyword.Exhaust];
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(18, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(38, ValueProp.Move)];
 
     public GroupDiscuss() : base(cost, type, rarity, target)
     {
@@ -55,6 +55,6 @@ public class GroupDiscuss : MySts2ModCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(6);
+        DynamicVars.Damage.UpgradeValueBy(14);
     }
 }

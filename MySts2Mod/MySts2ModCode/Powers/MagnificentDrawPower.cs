@@ -15,12 +15,14 @@ namespace MySts2Mod.MySts2ModCode.Powers;
 /// 豪华的豪（第一阶段）：本回合你每抽2张牌，获得1点豪意值。回合结束时移除并施加第二阶段。
 /// Amount 用作计数器（0..1）。
 /// </summary>
+// Smart description only; source checks still require localized title and smartDescription.
+#pragma warning disable STS001
 public class MagnificentDrawPower : MySts2ModPower
+#pragma warning restore STS001
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<HaoPower>(),
-        HoverTipFactory.FromPower<MagnificentHaoPower>(),
     ];
 
     public override PowerType Type => PowerType.Buff;

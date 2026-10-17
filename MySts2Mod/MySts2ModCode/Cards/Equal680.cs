@@ -8,7 +8,6 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MySts2Mod.MySts2ModCode.Powers;
 
-using MegaCrit.Sts2.Core.HoverTips;
 
 namespace MySts2Mod.MySts2ModCode.Cards;
 
@@ -16,11 +15,6 @@ namespace MySts2Mod.MySts2ModCode.Cards;
 public class Equal680 : MySts2ModCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new IntVar("ExtraDamage", 4)];
-
-    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
-    [
-        HoverTipFactory.FromPower<Equal680Power>(),
-    ];
 
     private const int cost = 1;
     private const CardType type = CardType.Power;

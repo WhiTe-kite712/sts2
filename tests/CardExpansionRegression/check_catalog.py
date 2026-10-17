@@ -9,6 +9,10 @@ root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).resolve().pare
 docs = root / 'docs/card-expansion-54'
 resources = root / 'MySts2Mod/MySts2Mod'
 code = root / 'MySts2Mod/MySts2ModCode'
+DUMB_POWER_NAMES = {'HaoPower', 'HiddenStatePower', 'OpenHaoStatePower'}
+def fields_for(table, name):
+    if table == 'cards': return ['title', 'description']
+    return ['title', 'smartDescription'] + (['description'] if name in DUMB_POWER_NAMES else [])
 def pairs(values):
     out = {}
     for key, value in values:
@@ -34,14 +38,14 @@ assert Counter(c['pool'] for c in cards) == {'HaoCardPool': 86, 'ColorlessCardPo
 assert {c['className'] for c in cards if c['before']['rarity'] == 'Token'} == {'Xiao', 'Chuan'}
 assert len([c for c in cards if c['before']['rarity'] in ('Common', 'Uncommon', 'Rare')]) == 79
 assert {c['className'] for c in cards if c['before']['rarity'] == 'Ancient'} == {'GodList', 'Lost'}
-assert Counter(c['before']['rarity'] for c in cards) == {'Basic': 5, 'Common': 24, 'Uncommon': 33, 'Rare': 22, 'Token': 2, 'Ancient': 2}
+assert Counter(c['before']['rarity'] for c in cards) == {'Basic': 5, 'Common': 24, 'Uncommon': 32, 'Rare': 23, 'Token': 2, 'Ancient': 2}
 assert len([c for c in cards if c['before']['rarity'] == 'Basic']) == 5
 assert Counter(c['before']['type'] for c in cards) == {'Attack': 26, 'Skill': 49, 'Power': 13}
 assert Counter('X' if c['before']['costsX'] else str(c['before']['cost']) for c in cards) == {
-    '0': 15, '1': 49, '2': 15, '3': 7, 'X': 2
+    '0': 15, '1': 49, '2': 16, '3': 6, 'X': 2
 }
 god_list = by_class['GodList']
-assert god_list['before']['cost'] == 3 and god_list['after']['cost'] == 2
+assert god_list['before']['cost'] == 2 and god_list['after']['cost'] == 1
 assert all(god_list[version]['type'] == 'Power' and god_list[version]['rarity'] == 'Ancient' for version in ('before', 'after'))
 assert 'ITomeCard' in (code / 'Cards/GodList.cs').read_text(encoding='utf-8-sig')
 assert 'GodListPower' in power_by_class
@@ -72,10 +76,10 @@ for language, suffix in [('zhs', 'Zhs'), ('eng', 'Eng')]:
         loaded[language][table] = texts
         assert all(isinstance(v, str) and v.strip() for v in texts.values()), (language, table, 'empty text')
         for model in models:
-            fields = ['title', 'description'] + (['smartDescription'] if table == 'powers' else [])
+            fields = fields_for(table, model['className'])
             known_vars = set(model['before']['variables'] if table == 'cards' else model['variables'])
             if table == 'cards': known_vars.update(model['before'].get('descriptionArgs', []))
-            if table == 'cards': known_vars |= {'IfUpgraded', 'OnTable', 'InCombat', 'IsTargeting', 'TargetType', 'GainsBlock', 'IsOstyAlive', 'energyPrefix', 'singleStarIcon'}
+            if table == 'cards': known_vars |= {'IfUpgraded', 'IfUpgrade', 'OnTable', 'InCombat', 'IsTargeting', 'TargetType', 'GainsBlock', 'IsOstyAlive', 'energyPrefix', 'singleStarIcon'}
             if table == 'powers': known_vars |= {'Amount', 'AmountOnTurnStart', 'energyPrefix', 'singleStarIcon'}
             for field in fields:
                 key = model['id'] + '.' + field
@@ -83,6 +87,9 @@ for language, suffix in [('zhs', 'Zhs'), ('eng', 'Eng')]:
                 if field != 'title':
                     used = set(re.findall(r'\{([A-Za-z][A-Za-z0-9_]*)[}:]', texts[key]))
                     assert used <= known_vars, (language, key, sorted(used - known_vars))
+        if table == 'powers':
+            expected_dumb = {model['id'] + '.description' for model in models if model['className'] in DUMB_POWER_NAMES}
+            assert {key for key in texts if key.endswith('.description')} == expected_dumb, (language, 'unexpected dumb power descriptions')
         print(f'PASS {language}/{table}: duplicate-free JSON, {len(models)} model descriptions, all variables bound to actual DLL')
     for card in catalog:
         texts = loaded[language]['cards']
@@ -92,7 +99,7 @@ for language, suffix in [('zhs', 'Zhs'), ('eng', 'Eng')]:
     for power in power_catalog:
         texts = loaded[language]['powers']
         model = power_by_class[power['className']]
-        for field in ('title', 'description', 'smartDescription'):
+        for field in fields_for('powers', power['className']):
             assert texts[model['id'] + '.' + field] == power[field + suffix], (language, power['className'], field)
 
 for table in ('cards', 'powers'):

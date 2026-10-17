@@ -16,7 +16,6 @@ public class Speech : MySts2ModCard
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<HaoPower>(),
-        EnergyHoverTip,
     ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>

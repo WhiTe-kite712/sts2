@@ -14,7 +14,7 @@ public class FiercerSmurfing : MySts2ModCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new IntVar("HaoThreshold", 20)];
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
-        [HoverTipFactory.FromPower<HaoPower>(), HoverTipFactory.FromPower<FiercerSmurfingPower>(DynamicVars["HaoThreshold"].IntValue)];
+        [HoverTipFactory.FromPower<HaoPower>()];
 
     public FiercerSmurfing() : base(1, CardType.Power, CardRarity.Rare, TargetType.Self) { }
 

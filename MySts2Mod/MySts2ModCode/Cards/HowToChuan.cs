@@ -12,7 +12,7 @@ public class HowToChuan : MySts2ModCard
 {
     protected override bool HasEnergyCostX => true;
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [EnergyHoverTip, HoverTipFactory.FromCard<Chuan>(IsUpgraded)];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<Chuan>(IsUpgraded)];
 
     public HowToChuan() : base(0, CardType.Skill, CardRarity.Rare, TargetType.Self) { }
 

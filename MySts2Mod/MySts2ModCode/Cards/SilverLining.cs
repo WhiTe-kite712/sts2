@@ -16,7 +16,7 @@ public class SilverLining : MySts2ModCard
     protected override IEnumerable<DynamicVar> CanonicalVars =>
         [new IntVar("TriggerLimit", 2), new EnergyVar(1), new CardsVar(2)];
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
-        RegularDebuffs.HoverTips.Append(HoverTipFactory.FromPower<SilverLiningPower>(DynamicVars["TriggerLimit"].IntValue));
+        RegularDebuffs.HoverTips;
 
     public SilverLining() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self) { }
 

@@ -134,16 +134,13 @@ for table, items in [('cards', catalog['cards']), ('powers', catalog['powers'])]
         else:
             assert variables == item['variables'], name
 
-        known = set(variables) | {'Amount', 'IfUpgraded', 'InCombat', 'OnTable', 'energyPrefix'}
+        known = set(variables) | {'Amount', 'IfUpgraded', 'IfUpgrade', 'InCombat', 'OnTable', 'energyPrefix'}
         for lang in ('zhs', 'eng'):
-            for field in ('title', 'description') + (('smartDescription',) if table == 'powers' else ()):
+            for field in (('title', 'description') if table == 'cards' else ('title', 'smartDescription')):
                 value = translations[lang][slug(name) + '.' + field]
                 assert isinstance(value, str) and value.strip(), (lang, name, field)
                 used = set(re.findall(r'\{([A-Za-z][A-Za-z0-9_]*)[}:]', value))
                 assert used <= known, (lang, name, field, used - known)
-                if table == 'powers' and field == 'description':
-                    # Canonical power hover tips only bind native dumb variables, not CanonicalVars.
-                    assert used <= {'Amount', 'energyPrefix'}, (name, 'canonical power description')
             if 'SelectionScreenPrompt' in source:
                 assert translations[lang][slug(name) + '.selectionScreenPrompt']
 
@@ -168,6 +165,7 @@ for table, items in [('cards', catalog['cards']), ('powers', catalog['powers'])]
 # Cross-card boundaries which have caused regressions in this project.
 helper = text(code / 'Extensions/RegularDebuffs.cs')
 assert 'power is FrailPower or WeakPower or VulnerablePower' in helper
+assert 'MYSTS2MOD-REGULAR_DEBUFFS.title' in helper and 'MYSTS2MOD-REGULAR_DEBUFFS.description' in helper
 assert 'power.Amount > 0' in helper and '.Sum(power => power.Amount)' in helper
 assert '1 + RegularDebuffs.CountKinds' in models['Tilted'][1]
 assert 'RegularDebuffs.CountLayers' in models['AmIShiNong'][1]
@@ -190,7 +188,7 @@ checked.append(dict(path=(code / 'Extensions/RegularDebuffs.cs').as_posix(),
 
 checks = ['88 card / 30 custom power registrations and complete source inventories',
           '11 card constructors, base/upgrade values, keywords and costs',
-          'Chinese/English text, prompts, energy icon placeholders and canonical power hover tips',
+          'Chinese/English text, prompts, energy icon placeholders and smart power descriptions and regular-debuff glossary',
           'Native override signatures and concrete native/custom power references',
           'Per-card self-debuff tracking, owner guards, quota reservation and own-turn reset',
           'Debuff kind/layer distinction, upgraded target Retain, native temporary stats and cost reduction']

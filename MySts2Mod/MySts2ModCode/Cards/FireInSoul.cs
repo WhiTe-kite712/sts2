@@ -19,7 +19,6 @@ public class FireInSoul : MySts2ModCard
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<FrailPower>(),
-        EnergyHoverTip,
     ];
 
     private const int cost = 1;

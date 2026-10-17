@@ -24,7 +24,7 @@ public class Planning : MySts2ModCard
 
     public override bool GainsBlock => true;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(2), new BlockVar(3, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(2), new BlockVar(5, ValueProp.Move)];
 
     public Planning() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {

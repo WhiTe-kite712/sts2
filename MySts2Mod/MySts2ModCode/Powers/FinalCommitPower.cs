@@ -7,20 +7,17 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 
-using MegaCrit.Sts2.Core.HoverTips;
 
 namespace MySts2Mod.MySts2ModCode.Powers;
 
 /// <summary>
 /// 最终提交：本回合你无法获得格挡；自己的回合结束时移除此能力。
 /// </summary>
+// Smart description only; source checks still require localized title and smartDescription.
+#pragma warning disable STS001
 public class FinalCommitPower : MySts2ModPower
+#pragma warning restore STS001
 {
-    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
-    [
-        HoverTipFactory.Static(StaticHoverTip.Block),
-    ];
-
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Single;
 

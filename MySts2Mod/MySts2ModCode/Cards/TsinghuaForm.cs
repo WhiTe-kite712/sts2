@@ -16,7 +16,6 @@ public class TsinghuaForm : MySts2ModCard
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<TsinghuaFormPower>(),
         HoverTipFactory.FromPower<HaoPower>(),
     ];
 

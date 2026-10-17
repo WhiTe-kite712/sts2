@@ -20,7 +20,7 @@ public class UncertaintyPrinciple : MySts2ModCard
     [
         HoverTipFactory.FromPower<HiddenStatePower>(),
         HoverTipFactory.FromPower<OpenHaoStatePower>(),
-        EnergyHoverTip,
+
         HoverTipFactory.FromKeyword(CardKeyword.Exhaust)
     ];
 

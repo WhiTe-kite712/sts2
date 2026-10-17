@@ -16,7 +16,6 @@ public class SuperHaoField : MySts2ModCard
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<SuperHaoFieldPower>(),
         HoverTipFactory.FromPower<HaoPower>(),
     ];
 

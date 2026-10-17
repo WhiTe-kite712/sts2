@@ -17,7 +17,6 @@ public class FinalCommit : MySts2ModCard
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<FinalCommitPower>(),
         HoverTipFactory.FromPower<HaoPower>(),
     ];
 

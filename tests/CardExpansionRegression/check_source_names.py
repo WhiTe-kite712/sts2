@@ -9,6 +9,10 @@ import sys
 root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).resolve().parents[2]
 docs = root / 'docs/card-expansion-54'
 code = root / 'MySts2Mod/MySts2ModCode'
+DUMB_POWER_NAMES = {'HaoPower', 'HiddenStatePower', 'OpenHaoStatePower'}
+def fields_for(table, name):
+    if table == 'cards': return ['title', 'description']
+    return ['title', 'smartDescription'] + (['description'] if name in DUMB_POWER_NAMES else [])
 resources = root / 'MySts2Mod/MySts2Mod'
 
 def pairs(items):
@@ -53,14 +57,14 @@ for name, (_, path, text) in cards.items():
         assert 'TargetType.' + item['before']['target'] in signature, name
         if not item['before']['costsX']: assert int(signature.split(',')[0]) == item['before']['cost'], name
 assert Counter(c['before']['type'] for c in inventory['cards']) == {'Attack': 26, 'Skill': 49, 'Power': 13}
-assert Counter(c['before']['rarity'] for c in inventory['cards']) == {'Basic': 5, 'Common': 24, 'Uncommon': 33, 'Rare': 22, 'Token': 2, 'Ancient': 2}
+assert Counter(c['before']['rarity'] for c in inventory['cards']) == {'Basic': 5, 'Common': 24, 'Uncommon': 32, 'Rare': 23, 'Token': 2, 'Ancient': 2}
 normal_rewards = [c for c in inventory['cards'] if c['before']['rarity'] in ('Common', 'Uncommon', 'Rare')]
 assert len(normal_rewards) == 79
 assert {c['className'] for c in inventory['cards'] if c['before']['rarity'] == 'Ancient'} == {'GodList', 'Lost'}
 assert sum(c['before']['rarity'] == 'Basic' for c in inventory['cards']) == 5
-assert Counter('X' if c['before']['costsX'] else str(c['before']['cost']) for c in inventory['cards']) == {'0': 15, '1': 49, '2': 15, '3': 7, 'X': 2}
+assert Counter('X' if c['before']['costsX'] else str(c['before']['cost']) for c in inventory['cards']) == {'0': 15, '1': 49, '2': 16, '3': 6, 'X': 2}
 god_list = next(c for c in inventory['cards'] if c['className'] == 'GodList')
-assert god_list['before']['cost'] == 3 and god_list['after']['cost'] == 2
+assert god_list['before']['cost'] == 2 and god_list['after']['cost'] == 1
 assert all(god_list[version]['type'] == 'Power' and god_list[version]['rarity'] == 'Ancient' for version in ('before', 'after'))
 assert 'ITomeCard' in cards['GodList'][2] and 'GodListPower' in power_models
 lost = next(c for c in inventory['cards'] if c['className'] == 'Lost')
@@ -89,11 +93,11 @@ for language, suffix in [('zhs', 'Zhs'), ('eng', 'Eng')]:
     for table, source in [('cards', cards), ('powers', power_models)]:
         translations = read(resources / 'localization' / language / (table + '.json'))
         for name, (_, path, text) in source.items():
-            fields = ['title', 'description'] + (['smartDescription'] if table == 'powers' else [])
+            fields = fields_for(table, name)
             for field in fields: assert translations.get(slug(name) + '.' + field), (language, name, field)
             if table == 'cards' and 'SelectionScreenPrompt' in text:
                 assert translations.get(slug(name) + '.selectionScreenPrompt'), (language, name, 'selection prompt')
-            known = {'Amount', 'AmountOnTurnStart', 'IfUpgraded', 'energyPrefix', 'singleStarIcon', 'OnTable', 'InCombat', 'IsTargeting', 'TargetType', 'GainsBlock', 'IsOstyAlive'}
+            known = {'Amount', 'AmountOnTurnStart', 'IfUpgraded', 'IfUpgrade', 'energyPrefix', 'singleStarIcon', 'OnTable', 'InCombat', 'IsTargeting', 'TargetType', 'GainsBlock', 'IsOstyAlive'}
             known.update(re.findall(r'new\s+(?:DynamicVar|IntVar)\s*\(\s*"([^"]+)"', text))
             known.update(re.findall(r'new\s+\w+Var\s*(?:<[^>]+>)?\s*\(\s*"([^"]+)"', text))
             known.update(re.findall(r'new\s+PowerVar\s*<\s*(\w+)\s*>', text))
@@ -102,10 +106,12 @@ for language, suffix in [('zhs', 'Zhs'), ('eng', 'Eng')]:
             for field in fields[1:]:
                 used = set(re.findall(r'\{([A-Za-z][A-Za-z0-9_]*)[}:]', translations[slug(name) + '.' + field]))
                 assert used <= known, (language, name, field, sorted(used - known))
+        if table == 'powers':
+            assert {key for key in translations if key.endswith('.description')} == {slug(name) + '.description' for name in DUMB_POWER_NAMES}, (language, 'unexpected dumb power descriptions')
         for item in catalog if table == 'cards' else powers:
             assert item['className'] in source
             if table == 'cards': assert (code / item['sourcePath']).is_file(), item['className']
-            for field in ['title', 'description'] + (['smartDescription'] if table == 'powers' else []):
+            for field in fields_for(table, item['className']):
                 assert translations[slug(item['className']) + '.' + field] == item[field + suffix], (language, item['className'], field)
         for old in list(mapping['cards']) + list(mapping['powers']) + list(mapping['removed']):
             assert not any(key.startswith(slug(old) + '.') for key in translations), (language, old)

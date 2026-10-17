@@ -25,8 +25,6 @@
     "className": "DualLifePower",
     "titleZhs": "双面日常",
     "titleEng": "Double Life",
-    "descriptionZhs": "每回合首次在隐匿状态与开豪状态之间切换时，按此能力的层数抽牌。",
-    "descriptionEng": "The first time each turn you switch between Hidden State and Hao Mode, draw cards equal to this power's amount.",
     "smartDescriptionZhs": "每回合首次在隐匿状态与开豪状态之间切换时，抽[blue]{Amount}[/blue]张牌。尚无状态时第一次进入状态不会触发。",
     "smartDescriptionEng": "The first time each turn you switch between Hidden State and Hao Mode, draw [blue]{Amount}[/blue] cards. Entering a state for the first time does not trigger this effect.",
     "suite": "state"
@@ -35,10 +33,8 @@
     "className": "RhythmPower",
     "titleZhs": "节奏",
     "titleEng": "Rhythm",
-    "descriptionZhs": "回合内，每次获得或失去豪意值时，按此能力的层数获得格挡。",
-    "descriptionEng": "During your turn, whenever you gain or lose Hao, gain Block equal to this Power's stacks.",
     "smartDescriptionZhs": "回合内，每次获得或失去豪意值时，获得[blue]{Amount}[/blue]点格挡。",
-    "smartDescriptionEng": "During your turn, whenever you gain or lose Hao, gain [blue]{Amount}[/blue] Block.",
+    "smartDescriptionEng": "During a turn, whenever you gain or lose Hao, gain [blue]{Amount}[/blue] Block.",
     "suite": "hao",
     "notes": "监听自身豪意数值变化；仅自己的回合触发，每次变化获得Amount格挡，不按豪意点数倍乘，无次数限制。"
   }

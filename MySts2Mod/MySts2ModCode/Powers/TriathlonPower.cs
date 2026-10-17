@@ -10,7 +10,10 @@ using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace MySts2Mod.MySts2ModCode.Powers;
 
+// Smart description only; source checks still require localized title and smartDescription.
+#pragma warning disable STS001
 public class TriathlonPower : MySts2ModPower
+#pragma warning restore STS001
 {
     private sealed class Data
     {

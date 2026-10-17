@@ -19,7 +19,7 @@ public class Spark : MySts2ModCard
     private const CardRarity rarity = CardRarity.Common;
     private const TargetType target = TargetType.AnyEnemy;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(8, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(10, ValueProp.Move)];
 
     public Spark() : base(cost, type, rarity, target)
     {
@@ -35,6 +35,6 @@ public class Spark : MySts2ModCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3);
+        DynamicVars.Damage.UpgradeValueBy(4);
     }
 }

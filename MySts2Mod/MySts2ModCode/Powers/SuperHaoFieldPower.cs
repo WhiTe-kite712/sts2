@@ -14,7 +14,10 @@ namespace MySts2Mod.MySts2ModCode.Powers;
 /// <summary>
 /// 超豪力场：回合结束时，获得等同于豪意值一半的格挡，并对所有敌人造成等同于豪意值一半的伤害。
 /// </summary>
+// Smart description only; source checks still require localized title and smartDescription.
+#pragma warning disable STS001
 public class SuperHaoFieldPower : MySts2ModPower
+#pragma warning restore STS001
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [

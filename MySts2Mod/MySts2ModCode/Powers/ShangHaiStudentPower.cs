@@ -14,7 +14,10 @@ namespace MySts2Mod.MySts2ModCode.Powers;
 /// <summary>
 /// 身影（上海学生）：本回合每打出一张牌，获得1层豪意与{Amount}点格挡。回合结束移除。
 /// </summary>
+// Smart description only; source checks still require localized title and smartDescription.
+#pragma warning disable STS001
 public class ShangHaiStudentPower : MySts2ModPower
+#pragma warning restore STS001
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [

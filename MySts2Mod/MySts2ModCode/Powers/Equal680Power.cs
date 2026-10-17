@@ -11,7 +11,10 @@ namespace MySts2Mod.MySts2ModCode.Powers;
 /// <summary>
 /// 等效680：当你的生命上限低于目标敌人时，伤害额外增加4点（升级后6点）。
 /// </summary>
+// Smart description only; source checks still require localized title and smartDescription.
+#pragma warning disable STS001
 public class Equal680Power : MySts2ModPower
+#pragma warning restore STS001
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Single;

@@ -17,9 +17,7 @@ public class Genius : MySts2ModCard
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<GeniusPower>(),
         HoverTipFactory.FromPower<HaoPower>(),
-        EnergyHoverTip,
     ];
 
     private const int cost = 1;
