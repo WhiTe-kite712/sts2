@@ -1,9 +1,170 @@
-[gd_resource type="SpineSkeletonDataResource" load_steps=3 format=3]
+[gd_resource type="SpineSkeletonDataResource" load_steps=35 format=3]
 
 [ext_resource type="SpineAtlasResource" path="res://MySts2Mod/animations/coding_farmer/hao.spatlas" id="1_atlas"]
 [ext_resource type="SpineSkeletonFileResource" path="res://MySts2Mod/animations/coding_farmer/hao.spjson" id="2_skeleton"]
 
+[sub_resource type="SpineAnimationMix" id="mix_0"]
+from = "idle_loop"
+to = "attack"
+mix = 0.02
+
+[sub_resource type="SpineAnimationMix" id="mix_1"]
+from = "idle_loop"
+to = "attack_multi"
+mix = 0.02
+
+[sub_resource type="SpineAnimationMix" id="mix_2"]
+from = "idle_loop"
+to = "cast"
+mix = 0.05
+
+[sub_resource type="SpineAnimationMix" id="mix_3"]
+from = "idle_loop"
+to = "hurt"
+mix = 0.03
+
+[sub_resource type="SpineAnimationMix" id="mix_4"]
+from = "hurt"
+to = "idle_loop"
+mix = 0.1
+
+[sub_resource type="SpineAnimationMix" id="mix_5"]
+from = "hurt"
+to = "die"
+mix = 0.1
+
+[sub_resource type="SpineAnimationMix" id="mix_6"]
+from = "idle_loop"
+to = "die"
+mix = 0.1
+
+[sub_resource type="SpineAnimationMix" id="mix_7"]
+from = "attack"
+to = "idle_loop"
+mix = 0.06
+
+[sub_resource type="SpineAnimationMix" id="mix_8"]
+from = "attack_multi"
+to = "idle_loop"
+mix = 0.08
+
+[sub_resource type="SpineAnimationMix" id="mix_9"]
+from = "cast"
+to = "idle_loop"
+mix = 0.06
+
+[sub_resource type="SpineAnimationMix" id="mix_10"]
+from = "die"
+to = "idle_loop"
+mix = 0.1
+
+[sub_resource type="SpineAnimationMix" id="mix_11"]
+from = "idle_loop"
+to = "idle_virtual"
+mix = 0.28
+
+[sub_resource type="SpineAnimationMix" id="mix_12"]
+from = "idle_virtual"
+to = "idle_loop"
+mix = 0.28
+
+[sub_resource type="SpineAnimationMix" id="mix_13"]
+from = "idle_virtual"
+to = "attack"
+mix = 0.06
+
+[sub_resource type="SpineAnimationMix" id="mix_14"]
+from = "idle_virtual"
+to = "attack_multi"
+mix = 0.06
+
+[sub_resource type="SpineAnimationMix" id="mix_15"]
+from = "idle_virtual"
+to = "cast"
+mix = 0.08
+
+[sub_resource type="SpineAnimationMix" id="mix_16"]
+from = "idle_virtual"
+to = "hurt"
+mix = 0.06
+
+[sub_resource type="SpineAnimationMix" id="mix_17"]
+from = "attack"
+to = "idle_virtual"
+mix = 0.1
+
+[sub_resource type="SpineAnimationMix" id="mix_18"]
+from = "attack_multi"
+to = "idle_virtual"
+mix = 0.1
+
+[sub_resource type="SpineAnimationMix" id="mix_19"]
+from = "cast"
+to = "idle_virtual"
+mix = 0.12
+
+[sub_resource type="SpineAnimationMix" id="mix_20"]
+from = "hurt"
+to = "idle_virtual"
+mix = 0.12
+
+[sub_resource type="SpineAnimationMix" id="mix_21"]
+from = "idle_virtual"
+to = "idle_lowhp"
+mix = 0.15
+
+[sub_resource type="SpineAnimationMix" id="mix_22"]
+from = "idle_lowhp"
+to = "idle_virtual"
+mix = 0.28
+
+[sub_resource type="SpineAnimationMix" id="mix_23"]
+from = "idle_lowhp"
+to = "attack"
+mix = 0.08
+
+[sub_resource type="SpineAnimationMix" id="mix_24"]
+from = "idle_lowhp"
+to = "attack_multi"
+mix = 0.08
+
+[sub_resource type="SpineAnimationMix" id="mix_25"]
+from = "idle_lowhp"
+to = "cast"
+mix = 0.08
+
+[sub_resource type="SpineAnimationMix" id="mix_26"]
+from = "idle_lowhp"
+to = "hurt"
+mix = 0.08
+
+[sub_resource type="SpineAnimationMix" id="mix_27"]
+from = "attack"
+to = "idle_lowhp"
+mix = 0.1
+
+[sub_resource type="SpineAnimationMix" id="mix_28"]
+from = "cast"
+to = "idle_lowhp"
+mix = 0.1
+
+[sub_resource type="SpineAnimationMix" id="mix_29"]
+from = "hurt"
+to = "idle_lowhp"
+mix = 0.1
+
+[sub_resource type="SpineAnimationMix" id="mix_30"]
+from = "idle_lowhp"
+to = "die"
+mix = 0.1
+
+[sub_resource type="SpineAnimationMix" id="mix_31"]
+from = "idle_virtual"
+to = "die"
+mix = 0.1
+
 [resource]
 atlas_res = ExtResource("1_atlas")
 skeleton_file_res = ExtResource("2_skeleton")
-default_mix = 0.10
+default_mix = 0.05
+animation_mixes = [SubResource("mix_0"), SubResource("mix_1"), SubResource("mix_2"), SubResource("mix_3"), SubResource("mix_4"), SubResource("mix_5"), SubResource("mix_6"), SubResource("mix_7"), SubResource("mix_8"), SubResource("mix_9"), SubResource("mix_10"), SubResource("mix_11"), SubResource("mix_12"), SubResource("mix_13"), SubResource("mix_14"), SubResource("mix_15"), SubResource("mix_16"), SubResource("mix_17"), SubResource("mix_18"), SubResource("mix_19"), SubResource("mix_20"), SubResource("mix_21"), SubResource("mix_22"), SubResource("mix_23"), SubResource("mix_24"), SubResource("mix_25"), SubResource("mix_26"), SubResource("mix_27"), SubResource("mix_28"), SubResource("mix_29"), SubResource("mix_30"), SubResource("mix_31")]

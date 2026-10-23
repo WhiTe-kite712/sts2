@@ -1,0 +1,25 @@
+{
+  "frameWidth": 1034,
+  "frameHeight": 800,
+  "frames": 12,
+  "frameIndex": [
+    48,
+    50,
+    52,
+    54,
+    56,
+    58,
+    59,
+    61,
+    63,
+    66,
+    70,
+    76
+  ],
+  "hitFrame": 6,
+  "firstFrame": 48,
+  "lastFrame": 76,
+  "fps": 54.5,
+  "fxHidden": true,
+  "note": "\u53ea\u542b\u5782\u76f4\u4e0b\u5288\u6bb5\uff1bfx_* \u5168\u90e8\u9690\u85cf\uff1b\u6df1\u8272\u5e95\u5df2\u62a0"
+}

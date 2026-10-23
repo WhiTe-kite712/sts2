@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Animation;
 using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Entities.Characters;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Models;
 
 namespace MySts2Mod.MySts2ModCode.Character;
@@ -39,11 +40,25 @@ public class CodingFarmer : PlaceholderCharacterModel
     public override string CustomCharacterSelectIconPath => $"{MainFile.ResPath}/images/charui/coding_farmer_select_icon.png";
     public override string CustomCharacterSelectLockedIconPath => CustomCharacterSelectIconPath;
     public override string CustomCharacterSelectBg => CodingFarmerSelectScene.GetScenePath();
+    // ★ 2026-10-23：火堆 / 商店也用码农模型（原先回落到铁甲战士 ironclad_rest_site / ironclad_merchant）
+    public override string CustomRestSiteAnimPath => CodingFarmerRoomScenes.GetRestSitePath();
+    public override string CustomMerchantAnimPath => CodingFarmerRoomScenes.GetMerchantPath();
 
     public override NCreatureVisuals CreateCustomVisuals() => CodingFarmerCombatVisuals.Create();
-    public override CreatureAnimator SetupCustomAnimationStates(MegaSprite controller)
-        => CodingFarmerCombatVisuals.CreateAnimator(controller);
-    public override float AttackAnimDelay => 0.34f;
+
+    /// <summary>
+    /// 覆写引擎原生的动画器构建（<c>sts2.decompiled.cs:75471</c>）。
+    /// **这是唯一能拿到 Creature 的入口** —— 按血量切换 idle 必须用它
+    /// （BaseLib 的 <c>SetupCustomAnimationStates(MegaSprite)</c> 拿不到 creature）。
+    /// </summary>
+    public override CreatureAnimator GenerateAnimator(MegaSprite controller, Creature creature)
+        => CodingFarmerCombatVisuals.CreateAnimator(controller, creature);
+    // 出伤时机 = 动画播到「下劈命中」的那一刻（引擎在 AttackCommand 里按此延迟结算伤害）。
+    // ★ 与 JumpSlashSequence 的命中时刻一致：
+    //   WindUp 0.26 + JumpUp 0.12 + ApexHold 0.10 + Fall 0.11 = 0.59s
+    // ⚠️ 注意：Spine 骨架动画 attack 的 eventFrames = 84（0.84s），比 VFX/伤害晚 0.25s
+    //   ⇒ 若要三套对齐，应改 Spine 动画的 hit 关键帧时刻（不是改这里）。
+    public override float AttackAnimDelay => 0.59f;
     public override float CastAnimDelay => 0.48f;
 
     // 过渡音效不能删

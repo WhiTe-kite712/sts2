@@ -1,0 +1,9 @@
+; Engine configuration file for the newking-vfx mod.
+; Kept minimal on purpose: this mod ships code + (optionally) textures only.
+
+config_version=5
+
+[application]
+
+config/name="newking-vfx"
+config/features=PackedStringArray("4.5", "C#")

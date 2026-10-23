@@ -1,12 +1,12 @@
 {
-  "ok": true,
+  "ok": false,
   "bodyUniformScale": 0.3333333333333333,
   "characterRegionsHavePreservedAspect": true,
   "bones": 22,
-  "slots": 20,
+  "slots": 23,
   "capeMeshVertices": 77,
   "capeMeshTriangles": 120,
-  "maxIKReachClamp": 0.0,
-  "bodyAttachmentCenterError": 6.3082249220299e-06,
+  "maxIKReachClamp": 65.8621083300255,
+  "bodyAttachmentCenterError": 5.061778639413839e-06,
   "weaponGripAttachmentError": 0.0
 }

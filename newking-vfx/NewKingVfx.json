@@ -1,0 +1,14 @@
+{
+  "id": "NewKingVfx",
+  "name": "NewKing VFX",
+  "author": "qqzd",
+  "description": "Presentation-only card play VFX layer for the Coding Farmer. Couples to other mods only by card ID string; no gameplay logic, no code references.",
+  "version": "v0.1.0",
+  "min_game_version": "0.107.0",
+  "has_pck": true,
+  "has_dll": true,
+  "dependencies": [
+    {"id": "BaseLib", "min_version": "3.4.7"}
+  ],
+  "affects_gameplay": false
+}

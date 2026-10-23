@@ -5,3 +5,21 @@
 # 系统文件
 Thumbs.db
 Desktop.ini
+
+# 调试备份（保留在磁盘，不提交）
+*.bak
+*.bak_*
+_bak_*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 构建产物
+bin/
+obj/
+*.pck
+*.dll
+*.pdb
+*.user

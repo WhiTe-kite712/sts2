@@ -1,0 +1,105 @@
+<Project Sdk="Godot.NET.Sdk/4.5.1" InitialTargets="CheckDependencyPaths">
+    <Import Project=".\Sts2PathDiscovery.props"/>
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>true</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Publicize>False</Publicize>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+        <!-- ⚠️ 关键：程序集名**必须**等于 mod manifest 里的 id（`NewKingVfx`）。
+             游戏是按 `mods/<子目录>/<id>.dll` 找程序集的（日志实测：
+             「no assembly at path ...\mods\newking-vfx\NewKingVfx.dll was found」）。
+             早先项目名是 `newking-vfx`，生成的 `newking-vfx.dll` 与 id 不匹配 ⇒ 整个 mod 静默不加载。 -->
+        <AssemblyName>NewKingVfx</AssemblyName>
+        <RootNamespace>NewKingVfx</RootNamespace>
+
+        <AppOutputBase>$(MSBuildProjectDirectory)\</AppOutputBase>
+        <PathMap>$(AppOutputBase)=.\</PathMap>
+        <GodotDisabledSourceGenerators>GodotPluginsInitializer</GodotDisabledSourceGenerators>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <NoWarn>$(NoWarn);MSB3270</NoWarn>
+    </PropertyGroup>
+
+    <!-- ══════════════════════════════════════════════════════════════════
+         PckPacker 的三个路径属性必须**显式覆盖**。
+         ══════════════════════════════════════════════════════════════════
+         它们的默认值是按**项目名**（`newking-vfx`）推导的：
+           PckPackerSourceDir  = $(MSBuildProjectDirectory)/$(MSBuildProjectName)/  ← 找 `newking-vfx/` 子目录
+           PckPackerResPrefix  = $(MSBuildProjectName)                              ← `newking-vfx`
+           PckPackerOutputPath = $(OutputPath)$(MSBuildProjectName).pck             ← `newking-vfx.pck`
+         而我们的资源目录叫 `NewKingVfx/`、mod id 叫 `NewKingVfx`
+         ⇒ 默认值导致 `Exists($(PckPackerSourceDir))` 为假 ⇒ PackPck 整个 target 被跳过（**连提示都不打**），
+           表现就是"构建成功但永远没有 .pck"。2026-10-22 就是这么卡住的。
+
+         ⚠️ 三个属性在包自带 targets 里都写成 `Condition="'$(X)' == ''"`，
+            所以只要这里先赋值就能覆盖（targets 在 csproj 之后 import，赋值为空时才填默认值）。
+         ⚠️ OutputPath 用固定路径而不是 `$(OutputPath)`：后者在 csproj 求值阶段可能还是默认的
+            `bin\$(Configuration)\`，与 Godot SDK 实际输出目录不一致。
+         ══════════════════════════════════════════════════════════════════ -->
+    <PropertyGroup>
+        <PckPackerSourceDir>$(MSBuildProjectDirectory)/NewKingVfx/</PckPackerSourceDir>
+        <PckPackerResPrefix>NewKingVfx</PckPackerResPrefix>
+        <PckPackerOutputPath>$(MSBuildProjectDirectory)/.godot/mono/temp/bin/$(Configuration)/NewKingVfx.pck</PckPackerOutputPath>
+    </PropertyGroup>
+
+    <!-- 引擎 + Harmony：这是唯一的两个必需引用。
+         ⚠️ **刻意不引用 NewKing / MySts2Mod**：
+         本 mod 与它们只通过「卡牌 ID 字符串」耦合（见 CardVfxRegistry），
+         所以它们改了实现、甚至不存在，本 mod 也照样能编译、照样不崩。 -->
+    <ItemGroup Condition="Exists('$(Sts2DataDir)')" >
+        <Reference Include="0Harmony">
+            <HintPath>$(Sts2DataDir)/0Harmony.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="sts2">
+            <HintPath>$(Sts2DataDir)/sts2.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Alchyr.Sts2.BaseLib" Version="3.4.7" PrivateAssets="All"/>
+        <!-- ⚠️ 刻意**不引用** Alchyr.Sts2.ModAnalyzers：
+             它要求"每个 mod 都必须有本地化文件并登记为 AdditionalFiles"（STS001/STS002），
+             而本 mod 是**纯表现层、零新内容**（不注册卡牌/能力/遗物/角色），
+             没有也不需要任何本地化条目 ⇒ 引用它只会带来无意义的编译错误。 -->
+        <PackageReference Include="BSchneppe.StS2.PckPacker" Version="0.1.1" PrivateAssets="All" />
+    </ItemGroup>
+
+    <!-- 本 mod 自己的资源（若将来需要放素材）不进编译器 -->
+    <ItemGroup>
+        <Compile Remove="NewKingVfx/**" />
+        <EmbeddedResource Remove="NewKingVfx/**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Condition="Exists('Directory.Build.props')" Include="Directory.Build.props"/>
+        <None Include=".gitignore" />
+        <None Include="NewKingVfx.json" />
+        <None Include="project.godot"/>
+        <None Include="NewKingVfx/**" />
+    </ItemGroup>
+
+    <Target Name="CheckDependencyPaths" >
+        <Error
+                Text=" Slay the Spire 2 data not found at path '$(Sts2DataDir)'"
+                Condition="'$(Sts2DataDir)' == '' or !Exists('$(Sts2DataDir)')" />
+    </Target>
+
+    <!-- ⚠️ 部署：程序集名与清单名都必须是 NewKingVfx（= mod id），见 TargetFramework 上方的说明。 -->
+    <Target Name="CopyToModsFolderOnBuild" AfterTargets="PostBuildEvent" Condition="'$(DeployToGame)' != 'false'">
+        <Message Text="Copying NewKingVfx .dll .pdb and .json to mods folder." Importance="high" />
+        <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsPath)NewKingVfx/" />
+        <Copy SourceFiles="NewKingVfx.json" DestinationFolder="$(ModsPath)NewKingVfx/" />
+        <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(ModsPath)NewKingVfx/" />
+    </Target>
+
+    <Target Name="CopyQuickPck" AfterTargets="PackPck" Condition="'$(DeployToGame)' != 'false' And Exists('$(PckPackerOutputPath)') And '$(PckPackerSkipped)' != 'true'">
+        <Message Text="Copying quick .pck to mods folder." Importance="high"/>
+        <!-- 目标目录与文件名都必须是 mod id（NewKingVfx）：游戏按 `mods/<id>/<id>.pck` 找。 -->
+        <Copy SourceFiles="$(PckPackerOutputPath)" DestinationFolder="$(ModsPath)NewKingVfx/" />
+    </Target>
+</Project>
